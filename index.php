@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>name of the page</title>
 </head>
 <body>
 <?php
 $start = 20;
-$end = 45;
+$end = 46;
 $sum = 0;
 
 for($i = $start; $i <= $end; $i++) {
@@ -18,6 +18,4 @@ for($i = $start; $i <= $end; $i++) {
     }
 echo $sum;
 }
-
 </body>
-</html>
