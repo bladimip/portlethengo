@@ -1,5 +1,5 @@
 <?php
-var_dump($_SERVER['REQUEST_URI'])
+var_dump( substr($_SERVER['REQUEST_URI'], 1))
 ?>
 
 <!DOCTYPE html>
