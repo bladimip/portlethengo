@@ -1,8 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-      <title>---</title>
-     </head>
- <body>
- </body>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
 <?php
 $start = 20;
 $end = 45;
@@ -13,3 +15,6 @@ for($i = $start; $i <= $end; $i++) {
     }
 }
 echo $sum;
+?>
+</body>
+</html>
