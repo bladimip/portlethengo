@@ -1,9 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: 1407563
- * Date: 10/10/2016
- * Time: 15:20
- */
-
-echo 'OinfoO';
+// connect to csdm- webdev server and sel ect database
+$db = new mysqli(
+"hostname",
+"username",
+"password’",
+"db_name’"
+);
+// test if connection was established, and print any errors
+if($db->connect_errno){
+    die()
+}
