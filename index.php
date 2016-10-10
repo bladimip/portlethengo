@@ -1,9 +1,10 @@
 <?php
 
 if ($_SERVER['REQUEST_URI'] == '/' ) $page = 'home';
-
-var_dump( substr($_SERVER['REQUEST_URI'], 0) );
-
+else {
+   $page = substr($_SERVER['REQUEST_URI'], 1);
+}
+echo $page;
 ?>
 
 <!DOCTYPE html>
