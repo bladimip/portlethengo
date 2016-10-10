@@ -1,8 +1,3 @@
-<?php
-
-ver_dump($_SERVER);
-
-?>
 
 
 <!DOCTYPE html>
