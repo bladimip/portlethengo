@@ -11,7 +11,17 @@ session_start();
 if( file_exists('all/'.$page.'.php')) include 'all/'.$page.'.php';
 else if( $_SESSION['uLogin'] != 1 and file_exists('auth/'.$page.'.php')) include 'auth/'.$page.'.php';
 else if( $_SESSION['uLogin'] == 1 and file_exists('guest/'.$page.'.php')) include 'guest/'.$page.'.php';
-else exit('Page404')
+else exit('Page404');
+
+$db = new mysqli(
+"hostname",
+"username",
+"password",
+"db_name"
+);
+if($db->connect_errno){
+    die('Connectfailed['.$db->connect_error.']');
+}
 
 ?>
 
@@ -22,7 +32,9 @@ else exit('Page404')
     <title>Title</title>
 </head>
 <body>
-<?php
+
+
+
 $start = 20;
 $end = 90;
 $sum = 0;
