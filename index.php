@@ -10,7 +10,6 @@ session_start();
 
 if( file_exists('all/'.$page.'.php')) include 'all/'.$page.'.php';
 else if( $_SESSION['uLogin'] != 1 and file_exists('auth/'.$page.'.php')) include 'auth/'.$page.'.php';
-else if( $_SESSION['uLogin'] == 1 and file_exists('DataBase/'.$page.'.php')) include 'DataBase/'.$page.'.php';
 else if( $_SESSION['uLogin'] == 1 and file_exists('guest/'.$page.'.php')) include 'guest/'.$page.'.php';
 else exit('Page404')
 
