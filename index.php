@@ -1,6 +1,8 @@
 <?php
 
-var_dump( substr($_SERVER['REQUEST_URI'], 1) );
+if ($_SERVER['REQUEST_URI'] == '/' ) $page = 'home';
+
+var_dump( substr($_SERVER['REQUEST_URI'], ) );
 
 ?>
 
