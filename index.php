@@ -13,16 +13,6 @@ else if( $_SESSION['uLogin'] != 1 and file_exists('auth/'.$page.'.php')) include
 else if( $_SESSION['uLogin'] == 1 and file_exists('guest/'.$page.'.php')) include 'guest/'.$page.'.php';
 else exit('Page404');
 
-$db = new mysqli(
-"hostname",
-"username",
-"password",
-"db_name"
-);
-if($db->connect_errno){
-    die('Connectfailed['.$db->connect_error.']');
-}
-
 ?>
 
 <!DOCTYPE html>

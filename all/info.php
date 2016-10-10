@@ -1,12 +1,10 @@
 <?php
-// connect to csdm- webdev server and sel ect database
 $db = new mysqli(
-"hostname",
-"username",
-"password’",
-"db_name’"
+    "eu-cdbr-azure-west-a.cloudapp.net",
+    "b5724637a2f2fd",
+    "f5aeeeb3",
+    "the_first_db"
 );
-// test if connection was established, and print any errors
 if($db->connect_errno){
-    die()
+    die('Connectfailed['.$db->connect_error.']');
 }
