@@ -1,6 +1,6 @@
 <?php
 
-if ($_SERVER['REQUEST_URI'] == '/' ) $page = 'home';
+if ($_SERVER['REQUEST_URI'] == '/site' ) $page = 'home';
 else {
    $page = substr($_SERVER['REQUEST_URI'], 1);
     if( !preg_match('/^[A-z0-9]{3,150}$/', $page) ) exit('error url');
@@ -8,9 +8,9 @@ else {
 
 session_start();
 
-if( file_exists('all/'.$page.'.php')) include 'all/'.$page.'.php';
-else if( $_SESSION['uLogin'] != 1 and file_exists('auth/'.$page.'.php')) include 'auth/'.$page.'.php';
-else if( $_SESSION['uLogin'] == 1 and file_exists('guest/'.$page.'.php')) include 'guest/'.$page.'.php';
+if( file_exists('site/all/'.$page.'.php')) include 'site/all/'.$page.'.php';
+else if( $_SESSION['uLogin'] != 1 and file_exists('site/auth/'.$page.'.php')) include 'site/auth/'.$page.'.php';
+else if( $_SESSION['uLogin'] == 1 and file_exists('site/guest/'.$page.'.php')) include 'site/guest/'.$page.'.php';
 else exit('Page404')
 
 ?>
