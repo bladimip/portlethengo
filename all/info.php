@@ -6,4 +6,4 @@
  * Time: 15:20
  */
 
-echo 'info';
+echo 'OinfoO';

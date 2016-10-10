@@ -6,4 +6,4 @@
  * Time: 15:18
  */
 
-echo 'Panel';
+echo 'OPanelO';
