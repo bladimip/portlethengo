@@ -1,7 +1,3 @@
-<?php
-var_dump( substr($_SERVER['REQUEST_URI'], 1))
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
