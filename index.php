@@ -1,6 +1,7 @@
 <?php
 
 if ($_SERVER['REQUEST_URI'] == '/' ) $page = 'home';
+else if ($_SERVER['REQUEST_URI'] == '/adminer' ) $page = 'adminer';
 else {
    $page = substr($_SERVER['REQUEST_URI'], 1);
     if( !preg_match('/^[A-z0-9]{3,150}$/', $page) ) exit('error url');
