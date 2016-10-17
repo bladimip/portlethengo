@@ -1,7 +1,5 @@
 <? top('Map') ?>
 
-<script>
-    <div id="map"></div>
         <script>
 
     var map;
@@ -11,5 +9,6 @@
             zoom: 8
         });
     }
+</script>
 
 <? bottom() ?>
