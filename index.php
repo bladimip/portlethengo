@@ -56,7 +56,7 @@ echo '<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <title>'.$title.'</title>
-<link rel="stylesheet" href="/style.css">
+<link type="css" rel="stylesheet" href="/style.css">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
 <script src="/script.js"></script>
