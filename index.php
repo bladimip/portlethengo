@@ -1,4 +1,4 @@
-* {margin: 0; padding: 0}
+<style>* {margin: 0; padding: 0}
 
 
 a {text-decoration: none}
@@ -81,7 +81,7 @@ padding: 10px 25px;
 text-transform: uppercase;
 
 }
-
+</style>
 
 
 
