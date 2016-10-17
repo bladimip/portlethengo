@@ -1,5 +1,7 @@
 <? top('Map') ?>
 
-    echo "Hello World";
+    <?php
+echo "Hello World";
+?>
 
 <? bottom() ?>
