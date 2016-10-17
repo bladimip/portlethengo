@@ -11,7 +11,7 @@ else {
 session_start();
 
 if ( file_exists('all/'.$page.'.php') ) include 'all/'.$page.'.php';
-elseif (file_exists( '/' .$page.'.css') ) include '/' .$page.'.css';
+elseif (file_exists( $page.'.css') ) include $page.'.css';
 else if ( $_SESSON['ulogin'] == 1 and file_exists('auth/'.$page.'.php') ) include 'auth/'.$page.'.php';
 else if ( $_SESSON['ulogin'] != 1 and file_exists('guest/'.$page.'.php') ) include 'guest/'.$page.'.php';
 else exit('Error 404');
