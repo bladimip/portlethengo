@@ -1,14 +1,18 @@
 <? top('Map') ?>
 
-        <script>
+    <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+    <script type="text/javascript">
+        var map = null;
 
-    var map;
-    function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 8
-        });
-    }
-</script>
+        function getMap()
+        {
+            map = new Microsoft.Maps.Map(document.getElementById('myMap'), {credentials: 'Your Bing Maps Key'});
+        }
+    </script>
+    </head>
+    <body onload="getMap();">
+    <div id='myMap' style="position:relative; width:400px; height:400px;"></div>
+    </body>
+
 
 <? bottom() ?>
