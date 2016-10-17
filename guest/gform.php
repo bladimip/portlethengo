@@ -12,7 +12,7 @@ message( 'OK' );
 
 else if ($_POST['register_f']) {
 
-go('login');
+go('Login');
 
 }
 

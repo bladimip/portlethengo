@@ -1,4 +1,4 @@
-<? top('login') ?>
+<? top('Login') ?>
 
 <h1>Login</h1>
 
