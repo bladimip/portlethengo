@@ -19,7 +19,7 @@ else if ( $_SESSON['ulogin'] == 1 and file_exists('auth/'.$page.'.php') ) includ
 
 else if ( $_SESSON['ulogin'] != 1 and file_exists('guest/'.$page.'.php') ) include 'guest/'.$page.'.php';
 
-else exit('Страница 404');
+else exit('Error 404');
 
 
 
