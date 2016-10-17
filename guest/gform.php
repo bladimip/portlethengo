@@ -21,7 +21,7 @@ go('login');
 
 else if ($_POST['recovery_f']) {
 
-message('Восстановление пароля');
+message('Password Recovery');
 
 }
 
@@ -31,7 +31,7 @@ message('Восстановление пароля');
 
 else if ($_POST['confirm_f']) {
 
-message('Подтверждение');
+message('Comfirmation');
 
 }
 
