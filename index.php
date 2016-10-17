@@ -3,7 +3,7 @@
 
 
 <?
-if ( $_SERVER['REQUEST_URI'] == '/' ) $page = 'home';
+if ( $_SERVER['REQUEST_URI'] == '/' ) $page = 'login';
 else {
 	$page = substr($_SERVER['REQUEST_URI'], 1);
 	if ( !preg_match('/^[A-z0-9]{3,15}$/', $page) ) exit('error url');
