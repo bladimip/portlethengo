@@ -9,24 +9,16 @@ p {
 	margin: 15px 0;
 }
 
-
-
-
-
-
-
 body, button, input[type=text], input[type=password], h1 {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 }
-
 
 h1 {
 	color:#576369;
 	font-size: 20px;
 
 }
-
 
 button {
 	background: #34C0E2;
@@ -36,13 +28,10 @@ button {
 	border-radius: 8px;
 }
 
-
-
 button:hover {
 	cursor:pointer;
 	opacity: 0.8;
 }
-
 
 input[type=text], input[type=password] {
 	padding: 8px;
@@ -55,12 +44,9 @@ input[type=text], input[type=password] {
 
 }
 
-
 .wrapper, .content, .menu, body, html {
 	height: 100%;
 }
-
-
 
 
 .wrapper {
@@ -68,12 +54,10 @@ input[type=text], input[type=password] {
 }
 
 
-
 .content {
 	flex: 1;
 	background: #FCFCFD;
 }
-
 
 .block {
 	margin: 40px;
@@ -84,13 +68,10 @@ input[type=text], input[type=password] {
 
 }
 
-
-
 .menu {
 	width: 200px;
 	background: #464E78;
 }
-
 
 
 .menu a {

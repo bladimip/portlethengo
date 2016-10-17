@@ -31,7 +31,7 @@ message('Password Recovery');
 
 else if ($_POST['confirm_f']) {
 
-message('Comfirmation');
+message('Confirmation');
 
 }
 

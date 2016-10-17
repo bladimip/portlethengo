@@ -35,10 +35,10 @@ function captcha_show() {
 
 function captcha_valid() {
 	$answers = array(
-		1 => 'mosko',
-		2 => 'kiev',
+		1 => 'Moscow',
+		2 => 'Kiev',
 		3 => 'Washington',
-		4 => 'Maikl',
+		4 => 'Michael',
 		5 => 'RockStarGames',
 		);
 
