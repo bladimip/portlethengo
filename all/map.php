@@ -11,7 +11,7 @@
     </script>
     </head>
     <body onload="getMap();">
-    <div id='myMap' style="position:relative; width:800px; height:800px;"></div>
+    <div id='myMap' style="position:relative; width:100%; height:800px;"></div>
     </body>
 
 
