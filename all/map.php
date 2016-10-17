@@ -1,9 +1,5 @@
 <? top('Map') ?>
 
-    <?php
-echo "Hello World";
-?>
-
 <script>
     <div id="map"></div>
         <script>
