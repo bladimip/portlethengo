@@ -1,3 +1,5 @@
+<style>
+
 * {margin: 0; padding: 0}
 
 
@@ -81,3 +83,4 @@ input[type=text], input[type=password] {
 	text-transform: uppercase;
 
 }
+</style>
