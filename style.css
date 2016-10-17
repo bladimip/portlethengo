@@ -1,0 +1,102 @@
+* {margin: 0; padding: 0}
+
+
+a {text-decoration: none}
+
+
+
+p {
+	margin: 15px 0;
+}
+
+
+
+
+
+
+
+body, button, input[type=text], input[type=password], h1 {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+}
+
+
+h1 {
+	color:#576369;
+	font-size: 20px;
+
+}
+
+
+button {
+	background: #34C0E2;
+	color: #fff;
+	border: 1px solid #34C0E2;
+	padding: 8px;
+	border-radius: 8px;
+}
+
+
+
+button:hover {
+	cursor:pointer;
+	opacity: 0.8;
+}
+
+
+input[type=text], input[type=password] {
+	padding: 8px;
+	border: 1px solid #EEEFF2;
+	border-radius: 8px;
+	color: #ADB6BA;
+	width: 300px;
+	outline: none;
+
+
+}
+
+
+.wrapper, .content, .menu, body, html {
+	height: 100%;
+}
+
+
+
+
+.wrapper {
+	display: flex;
+}
+
+
+
+.content {
+	flex: 1;
+	background: #FCFCFD;
+}
+
+
+.block {
+	margin: 40px;
+	padding: 20px;
+	background: #fff;
+	border: 1px solid #EEEFF2;
+
+
+}
+
+
+
+.menu {
+	width: 200px;
+	background: #464E78;
+}
+
+
+
+.menu a {
+	display:
+	block; color: #fff;
+	padding: 10px 25px;
+	text-transform: uppercase;
+
+}

@@ -1,9 +1,10 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: 1407563
- * Date: 10/10/2016
- * Time: 15:19
- */
+<? top('login') ?>
 
-echo 'OLoginO';
+<h1>Login</h1>
+
+<p><input type="text" placeholder="E-mail" id="email"></p>
+<p><input type="password" placeholder="Password" id="password"></p>
+<p><input type="text" placeholder="<?captcha_show()?>" id="captcha"></p>
+<p><button onclick="post_query('gform', 'login', 'email.password.captcha')">Enter</button> <button>Recovery Password</button></p>
+
+<? bottom() ?>
