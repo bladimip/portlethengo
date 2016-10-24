@@ -61,6 +61,16 @@ if ( $_SESSION['captcha'] != array_search( strtolower($_POST['captcha']), $answe
  
 }
 
+function email_valid(){
+    if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
+        message('wrong email');
+}
+
+function password_valid(){
+    if ( !preg_match('/^[A-z0-9]{10,30}$/', $_POST['password']) )
+        message('Pssword 10-30 symbols');
+    $_POST['password']= md5($_POST['password']);
+}
 
 
 function top( $title ) {
