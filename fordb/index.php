@@ -28,6 +28,10 @@ function go( $url ) {
 	exit('{ "go" : "'.$url.'"}');
 }
 
+function random_str ( $num = 30 ) {
+    return substr(str_shuffle('0123456789'), 0, $num);
+}
+
 function captcha_show() {
 	$questions = array(
 		1 => 'The capital sity of Russia?',
@@ -64,11 +68,11 @@ echo '<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>'.$title.'</title>
+<title>'.$title. '</title>
 <link  rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
-<script src="/script.js"></script>
+<script src="/fordb/script.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=r6H8oL-lra0lgTmkg6d7pR5Assg=&callback=initMap" async defer></script>
 </head>
 
