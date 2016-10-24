@@ -8,6 +8,11 @@ else {
 	$page = substr($_SERVER['REQUEST_URI'], 1);
 	if ( !preg_match('/^[A-z0-9]{3,15}$/', $page) ) exit('error url');
 }
+
+
+$CONNECT = mysqli_connect('eu-cdbr-azure-west-a.cloudapp.net', 'b5724637a2f2fd', "f5aeeeb3", "the_first_db", "3306");
+if ( !$CONNECT ) exit('MySQL error');
+
 session_start();
 
 if ( file_exists('all/'.$page.'.php') ) include 'all/'.$page.'.php';
