@@ -12,6 +12,11 @@ message( 'OK' );
 
 else if ($_POST['register_f']) {
 
+	email_valid();
+	password_valid();
+	message('OK');
+
+
 go('Login');
 
 }
