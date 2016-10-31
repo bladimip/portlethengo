@@ -1,14 +1,11 @@
-
-
-
-
 <?
-if ( $_SERVER['REQUEST_URI'] == '/' ) $page = 'login';
-else {
-	$page = substr($_SERVER['REQUEST_URI'], 1);
-	if ( !preg_match('/^[A-z0-9]{3,15}$/', $page) ) exit('error url');
-}
 
+if ( $_SERVER['REQUEST_URI'] == '/' ) $page = 'home';
+else {
+
+	$page = substr($_SERVER['REQUEST_URI'], 1);
+	if ( !preg_match('/^[A-z0-9]{3,15}$/', $page) ) not_found();
+}
 
 $CONNECT = mysqli_connect('eu-cdbr-azure-west-a.cloudapp.net', 'b5724637a2f2fd', "f5aeeeb3", "the_first_db", "3306");
 if ( !$CONNECT ) exit('MySQL error');
@@ -16,20 +13,27 @@ if ( !$CONNECT ) exit('MySQL error');
 session_start();
 
 if ( file_exists('all/'.$page.'.php') ) include 'all/'.$page.'.php';
+
 else if ( $_SESSON['ulogin'] == 1 and file_exists('auth/'.$page.'.php') ) include 'auth/'.$page.'.php';
+
 else if ( $_SESSON['ulogin'] != 1 and file_exists('guest/'.$page.'.php') ) include 'guest/'.$page.'.php';
-else exit('Error 404');
+
+else not_found();
 
 function message( $text ) {
-	exit('{ "message" : "'.$text.'"}');
+    exit('{ "message" : "'.$text.'"}');
 }
 
 function go( $url ) {
-	exit('{ "go" : "'.$url.'"}');
+    exit('{ "go" : "'.$url.'"}');
 }
 
-function random_str ( $num = 30 ) {
-    return substr(str_shuffle('0123456789'), 0, $num);
+function random_str( $num = 30 ) {
+    return substr(str_shuffle('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'), 0, $num);
+}
+
+function not_found() {
+    exit('Page 404');
 }
 
 function captcha_show() {
@@ -56,13 +60,13 @@ function captcha_valid() {
 		);
 
 
-if ( $_SESSION['captcha'] != array_search( strtolower($_POST['captcha']), $answers) )
+    if ( $_SESSION['captcha'] != array_search( strtolower($_POST['captcha']), $answers) )
 	message('Wrong answer');
  
 }
 
-function email_valid(){
-    if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
+function email_valid() {
+    if ( !filter_var( $_POST['email'], FILTER_VALIDATE_EMAIL))
         message('wrong email');
 }
 
@@ -74,16 +78,15 @@ function password_valid(){
 
 
 function top( $title ) {
-echo '<!DOCTYPE html>
+    echo '<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>'.$title. '</title>
-<link  rel="stylesheet" href="style.css">
+<title>'.$title.'</title>
+<link rel="stylesheet" href="/style.css">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
 <script src="/script.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=r6H8oL-lra0lgTmkg6d7pR5Assg=&callback=initMap" async defer></script>
 </head>
 
 <body>
