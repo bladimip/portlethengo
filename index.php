@@ -1,6 +1,6 @@
 <?
 
-if ( $_SERVER['REQUEST_URI'] == '/' ) $page = 'home';
+if ( $_SERVER['REQUEST_URI'] == '/' ) $page = 'login';
 else {
 
 	$page = substr($_SERVER['REQUEST_URI'], 1);
