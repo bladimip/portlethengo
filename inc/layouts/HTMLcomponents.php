@@ -50,6 +50,7 @@ function top( $title ) {
 							<li><a class="waves-effect waves-light" href="/sportlethen"><span class="lnr lnr-users"></span>SPORTLETHEN</a></li>
 							<li><a class="waves-effect waves-light" href="/health-wellbeing"><span class="lnr lnr-heart-pulse"></span>HEALTH & WELLBEING</a></li>
 							<li><a class="waves-effect waves-light" href="/map"><span class="lnr lnr-map"></span>MAP</a></li>
+							<li><a class="waves-effect waves-light" href="/login"><span class="lnr lnr-user"></span>Login</a></li>
 						</ul>
 						
 						<ul class="right hide-on-large-only">
@@ -57,6 +58,7 @@ function top( $title ) {
 							<li><a class="waves-effect waves-light" href="/sportlethen"><span class="lnr lnr-users"></span></a></li>
 							<li><a class="waves-effect waves-light" href="/health-wellbeing"><span class="lnr lnr-heart-pulse"></span></a></li>
 							<li><a class="waves-effect waves-light" href="/map"><span class="lnr lnr-map"></span></a></li>
+							<li><a class="waves-effect waves-light" href="/login"><span class="lnr lnr-user"></span></a></li>
 						</ul>
 					</div>
 				</nav>
