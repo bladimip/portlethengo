@@ -10,17 +10,6 @@ top("Welcome to Portlethen");
 
 //Other page content
 ?>
-    <div class="parallax-container valign-wrapper">
-        <div class="section no-pad-bot">
-            <div class="container">
-                <div class="row center">
-                    <h5 class="header col s12 light">Nulla ullamcorper mauris non risus egestas consectetur. Ut non lacus lorem. Cras sagittis porta neque eu egestas!</h5>
-                </div>
-            </div>
-        </div>
-        <div class="parallax"><img src="/assets/images/picture1.png" alt="Unsplashed background img 2"></div>
-    </div>
-
     <div class="container">
         <div class="section">
 
@@ -33,18 +22,6 @@ top("Welcome to Portlethen");
             </div>
 
         </div>
-    </div>
-
-
-    <div class="parallax-container valign-wrapper">
-        <div class="section no-pad-bot">
-            <div class="container">
-                <div class="row center">
-                    <h5 class="header col s12 light">Nulla ullamcorper mauris non risus egestas consectetur. Ut non lacus lorem. Cras sagittis porta neque eu egestas.</h5>
-                </div>
-            </div>
-        </div>
-        <div class="parallax"><img src="/assets/images/picture2.png" alt="Unsplashed background img 3"></div>
     </div>
 <?php
 
