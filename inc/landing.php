@@ -18,7 +18,7 @@ top("Welcome to Portlethen");
                 </div>
             </div>
         </div>
-        <div class="parallax"><img src="https://aroundthehills.files.wordpress.com/2011/10/p1010073_2.jpg" alt="Unsplashed background img 2"></div>
+        <div class="parallax"><img src="/assets/images/picture1.png" alt="Unsplashed background img 2"></div>
     </div>
 
     <div class="container">
@@ -44,7 +44,7 @@ top("Welcome to Portlethen");
                 </div>
             </div>
         </div>
-        <div class="parallax"><img src="http://s251181733.websitehome.co.uk/portyinfo/aerial-images/portlethen-03.jpg" alt="Unsplashed background img 3"></div>
+        <div class="parallax"><img src="/assets/images/picture2.png" alt="Unsplashed background img 3"></div>
     </div>
 <?php
 
