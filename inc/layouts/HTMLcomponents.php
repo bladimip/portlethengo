@@ -71,18 +71,7 @@ function top( $title ) {
 // Footer
 function bottom() {
 ?>
-		<div class="parallax-container valign-wrapper">
-			<div class="section no-pad-bot">
-				<div class="container">
-					<div class="row center">
-						<h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-					</div>
-				</div>
-			</div>
-			<div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 3"></div>
-		</div>
-
-		<footer class="page-footer teal">
+		<footer class="page-footer deep-purple lighten-2">
 			<div class="container">
 				<div class="row">
 					<div class="col l6 s12">
@@ -113,7 +102,7 @@ function bottom() {
 			</div>
 			<div class="footer-copyright">
 				<div class="container">
-					Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+					Made by <a class="brown-text text-lighten-3">CA2</a>
 				</div>
 			</div>
 		</footer>
