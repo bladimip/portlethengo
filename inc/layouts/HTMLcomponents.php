@@ -71,31 +71,31 @@ function top( $title ) {
 // Footer
 function bottom() {
 ?>
-		<footer class="page-footer deep-purple lighten-2">
+		<footer class="page-footer deep-purple lighten-1">
 			<div class="container">
 				<div class="row">
 					<div class="col l6 s12">
-						<h5 class="white-text">Company Bio</h5>
-						<p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+						<h5 class="white-text">Portlethen</h5>
+						<p class="grey-text text-lighten-4">Cras congue sodales leo in volutpat. Curabitur euismod felis dapibus nisi porta lobortis. In semper, mi vel blandit elementum, justo nisl imperdiet justo, eget tempus ligula turpis non risus. Sed orci felis, tincidunt in turpis a, viverra faucibus arcu. </p>
 
 
 					</div>
 					<div class="col l3 s12">
-						<h5 class="white-text">Settings</h5>
+						<h5 class="white-text">Social networks</h5>
 						<ul>
-							<li><a class="white-text" href="#!">Link 1</a></li>
-							<li><a class="white-text" href="#!">Link 2</a></li>
-							<li><a class="white-text" href="#!">Link 3</a></li>
-							<li><a class="white-text" href="#!">Link 4</a></li>
+							<li><a class="white-text" href="#!">Faceboook</a></li>
+							<li><a class="white-text" href="#!">Twitter</a></li>
+							<li><a class="white-text" href="#!">Google+</a></li>
+							<li><a class="white-text" href="#!">YouTube</a></li>
 						</ul>
 					</div>
 					<div class="col l3 s12">
-						<h5 class="white-text">Connect</h5>
+						<h5 class="white-text">Friends</h5>
 						<ul>
-							<li><a class="white-text" href="#!">Link 1</a></li>
-							<li><a class="white-text" href="#!">Link 2</a></li>
-							<li><a class="white-text" href="#!">Link 3</a></li>
-							<li><a class="white-text" href="#!">Link 4</a></li>
+							<li><a class="white-text" href="#!">WebPage1</a></li>
+							<li><a class="white-text" href="#!">WebPage2</a></li>
+							<li><a class="white-text" href="#!">WebPage3</a></li>
+							<li><a class="white-text" href="#!">WebPage4</a></li>
 						</ul>
 					</div>
 				</div>
