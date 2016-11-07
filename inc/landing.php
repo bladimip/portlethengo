@@ -14,11 +14,11 @@ top("Welcome to Portlethen");
         <div class="section no-pad-bot">
             <div class="container">
                 <div class="row center">
-                    <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                    <h5 class="header col s12 light">Nulla ullamcorper mauris non risus egestas consectetur. Ut non lacus lorem. Cras sagittis porta neque eu egestas.</h5>
                 </div>
             </div>
         </div>
-        <div class="parallax"><img src="background2.jpg" alt="Unsplashed background img 2"></div>
+        <div class="parallax"><img src="/assets/images/picture1.jpg" alt="Unsplashed background img 2"></div>
     </div>
 
     <div class="container">
@@ -28,7 +28,7 @@ top("Welcome to Portlethen");
                 <div class="col s12 center">
                     <h3><i class="mdi-content-send brown-text"></i></h3>
                     <h4>Contact Us</h4>
-                    <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+                    <p class="left-align light">Nulla ullamcorper mauris non risus egestas consectetur. Ut non lacus lorem. Cras sagittis porta neque eu egestas;</p>
                 </div>
             </div>
 
@@ -40,11 +40,11 @@ top("Welcome to Portlethen");
         <div class="section no-pad-bot">
             <div class="container">
                 <div class="row center">
-                    <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                    <h5 class="header col s12 light">Nulla ullamcorper mauris non risus egestas consectetur. Ut non lacus lorem. Cras sagittis porta neque eu egestas.</h5>
                 </div>
             </div>
         </div>
-        <div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 3"></div>
+        <div class="parallax"><img src="/assets/images/picture2.jpg" alt="Unsplashed background img 3"></div>
     </div>
 <?php
 
