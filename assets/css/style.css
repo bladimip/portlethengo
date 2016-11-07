@@ -1,83 +1,131 @@
-* {margin: 0; padding: 0}
+/* Icoons */
 
-
-a {text-decoration: none}
-
-
-
-p {
-	margin: 15px 0;
+.lnr-apartment {
+	margin: 0 5px;
+	color: white;
+	font-size: 30px;
+	/* To get crisp results, use sizes that are
+	a multiple of 20; because Linearicons was
+	designed on a 20 by 20 grid. */
 }
 
-body, button, input[type=text], input[type=password], h1 {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 16px;
-}
-
-h1 {
-	color:#576369;
+.lnr-menu {
+	margin: 0 5px;
+	color: white;
 	font-size: 20px;
-
+	/* To get crisp results, use sizes that are
+	a multiple of 20; because Linearicons was
+	designed on a 20 by 20 grid. */
 }
 
-button {
-	background: #34C0E2;
-	color: #fff;
-	border: 1px solid #34C0E2;
-	padding: 8px;
-	border-radius: 8px;
+.lnr-magnifier {
+	margin: 0 5px;
+	color: #e040fb;
+	font-size: 20px;
+	/* To get crisp results, use sizes that are
+	a multiple of 20; because Linearicons was
+	designed on a 20 by 20 grid. */
 }
 
-button:hover {
-	cursor:pointer;
-	opacity: 0.8;
+.lnr-magnifier {
+	margin: 0 5px;
+	color: #e040fb;
+	font-size: 20px;
+	/* To get crisp results, use sizes that are
+	a multiple of 20; because Linearicons was
+	designed on a 20 by 20 grid. */
 }
 
-input[type=text], input[type=password] {
-	padding: 8px;
-	border: 1px solid #EEEFF2;
-	border-radius: 8px;
-	color: #ADB6BA;
-	width: 300px;
-	outline: none;
-
-
+.lnr-users {
+	margin: 0 5px;
+	color: #e040fb;
+	font-size: 20px;
+	/* To get crisp results, use sizes that are
+	a multiple of 20; because Linearicons was
+	designed on a 20 by 20 grid. */
 }
 
-.wrapper, .content, .menu, body, html {
-	height: 100%;
+.lnr-heart-pulse {
+	margin: 0 5px;
+	color: #e040fb;
+	font-size: 20px;
+	/* To get crisp results, use sizes that are
+	a multiple of 20; because Linearicons was
+	designed on a 20 by 20 grid. */
 }
 
-
-.wrapper {
-	display: flex;
+.lnr-map {
+	margin: 0 5px;
+	color: #e040fb;
+	font-size: 20px;
+	text-align: center;
+	/* To get crisp results, use sizes that are
+	a multiple of 20; because Linearicons was
+	designed on a 20 by 20 grid. */
 }
 
-
-.content {
-	flex: 1;
-	background: #FCFCFD;
+.nav-wrapper .brand-logo {
+	font-family: 'Orbitron', sans-serif;
+	margin-left: 10px;
 }
 
-.block {
-	margin: 40px;
-	padding: 20px;
-	background: #fff;
-	border: 1px solid #EEEFF2;
-
-
+.nav-wrapper ul > li:first-child > span {
+	text-align: center;
+	padding: 0 15px;
 }
 
-.menu {
-	width: 200px;
-	background: #464E78;
+.nav-wrapper ul > li:first-child > span:hover {
+	background-color: rgba(0,0,0,.1);
 }
 
+.searchInput {
+	position: fixed;
+	top: 64px;
+	right: 0;
+	display: none;
+	background-color: white;
+	width: 100%;
+	height: 50px;
+	padding: 0 10px;
+	box-shadow: 0px 1px 5px grey;
+	z-index: 100;
+}
 
-.menu a {
-	display:
-	block; color: #fff;
-	padding: 10px 25px;
-	text-transform: uppercase;
+.searchInput > form > input {
+	text-align: center;
+	border-bottom: none;
+}
+
+.searchInput > form > input:focus {
+	border-bottom: 1px solid transparent !important;
+	box-shadow: 0 1px 0 0 transparent !important
+}
+
+footer {
+	background-color: #555;
+	color: white;
+}
+
+/*------------Media queries-------------*/
+
+
+/*small*/
+@media screen and (max-width: 600px) {
+	.nav-wrapper .brand-logo {
+		font-size: .9em !important;
+		margin-left: 5px;
+	}
+	.lnr-apartment {
+		font-size: 20px !important;
+	}
+	.searchInput {
+		top: 54px;
+	}
+}
+/*medium*/
+@media screen and (max-width: 992px) and (min-width: 601px) {
+
+/*large*/
+@media screen and (min-width: 991px) {
 
 }

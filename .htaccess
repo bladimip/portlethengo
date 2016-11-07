@@ -1,0 +1,11 @@
+RewriteEngine On
+
+RewriteRule ^clubs/club/([^/]+)$ inc/club/t_club.php?id=$1 [QSA,L]
+RewriteRule ^clubs/club/([^/]+)/event/([^/]+)$ inc/club/t_event.php?id=$1&event_id=$2 [QSA,L]
+
+RewriteRule ^health-wellbeing/news/([^/]+)$ inc/news/t_news.php?id=$1 [QSA,L]
+
+RewriteRule ^inc/(.*)$ route.php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ route.php [QSA,L]
