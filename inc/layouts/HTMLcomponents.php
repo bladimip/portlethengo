@@ -43,14 +43,14 @@ function top( $title ) {
 						<a href="/" class="left brand-logo"><span class="lnr lnr-apartment"></span>Portlethen</a>
 						<ul class="right hide-on-med-and-down">
 							<li><span class="waves-effect waves-light searchBtn"><span class="lnr lnr-magnifier"></span>SEARCH</span></li>
-							<li><a class="waves-effect waves-light" href="/clubs"><span class="lnr lnr-users"></span>CLUBS & SOCIETIES</a></li>
+							<li><a class="waves-effect waves-light" href="/sportlethen"><span class="lnr lnr-users"></span>SPORTLETHEN</a></li>
 							<li><a class="waves-effect waves-light" href="/health-wellbeing"><span class="lnr lnr-heart-pulse"></span>HEALTH & WELLBEING</a></li>
 							<li><a class="waves-effect waves-light" href="/map"><span class="lnr lnr-map"></span>MAP</a></li>
 						</ul>
 						
 						<ul class="right hide-on-large-only">
 							<li><span class="waves-effect waves-light"><span class="lnr lnr-magnifier searchBtn"></span></span></li>
-							<li><a class="waves-effect waves-light" href="/clubs"><span class="lnr lnr-users"></span></a></li>
+							<li><a class="waves-effect waves-light" href="/sportlethen"><span class="lnr lnr-users"></span></a></li>
 							<li><a class="waves-effect waves-light" href="/health-wellbeing"><span class="lnr lnr-heart-pulse"></span></a></li>
 							<li><a class="waves-effect waves-light" href="/map"><span class="lnr lnr-map"></span></a></li>
 						</ul>
@@ -73,7 +73,7 @@ function bottom() {
 ?>
 		<footer>
 			<address>Portlethen</address>
-			&copy; 2008-<?php echo date("Y") ?>
+			&copy; 2016-<?php echo date("Y") ?>
 		</footer>
 
 
