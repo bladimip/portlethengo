@@ -72,7 +72,7 @@ METHODS DESCRIPTION AND USAGE:
 
 			$this->result = $this->myConn->query($query);
 			
-			if ($this->result === TRUE) {
+			if ($this->result == TRUE) {
 				//echo "Success";
 			} else {
 				echo "Error: " . $this->myConn->error;
