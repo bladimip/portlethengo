@@ -1,5 +1,5 @@
 <?php
-/* 
+/*
 Clubs page
 
 Default: ./clubs.php (no varaible passed in url)
@@ -35,11 +35,16 @@ include('layouts/HTMLcomponents.php');
 top("Clubs and Societies");
 
 //Other page content
+$db = new Connection();
+$db->open();
+$clubs = $db->runQuery("SELECT * FROM clubs");
+$db->close();
 
+while ($row = $clubs->fetch_assoc()) {
+
+}
 
 // Footer
 bottom();
 
 ?>
-
-

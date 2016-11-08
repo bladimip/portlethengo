@@ -49,10 +49,10 @@ METHODS DESCRIPTION AND USAGE:
 	
 	class Connection {
 		
-		private $servername = "server name goes here";
-		private $db = "database name goes here";
-		private $username = "username of a database goes here";
-		private $password = "password of a database goes here";
+		private $servername = "localhost";
+		private $db = "webdev5";
+		private $username = "root";
+		private $password = "";
 		private $myConn;
 		private $result;
 
