@@ -9,56 +9,15 @@
 	designed on a 20 by 20 grid. */
 }
 
-.lnr-menu {
-	margin: 0 5px;
-	color: white;
-	font-size: 20px;
-	/* To get crisp results, use sizes that are
-	a multiple of 20; because Linearicons was
-	designed on a 20 by 20 grid. */
-}
-
-.lnr-magnifier {
+.lnr-menu,
+.lnr-magnifier,
+.lnr-users,
+.lnr-heart-pulse,
+.lnr-map,
+.lnr-user {
 	margin: 0 5px;
 	color: #e040fb;
 	font-size: 20px;
-	/* To get crisp results, use sizes that are
-	a multiple of 20; because Linearicons was
-	designed on a 20 by 20 grid. */
-}
-
-.lnr-magnifier {
-	margin: 0 5px;
-	color: #e040fb;
-	font-size: 20px;
-	/* To get crisp results, use sizes that are
-	a multiple of 20; because Linearicons was
-	designed on a 20 by 20 grid. */
-}
-
-.lnr-users {
-	margin: 0 5px;
-	color: #e040fb;
-	font-size: 20px;
-	/* To get crisp results, use sizes that are
-	a multiple of 20; because Linearicons was
-	designed on a 20 by 20 grid. */
-}
-
-.lnr-heart-pulse {
-	margin: 0 5px;
-	color: #e040fb;
-	font-size: 20px;
-	/* To get crisp results, use sizes that are
-	a multiple of 20; because Linearicons was
-	designed on a 20 by 20 grid. */
-}
-
-.lnr-map {
-	margin: 0 5px;
-	color: #e040fb;
-	font-size: 20px;
-	text-align: center;
 	/* To get crisp results, use sizes that are
 	a multiple of 20; because Linearicons was
 	designed on a 20 by 20 grid. */
@@ -145,6 +104,14 @@ footer {
 	.nav-wrapper .brand-logo {
 		font-size: .9em !important;
 		margin-left: 5px;
+	}
+	.lnr-menu,
+	.lnr-magnifier,
+	.lnr-users,
+	.lnr-heart-pulse,
+	.lnr-map,
+	.lnr-user {
+		margin: 0;
 	}
 	.lnr-apartment {
 		font-size: 20px !important;
