@@ -106,6 +106,26 @@ footer {
 	color: white;
 }
 
+/* Sportlethen */
+
+.sp-genre {
+	padding: 25px !important;
+	text-align: center;
+	background-color: #8e24aa;
+	color: white;
+	font-weight: bold;
+	margin: 0;
+}
+
+.sp-genre:hover {
+	background-color: #6a1b9a;
+}
+
+.sp-genre-list {
+	padding: 15px !important;
+	font-size: 1.5em;
+}
+
 /*------------Media queries-------------*/
 
 

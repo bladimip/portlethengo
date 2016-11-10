@@ -1,5 +1,7 @@
 RewriteEngine On
 
+
+RewriteRule ^sportlethen/genre/([^/]+)$ inc/sportlethen.php?clubs_genre=$1 [QSA,L]
 RewriteRule ^sportlethen/club/([^/]+)$ inc/club/t_club.php?id=$1 [QSA,L]
 RewriteRule ^sportlethen/club/([^/]+)/event/([^/]+)$ inc/club/t_event.php?id=$1&event_id=$2 [QSA,L]
 
