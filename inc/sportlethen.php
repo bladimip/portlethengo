@@ -43,11 +43,13 @@ if (isset($_GET["clubs_genre"])) {
     $clubs = $db->runQuery("SELECT * FROM clubs,clubgenre WHERE genreCode = code AND category = '". $clGenreDecoded."'");
     $db->close();
 
+    echo '<h4 class="sp-title">Discover Portlethen '. $clGenreDecoded .' clubs</h4>';
+
     echo '<div class="row">';
     while ($row = $clubs->fetch_assoc()) {
             echo '
             <a href="/sportlethen/'. urlencode($row["category"]) .'/'. urlencode($row["name"]) .'">
-                <div class="sp-genre-list z-depth-1 col s12">
+                <div class="sp-genre-list z-depth-1 waves-effect waves-dark col s12 l8 offset-l2">
                     '. $row["name"] .'
                 </div>
             </a>';
@@ -61,7 +63,7 @@ if (isset($_GET["clubs_genre"])) {
     $clubs = $db->runQuery("SELECT category, code, genreCode, COUNT(*) AS num FROM clubgenre, clubs WHERE genreCode = code GROUP BY code");
     $db->close();
 
-    echo '<h4 class="sp-title">Discover Portlethen Clubs</h4>';
+    echo '<h4 class="sp-title">Discover Portlethen clubs</h4>';
 
     echo '<div class="row">';
     while ($row = $clubs->fetch_assoc()) {

@@ -130,9 +130,11 @@ footer {
 
 .sp-genre-list {
 	padding: 15px !important;
+	margin-top: 1px;
 	font-size: 1.5em;
 	font-family: 'Orbitron', sans-serif;
 	color: #8e24aa;
+	background-color: #e8eaf6;
 }
 
 /*------------Media queries-------------*/
