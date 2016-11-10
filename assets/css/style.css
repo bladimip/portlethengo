@@ -81,10 +81,6 @@ footer {
 	.lnr-map,
 	.lnr-user {
 		margin: 0;
-		font-size: 20px;
-		/* To get crisp results, use sizes that are
-		a multiple of 20; because Linearicons was
-		designed on a 20 by 20 grid. */
 	}
 	.lnr-apartment {
 		font-size: 20px !important;
