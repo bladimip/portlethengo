@@ -108,12 +108,19 @@ footer {
 
 /* Sportlethen */
 
+.sp-title {
+	text-align: center;
+	padding : 15px 0;
+}
+
 .sp-genre {
+	margin: 10px 0 !important;
 	padding: 25px !important;
 	text-align: center;
 	background-color: #8e24aa;
 	color: white;
-	font-weight: bold;
+	font-size: 1.5em;
+	font-family: 'Orbitron', sans-serif;
 	margin: 0;
 }
 
@@ -124,6 +131,8 @@ footer {
 .sp-genre-list {
 	padding: 15px !important;
 	font-size: 1.5em;
+	font-family: 'Orbitron', sans-serif;
+	color: #8e24aa;
 }
 
 /*------------Media queries-------------*/
