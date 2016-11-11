@@ -34,10 +34,15 @@ include('layouts/HTMLcomponents.php');
 // Navbar
 top("Clubs and Societies");
 
-if (isset($_GET["clubs_genre"])) {
-    $clGenre = $_GET["clubs_genre"];
-    $clGenreDecoded = urldecode($clGenre);
+/* LOAD a page content depending on if a 'club genre' passed to the script or not (GET) */
+/* Stage one: this script receive a 'genre type' and load a list of the clubs what are of that type (can be send from 'Stage two' of this script) */
 
+// if passed
+if (isset($_GET["clubs_genre"])) {
+    // save it
+    $clGenreDecoded = urldecode($_GET["clubs_genre"]);
+
+    // fetch clubs of the passed type
     $db = new Connection();
     $db->open();
     $clubs = $db->runQuery("SELECT * FROM clubs,clubgenre WHERE genreCode = code AND category = '". $clGenreDecoded."'");
@@ -47,6 +52,8 @@ if (isset($_GET["clubs_genre"])) {
 
     echo '<div class="row">';
     while ($row = $clubs->fetch_assoc()) {
+            // build a link to a club template and pass a club name using GET
+            // check .htaccess file for routing rules - /sportlethen/genre/club name
             echo '
             <a href="/sportlethen/'. urlencode($row["category"]) .'/'. urlencode($row["name"]) .'">
                 <div class="sp-genre-list z-depth-1 waves-effect waves-dark col s12 l8 offset-l2">
@@ -55,6 +62,9 @@ if (isset($_GET["clubs_genre"])) {
             </a>';
     }
     echo '</div>';
+
+
+/* Stage two: this script doesn't receive a 'genre type' and load a list of the all club genres from a db (amount of clubs of each genre as well)*/
 
 } else {
 
@@ -67,6 +77,7 @@ if (isset($_GET["clubs_genre"])) {
 
     echo '<div class="row">';
     while ($row = $clubs->fetch_assoc()) {
+            // can pass a 'genre type' to this script to display a list of the clubs of that genre
             echo '
             <a href="/sportlethen/'. urlencode($row["category"]) .'">
                 <div class="col s12 m6 l3">
