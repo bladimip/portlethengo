@@ -95,6 +95,15 @@ footer {
 	color: #8e24aa;
 	background-color: #e8eaf6;
 }
+/* event calendar */
+.collection-item {
+	color: black !important;
+}
+
+.collection-item span {
+	font-weight: bold;
+	color: #8e24aa;
+}
 
 /*------------Media queries-------------*/
 

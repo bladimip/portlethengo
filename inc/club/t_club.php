@@ -17,40 +17,38 @@ $db->close();
 
 include('../db/simpleDB.php');
 include('../layouts/HTMLcomponents.php');
+include('ClubClass.php');
 
 // Navbar
 top("Club name goes here");
 
+// test variables
+$clubAdmin = 1;
+$nkpag = 0;
+$siteAdmin = 0;
+
 //Other page content
 if (isset($_GET["club"])) {
-    $club = urldecode($_GET["club"]);
-
-    echo '<h4 class="sp-title">'. $club .'</h4>';
+    $clubGET = urldecode($_GET["club"]);
 
     $db = new Connection();
     $db->open();
-    $club = $db->runQuery("SELECT * FROM clubs,clubgenre WHERE genreCode = code AND name = '". $club ."'");
+    $club = $db->runQuery("SELECT * FROM clubs,clubgenre WHERE genreCode = code AND name = '". $clubGET ."' LIMIT 1");
     $db->close();
 
-    echo '<div class="row">';
-    while ($row = $club->fetch_assoc()) {
-      echo '
-      <div class="col s12 l8 offset-l2 justify">
+    if (mysqli_num_rows($club) == 1) {
+        while ($row = $club->fetch_assoc()) {
 
-          space for image(s)
+          $clubObj = new Club($row["club_id"], $row["name"], $row["category"], $row["description"], $row["phone"], $row["email"], $row["address"]);
+          $clubObj->displayContent();
+        }
 
-          <h5>Category: '. $row["category"] .'</h5>
-          '. $row["description"] .'
-          <p><span class="lnr lnr-phone-handset"></span> '. $row["phone"] .'</p>
-          <p><span class="lnr lnr-envelope"></span> '. $row["email"] .'</p>
-          <p><span class="lnr lnr-location"></span> '. $row["address"] .'</p>
-          <br>
-          <h5>Event Calendar:</h5>
-          <p>Events will go here...</p>
-      </div>';
+    } else {
+          echo 'Club not found';
     }
-    echo '</div>';
 
+} else {
+      echo 'Club not found';
 }
 
 // Footer
