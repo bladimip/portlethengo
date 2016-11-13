@@ -1,4 +1,5 @@
 <?php
+
 class Club {
 
   // Properties
@@ -9,8 +10,8 @@ class Club {
   private $phone;
   private $email;
   private $address;
-  private $images = array(2,2,5);
-  private $events = array(2,2,5);
+  private $images = [];
+  private $events = [];
 
   // Constructor
   public function __construct($id, $name, $genre, $description, $phone, $email, $address) {
@@ -110,11 +111,12 @@ class Club {
       echo '<div class="slider">
               <ul class="slides">';
       for ($i=0; $i<count($this->images); $i++) {
+        $image = $this->images[$i];
         echo '<li>
-                <img src="http://lorempixel.com/580/250/nature/'.$i.'"> <!-- random image -->
+                <img src="http://lorempixel.com/580/250/nature/'.$i.'" alt='. $image->getAltName() .'> <!-- random image -->
                 <div class="caption center-align">
-                  <h3>This is our big Tagline '.$i.'!</h3>
-                  <h5 class="light grey-text text-lighten-3">Heres our small slogan '.$i.'.</h5>
+                  <h3>Title - '. $image->getAltName() .'!</h3>
+                  <h5 class="light grey-text text-lighten-3">Path '. $image->getPath() .'.</h5>
                 </div>
               </li>';
       }
@@ -140,21 +142,46 @@ class Club {
     echo '<h5>Event Calendar:</h5>';
     echo '<div class="collection">';
 
-    for ($i=0; $i<count($this->events); $i++) {
-      echo '<a href="#!" class="collection-item"><span>'.($i + 1).'</span> ...</a>';
+    if (count($this->events) > 0) {
+      for ($i=0; $i<count($this->events); $i++) {
+        $event = $this->events[$i];
+        echo '<a href="#!" class="collection-item"><span>'.($i + 1).'</span> '. $event->getName() .'</a>';
+      }
+    } else {
+      echo '<a href="#!" class="collection-item"><span></span>No events</a>';
     }
     echo '</div>';
   }
 
+  public function addImage(Image $image) {
+    $this->images[] = $image;
+  }
+
+  public function addEvent(Event $event) {
+    $this->events[] = $event;
+  }
+
+  public function imagesToString() {
+    for ($i=0; $i<count($this->images); $i++) {
+      echo $this->images[$i]->toString();
+    }
+  }
+
+  public function eventsToString() {
+    for ($i=0; $i<count($this->events); $i++) {
+      echo $this->events[$i]->toString();
+    }
+  }
+
   public function toString() {
-    return "Club information:
-            \nID: ". $this->getId() ."
-            \nGENRE: ". $this->getGenre() ."
-            \nNAME: ". $this->getName() ."
-            \nDESCRIPTION: ". $this->getDescription() ."
-            \nPHONE: ". $this->getPhone() ."
-            \nEMAIL: ". $this->getEmail() ."
-            \nADDRESS: ". $this->getAddress();
+    echo "Club information:
+            ID: ". $this->getId() ."
+            <br>GENRE: ". $this->getGenre() ."
+            <br>NAME: ". $this->getName() ."
+            <br>DESCRIPTION: ". $this->getDescription() ."
+            <br>PHONE: ". $this->getPhone() ."
+            <br>EMAIL: ". $this->getEmail() ."
+            <br>ADDRESS: ". $this->getAddress();
   }
 
 }

@@ -103,6 +103,7 @@ footer {
 .collection-item span {
 	font-weight: bold;
 	color: #8e24aa;
+	padding-right: 15px;
 }
 
 /*------------Media queries-------------*/
