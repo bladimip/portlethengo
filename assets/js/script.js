@@ -10,4 +10,6 @@ $(document).ready(function() {
 
 	$('.slider').slider({full_width: true});
 	$('.slider').slider('start');
+
+  $('select').material_select();
 });

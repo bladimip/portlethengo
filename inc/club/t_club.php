@@ -17,7 +17,7 @@ $db->close();
 
 include('../db/simpleDB.php');
 include('../layouts/HTMLcomponents.php');
-include('ClubClass.php');
+include('ClubAdminClass.php');
 include('ImageClass.php');
 include('EventClass.php');
 
@@ -25,15 +25,41 @@ include('EventClass.php');
 top("Club name goes here");
 
 // test variables
+$userId = 2;
 $clubAdmin = 1;
 $nkpag = 0;
 $siteAdmin = 0;
 
+// User type variable (contributer -default, ClubAdmin of selected club or siteAdmin)
+$userType = "contributor";
+
 //Other page content
+// Check if a club name is passed to this script
 if (isset($_GET["club"])) {
     $clubGET = urldecode($_GET["club"]);
 
-    // Get general club information
+    //// DETERMINE A TYPE OF A USER REQUESTING A CLUB PAGE
+    // Check if user is a siteAdmin
+    if ($siteAdmin) {
+      $userType = "siteAdmin";
+
+    } else {
+      // Check if user has a clubAdmin privilage
+      if ($clubAdmin) {
+        $db = new Connection();
+        $db->open();
+        $match = $db->runQuery("SELECT * FROM clubadmins, clubs WHERE clubadmins.user_id = ". $userId ." AND clubs.club_id = clubadmins.club_id AND clubs.name = '". $clubGET ."' LIMIT 1");
+        $db->close();
+        // Check if clubAdmin is an admin of selected club
+        if (mysqli_num_rows($match) == 1) {
+          // Change type (if this club admin is not an admin of selected club, that admin is treated as contributer)
+          $userType = "clubAdmin";
+        }
+      }
+    }
+    ////
+
+    //// GET GENERAL INFORMATION OF A CLUB
     $db = new Connection();
     $db->open();
     $club = $db->runQuery("SELECT * FROM clubs,clubgenre WHERE genreCode = code AND name = '". $clubGET ."' LIMIT 1");
@@ -42,41 +68,67 @@ if (isset($_GET["club"])) {
     if (mysqli_num_rows($club) == 1) {
         while ($row = $club->fetch_assoc()) {
 
-          // Create a club object
-          $clubObj = new Club($row["club_id"], $row["name"], $row["category"], $row["description"], $row["phone"], $row["email"], $row["address"]);
+          // Create a club object depending on the user type
+          if ($userType == "contributor") {
+              $clubObj = new Club($row["club_id"], $row["name"], $row["category"], $row["description"], $row["phone"], $row["email"], $row["address"]);
+
+          } elseif ($userType == "clubAdmin") {
+              $clubObj = new ClubAdmin($row["club_id"], $row["name"], $row["category"], $row["description"], $row["phone"], $row["email"], $row["address"]);
+
+          } elseif ($userType == "siteAdmin") {
+              //...
+          }
           // test
           //$clubObj->toString();
         }
+        ////
 
-          // Get images of a club
-          $db = new Connection();
-          $db->open();
-          $images = $db->runQuery("SELECT * FROM clubs,clubimages WHERE clubs.club_id = clubimages.club_id AND clubs.club_id = ". $clubObj->getId() ."");
-          $db->close();
+        //// ADD ADDITIONAL INFORMATION TO A CLUB OBJECT
+        // Get images of a club
+        $db = new Connection();
+        $db->open();
+        $images = $db->runQuery("SELECT * FROM clubs,clubimages WHERE clubs.club_id = clubimages.club_id AND clubs.club_id = ". $clubObj->getId() ."");
+        $db->close();
 
-          // Add images to a club object
-          while ($row = $images->fetch_assoc()) {
-            $clubObj->addImage(new Image($row["image_id"], $row["club_id"], $row["imagePath"], $row["altName"]));
-          }
-          // test
-          //$clubObj->imagesToString();
-
-
-          // Get events of a club
-          $db = new Connection();
-          $db->open();
-          $events = $db->runQuery("SELECT * FROM clubs,clubevents WHERE clubs.club_id = clubevents.club_id AND clubs.club_id = ". $clubObj->getId() ."");
-          $db->close();
-
-          // Add images to a club object
-          while ($row = $events->fetch_assoc()) {
-            $clubObj->addEvent(new Event($row["event_id"], $row["club_id"], $row["user_id"], $row["approvedBy"], $row["name"], $row["description"], $row["eventDate"], $row["status"]));
-          }
-          // test
-          //$clubObj->eventsToString();
+        // Add images to a club object
+        while ($row = $images->fetch_assoc()) {
+          $clubObj->addImage(new Image($row["image_id"], $row["club_id"], $row["imagePath"], $row["altName"]));
+        }
+        // test
+        //$clubObj->imagesToString();
 
 
-          $clubObj->displayContent();
+        // Get events of a club
+        $db = new Connection();
+        $db->open();
+        $events = $db->runQuery("SELECT * FROM clubs,clubevents WHERE clubs.club_id = clubevents.club_id AND clubs.club_id = ". $clubObj->getId() ."");
+        $db->close();
+
+        // Add events to a club object
+        while ($row = $events->fetch_assoc()) {
+          $clubObj->addEvent(new Event($row["event_id"], $row["club_id"], $row["user_id"], $row["approvedBy"], $row["name"], $row["description"], $row["eventDate"], $row["status"]));
+        }
+
+        // Add available club genres (for ClubAdmin and SiteAdmin only)
+        if ($clubObj instanceof ClubAdmin) {
+            $db = new Connection();
+            $db->open();
+            $genres = $db->runQuery("SELECT * FROM clubgenre");
+            $db->close();
+
+            $genresArr = array();
+            while ($row = $genres->fetch_assoc()) {
+              $genresArr[$row["code"]] = $row["category"];
+            }
+            $clubObj->addGenres($genresArr);
+        }
+        // test
+        //$clubObj->eventsToString();
+        ////
+
+        //// GENERATE AND DISPLAY PAGE
+        $clubObj->displayContent();
+        ////
 
     } else {
           echo 'Club not found';

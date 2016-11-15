@@ -70,10 +70,11 @@ footer {
 .sp-title {
 	text-align: center;
 	padding : 15px 0;
+	font-size: 2em !important;
+	margin: 5px 0 !important;
 }
 
 .sp-genre {
-	margin: 10px 0 !important;
 	padding: 25px !important;
 	text-align: center;
 	background-color: #8e24aa;
@@ -104,6 +105,33 @@ footer {
 	font-weight: bold;
 	color: #8e24aa;
 	padding-right: 15px;
+}
+
+/* Club Admin Mode */
+
+.edit {
+	border: 1px solid rgba(0,0,0,.05) !important;
+	border-radius: 2px !important;
+	padding: 5px !important;
+}
+
+.editLabel {
+	margin: 5px;
+	padding: 0 5px;;
+	color: #ccc;
+}
+
+.editImage {
+	text-align: center;
+}
+
+.editImage img {
+	height: 75px;
+}
+
+.imgLayout {
+	display: inline-block;
+	margin: 0 5px;
 }
 
 /*------------Media queries-------------*/
@@ -137,6 +165,17 @@ footer {
 /*large*/
 @media screen and (min-width: 991px) {
 
+}
+
+.flexcontainer {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row /* works with row or column */
+   flex-direction: row;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
 }
 
 .justify {

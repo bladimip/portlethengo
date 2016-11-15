@@ -3,15 +3,15 @@
 class Club {
 
   // Properties
-  private $id;
-  private $name;
-  private $genre;
-  private $description;
-  private $phone;
-  private $email;
-  private $address;
-  private $images = [];
-  private $events = [];
+  protected $id;
+  protected $name;
+  protected $genre;
+  protected $description;
+  protected $phone;
+  protected $email;
+  protected $address;
+  protected $images = [];
+  protected $events = [];
 
   // Constructor
   public function __construct($id, $name, $genre, $description, $phone, $email, $address) {
@@ -99,7 +99,7 @@ class Club {
   }
 
   public function showCategory() {
-    echo '<h5>Category: '. $this->getGenre() .'</h5>';
+    echo '<h5>Genre: '. $this->getGenre() .'</h5>';
   }
 
   public function showImages() {
