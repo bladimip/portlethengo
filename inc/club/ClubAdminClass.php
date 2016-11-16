@@ -5,7 +5,6 @@ include('ClubClass.php');
 class ClubAdmin extends Club {
 
   // METHODS
-
   public function addGenres($arr) {
     $this->genresAvailable = $arr;
   }
@@ -51,7 +50,7 @@ class ClubAdmin extends Club {
         $image = $this->images[$i];
         echo '<div class="imgLayout">
                   <div class="editImage">
-                    <img class="materialboxed" src="http://lorempixel.com/580/250/nature/'.$i.'" alt="'. $image->getAltName() .'">
+                    <img class="materialboxed" src="'. $image->getPath() .'" alt="'. $image->getAltName() .'">
                   </div>
                   <div class="ImgDeleteBtn"><span class="lnr lnr-trash"></span>delete</div>
               </div>';
@@ -72,9 +71,14 @@ class ClubAdmin extends Club {
 
   public function showContacts() {
 
-    echo '<p><span class="lnr lnr-phone-handset"></span> '. $this->getPhone() .'</p>
-          <p><span class="lnr lnr-envelope"></span> '. $this->getEmail() .'</p>
-          <p><span class="lnr lnr-location"></span> '. $this->getAddress() .'</p>';
+    echo '<br><div class="row">
+            <span class="lnr lnr-pencil"></span><span class="editLabel">Phone:</span>
+            <input type="text" class="editField edit" name="cPhone" value="'. $this->getPhone() .'">
+            <span class="lnr lnr-pencil"></span><span class="editLabel">Email:</span>
+            <input type="text" class="editField edit" name="cEmail" value="'. $this->getEmail() .'">
+            <span class="lnr lnr-pencil"></span><span class="editLabel">Address:</span>
+            <input type="text" class="editField edit" name="cAddress" value="'. $this->getAddress() .'">
+          </div>';
   }
 
   public function showCalendar() {

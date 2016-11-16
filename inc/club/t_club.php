@@ -17,21 +17,24 @@ $db->close();
 
 include('../db/simpleDB.php');
 include('../layouts/HTMLcomponents.php');
-include('ClubAdminClass.php');
+include('ClubSiteAdminClass.php');
 include('ImageClass.php');
 include('EventClass.php');
+include('UserClass.php');
 
 // Navbar
 top("Club name goes here");
 
 // test variables
 $userId = 2;
-$clubAdmin = 1;
+$clubAdmin = 0;
 $nkpag = 0;
-$siteAdmin = 0;
+$siteAdmin = 1;
 
 // User type variable (contributer -default, ClubAdmin of selected club or siteAdmin)
 $userType = "contributor";
+
+$thatClubId;
 
 //Other page content
 // Check if a club name is passed to this script
@@ -68,6 +71,8 @@ if (isset($_GET["club"])) {
     if (mysqli_num_rows($club) == 1) {
         while ($row = $club->fetch_assoc()) {
 
+          $thatClubId = $row["club_id"];
+
           // Create a club object depending on the user type
           if ($userType == "contributor") {
               $clubObj = new Club($row["club_id"], $row["name"], $row["category"], $row["description"], $row["phone"], $row["email"], $row["address"]);
@@ -76,7 +81,7 @@ if (isset($_GET["club"])) {
               $clubObj = new ClubAdmin($row["club_id"], $row["name"], $row["category"], $row["description"], $row["phone"], $row["email"], $row["address"]);
 
           } elseif ($userType == "siteAdmin") {
-              //...
+              $clubObj = new ClubSiteAdmin($row["club_id"], $row["name"], $row["category"], $row["description"], $row["phone"], $row["email"], $row["address"]);
           }
           // test
           //$clubObj->toString();
@@ -110,7 +115,7 @@ if (isset($_GET["club"])) {
         }
 
         // Add available club genres (for ClubAdmin and SiteAdmin only)
-        if ($clubObj instanceof ClubAdmin) {
+        if ($clubObj instanceof ClubAdmin || $clubObj instanceof ClubSiteAdmin) {
             $db = new Connection();
             $db->open();
             $genres = $db->runQuery("SELECT * FROM clubgenre");
@@ -121,6 +126,21 @@ if (isset($_GET["club"])) {
               $genresArr[$row["code"]] = $row["category"];
             }
             $clubObj->addGenres($genresArr);
+        }
+
+        if ($clubObj instanceof ClubSiteAdmin) {
+            $db = new Connection();
+            $db->open();
+            $thatClubAdmins = $db->runQuery("SELECT * FROM users, clubadmins WHERE users.user_id = clubadmins.user_id AND clubadmins.club_id = ". $thatClubId ."");
+            $db->close();
+
+            $adminsArr = array();
+            while ($row = $thatClubAdmins->fetch_assoc()) {
+              $adminsArr[] = new User($row["user_id"], $row["username"]);
+            }
+            $clubObj->addClubAdmins($adminsArr);
+            // test
+            //$clubObj->toStringClubAdmins();
         }
         // test
         //$clubObj->eventsToString();

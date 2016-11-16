@@ -113,7 +113,7 @@ class Club {
       for ($i=0; $i<count($this->images); $i++) {
         $image = $this->images[$i];
         echo '<li>
-                <img src="http://lorempixel.com/580/250/nature/'.$i.'" alt="'. $image->getAltName() .'"> <!-- random image -->
+                <img src="'. $image->getPath() .'" alt="'. $image->getAltName() .'"> <!-- random image -->
                 <div class="caption center-align">
                   <h3>Title - '. $image->getAltName() .'!</h3>
                   <h5 class="light grey-text text-lighten-3">Path '. $image->getPath() .'.</h5>

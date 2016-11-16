@@ -115,6 +115,10 @@ footer {
 	padding: 5px !important;
 }
 
+.editField {
+	text-align: left;
+}
+
 .editLabel {
 	margin: 5px;
 	padding: 0 5px;;
@@ -166,6 +170,7 @@ footer {
 @media screen and (min-width: 991px) {
 
 }
+
 
 .flexcontainer {
    display: -webkit-flex;
