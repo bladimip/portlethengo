@@ -22,19 +22,17 @@ include('C_image.php');
 include('C_event.php');
 include('C_user.php');
 
-// Navbar
-top("Club name goes here");
-
 // test variables(session vars) - TEST******************************
 $userId = 2;
-$clubAdmin = 0;
+$clubAdmin = 1;
 $nkpag = 0;
 $siteAdmin = 0;
-$loggedIn = false;
+$loggedIn = true;
 
 
-// Going to hold an id of requested club
-$thatClubId;
+// Navbar
+top(isset($_GET["club"]) ? urldecode($_GET["club"]) : "unknown");
+
 
 //Other page content
 // Check if a club name is passed to this script
@@ -77,6 +75,9 @@ if (isset($_GET["club"])) {
                 if (mysqli_num_rows($match) == 1) {
                   // If a club admin is not an admin of selected club, that admin is treated as contributer)
                   $userType = "clubAdmin";
+
+                } else {
+                    $userType = "contributor";
                 }
 
             } else {
@@ -87,8 +88,8 @@ if (isset($_GET["club"])) {
 
           // Create a club object depending on the user type
           if ($userType == "public") {
-            // Public users - first as most common
-            $clubObj = new Club($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
+              // Public users - first as most common
+              $clubObj = new Club($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
 
           } elseif ($userType == "contributor") {
               $clubObj = new ClubContributor($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
@@ -98,6 +99,7 @@ if (isset($_GET["club"])) {
 
           } elseif ($userType == "siteAdmin") {
               $clubObj = new ClubSiteAdmin($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
+
           } else {
             echo 'Error: privilage conflict';
           }
