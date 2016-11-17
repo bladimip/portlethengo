@@ -17,23 +17,23 @@ $db->close();
 
 include('../db/simpleDB.php');
 include('../layouts/HTMLcomponents.php');
-include('ClubSiteAdminClass.php');
-include('ImageClass.php');
-include('EventClass.php');
-include('UserClass.php');
+include('C_siteAdmin.php');
+include('C_image.php');
+include('C_event.php');
+include('C_user.php');
 
 // Navbar
 top("Club name goes here");
 
-// test variables
+// test variables(session vars) - TEST******************************
 $userId = 2;
 $clubAdmin = 0;
 $nkpag = 0;
-$siteAdmin = 1;
+$siteAdmin = 0;
+$loggedIn = false;
 
-// User type variable (contributer -default, ClubAdmin of selected club or siteAdmin)
-$userType = "contributor";
 
+// Going to hold an id of requested club
 $thatClubId;
 
 //Other page content
@@ -41,26 +41,7 @@ $thatClubId;
 if (isset($_GET["club"])) {
     $clubGET = urldecode($_GET["club"]);
 
-    //// DETERMINE A TYPE OF A USER REQUESTING A CLUB PAGE
-    // Check if user is a siteAdmin
-    if ($siteAdmin) {
-      $userType = "siteAdmin";
-
-    } else {
-      // Check if user has a clubAdmin privilage
-      if ($clubAdmin) {
-        $db = new Connection();
-        $db->open();
-        $match = $db->runQuery("SELECT * FROM clubadmins, clubs WHERE clubadmins.user_id = ". $userId ." AND clubs.club_id = clubadmins.club_id AND clubs.name = '". $clubGET ."' LIMIT 1");
-        $db->close();
-        // Check if clubAdmin is an admin of selected club
-        if (mysqli_num_rows($match) == 1) {
-          // Change type (if this club admin is not an admin of selected club, that admin is treated as contributer)
-          $userType = "clubAdmin";
-        }
-      }
-    }
-    ////
+    $userType = "public";
 
     //// GET GENERAL INFORMATION OF A CLUB
     $db = new Connection();
@@ -68,27 +49,64 @@ if (isset($_GET["club"])) {
     $club = $db->runQuery("SELECT * FROM clubs,clubgenre WHERE genreCode = code AND name = '". $clubGET ."' LIMIT 1");
     $db->close();
 
+
     if (mysqli_num_rows($club) == 1) {
         while ($row = $club->fetch_assoc()) {
 
-          $thatClubId = $row["club_id"];
+          $cId = $row["club_id"];
+          $cName = $row["name"];
+          $cCategory = $row["category"];
+          $cDescription = $row["description"];
+          $cPhone = $row["phone"];
+          $cEmail = $row["email"];
+          $cAddress = $row["address"];
+
+          // if session exists - TEST***************************
+          if ($loggedIn) {
+            //// DETERMINE A TYPE OF A USER REQUESTING A CLUB PAGE
+            if ($siteAdmin) {
+              $userType = "siteAdmin";
+
+            } elseif ($clubAdmin) {
+                $db = new Connection();
+                $db->open();
+                $match = $db->runQuery("SELECT * FROM clubadmins, clubs WHERE clubadmins.user_id = ". $userId ." AND clubs.club_id = clubadmins.club_id AND clubs.name = '". $clubGET ."' LIMIT 1");
+                $db->close();
+
+                // Check if clubAdmin is an admin of selected club
+                if (mysqli_num_rows($match) == 1) {
+                  // If a club admin is not an admin of selected club, that admin is treated as contributer)
+                  $userType = "clubAdmin";
+                }
+
+            } else {
+              $userType = "contributor";
+            }
+            ////
+          }
 
           // Create a club object depending on the user type
-          if ($userType == "contributor") {
-              $clubObj = new Club($row["club_id"], $row["name"], $row["category"], $row["description"], $row["phone"], $row["email"], $row["address"]);
+          if ($userType == "public") {
+            // Public users - first as most common
+            $clubObj = new Club($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
+
+          } elseif ($userType == "contributor") {
+              $clubObj = new ClubContributor($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
 
           } elseif ($userType == "clubAdmin") {
-              $clubObj = new ClubAdmin($row["club_id"], $row["name"], $row["category"], $row["description"], $row["phone"], $row["email"], $row["address"]);
+              $clubObj = new ClubAdmin($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
 
           } elseif ($userType == "siteAdmin") {
-              $clubObj = new ClubSiteAdmin($row["club_id"], $row["name"], $row["category"], $row["description"], $row["phone"], $row["email"], $row["address"]);
+              $clubObj = new ClubSiteAdmin($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
+          } else {
+            echo 'Error: privilage conflict';
           }
           // test
           //$clubObj->toString();
         }
         ////
 
-        //// ADD ADDITIONAL INFORMATION TO A CLUB OBJECT
+        //// ADD ADDITIONAL COMMON INFORMATION TO A CLUB OBJECT
         // Get images of a club
         $db = new Connection();
         $db->open();
@@ -97,7 +115,13 @@ if (isset($_GET["club"])) {
 
         // Add images to a club object
         while ($row = $images->fetch_assoc()) {
-          $clubObj->addImage(new Image($row["image_id"], $row["club_id"], $row["imagePath"], $row["altName"]));
+
+          $iId = $row["image_id"];
+          $iClubId = $row["club_id"];
+          $iImagePath = $row["imagePath"];
+          $iAltName = $row["altName"];
+
+          $clubObj->addImage(new Image($iId, $iClubId, $iImagePath, $iAltName));
         }
         // test
         //$clubObj->imagesToString();
@@ -111,8 +135,19 @@ if (isset($_GET["club"])) {
 
         // Add events to a club object
         while ($row = $events->fetch_assoc()) {
-          $clubObj->addEvent(new Event($row["event_id"], $row["club_id"], $row["user_id"], $row["approvedBy"], $row["name"], $row["description"], $row["eventDate"], $row["status"]));
+
+          $eId = $row["event_id"];
+          $eClubId = $row["club_id"];
+          $eUserId = $row["user_id"];
+          $eApprovedBy = $row["approvedBy"];
+          $eName = $row["name"];
+          $eDescription = $row["description"];
+          $eDate = $row["eventDate"];
+          $eStatus = $row["status"];
+
+          $clubObj->addEvent(new Event($eId, $eClubId, $eUserId, $eApprovedBy, $eName, $eDescription, $eDate, $eStatus));
         }
+
 
         // Add available club genres (for ClubAdmin and SiteAdmin only)
         if ($clubObj instanceof ClubAdmin || $clubObj instanceof ClubSiteAdmin) {
@@ -131,12 +166,16 @@ if (isset($_GET["club"])) {
         if ($clubObj instanceof ClubSiteAdmin) {
             $db = new Connection();
             $db->open();
-            $thatClubAdmins = $db->runQuery("SELECT * FROM users, clubadmins WHERE users.user_id = clubadmins.user_id AND clubadmins.club_id = ". $thatClubId ."");
+            $thatClubAdmins = $db->runQuery("SELECT * FROM users, clubadmins WHERE users.user_id = clubadmins.user_id AND clubadmins.club_id = ". $clubObj->getId() ."");
             $db->close();
 
             $adminsArr = array();
             while ($row = $thatClubAdmins->fetch_assoc()) {
-              $adminsArr[] = new User($row["user_id"], $row["username"]);
+
+              $uId = $row["user_id"];
+              $uUsername = $row["username"];
+
+              $adminsArr[] = new User($uId, $uUsername);
             }
             $clubObj->addClubAdmins($adminsArr);
             // test
@@ -145,6 +184,7 @@ if (isset($_GET["club"])) {
         // test
         //$clubObj->eventsToString();
         ////
+
 
         //// GENERATE AND DISPLAY PAGE
         $clubObj->displayContent();

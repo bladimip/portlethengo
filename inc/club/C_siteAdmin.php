@@ -1,6 +1,6 @@
 <?php
 
-include('ClubAdminClass.php');
+include_once('C_clubAdmin.php');
 
 class ClubSiteAdmin extends ClubAdmin {
 

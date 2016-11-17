@@ -1,8 +1,8 @@
 <?php
 
-include('ClubClass.php');
+include_once('C_contributor.php');
 
-class ClubAdmin extends Club {
+class ClubAdmin extends ClubContributor {
 
   // METHODS
   public function addGenres($arr) {
