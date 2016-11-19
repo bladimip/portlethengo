@@ -17,8 +17,8 @@ class ClubSiteAdmin extends ClubAdmin {
         $this->showCategory();
         $this->showDescription();
         $this->showContacts();
-        $this->addEventOption();
         $this->showCalendar();
+        $this->addEventOption();
         // Display all admins of that club
         $this->showClubAdmins();
       echo '</div>';

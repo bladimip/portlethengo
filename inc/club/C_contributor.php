@@ -13,14 +13,16 @@ class ClubContributor extends Club {
         $this->showCategory();
         $this->showDescription();
         $this->showContacts();
-        $this->addEventOption();
         $this->showCalendar();
+        $this->addEventOption();
       echo '</div>';
     echo '</div>';
   }
 
   public function addEventOption() {
-    echo 'Add event here';
+    echo '<div class="centerPos">
+            <div class="btn purple accent-1 waves-effect waves-light">Add event</div>
+          </div>';
   }
 
 }
