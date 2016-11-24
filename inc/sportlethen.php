@@ -41,7 +41,7 @@ top("Clubs and Societies");
 // if passed
 if (isset($_GET["clubs_genre"])) {
     // save it
-    $clGenreDecoded = urldecode($_GET["clubs_genre"]);
+    $clGenreDecoded = str_replace("-", " ", $_GET["clubs_genre"]);
 
     // fetch clubs of the passed type
     $db = new Connection();
@@ -56,7 +56,7 @@ if (isset($_GET["clubs_genre"])) {
             // build a link to a club template and pass a club name using GET
             // check .htaccess file for routing rules - /sportlethen/genre/club name
             echo '
-            <a href="/sportlethen/'. url($row["category"]) .'/'. url($row["name"]) .'-'.$row["club_id"].'">
+            <a href="/sportlethen/'. url($row["category"]) .'/'. url($row["name"]) .'-C'.$row["club_id"].'">
                 <div class="sp-genre-list z-depth-1 waves-effect waves-dark col s12 l8 offset-l2">
                     '. $row["name"] .'
                 </div>
@@ -80,7 +80,7 @@ if (isset($_GET["clubs_genre"])) {
     while ($row = $clubs->fetch_assoc()) {
             // can pass a 'genre type' to this script to display a list of the clubs of that genre
             echo '
-            <a href="/sportlethen/'. urlencode($row["category"]) .'">
+            <a href="/sportlethen/'. url($row["category"]) .'">
                 <div class="col s12 m6 l3">
                     <p class="sp-genre z-depth-2">'. $row["category"] .' <br>('. $row["num"] .')</p>
                 </div>
