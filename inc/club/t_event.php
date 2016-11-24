@@ -1,5 +1,5 @@
 <?php
-/* 
+/*
 Event information template
 Id of an event and id of a club need to be passed to this script, otherwise it won't work and an output will be 404
 
@@ -21,6 +21,7 @@ $db->close();
 
 include('../db/simpleDB.php');
 include('../layouts/HTMLcomponents.php');
+include('C_event.php');
 
 // Navbar
 top("Event title goes here");

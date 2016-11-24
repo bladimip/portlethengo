@@ -17,16 +17,17 @@ $db->close();
 
 include('../db/simpleDB.php');
 include('../layouts/HTMLcomponents.php');
+include('../php/functions.php');
 include('C_siteAdmin.php');
 include('C_image.php');
 include('C_event.php');
 include('C_user.php');
 
 // test variables(session vars) - TEST******************************
-$userId = 2;
-$clubAdmin = 1;
+$userId = 1;
+$clubAdmin = 0;
 $nkpag = 0;
-$siteAdmin = 0;
+$siteAdmin = 1;
 $loggedIn = true;
 
 
@@ -38,13 +39,15 @@ top(isset($_GET["club"]) ? urldecode($_GET["club"]) : "unknown");
 // Check if a club name is passed to this script
 if (isset($_GET["club"])) {
     $clubGET = urldecode($_GET["club"]);
+    // Get the id (last character added to the name)
+    $clubGET = substr($clubGET, -1);
 
     $userType = "public";
 
     //// GET GENERAL INFORMATION OF A CLUB
     $db = new Connection();
     $db->open();
-    $club = $db->runQuery("SELECT * FROM clubs,clubgenre WHERE genreCode = code AND name = '". $clubGET ."' LIMIT 1");
+    $club = $db->runQuery("SELECT * FROM clubs,clubgenre WHERE genreCode = code AND club_id = '". $clubGET ."' LIMIT 1");
     $db->close();
 
 

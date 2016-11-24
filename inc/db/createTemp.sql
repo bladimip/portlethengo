@@ -1,9 +1,19 @@
+/*scrip for creating tables in vlad's DB
+-clubgenre must be created BEFORE clubs because of reference
+-consider adding default values
+-make unique email?
+-change status fields to boolean?
+-media type field - leave as is?
+-locations and routes have status missing?
+-add description to routes?
+-changed data tipe for coordinates in locations - from decimal to float(10,6)
+-helth news - title 200, desc 100??????
+*/
+/*you migh need to (drop)create database first, depending on your situation
 DROP DATABASE webdev5;
-
 CREATE DATABASE webdev5;
-
 USE webdev5;
-
+*/
 CREATE TABLE Users (
 	user_id 		INTEGER 		AUTO_INCREMENT,
 	clubAdmin 		BOOLEAN,
@@ -13,6 +23,12 @@ CREATE TABLE Users (
 	email 			VARCHAR(200) 	NOT NULL,
 	password 		VARCHAR(500) 	NOT NULL,
 	PRIMARY KEY (user_id)
+);
+
+CREATE TABLE ClubGenre (
+	code			VARCHAR(2)		UNIQUE,
+	category		VARCHAR(100)	NOT NULL,
+	PRIMARY KEY (code)
 );
 
 CREATE TABLE Clubs (
@@ -58,18 +74,12 @@ CREATE TABLE ClubImages (
 	CONSTRAINT fk_ClubImages_Clubs FOREIGN KEY (club_id) REFERENCES Clubs (club_id) ON DELETE CASCADE
 );
 
-CREATE TABLE ClubGenre (
-	code			VARCHAR(2)		UNIQUE,
-	category		VARCHAR(100)	NOT NULL,
-	PRIMARY KEY (code)
-);
-
 CREATE TABLE HealthNews (
 	news_id			INTEGER			AUTO_INCREMENT,
 	user_id			INTEGER			NOT NULL,
 	approvedBy		INTEGER,
 	title			VARCHAR(200)	NOT NULL,
-	description		VARCHAR(100)	NOT NULL,
+	description		VARCHAR(5000)	NOT NULL,
 	newsDate		DATETIME		NOT NULL,
 	status			VARCHAR(100)	NOT NULL,
 	PRIMARY KEY (news_id),
@@ -93,8 +103,8 @@ CREATE TABLE Locations (
 	approvedBy		INTEGER,
 	name			VARCHAR(200)	NOT NULL,
 	description		VARCHAR(5000),
-	longitude		DECIMAL			NOT NULL,
-	langitude		DECIMAL			NOT NULL,
+	longitude		FLOAT(10,6)		NOT NULL,
+	latitude		FLOAT(10,6)		NOT NULL,
 	address			VARCHAR(200),
 	PRIMARY KEY (loc_id),
 	CONSTRAINT fk_Locations_Users FOREIGN KEY (user_id) REFERENCES Users (user_id) ON DELETE CASCADE,

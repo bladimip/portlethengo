@@ -138,6 +138,19 @@ footer {
 	margin: 0 5px;
 }
 
+.ImgDeleteBtn {
+	padding: 5px;
+	margin: 5px 0;
+	border: 1px solid #ffcdd2;
+	border-radius: 5px;
+	cursor: pointer;
+	text-align: center;
+}
+
+.ImgDeleteBtn:hover {
+	background-color: #ffcdd2;
+}
+
 /*------------Media queries-------------*/
 
 

@@ -3,7 +3,7 @@ RewriteEngine On
 
 RewriteRule ^sportlethen/([^/]+)$ inc/sportlethen.php?clubs_genre=$1 [QSA,L]
 RewriteRule ^sportlethen/([^/]+)/([^/]+)$ inc/club/t_club.php?club=$2 [QSA,L]
-RewriteRule ^sportlethen/([^/]+)$/([^/]+)/event/([^/]+)$ inc/club/t_event.php?id=$1&event_id=$2 [QSA,L]
+RewriteRule ^sportlethen/([^/]+)/([^/]+)/event/([^/]+)$ inc/club/t_event.php?club_id=$1&event_id=$2 [QSA,L]
 
 RewriteRule ^health-wellbeing/news/([^/]+)$ inc/news/t_news.php?id=$1 [QSA,L]
 

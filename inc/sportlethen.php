@@ -30,6 +30,7 @@ $db->close();
 
 include('db/simpleDB.php');
 include('layouts/HTMLcomponents.php');
+include('php/functions.php');
 
 // Navbar
 top("Clubs and Societies");
@@ -55,7 +56,7 @@ if (isset($_GET["clubs_genre"])) {
             // build a link to a club template and pass a club name using GET
             // check .htaccess file for routing rules - /sportlethen/genre/club name
             echo '
-            <a href="/sportlethen/'. urlencode($row["category"]) .'/'. urlencode($row["name"]) .'">
+            <a href="/sportlethen/'. url($row["category"]) .'/'. url($row["name"]) .'-'.$row["club_id"].'">
                 <div class="sp-genre-list z-depth-1 waves-effect waves-dark col s12 l8 offset-l2">
                     '. $row["name"] .'
                 </div>
