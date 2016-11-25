@@ -23,11 +23,55 @@ include('../db/simpleDB.php');
 include('../layouts/HTMLcomponents.php');
 include('C_event.php');
 
+
+
+// test variables(session vars) - TEST******************************
+$userId = 1;
+$clubAdmin = 0;
+$nkpag = 0;
+$siteAdmin = 1;
+$loggedIn = true;
+
+if (isset($_GET["id"])) {
+    // string containing ids of a club and event
+    $strIDs = $_GET["id"];
+    // split into two string separating club and event
+    $arr = explode("E", $strIDs);
+
+    // cut numbers(ids) from strings
+    $clubID = preg_replace("/[^0-9]+/", '', $arr[0]);
+    $eventID = preg_replace("/[^0-9]+/", '', $arr[1]);
+
+    //// GET GENERAL INFORMATION OF EVENT
+    $db = new Connection();
+    $db->open();
+    $event = $db->runQuery("SELECT * FROM clubevents WHERE club_id = " . $clubID . " AND event_id = ". $eventID ." LIMIT 1");
+    $db->close();
+
+    if (mysqli_num_rows($event) == 1) {
+        while ($row = $event->fetch_assoc()) {
+
+            $eId = $row["event_id"];
+            $eClubId = $row["club_id"];
+            $eUserId = $row["user_id"];
+            $eApprovedBy = $row["approvedBy"];
+            $eName = $row["name"];
+            $eDescription = $row["description"];
+            $eDate = $row["eventDate"];
+            $eStatus = $row["status"];
+
+            $eventObj = new Event($eId, $eClubId, $eUserId, $eApprovedBy, $eName, $eDescription, $eDate, $eStatus);
+
+        }
+
+    }
+}
+
 // Navbar
-top("Event title goes here");
+top($eventObj->getName());
 
 //Other page content
-
+$eventObj->displayContent();
 
 // Footer
 bottom();

@@ -27,13 +27,15 @@ include('C_user.php');
 $userId = 1;
 $clubAdmin = 0;
 $nkpag = 0;
-$siteAdmin = 1;
+$siteAdmin = 0;
 $loggedIn = true;
 
 
 // Navbar
-top(isset($_GET["club"]) ? urldecode($_GET["club"]) : "unknown");
+// cut the passed code from the title (like C4 etc.)
+top(isset($_GET["club"]) ? substr(str_replace("-", " ", $_GET["club"]), 0, strrpos(str_replace("-", " ", $_GET["club"]), "C", -1)) : "unknown");
 
+//substr(str_replace("-", " ", $_GET["club"]), 0, strrpos(str_replace("-", " ", $_GET["club"]), "C", -1))
 
 //Other page content
 // Check if a club name is passed to this script
@@ -44,7 +46,7 @@ if (isset($_GET["club"])) {
 
     $userType = "public";
 
-    //// GET GENERAL INFORMATION OF A CLUB
+    //// GET GENERAL INFORMATION OF CLUB
     $db = new Connection();
     $db->open();
     $club = $db->runQuery("SELECT * FROM clubs,clubgenre WHERE genreCode = code AND club_id = '". $clubGET ."' LIMIT 1");

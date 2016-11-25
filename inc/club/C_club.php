@@ -145,8 +145,11 @@ class Club {
     if (count($this->events) > 0) {
       for ($i=0; $i<count($this->events); $i++) {
         $event = $this->events[$i];
-        // C for club id, E for event id
-        echo '<a href="/sportlethen/'.url($this->getGenre()).'/'.url($this->getName()).'/event/C'.$this->getId()."E".$event->getId().'" class="collection-item"><span>'.($i + 1).'</span> '. $event->getName() .'</a>';
+
+        if ($event->getStatus() == "approved") {
+          // C for club id, E for event id
+          echo '<a href="/sportlethen/'.url($this->getGenre()).'/'.url($this->getName()).'/event/C'.$this->getId()."E".$event->getId().'" class="collection-item"><span>'. date_format(new DateTime($event->getEventDate()), 'd M Y') .'</span> '. $event->getName() .'</a>';
+        }
       }
     } else {
       echo '<a href="#!" class="collection-item"><span></span>No events</a>';

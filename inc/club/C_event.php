@@ -87,6 +87,27 @@
     }
 
 
+    public function displayContent() {
+
+      echo '<div class="row">';
+        echo '<div class="col s12 l8 offset-l2 justify">';
+          $this->showTitle();
+          $this->showDescription();
+        echo '</div>';
+      echo '</div>';
+    }
+
+    public function showTitle() {
+      echo '<h4 class="sp-title">'. $this->getName() .'</h4>';
+    }
+
+    public function showDescription() {
+
+      echo '<p>'. $this->getDescription() .'</p>';
+      echo '<p>Date: '. date_format(new DateTime($this->getEventDate()), 'd M Y') .'</p>';
+    }
+
+
     public function toString() {
       echo "Event information:
               <br>ID: ". $this->getId() ."
