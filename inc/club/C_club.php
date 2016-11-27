@@ -80,8 +80,9 @@ class Club {
 
 
   // METHODS
-  public function displayContent() {
 
+  // Generate a page
+  public function displayContent() {
     echo '<div class="row">';
       echo '<div class="col s12 l8 offset-l2 justify">';
         $this->showTitle();
@@ -103,7 +104,6 @@ class Club {
   }
 
   public function showImages() {
-
     if (count($this->images) == 1) echo '<img src="" alt="">';
 
     elseif (count($this->images) > 1) {
@@ -115,7 +115,7 @@ class Club {
         echo '<li>
                 <img src="'. $image->getPath() .'" alt="'. $image->getAltName() .'"> <!-- random image -->
                 <div class="caption center-align">
-                  <h3>Title - '. $image->getAltName() .'!</h3>
+                  <h3>'. $image->getAltName() .'!</h3>
                   <h5 class="light grey-text text-lighten-3">Path '. $image->getPath() .'.</h5>
                 </div>
               </li>';
@@ -126,19 +126,16 @@ class Club {
   }
 
   public function showDescription() {
-
     echo '<p>'. $this->getDescription() .'</p>';
   }
 
   public function showContacts() {
-
     echo '<p><span class="lnr lnr-phone-handset"></span> '. $this->getPhone() .'</p>
           <p><span class="lnr lnr-envelope"></span> '. $this->getEmail() .'</p>
           <p><span class="lnr lnr-location"></span> '. $this->getAddress() .'</p>';
   }
 
   public function showCalendar() {
-
     echo '<h5>Event Calendar:</h5>';
     echo '<div class="collection">';
 
@@ -157,6 +154,50 @@ class Club {
     echo '</div>';
   }
 
+  //// ADD ADDITIONAL COMMON INFORMATION TO A CLUB OBJECT
+  // Get images of a club
+  public function fetchImages() {
+    $db = new Connection();
+    $db->open();
+    $images = $db->runQuery("SELECT * FROM clubs,clubimages WHERE clubs.club_id = clubimages.club_id AND clubs.club_id = ". $this->getId() ."");
+    $db->close();
+
+    // Add images to a club object
+    while ($row = $images->fetch_assoc()) {
+
+      $iId = $row["image_id"];
+      $iClubId = $row["club_id"];
+      $iImagePath = $row["imagePath"];
+      $iAltName = $row["altName"];
+
+      $this->addImage(new Image($iId, $iClubId, $iImagePath, $iAltName));
+    }
+
+  }
+
+  public function fetchEvents() {
+    // Get events of a club
+    $db = new Connection();
+    $db->open();
+    $events = $db->runQuery("SELECT * FROM clubs,clubevents WHERE clubs.club_id = clubevents.club_id AND clubs.club_id = ". $this->getId() ."");
+    $db->close();
+
+    // Add events to a club object
+    while ($row = $events->fetch_assoc()) {
+
+      $eId = $row["event_id"];
+      $eClubId = $row["club_id"];
+      $eUserId = $row["user_id"];
+      $eApprovedBy = $row["approvedBy"];
+      $eName = $row["name"];
+      $eDescription = $row["description"];
+      $eDate = $row["eventDate"];
+      $eStatus = $row["status"];
+
+      $this->addEvent(new Event($eId, $eClubId, $eUserId, $eApprovedBy, $eName, $eDescription, $eDate, $eStatus));
+    }
+  }
+
   public function addImage(Image $image) {
     $this->images[] = $image;
   }
@@ -165,6 +206,7 @@ class Club {
     $this->events[] = $event;
   }
 
+  // Test methods
   public function imagesToString() {
     for ($i=0; $i<count($this->images); $i++) {
       echo $this->images[$i]->toString();

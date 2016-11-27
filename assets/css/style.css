@@ -60,11 +60,6 @@
 	box-shadow: 0 1px 0 0 transparent !important
 }
 
-footer {
-	background-color: #555;
-	color: white;
-}
-
 /* Sportlethen */
 
 .sp-title {
@@ -204,4 +199,8 @@ footer {
 	margin-top: 15px;
 	width: 100%;
 	text-align: center;
+}
+
+.slider .indicators .indicator-item.active {
+    background-color: #8e24aa !important;
 }

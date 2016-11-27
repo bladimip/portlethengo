@@ -36,6 +36,23 @@ class ClubSiteAdmin extends ClubAdmin {
     }
   }
 
+  public function fetchAdmins() {
+    $db = new Connection();
+    $db->open();
+    $thatClubAdmins = $db->runQuery("SELECT * FROM users, clubadmins WHERE users.user_id = clubadmins.user_id AND clubadmins.club_id = ". $this->getId() ."");
+    $db->close();
+
+    $adminsArr = array();
+    while ($row = $thatClubAdmins->fetch_assoc()) {
+
+      $uId = $row["user_id"];
+      $uUsername = $row["username"];
+
+      $adminsArr[] = new User($uId, $uUsername);
+    }
+    $this->addClubAdmins($adminsArr);
+  }
+
   public function showClubAdmins() {
     echo '<span class="editLabel">Club Administrators:</span>';
     foreach ($this->thatClubAdmins as $value) {

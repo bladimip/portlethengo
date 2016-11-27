@@ -24,8 +24,8 @@ include('C_event.php');
 include('C_user.php');
 
 // test variables(session vars) - TEST******************************
-$userId = 1;
-$clubAdmin = 0;
+$userId = 4;
+$clubAdmin = 1;
 $nkpag = 0;
 $siteAdmin = 0;
 $loggedIn = true;
@@ -67,140 +67,56 @@ if (isset($_GET["club"])) {
           // if session exists - TEST***************************
           if ($loggedIn) {
             //// DETERMINE A TYPE OF A USER REQUESTING A CLUB PAGE
-            if ($siteAdmin) {
-              $userType = "siteAdmin";
-
-            } elseif ($clubAdmin) {
+            if ($siteAdmin) $userType = "siteAdmin";
+            elseif ($clubAdmin) {
                 $db = new Connection();
                 $db->open();
-                $match = $db->runQuery("SELECT * FROM clubadmins, clubs WHERE clubadmins.user_id = ". $userId ." AND clubs.club_id = clubadmins.club_id AND clubs.name = '". $clubGET ."' LIMIT 1");
+                $match = $db->runQuery("SELECT * FROM clubadmins, clubs WHERE clubadmins.user_id = ". $userId ." AND clubs.club_id = clubadmins.club_id AND clubs.club_id = '". $clubGET ."' LIMIT 1");
                 $db->close();
 
                 // Check if clubAdmin is an admin of selected club
-                if (mysqli_num_rows($match) == 1) {
-                  // If a club admin is not an admin of selected club, that admin is treated as contributer)
-                  $userType = "clubAdmin";
+                // If a club admin is not an admin of selected club, that admin is treated as contributer)
+                if (mysqli_num_rows($match) == 1) $userType = "clubAdmin";
+                else $userType = "contributor";
 
-                } else {
-                    $userType = "contributor";
-                }
-
-            } else {
-              $userType = "contributor";
-            }
-            ////
+            } else $userType = "contributor";
           }
 
           // Create a club object depending on the user type
-          if ($userType == "public") {
-              // Public users - first as most common
-              $clubObj = new Club($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
-
-          } elseif ($userType == "contributor") {
-              $clubObj = new ClubContributor($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
-
-          } elseif ($userType == "clubAdmin") {
-              $clubObj = new ClubAdmin($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
-
-          } elseif ($userType == "siteAdmin") {
-              $clubObj = new ClubSiteAdmin($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
-
-          } else {
+          // Public users - first as most common
+          if ($userType == "public") $clubObj = new Club($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
+          elseif ($userType == "contributor") $clubObj = new ClubContributor($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
+          elseif ($userType == "clubAdmin") $clubObj = new ClubAdmin($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
+          elseif ($userType == "siteAdmin") $clubObj = new ClubSiteAdmin($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
+          else {
             echo 'Error: privilage conflict';
           }
-          // test
-          //$clubObj->toString();
         }
         ////
 
-        //// ADD ADDITIONAL COMMON INFORMATION TO A CLUB OBJECT
-        // Get images of a club
-        $db = new Connection();
-        $db->open();
-        $images = $db->runQuery("SELECT * FROM clubs,clubimages WHERE clubs.club_id = clubimages.club_id AND clubs.club_id = ". $clubObj->getId() ."");
-        $db->close();
-
-        // Add images to a club object
-        while ($row = $images->fetch_assoc()) {
-
-          $iId = $row["image_id"];
-          $iClubId = $row["club_id"];
-          $iImagePath = $row["imagePath"];
-          $iAltName = $row["altName"];
-
-          $clubObj->addImage(new Image($iId, $iClubId, $iImagePath, $iAltName));
-        }
-        // test
-        //$clubObj->imagesToString();
+        //Load information about club images to a club object
+        $clubObj->fetchImages();
+        //Load information about club events to a club object
+        $clubObj->fetchEvents();
 
 
-        // Get events of a club
-        $db = new Connection();
-        $db->open();
-        $events = $db->runQuery("SELECT * FROM clubs,clubevents WHERE clubs.club_id = clubevents.club_id AND clubs.club_id = ". $clubObj->getId() ."");
-        $db->close();
-
-        // Add events to a club object
-        while ($row = $events->fetch_assoc()) {
-
-          $eId = $row["event_id"];
-          $eClubId = $row["club_id"];
-          $eUserId = $row["user_id"];
-          $eApprovedBy = $row["approvedBy"];
-          $eName = $row["name"];
-          $eDescription = $row["description"];
-          $eDate = $row["eventDate"];
-          $eStatus = $row["status"];
-
-          $clubObj->addEvent(new Event($eId, $eClubId, $eUserId, $eApprovedBy, $eName, $eDescription, $eDate, $eStatus));
-        }
-
-
-        // Add available club genres (for ClubAdmin and SiteAdmin only)
+        // Add more information (for ClubAdmin and SiteAdmin only)
         if ($clubObj instanceof ClubAdmin || $clubObj instanceof ClubSiteAdmin) {
-            $db = new Connection();
-            $db->open();
-            $genres = $db->runQuery("SELECT * FROM clubgenre");
-            $db->close();
-
-            $genresArr = array();
-            while ($row = $genres->fetch_assoc()) {
-              $genresArr[$row["code"]] = $row["category"];
-            }
-            $clubObj->addGenres($genresArr);
+            //Load information about available club genres to a club object
+            $clubObj->fetchGenres();
         }
 
         if ($clubObj instanceof ClubSiteAdmin) {
-            $db = new Connection();
-            $db->open();
-            $thatClubAdmins = $db->runQuery("SELECT * FROM users, clubadmins WHERE users.user_id = clubadmins.user_id AND clubadmins.club_id = ". $clubObj->getId() ."");
-            $db->close();
-
-            $adminsArr = array();
-            while ($row = $thatClubAdmins->fetch_assoc()) {
-
-              $uId = $row["user_id"];
-              $uUsername = $row["username"];
-
-              $adminsArr[] = new User($uId, $uUsername);
-            }
-            $clubObj->addClubAdmins($adminsArr);
-            // test
-            //$clubObj->toStringClubAdmins();
+            //Load information about club admins to a club object
+            $clubObj->fetchAdmins();
         }
-        // test
-        //$clubObj->eventsToString();
-        ////
-
 
         //// GENERATE AND DISPLAY PAGE
         $clubObj->displayContent();
         ////
-
     } else {
           echo 'Club not found';
     }
-
 } else {
       echo 'Club not found';
 }

@@ -93,6 +93,7 @@
         echo '<div class="col s12 l8 offset-l2 justify">';
           $this->showTitle();
           $this->showDescription();
+          $this->showUsers();
         echo '</div>';
       echo '</div>';
     }
@@ -107,6 +108,20 @@
       echo '<p>Date: '. date_format(new DateTime($this->getEventDate()), 'd M Y') .'</p>';
     }
 
+    public function showUsers() {
+
+      $db = new Connection();
+      $db->open();
+      $event = $db->runQuery("SELECT * FROM users WHERE user_id = ". $this->getUserId() ." LIMIT 1");
+      $db->close();
+
+      if (mysqli_num_rows($event) == 1) {
+          while ($row = $event->fetch_assoc()) {
+
+            echo '<p>'. $row["username"] .'</p>';
+          }
+       }
+    }
 
     public function toString() {
       echo "Event information:

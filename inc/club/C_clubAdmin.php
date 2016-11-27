@@ -98,5 +98,20 @@ class ClubAdmin extends ClubContributor {
     echo '</div>';
   }
 
+
+  // ADD ADDITIONAL INFORMATION
+  public function fetchGenres() {
+    $db = new Connection();
+    $db->open();
+    $genres = $db->runQuery("SELECT * FROM clubgenre");
+    $db->close();
+
+    $genresArr = array();
+    while ($row = $genres->fetch_assoc()) {
+      $genresArr[$row["code"]] = $row["category"];
+    }
+    $this->addGenres($genresArr);
+  }
+
 }
 ?>
