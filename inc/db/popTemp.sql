@@ -76,7 +76,6 @@ VALUES (1, "http://www.loupiote.com/photos_l/8137869926-spraying-champagne-sf-gi
 (4, "http://i.dailymail.co.uk/i/pix/2011/05/04/article-1383559-019039FA000004B0-40_634x418.jpg", "Fans");
 
 /*healthnews
---TODO add description
 */
 INSERT INTO HealthNews (user_id, approvedBy, title, description, newsDate, approved)
 VALUES (1, 1, "Welcome!", "Praesent at justo vitae urna commodo tempor. Aliquam id convallis tellus. Ut rutrum eu nisi a dignissim. Quisque et accumsan neque, id lobortis purus. Vivamus a quam laoreet, porttitor elit a, auctor diam. Quisque at mollis sem. Aliquam blandit tincidunt nisl, eget consectetur lectus porta id. Donec magna eros, gravida ac turpis nec, finibus eleifend lacus. Integer tincidunt sollicitudin felis eu venenatis. Integer tempus, enim eget ornare euismod, risus justo pellentesque erat, id posuere quam arcu vel diam. Phasellus ut hendrerit lectus. Maecenas in mi a dui efficitur egestas ac molestie lacus. Aenean eleifend placerat nibh volutpat porttitor. Etiam congue rutrum ligula. Duis nisi ipsum, tincidunt quis ultrices vitae, maximus vitae sapien. Sed bibendum sollicitudin ex, et hendrerit sem pharetra non.
