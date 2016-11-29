@@ -30,7 +30,7 @@ include('C_eventClubAdmin.php');
 $userId = 1;
 $clubAdmin = 0;
 $nkpag = 0;
-$siteAdmin = 0;
+$siteAdmin = 1;
 $blocked = 0;
 $loggedIn = true;
 
@@ -85,7 +85,7 @@ if (isset($_GET["id"])) {
             // Create a club object depending on the user type
             // Public users - first as most common
             if ($userType == "public" || $userType == "contributor") $eventObj = new Event($eId, $eClubId, $eUserId, $eApprovedBy, $eName, $eDescription, $eDate, $eStatus);
-            elseif ($userType == "clubAdmin" || $userType == "siteAdmin") $eventObj = new EventClubAdmin($eId, $eClubId, $eUserId, $eApprovedBy, $eName, $eDescription, $eDate, $eStatus);
+            elseif ($userType == "clubAdmin" || $userType == "siteAdmin") $eventObj = new EventAdmin($eId, $eClubId, $eUserId, $eApprovedBy, $eName, $eDescription, $eDate, $eStatus);
             else echo 'Error: privilage conflict';
 
         }

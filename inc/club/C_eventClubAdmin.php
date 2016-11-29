@@ -1,7 +1,7 @@
 <?php
 include_once('C_Event.php');
 
-  class EventClubAdmin extends Event {
+  class EventAdmin extends Event {
 
     public function displayContent() {
       echo '<div class="row">';
@@ -59,7 +59,7 @@ include_once('C_Event.php');
       echo '<div class="centerPos">';
       if ($this->getStatus() == "0") {
         echo '<div class="btn grey-text text-darken-3 lime waves-effect waves-light">Approve</div>
-              <div class="btn grey-text text-darken-3 red lighten-3 waves-effect waves-light">Reject</div>';
+              <div class="btn grey-text text-darken-3 red lighten-3 waves-effect waves-light">Delete</div>';
       } else echo '<div class="btn grey-text text-darken-3 red lighten-3 waves-effect waves-light">Delete</div>';
       echo '</div>';
     }

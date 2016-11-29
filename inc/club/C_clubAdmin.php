@@ -48,7 +48,7 @@ class ClubAdmin extends ClubContributor {
           <div class="row">';
       for ($i=0; $i<count($this->images); $i++) {
         $image = $this->images[$i];
-        echo '<div class="imgLayout">
+        echo '<div class="imgLayout" id="img'. $image->getId() .'">
                   <div class="editImage">
                     <img class="materialboxed" src="'. $image->getPath() .'" alt="'. $image->getAltName() .'">
                   </div>
