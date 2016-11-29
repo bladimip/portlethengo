@@ -31,6 +31,7 @@ $userId = 1;
 $clubAdmin = 0;
 $nkpag = 0;
 $siteAdmin = 1;
+$blocked = 0;
 $loggedIn = true;
 
 if (isset($_GET["id"])) {

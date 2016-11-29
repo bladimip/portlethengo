@@ -57,7 +57,7 @@ include_once('C_Event.php');
 
     public function showControls() {
       echo '<div class="centerPos">';
-      if ($this->getStatus() == "considered") {
+      if ($this->getStatus() == "0") {
         echo '<div class="btn grey-text text-darken-3 lime waves-effect waves-light">Approve</div>
               <div class="btn grey-text text-darken-3 red lighten-3 waves-effect waves-light">Reject</div>';
       } else echo '<div class="btn grey-text text-darken-3 red lighten-3 waves-effect waves-light">Delete</div>';
