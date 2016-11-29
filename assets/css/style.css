@@ -72,15 +72,11 @@
 .sp-genre {
 	padding: 25px !important;
 	text-align: center;
-	background-color: #8e24aa;
-	color: white;
+	background-color: #cddc39;
+	color: #424242;
 	font-size: 1.5em;
 	font-family: 'Orbitron', sans-serif;
-	margin: 0;
-}
-
-.sp-genre:hover {
-	background-color: #6a1b9a;
+	margin-top: 1px;
 }
 
 .sp-genre-list {
@@ -88,9 +84,16 @@
 	margin-top: 1px;
 	font-size: 1.5em;
 	font-family: 'Orbitron', sans-serif;
-	color: #8e24aa;
-	background-color: #e8eaf6;
+	color: #424242;
+	background-color: #cddc39;
 }
+
+.sp-genre:hover,
+.sp-genre-list:hover {
+	background-color: rgba(0,0,0,.6);
+	color: white;
+}
+
 /* event calendar */
 .collection-item {
 	color: black !important;
@@ -130,6 +133,11 @@
 
 .editImage img {
 	height: 75px;
+}
+
+.addImgBtn {
+	margin-bottom: 25px;
+	color: #424242 !important;
 }
 
 .imgLayout {

@@ -27,7 +27,7 @@ include('C_user.php');
 $userId = 4;
 $clubAdmin = 0;
 $nkpag = 0;
-$siteAdmin = 0;
+$siteAdmin = 1;
 $blocked = 0;
 $loggedIn = true;
 

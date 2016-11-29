@@ -56,6 +56,7 @@ class ClubAdmin extends ClubContributor {
               </div>';
       }
       echo '</div>';
+      echo '<div class="btn lime addImgBtn"><span class="lnr lnr-upload"></span> Upload Image</div>';
     }
   }
 
