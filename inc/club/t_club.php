@@ -18,24 +18,22 @@ $db->close();
 include('../db/simpleDB.php');
 include('../layouts/HTMLcomponents.php');
 include('../php/functions.php');
-include('C_siteAdmin.php');
+include('C_clubSiteAdmin.php');
 include('C_image.php');
 include('C_event.php');
 include('C_user.php');
 
 // test variables(session vars) - TEST******************************
 $userId = 4;
-$clubAdmin = 1;
+$clubAdmin = 0;
 $nkpag = 0;
-$siteAdmin = 0;
+$siteAdmin = 1;
 $loggedIn = true;
 
 
 // Navbar
 // cut the passed code from the title (like C4 etc.)
 top(isset($_GET["club"]) ? substr(str_replace("-", " ", $_GET["club"]), 0, strrpos(str_replace("-", " ", $_GET["club"]), "C", -1)) : "unknown");
-
-//substr(str_replace("-", " ", $_GET["club"]), 0, strrpos(str_replace("-", " ", $_GET["club"]), "C", -1))
 
 //Other page content
 // Check if a club name is passed to this script
@@ -88,9 +86,7 @@ if (isset($_GET["club"])) {
           elseif ($userType == "contributor") $clubObj = new ClubContributor($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
           elseif ($userType == "clubAdmin") $clubObj = new ClubAdmin($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
           elseif ($userType == "siteAdmin") $clubObj = new ClubSiteAdmin($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
-          else {
-            echo 'Error: privilage conflict';
-          }
+          else echo 'Error: privilage conflict';
         }
         ////
 
@@ -101,25 +97,19 @@ if (isset($_GET["club"])) {
 
 
         // Add more information (for ClubAdmin and SiteAdmin only)
-        if ($clubObj instanceof ClubAdmin || $clubObj instanceof ClubSiteAdmin) {
-            //Load information about available club genres to a club object
-            $clubObj->fetchGenres();
-        }
 
-        if ($clubObj instanceof ClubSiteAdmin) {
-            //Load information about club admins to a club object
-            $clubObj->fetchAdmins();
-        }
+        //Load information about available club genres to a club object
+        if ($clubObj instanceof ClubAdmin || $clubObj instanceof ClubSiteAdmin) $clubObj->fetchGenres();
+        //Load information about club admins to a club object
+        if ($clubObj instanceof ClubSiteAdmin) $clubObj->fetchAdmins();
+
 
         //// GENERATE AND DISPLAY PAGE
         $clubObj->displayContent();
         ////
-    } else {
-          echo 'Club not found';
-    }
-} else {
-      echo 'Club not found';
-}
+
+    } else echo 'Club not found';
+} else echo 'Club not found';
 
 // Footer
 bottom();

@@ -21,7 +21,8 @@ $db->close();
 
 include('../db/simpleDB.php');
 include('../layouts/HTMLcomponents.php');
-include('C_event.php');
+include('../php/functions.php');
+include('C_eventClubAdmin.php');
 
 
 
@@ -60,7 +61,31 @@ if (isset($_GET["id"])) {
             $eDate = $row["eventDate"];
             $eStatus = $row["status"];
 
-            $eventObj = new Event($eId, $eClubId, $eUserId, $eApprovedBy, $eName, $eDescription, $eDate, $eStatus);
+
+            // if session exists - TEST***************************
+            if ($loggedIn) {
+              //// DETERMINE A TYPE OF A USER REQUESTING A CLUB PAGE
+              if ($siteAdmin) $userType = "siteAdmin";
+              elseif ($clubAdmin) {
+                  $db = new Connection();
+                  $db->open();
+                  $match = $db->runQuery("SELECT * FROM clubadmins, clubs WHERE clubadmins.user_id = ". $userId ." AND clubs.club_id = clubadmins.club_id AND clubs.club_id = '". $clubGET ."' LIMIT 1");
+                  $db->close();
+
+                  // Check if clubAdmin is an admin of selected club
+                  // If a club admin is not an admin of selected club, that admin is treated as contributer)
+                  if (mysqli_num_rows($match) == 1) $userType = "clubAdmin";
+                  else $userType = "contributor";
+
+              } else $userType = "contributor";
+            }
+
+
+            // Create a club object depending on the user type
+            // Public users - first as most common
+            if ($userType == "public" || $userType == "contributor") $eventObj = new Event($eId, $eClubId, $eUserId, $eApprovedBy, $eName, $eDescription, $eDate, $eStatus);
+            elseif ($userType == "clubAdmin" || $userType == "siteAdmin") $eventObj = new EventClubAdmin($eId, $eClubId, $eUserId, $eApprovedBy, $eName, $eDescription, $eDate, $eStatus);
+            else echo 'Error: privilage conflict';
 
         }
 

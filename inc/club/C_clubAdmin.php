@@ -1,6 +1,6 @@
 <?php
 
-include_once('C_contributor.php');
+include_once('C_clubContributor.php');
 
 class ClubAdmin extends ClubContributor {
 
@@ -89,8 +89,14 @@ class ClubAdmin extends ClubContributor {
     if (count($this->events) > 0) {
       for ($i=0; $i<count($this->events); $i++) {
         $event = $this->events[$i];
+
         // C for club id, E for event id
-        echo '<a href="/sportlethen/'.url($this->getGenre()).'/'.url($this->getName()).'/event/C'.$this->getId()."E".$event->getId().'" class="collection-item"><span>'.($i + 1).'</span> '. $event->getName() .'</a>';
+        if ($event->getStatus() == "approved") {
+          echo '<a href="/sportlethen/'.url($this->getGenre()).'/'.url($this->getName()).'/event/C'.$this->getId()."E".$event->getId().'" class="collection-item lime"><span>'. date_format(new DateTime($event->getEventDate()), 'd M Y') .'</span> '. $event->getName() .'<span class="badge">approved</span></a>';
+        } else {
+          echo '<a href="/sportlethen/'.url($this->getGenre()).'/'.url($this->getName()).'/event/C'.$this->getId()."E".$event->getId().'" class="collection-item grey lighten-2"><span>'. date_format(new DateTime($event->getEventDate()), 'd M Y') .'</span> '. $event->getName() .'<span class="badge">not approved</span></a>';
+        }
+
       }
     } else {
       echo '<a href="#!" class="collection-item"><span></span>No events</a>';

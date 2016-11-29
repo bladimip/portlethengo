@@ -179,7 +179,7 @@ class Club {
     // Get events of a club
     $db = new Connection();
     $db->open();
-    $events = $db->runQuery("SELECT * FROM clubs,clubevents WHERE clubs.club_id = clubevents.club_id AND clubs.club_id = ". $this->getId() ."");
+    $events = $db->runQuery("SELECT * FROM clubs,clubevents WHERE clubs.club_id = clubevents.club_id AND clubs.club_id = ". $this->getId() ." ORDER BY eventDate");
     $db->close();
 
     // Add events to a club object

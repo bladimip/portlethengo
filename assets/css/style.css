@@ -96,6 +96,10 @@
 	color: black !important;
 }
 
+.collection-item span:nth-child(2) {
+	display: none;
+}
+
 .collection-item span {
 	font-weight: bold;
 	color: #8e24aa;
@@ -172,11 +176,15 @@
 }
 /*medium*/
 @media screen and (max-width: 992px) and (min-width: 601px) {
-
+	.collection-item span:nth-child(2) {
+		display: block;
+	}
 }
 /*large*/
 @media screen and (min-width: 991px) {
-
+	.collection-item span:nth-child(2) {
+		display: block;
+	}
 }
 
 
