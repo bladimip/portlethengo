@@ -30,7 +30,7 @@ include('C_eventClubAdmin.php');
 $userId = 1;
 $clubAdmin = 0;
 $nkpag = 0;
-$siteAdmin = 1;
+$siteAdmin = 0;
 $blocked = 0;
 $loggedIn = true;
 
@@ -60,7 +60,7 @@ if (isset($_GET["id"])) {
             $eName = $row["name"];
             $eDescription = $row["description"];
             $eDate = $row["eventDate"];
-            $eStatus = $row["status"];
+            $eStatus = $row["approved"];
 
 
             // if session exists - TEST***************************

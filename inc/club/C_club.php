@@ -143,7 +143,7 @@ class Club {
       for ($i=0; $i<count($this->events); $i++) {
         $event = $this->events[$i];
 
-        if ($event->getStatus() == "approved") {
+        if ($event->getStatus() == "1") {
           // C for club id, E for event id
           echo '<a href="/sportlethen/'.url($this->getGenre()).'/'.url($this->getName()).'/event/C'.$this->getId()."E".$event->getId().'" class="collection-item"><span>'. date_format(new DateTime($event->getEventDate()), 'd M Y') .'</span> '. $event->getName() .'</a>';
         }
@@ -192,7 +192,7 @@ class Club {
       $eName = $row["name"];
       $eDescription = $row["description"];
       $eDate = $row["eventDate"];
-      $eStatus = $row["status"];
+      $eStatus = $row["approved"];
 
       $this->addEvent(new Event($eId, $eClubId, $eUserId, $eApprovedBy, $eName, $eDescription, $eDate, $eStatus));
     }
