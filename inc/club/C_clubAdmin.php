@@ -56,7 +56,19 @@ class ClubAdmin extends ClubContributor {
               </div>';
       }
       echo '</div>';
-      echo '<div class="btn lime addImgBtn"><span class="lnr lnr-upload"></span> Upload Image(s)</div>';
+      echo '<form id="imgUploadForm">
+              <input type="hidden" id="club_id" value="'. $this->getId() .'">
+              <div class="file-field input-field">
+                <div class="btn lime addImgBtn">
+                  <span>Select Image(s)</span>
+                  <input id="file" type="file" name="file[]" multiple>
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text">
+                </div>
+              </div>
+              <span id="imgUploadFormSub" class="btn lime addImgBtn centerPos"><span class="lnr lnr-upload"></span> Upload selected images</span>
+            </form><br>';
     }
   }
 
