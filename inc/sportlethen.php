@@ -1,5 +1,10 @@
 <?php
 /*
+Developer: Arnis Zelcs
+2016
+*/
+
+/*
 Clubs page
 
 Default: ./clubs.php (no varaible passed in url)

@@ -1,5 +1,10 @@
 <?php
 /*
+Developer: Arnis Zelcs
+2016
+*/
+
+/*
 Event information template
 Id of an event and id of a club need to be passed to this script, otherwise it won't work and an output will be 404
 

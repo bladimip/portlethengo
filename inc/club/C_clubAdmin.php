@@ -1,4 +1,8 @@
 <?php
+/*
+Developer: Arnis Zelcs
+2016
+*/
 
 include_once('C_clubContributor.php');
 

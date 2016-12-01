@@ -1,4 +1,9 @@
 <?php
+/*
+Developer: Arnis Zelcs
+2016
+*/
+
 include_once('C_club.php');
 
 class ClubContributor extends Club {

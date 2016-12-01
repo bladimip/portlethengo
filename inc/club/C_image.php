@@ -1,4 +1,9 @@
 <?php
+/*
+Developer: Arnis Zelcs
+2016
+*/
+
   class Image {
     private $id;
     private $clubId;

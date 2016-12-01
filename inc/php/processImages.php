@@ -1,4 +1,9 @@
 <?php
+/*
+Developer: Arnis Zelcs
+2016
+*/
+
 include_once('../db/simpleDB.php');
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {

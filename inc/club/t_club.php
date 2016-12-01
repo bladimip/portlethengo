@@ -1,5 +1,10 @@
 <?php
 /*
+Developer: Arnis Zelcs
+2016
+*/
+
+/*
 Club information template
 Id of a club need to be passed to this script, otherwise it won't work and an output will be 404
 
@@ -27,7 +32,7 @@ include('C_user.php');
 $userId = 4;
 $clubAdmin = 0;
 $nkpag = 0;
-$siteAdmin = 0;
+$siteAdmin = 1;
 $blocked = 0;
 $loggedIn = true;
 

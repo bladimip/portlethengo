@@ -1,4 +1,9 @@
 <?php
+/*
+Developer: Arnis Zelcs
+2016
+*/
+
 include_once('C_Event.php');
 
   class EventAdmin extends Event {

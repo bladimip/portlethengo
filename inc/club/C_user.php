@@ -1,4 +1,8 @@
 <?php
+/*
+Developer: Arnis Zelcs
+2016
+*/
 
 class User {
 
