@@ -19,12 +19,12 @@ include('inc/layouts/HTMLcomponents.php');
 //file contains information and methods for DB
 include('inc/db/simpleDB.php');
 
-//method for fetching queries - returns query result
-//used methods described in simpleDB file
-function getContributions ($table, $userID) {
+//method for fetching queries - returns query result - used for getting approved queries by user
+//used methods are described in simpleDB file
+function getApprovedContributions ($table, $userID) {
 	$db = new Connection();
 	$db->open();
-	$queryResult = $db->runQuery("SELECT * FROM " . $table . " WHERE user_id = ". $userID);
+	$queryResult = $db->runQuery("SELECT * FROM " . $table . " WHERE user_id = ". $userID . " AND approved = 1");
 	$db->close();
 	return $queryResult;
 }
@@ -34,10 +34,14 @@ top("vladTest");
 
 //Other page content
 //setting testing variable - browsed user's id:
-$person = 9;
+$person = 1;
 
-//running method for getting sql query with user data - used for getting data from one table
-$user = getContributions("Users", $person);
+//running method for getting sql query with user data
+$db = new Connection();
+$db->open();
+$user = $db->runQuery("SELECT * FROM Users WHERE user_id = " . $person);
+$db->close();
+
 
 //writing queried user data into variables
 //not all data will be used in final version
@@ -51,69 +55,77 @@ while ($row = $user->fetch_assoc()) {
 	//$password = $row["password"];
 	$blocked = $row["blocked"];
 }
-//outputting all info - for testing purposes
-// echo "<h1>" . $userName . "</h1>";
-// echo "<h2>" . $userName . "</h2>";
-// echo "<h3>" . $userName . "</h3>";
-// echo "<h4>" . $userName . "</h4>";
-// echo "<h5>" . $userName . "</h5>";
-
+//Displaying username
 echo "<h2>" . $userName . "</h2>";
 
+//Displaying if user acount is blocked
 if ($blocked == 1) {
 	echo "This account is disabled<br>";
 }
 
+//Displaying if user is one of site admins
 if ($siteAdmin == 1) {
 	echo "Site Administrator<br>";
 } else if ($nkpag == 1) {
 	echo "Map Admin<br>";
 }
 
+//Following 2 strings will be displayed only for admins
 echo "User ID: " . $userID . "<br>";
 echo "Registered email address: " . $email . "<br>";
 
-
+//getting administrated clubs (if any)
 if ($clubAdmin == 1) {
 	echo ("Admin of following clubs: ");
-	//getting administrated clubs
-	$clubs = getContributions("ClubAdmins", $person);
-	while ($row = $clubs->fetch_assoc()) {
-		echo $row["club_id"];
+	$db = new Connection();
+	$db->open();
+	$clubsAdministered = $db->runQuery("SELECT * FROM ClubAdmins, Clubs WHERE Clubs.club_id = ClubAdmins.club_id AND user_id = ". $person);
+	$db->close();
+	while ($row = $clubsAdministered->fetch_assoc()) {
+		echo $row["name"] . " ";
 	}
 }
 
-//getting added events
-$events = getContributions("ClubEvents", $person);
-echo "<br>Added events:<br>";
-while ($row = $events->fetch_assoc()) {
-	echo $row["name"] . "<br>";
+//getting added events that are approved
+$events = getApprovedContributions("ClubEvents", $person);
+if ($events->num_rows >= 1) {
+	echo "<br>Added events:<br>";
+	while ($row = $events->fetch_assoc()) {
+		echo $row["name"] . "<br>";
+	}
 }
 
-//getting added articles
-$news = getContributions("HealthNews", $person);
-echo "<br>Added articles:<br>";
-while ($row = $news->fetch_assoc()) {
-	echo $row["title"] . "<br>";
+//getting added articles that are approved
+$news = getApprovedContributions("HealthNews", $person);
+if ($news->num_rows >= 1) {
+	echo "<br>Added articles:<br>";
+	while ($row = $news->fetch_assoc()) {
+		echo $row["title"] . "<br>";
+	}
 }
 
-//getting added locations
-$locations = getContributions("Locations", $person);
-echo "<br>Added locations:<br>";
-while ($row = $locations->fetch_assoc()) {
-	echo $row["name"] . "<br>";
+//getting added locations that are approved
+$locations = getApprovedContributions("Locations", $person);
+if ($locations->num_rows >= 1) {
+	echo "<br>Added locations:<br>";
+	while ($row = $locations->fetch_assoc()) {
+		echo $row["name"] . "<br>";
+	}
 }
 
-//getting added routes
-$routes = getContributions("Routes", $person);
-echo "<br>Added routes:<br>";
-while ($row = $routes->fetch_assoc()) {
-	echo $row["name"] . "<br>";
+//getting added routes that are approved
+$routes = getApprovedContributions("Routes", $person);
+if ($routes->num_rows >= 1) {
+	echo "<br>Added routes:<br>";
+	while ($row = $routes->fetch_assoc()) {
+		echo $row["name"] . "<br>";
+	}
 }
 
-// if (mysql_num_rows($routes)== 0) {
-	// echo "OK";
-// }
+//outputting message if user has no approved contributions
+if (($events->num_rows == 0) and ($news->num_rows == 0) and ($locations->num_rows == 0) and ($routes->num_rows == 0)) {
+	echo "<br>This user has not made any contibutions yet<br>";
+}
 
 // Footer
 bottom();
