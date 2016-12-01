@@ -43,6 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $db = new Connection();
     $db->open();
 
+    $responseHTML = "";
+
     // Get information about each file
     foreach ($_FILES as $index => $file) {
     	$file_name = $file["name"];
@@ -108,78 +110,57 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     				$filenameNoExt = basename($file_name, ".".$ext);
 
 
-            // Add to database here
+            // Add to database
             $clubID_esc = $db->escape($clubID);
-            $db->runQuery("INSERT INTO clubimages (club_id, imagePath, altName) VALUES ('". $clubID_esc ."', '../../assets/images/clubs/". $file_name ."', '". $file_name ."')");
+            $db->runQuery("INSERT INTO clubimages (club_id, imagePath, altName) VALUES ('". $clubID_esc ."', '../../assets/images/clubs/". $file_name ."', '". $filenameNoExt ."')");
+            $lasID = $db->getLastID();
 
-    				/* create a new id for the file (id is used in other tables)
-    				$db->customQuery("INSERT INTO ai_images (ai_ID) VALUES ('')");
-
-    				//get that id
-    				$result = $db->customQuery("SELECT ai_ID FROM ai_images ORDER BY ai_ID DESC LIMIT 1");
-    				if ($result->num_rows == 1) {
-    					while($row = $result->fetch_assoc()) {
-    						//Place all folder names into new array
-    						$lastID = $row["ai_ID"];
-    					}
-
-    					//Create a database record about this file
-    					$userIDDB = $db->escape($userID);
-    					$db->customQuery("INSERT INTO media (usr_ID, music_ID, video_ID, image_ID) VALUES ('$userIDDB', 0, 0, $lastID)");
-
-    					$valArr = $db->prepareArray($lastID, $filenameNoExt, " ", "../uploaded_photos/$file_name", 'acting', $newAlbum);
-    					$db->insert("images", "image_ID, image_title, image_descr, image_path, image_group, image_folder", $valArr);
-
-    				} else {
-    					echo "<p>One result is expected</p>";
-    				}*/
+            $responseHTML .= '<div class="imgLayout" id="img'. $lasID .'">
+                      <div class="editImage">
+                        <img class="materialboxed" src="../../assets/images/clubs/'. $file_name .'" alt="'. $filenameNoExt .'">
+                      </div>
+                      <div class="ImgDeleteBtn"><span class="lnr lnr-trash"></span>delete</div>
+                  </div>';
 
     			// If a file with the same name is already existing
     			} else {
 
     				$filename = basename($file_name, $ext);
 
-    				//create a new name for the file (using time function, so it is always unique)
+    				// Create a new name for the file (using time function, so it is always unique)
     				$newFileName = $filename.time().".".$ext;
 
-    				//if file size is smaller than the limit, upload original
+    				// If file size is smaller than the limit, upload original
     				if ($size < $max_file_size) {
     					move_uploaded_file($file_tmp, "../../assets/images/clubs/".$newFileName);
 
     				} else {
-    					//upload resized image
+    					// Upload resized image
     					imagepng($new, "../../assets/images/clubs/".$newFileName);
     				}
 
-    				//same logic here as in a first block of if statement
+    				// Same logic here as in a first block of if statement
     				$filenameNoExt = basename($file_name, ".".$ext);
 
-            /*
-    				$db->customQuery("INSERT INTO ai_images () VALUES ()");
+            // Add to database here
+            $clubID_esc = $db->escape($clubID);
+            $db->runQuery("INSERT INTO clubimages (club_id, imagePath, altName) VALUES ('". $clubID_esc ."', '../../assets/images/clubs/". $newFileName ."', '". $filenameNoExt ."')");
+            $lasID = $db->getLastID();
 
-    				$result = $db->customQuery("SELECT ai_ID FROM ai_images ORDER BY ai_ID DESC LIMIT 1");
-    				if ($result->num_rows == 1) {
-    					while($row = $result->fetch_assoc()) {
-    						//Place all folder names into new array
-    						$lastID = $row["ai_ID"];
-    					}
-
-    					$userIDDB = $db->escape($userID);
-    					$db->customQuery("INSERT INTO media (usr_ID, music_ID, video_ID, image_ID) VALUES ('$userIDDB', 0, 0, $lastID)");
-
-    					$valArr = $db->prepareArray($lastID, $filenameNoExt, " ", "../uploaded_photos/$newFileName", 'acting', $newAlbum);
-    					$db->insert("images", "image_ID, image_title, image_descr, image_path, image_group, image_folder", $valArr);
-
-    				} else {
-    					echo "<p>One result is expected</p>";
-    				}
-            */
+            $responseHTML .= '<div class="imgLayout" id="img'. $lasID .'">
+                      <div class="editImage">
+                        <img class="materialboxed" src="../../assets/images/clubs/'. $newFileName .'" alt="'. $filenameNoExt .'">
+                      </div>
+                      <div class="ImgDeleteBtn"><span class="lnr lnr-trash"></span>delete</div>
+                  </div>';
     			}
 
+      		// Destroy a temporary image
+      		imagedestroy($new);
     		}
-    		//destroy a temporary image
-    		imagedestroy($new);
     	}
+
+      echo $responseHTML;
 
     	$db->close();
 

@@ -42,10 +42,12 @@ class ClubAdmin extends ClubContributor {
 
   public function showImages() {
 
+    echo '<span class="lnr lnr-pencil"></span><span class="editLabel">Images:</span>
+        <div id="clubImgContainer" class="row">';
+
     if (count($this->images) > 0) {
 
-      echo '<span class="lnr lnr-pencil"></span><span class="editLabel">Images:</span>
-          <div class="row">';
+
       for ($i=0; $i<count($this->images); $i++) {
         $image = $this->images[$i];
         echo '<div class="imgLayout" id="img'. $image->getId() .'">
@@ -55,21 +57,21 @@ class ClubAdmin extends ClubContributor {
                   <div class="ImgDeleteBtn"><span class="lnr lnr-trash"></span>delete</div>
               </div>';
       }
-      echo '</div>';
-      echo '<form id="imgUploadForm">
-              <input type="hidden" id="club_id" value="'. $this->getId() .'">
-              <div class="file-field input-field">
-                <div class="btn lime addImgBtn">
-                  <span>Select Image(s)</span>
-                  <input id="file" type="file" name="file[]" multiple>
-                </div>
-                <div class="file-path-wrapper">
-                  <input class="file-path validate" type="text">
-                </div>
-              </div>
-              <span id="imgUploadFormSub" class="btn lime addImgBtn centerPos"><span class="lnr lnr-upload"></span> Upload selected images</span>
-            </form><br>';
     }
+    echo '</div>';
+    echo '<form id="imgUploadForm">
+            <input type="hidden" id="club_id" value="'. $this->getId() .'">
+            <div class="file-field input-field">
+              <div class="btn lime addImgBtn">
+                <span>Select Image(s)</span>
+                <input id="file" type="file" name="file[]" multiple>
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+            </div>
+            <span id="imgUploadFormSub" class="btn lime addImgBtn centerPos"><span class="lnr lnr-upload"></span> Upload selected images</span>
+          </form><br>';
   }
 
   public function showDescription() {

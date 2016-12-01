@@ -113,5 +113,5 @@ if (isset($_GET["club"])) {
 } else echo 'Club not found';
 
 // Footer
-bottom();
+bottom($userType);
 ?>

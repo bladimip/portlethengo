@@ -75,7 +75,7 @@ function top( $title ) {
 }
 
 // Footer
-function bottom() {
+function bottom($auth) {
 ?>
 		<footer class="page-footer deep-purple lighten-1">
 			<div class="container">
@@ -112,8 +112,12 @@ function bottom() {
 				</div>
 			</div>
 		</footer>
-
-
+<?php
+		// Add additional javascript for admin mode only for admins (security issue)
+		if ($auth == "clubAdmin" || $auth == "siteAdmin") {
+			echo '<script src="/assets/js/scriptAuth.js"></script>';
+		}
+?>
 	</body>
 	</html>
 

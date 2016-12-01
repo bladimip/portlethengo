@@ -91,6 +91,6 @@ if (isset($_GET["clubs_genre"])) {
 }
 
 // Footer
-bottom();
+bottom("public");
 
 ?>
