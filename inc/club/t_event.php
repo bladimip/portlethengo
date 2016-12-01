@@ -100,5 +100,5 @@ top($eventObj->getName());
 $eventObj->displayContent();
 
 // Footer
-bottom();
+bottom($userType);
 ?>
