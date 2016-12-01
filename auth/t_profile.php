@@ -19,14 +19,40 @@ include('inc/layouts/HTMLcomponents.php');
 //file contains information and methods for DB
 include('inc/db/simpleDB.php');
 
-//method for fetching queries - returns query result - used for getting approved queries by user
+//method for outputting approved contibutions - returns boolean which is used for message in case if no contributins made
 //used methods are described in simpleDB file
 function getApprovedContributions ($table, $userID) {
 	$db = new Connection();
 	$db->open();
+	
+	//checking which table is needed, won't work if wrong table given
+	//needed for making query and output
+	if ($table == "ClubEvents") {
+		$title = "events";
+		$column = "name";
+	} else if ($table == "HealthNews") {
+		$title = "articles";
+		$column = "title";
+	} else if ($table == "Locations") {
+		$title = "locations";
+		$column = "name";
+	} else if ($table == "Routes") {
+		$title = "routes";
+		$column = "name";
+	}
+	
 	$queryResult = $db->runQuery("SELECT * FROM " . $table . " WHERE user_id = ". $userID . " AND approved = 1");
 	$db->close();
-	return $queryResult;
+
+	//outputting contributions and returning boolean value
+	if ($queryResult->num_rows >= 1) {
+		echo "<br>Added " . $title . ":<br>";
+		while ($row = $queryResult->fetch_assoc()) {
+			echo $row[$column] . "<br>";
+		}
+		return TRUE;
+	} else 
+		return FALSE;
 }
 
 // Navbar
@@ -34,9 +60,9 @@ top("vladTest");
 
 //Other page content
 //setting testing variable - browsed user's id:
-$person = 1;
+$person = 3;
 
-//running method for getting sql query with user data
+//getting sql query with user data
 $db = new Connection();
 $db->open();
 $user = $db->runQuery("SELECT * FROM Users WHERE user_id = " . $person);
@@ -88,42 +114,18 @@ if ($clubAdmin == 1) {
 
 //getting added events that are approved
 $events = getApprovedContributions("ClubEvents", $person);
-if ($events->num_rows >= 1) {
-	echo "<br>Added events:<br>";
-	while ($row = $events->fetch_assoc()) {
-		echo $row["name"] . "<br>";
-	}
-}
 
 //getting added articles that are approved
 $news = getApprovedContributions("HealthNews", $person);
-if ($news->num_rows >= 1) {
-	echo "<br>Added articles:<br>";
-	while ($row = $news->fetch_assoc()) {
-		echo $row["title"] . "<br>";
-	}
-}
 
 //getting added locations that are approved
 $locations = getApprovedContributions("Locations", $person);
-if ($locations->num_rows >= 1) {
-	echo "<br>Added locations:<br>";
-	while ($row = $locations->fetch_assoc()) {
-		echo $row["name"] . "<br>";
-	}
-}
 
 //getting added routes that are approved
 $routes = getApprovedContributions("Routes", $person);
-if ($routes->num_rows >= 1) {
-	echo "<br>Added routes:<br>";
-	while ($row = $routes->fetch_assoc()) {
-		echo $row["name"] . "<br>";
-	}
-}
 
 //outputting message if user has no approved contributions
-if (($events->num_rows == 0) and ($news->num_rows == 0) and ($locations->num_rows == 0) and ($routes->num_rows == 0)) {
+if (($events == 0) and ($news == 0) and ($locations == 0) and ($routes == 0)) {
 	echo "<br>This user has not made any contibutions yet<br>";
 }
 
