@@ -65,13 +65,15 @@ include_once('../db/simpleDB.php');
       $error .= "#address is not set";
     }
 
-    $db = new Connection();
-    $db->open();
-    $club = $db->runQuery("UPDATE clubs SET name='".$title."', genreCode='".$genre."', description='".$description."', phone='".$phone."', email='".$email."', address='".$address."' WHERE club_id=".$clubID);
-    $db->close();
-
     if ($error != "") echo $error;
-    else echo "Saved";
+    else {
+      $db = new Connection();
+      $db->open();
+      $club = $db->runQuery("UPDATE clubs SET name='".$title."', genreCode='".$genre."', description='".$description."', phone='".$phone."', email='".$email."', address='".$address."' WHERE club_id=".$clubID);
+      $db->close();
+      
+      echo "Saved";
+    }
 
   }
 ?>
