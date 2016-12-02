@@ -20,7 +20,7 @@ class ClubAdmin extends ClubContributor {
   public function showTitle() {
     echo '<div class="adminImg flexcontainer">
             <img src="../../assets/images/siteadmin.PNG" alt="admin" />
-            <span>You have logged in as administrator. You can view, edit, add information of this page. Please press a "SAVE" button on the bottom to apply changes.</span>
+            <span>You have logged in as administrator. You can view, edit and add information on this page. Please press a "SAVE" button on the bottom to apply changes.</span>
         </div>';
     echo '<br>
           <div class="row">
