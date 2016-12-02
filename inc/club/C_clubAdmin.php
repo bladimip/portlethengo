@@ -18,7 +18,12 @@ class ClubAdmin extends ClubContributor {
   }
 
   public function showTitle() {
-    echo '<br><div class="row">
+    echo '<div class="adminImg flexcontainer">
+            <img src="../../assets/images/siteadmin.PNG" alt="admin" />
+            <span>You have logged in as administrator. You can view, edit, add information of this page. Please press a "SAVE" button on the bottom to apply changes.</span>
+        </div>';
+    echo '<br>
+          <div class="row">
             <span class="lnr lnr-pencil"></span><span class="editLabel">Title:</span>
             <input type="text" class="sp-title edit" name="cTitle" value="'. $this->getName() .'">
           </div>';
@@ -32,10 +37,10 @@ class ClubAdmin extends ClubContributor {
               foreach ($this->genresAvailable as $key => $value) {
 
                 if ($value != $this->getGenre()) {
-                  echo '<option value="'. key($this->genresAvailable) .'">'. $value .'</option>';
+                  echo '<option value="'. $key .'">'. $value .'</option>';
                 } else {
 
-                  echo '<option value="'. key($this->genresAvailable) .'" selected>'. $value .'</option>';
+                  echo '<option value="'. $key .'" selected>'. $value .'</option>';
                 }
                 // Go to next key
                 next($this->genresAvailable);
@@ -90,13 +95,18 @@ class ClubAdmin extends ClubContributor {
 
   public function showContacts() {
 
-    echo '<br><div class="row">
+    echo '<br>
+          <div class="row">
             <span class="lnr lnr-pencil"></span><span class="editLabel">Phone:</span>
             <input type="text" class="editField edit" name="cPhone" value="'. $this->getPhone() .'">
             <span class="lnr lnr-pencil"></span><span class="editLabel">Email:</span>
             <input type="text" class="editField edit" name="cEmail" value="'. $this->getEmail() .'">
             <span class="lnr lnr-pencil"></span><span class="editLabel">Address:</span>
             <input type="text" class="editField edit" name="cAddress" value="'. $this->getAddress() .'">
+          </div>
+
+          <div id="saveClubBtnCont">
+            <div id="saveClubBtn" class="btn yellow accent-2 black-text">SAVE</div>
           </div>';
   }
 
@@ -111,9 +121,9 @@ class ClubAdmin extends ClubContributor {
 
         // C for club id, E for event id
         if ($event->getStatus() == "1") {
-          echo '<a href="/sportlethen/'.url($this->getGenre()).'/'.url($this->getName()).'/event/C'.$this->getId()."E".$event->getId().'" class="collection-item lime"><span>'. date_format(new DateTime($event->getEventDate()), 'd M Y') .'</span> '. $event->getName() .'<span class="badge">approved</span></a>';
+          echo '<a href="/sportlethen/'.url($this->getGenre()).'/'.url($this->getName()).'/event/C'.$this->getId()."E".$event->getId().'" class="collection-item lime"><span>'. date_format(new DateTime($event->getEventDate()), 'd M Y') .'</span> '. $event->getName() .'<span class="badge"><span class="lnr lnr-checkmark-circle"></span></span></a>';
         } else {
-          echo '<a href="/sportlethen/'.url($this->getGenre()).'/'.url($this->getName()).'/event/C'.$this->getId()."E".$event->getId().'" class="collection-item grey lighten-2"><span>'. date_format(new DateTime($event->getEventDate()), 'd M Y') .'</span> '. $event->getName() .'<span class="badge">not approved</span></a>';
+          echo '<a href="/sportlethen/'.url($this->getGenre()).'/'.url($this->getName()).'/event/C'.$this->getId()."E".$event->getId().'" class="collection-item grey lighten-2"><span>'. date_format(new DateTime($event->getEventDate()), 'd M Y') .'</span> '. $event->getName() .'<span class="badge"><span class="lnr lnr-question-circle"></span></span></a>';
         }
 
       }

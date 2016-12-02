@@ -11,28 +11,28 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
   // Delete
   if (isset($_POST["imgId"])) {
 
-    $imgId = $_POST["imgId"];
+      $imgId = $_POST["imgId"];
 
-    // Delete an actual image file
-    $db = new Connection();
-    $db->open();
-    $delFilePath = $db->runQuery("SELECT imagePath FROM clubimages WHERE image_id = ". $imgId);
-    $db->close();
-    if (mysqli_num_rows($delFilePath) == 1) {
-      while ($row = $delFilePath->fetch_assoc()) {
-        $path = $row["imagePath"];
-        // Delete a file
-        unlink($path);
+      // Delete an actual image file
+      $db = new Connection();
+      $db->open();
+      $delFilePath = $db->runQuery("SELECT imagePath FROM clubimages WHERE image_id = ". $imgId);
+      $db->close();
+      if (mysqli_num_rows($delFilePath) == 1) {
+        while ($row = $delFilePath->fetch_assoc()) {
+          $path = $row["imagePath"];
+          // Delete a file
+          unlink($path);
+        }
       }
-    }
 
-    // Delete a record about an image from a database
-    $db = new Connection();
-    $db->open();
-    $club = $db->runQuery("DELETE FROM clubimages WHERE image_id = ". $imgId);
-    $db->close();
+      // Delete a record about an image from a database
+      $db = new Connection();
+      $db->open();
+      $club = $db->runQuery("DELETE FROM clubimages WHERE image_id = ". $imgId);
+      $db->close();
 
-    echo "Deleted";
+      echo "Deleted";
 
   // Upload
   } else {

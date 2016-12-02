@@ -10,7 +10,6 @@ $('.ImgDeleteBtn').on('click', function() {
 
     var formData = new FormData();
     formData.append('imgId', imgId);
-    formData.append('command', 'delete');
 
     //send formdata to server-side
     $.ajax({
@@ -83,7 +82,7 @@ $('#imgUploadForm').on('submit', function(e) {
             formData.append('imgId', imgId);
             formData.append('command', 'delete');
 
-            //send formdata to server-side
+            // Send form data object to server-side
             $.ajax({
               url: '/inc/php/processImages.php', // php file
               type: 'post',
@@ -109,3 +108,41 @@ $('#imgUploadForm').on('submit', function(e) {
       }
     });
   });
+
+// Save Club Content changes
+$('#saveClubBtn').on('click', function() {
+
+  // Get current values
+  var clubID = $('#club_id').val();
+  var title = $('[name=cTitle]').val();
+  var genre = $('select').val();
+  var descr = $('#textarea1').val();
+  var phone = $('[name=cPhone]').val();
+  var email = $('[name=cEmail]').val();
+  var addr = $('[name=cAddress]').val();
+
+  // Create a form data object and add values to it
+  var formData = new FormData();
+  formData.append('clubID', clubID);
+  formData.append('title', title);
+  formData.append('genre', genre);
+  formData.append('description', descr);
+  formData.append('phone', phone);
+  formData.append('email', email);
+  formData.append('address', addr);
+
+  // Send form data object to server-side
+  $.ajax({
+    url: '/inc/php/saveClubInfo.php', // php file
+    type: 'post',
+    data: formData,
+    dataType: 'html', // return html from php file
+    async: true,
+    processData: false,  // tell jQuery not to process the data
+    contentType: false,   // tell jQuery not to set contentType
+    success: function(data) {
+      console.log(data);
+      Materialize.toast(data, 3000, 'rounded');
+    }
+  });
+});
