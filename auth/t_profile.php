@@ -55,8 +55,7 @@ function getApprovedContributions ($table, $userID) {
 		return FALSE;
 }
 
-// Navbar
-top("vladTest");
+
 
 //Other page content
 //setting testing variable - browsed user's id:
@@ -81,6 +80,10 @@ while ($row = $user->fetch_assoc()) {
 	//$password = $row["password"];
 	$blocked = $row["blocked"];
 }
+
+// Navbar
+top($userName . "'s profile");
+
 //Displaying username
 echo "<h2>" . $userName . "</h2>";
 
@@ -105,10 +108,11 @@ if ($clubAdmin == 1) {
 	echo ("Admin of following clubs: ");
 	$db = new Connection();
 	$db->open();
-	$clubsAdministered = $db->runQuery("SELECT * FROM ClubAdmins, Clubs WHERE Clubs.club_id = ClubAdmins.club_id AND user_id = ". $person);
+	$clubsAdministered = $db->runQuery("SELECT * FROM ClubAdmins, Clubs, ClubGenre WHERE Clubs.club_id = ClubAdmins.club_id AND user_id = ". $person . " AND Clubs.genreCode = ClubGenre.code");
 	$db->close();
 	while ($row = $clubsAdministered->fetch_assoc()) {
-		echo $row["name"] . " ";
+		//echo $row["name"] . " ";
+		echo ("<a href=/sportlethen/" . $row["category"] . "/" . $row["name"] . ">" . $row["name"] . "</a>") . " ";
 	}
 }
 
