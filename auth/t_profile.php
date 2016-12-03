@@ -22,35 +22,36 @@ include('inc/db/simpleDB.php');
 include('php/functions.php');
 
 //method for outputting approved contibutions - returns boolean which is used for message in case if no contributins made
-//used methods are described in simpleDB file
-function getApprovedContributions ($table, $userID) {
+//used methods are described in simpleDB and functions files
+function getApprovedContributions ($title, $userID) {
 	$db = new Connection();
 	$db->open();
 	
-	//checking which table is needed, won't work if wrong table given
-	//needed for making query and output
-	if ($table == "ClubEvents") {
-		$title = "events";
-		$column = "name";
-	} else if ($table == "HealthNews") {
-		$title = "articles";
-		$column = "title";
-	} else if ($table == "Locations") {
-		$title = "locations";
-		$column = "name";
-	} else if ($table == "Routes") {
-		$title = "routes";
-		$column = "name";
+	//checking which table is needed and making according query, won't work if wrong table given
+	if ($title == "events") {
+		$queryResult = $db->runQuery("SELECT *, Clubs.name as clubname FROM ClubGenre, Clubs, ClubEvents WHERE user_id = ". $userID . " AND approved = 1 AND code = genreCode AND Clubs.club_id = ClubEvents.club_id");
+	} else if ($title == "articles") {
+		$queryResult = $db->runQuery("SELECT * FROM HealthNews WHERE user_id = ". $userID . " AND approved = 1");
+	} else if ($title == "locations") {
+		$queryResult = $db->runQuery("SELECT * FROM Locations WHERE user_id = ". $userID . " AND approved = 1");
+	} else if ($title == "routes") {
+		$queryResult = $db->runQuery("SELECT * FROM Routes WHERE user_id = ". $userID . " AND approved = 1");
 	}
 	
-	$queryResult = $db->runQuery("SELECT * FROM " . $table . " WHERE user_id = ". $userID . " AND approved = 1");
 	$db->close();
 
 	//outputting contributions and returning boolean value
 	if ($queryResult->num_rows >= 1) {
 		echo "<br>Added " . $title . ":<br>";
 		while ($row = $queryResult->fetch_assoc()) {
-			echo $row[$column] . "<br>";
+			if ($title == "events") {
+			}
+			if ($title == "articles") {
+			}
+			if ($title == "locations") {
+			}
+			if ($title == "routes") {
+			}
 		}
 		return TRUE;
 	} else 
@@ -118,16 +119,16 @@ if ($clubAdmin == 1) {
 }
 
 //getting added events that are approved
-$events = getApprovedContributions("ClubEvents", $person);
+$events = getApprovedContributions("events", $person);
 
 //getting added articles that are approved
-$news = getApprovedContributions("HealthNews", $person);
+$news = getApprovedContributions("articles", $person);
 
 //getting added locations that are approved
-$locations = getApprovedContributions("Locations", $person);
+$locations = getApprovedContributions("locations", $person);
 
 //getting added routes that are approved
-$routes = getApprovedContributions("Routes", $person);
+$routes = getApprovedContributions("routes", $person);
 
 //outputting message if user has no approved contributions
 if (($events == 0) and ($news == 0) and ($locations == 0) and ($routes == 0)) {
