@@ -18,6 +18,8 @@ recieve information from session
 include('inc/layouts/HTMLcomponents.php');
 //file contains information and methods for DB
 include('inc/db/simpleDB.php');
+//file contains function for trimming white-spaces and special characters when creating links
+include('php/functions.php');
 
 //method for outputting approved contibutions - returns boolean which is used for message in case if no contributins made
 //used methods are described in simpleDB file
@@ -111,8 +113,7 @@ if ($clubAdmin == 1) {
 	$clubsAdministered = $db->runQuery("SELECT * FROM ClubAdmins, Clubs, ClubGenre WHERE Clubs.club_id = ClubAdmins.club_id AND user_id = ". $person . " AND Clubs.genreCode = ClubGenre.code");
 	$db->close();
 	while ($row = $clubsAdministered->fetch_assoc()) {
-		//echo $row["name"] . " ";
-		echo ("<a href=/sportlethen/" . $row["category"] . "/" . $row["name"] . ">" . $row["name"] . "</a>") . " ";
+		echo ("<a href=/sportlethen/" . url($row["category"]) . "/" . url($row["name"]) . "-C" . $row["club_id"] . ">" . $row["name"] . "</a>") . " ";
 	}
 }
 
