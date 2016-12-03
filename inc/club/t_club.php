@@ -29,10 +29,10 @@ include('C_event.php');
 include('C_user.php');
 
 // test variables(session vars) - TEST******************************
-$userId = 4;
-$clubAdmin = 0;
+$userId = 3;
+$clubAdmin = 1;
 $nkpag = 0;
-$siteAdmin = 1;
+$siteAdmin = 0;
 $blocked = 0;
 $loggedIn = true;
 
