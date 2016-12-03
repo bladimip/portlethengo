@@ -156,6 +156,10 @@
 	color: #424242 !important;
 }
 
+#addImgIcon {
+border: 1px dashed #555 !important;
+}
+
 .imgLayout {
 	display: inline-block;
 	margin: 0 5px;
@@ -175,7 +179,7 @@
 }
 
 .adminImg {
-	margin-top: 10px;
+	margin: 10px 0px;
 	padding: 25px;
 	background-color: rgba(60,170,210,.9);
 }

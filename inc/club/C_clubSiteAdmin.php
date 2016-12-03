@@ -16,8 +16,8 @@ class ClubSiteAdmin extends ClubAdmin {
 
     echo '<div class="row">';
       echo '<div class="col s12 l8 offset-l2 justify">';
-        $this->showTitle();
         $this->showImages();
+        $this->showTitle();
         $this->showCategory();
         $this->showDescription();
         $this->showContacts();
