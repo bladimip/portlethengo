@@ -32,7 +32,7 @@ include('C_user.php');
 $userId = 3;
 $clubAdmin = 1;
 $nkpag = 0;
-$siteAdmin = 0;
+$siteAdmin = 1;
 $blocked = 0;
 $loggedIn = true;
 
@@ -96,10 +96,10 @@ if (isset($_GET["club"])) {
         }
         ////
 
-        //Load information about club images to a club object
+        //Load information about club images to a club object, parameter is a an id of user currently on the page (logged in)
         $clubObj->fetchImages();
         //Load information about club events to a club object
-        $clubObj->fetchEvents();
+        $clubObj->fetchEvents($userId);
 
 
         // Add more information (for ClubAdmin and SiteAdmin only)

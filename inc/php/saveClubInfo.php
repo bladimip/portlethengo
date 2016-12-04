@@ -5,17 +5,10 @@ Developer: Arnis Zelcs
 */
 
 include_once('../db/simpleDB.php');
+include_once('functions.php');
 
   // To make work htmlspecialchars() function
 	header('Content-Type: text/plain');
-
-  // Sanitise data
-	function test_input($data) {
-		$data = trim($data);
-		$data = stripslashes($data);
-		$data = htmlspecialchars($data);
-		return $data;
-	}
 
   $title = $genre = $description = $phone = $email = $address = "not set";
   $error = "";
@@ -71,7 +64,7 @@ include_once('../db/simpleDB.php');
       $db->open();
       $club = $db->runQuery("UPDATE clubs SET name='".$title."', genreCode='".$genre."', description='".$description."', phone='".$phone."', email='".$email."', address='".$address."' WHERE club_id=".$clubID);
       $db->close();
-      
+
       echo "Saved";
     }
 

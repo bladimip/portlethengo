@@ -58,7 +58,7 @@ class ClubAdmin extends ClubContributor {
             <input type="hidden" id="club_id" value="'. $this->getId() .'">
             <div class="file-field input-field">
               <div id="addImgIcon" class="btn lime addImgBtn">
-                <span><span class="lnr lnr-plus-circle"></span></span>
+                <span>+ select image(s)</span>
                 <input id="file" type="file" name="file[]" multiple>
               </div>
               <div class="file-path-wrapper">

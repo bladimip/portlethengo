@@ -7,4 +7,12 @@ function url($url) {
    $url = preg_replace('~[^-a-z-A-Z0-9_]+~', '+', $url);
    return $url;
 }
+
+// Sanitise data
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
 ?>

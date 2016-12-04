@@ -15,6 +15,7 @@ include_once('C_Event.php');
           $this->showDescription();
           $this->showClub();
           $this->showUsers();
+          $this->showStatus();
           $this->showControls();
         echo '</div>';
       echo '</div>';
@@ -27,7 +28,9 @@ include_once('C_Event.php');
     public function showDescription() {
 
       echo '<p>'. $this->getDescription() .'</p>';
-      echo '<p>Date: '. date_format(new DateTime($this->getEventDate()), 'd M Y') .'</p>';
+      echo '<p>Date: '. date_format(new DateTime($this->getEventDate()), 'd M Y') .'</p>
+            <input type="hidden" id="event_id" value="'. $this->getId() .'">
+            <input type="hidden" id="user_id" value="'. $this->getCurUser() .'">';
     }
 
     public function showClub() {
@@ -40,7 +43,7 @@ include_once('C_Event.php');
           while ($row = $club->fetch_assoc()) {
 
             echo '<span class="grey-text text-lighten-1">Club: </span>';
-            echo '<a href="/sportlethen/'. url($row["category"]) .'/'. url($row["name"]) .'-C'.$row["club_id"].'">'. $row["name"] .'</a><br>';
+            echo '<a id="club_link" href="/sportlethen/'. url($row["category"]) .'/'. url($row["name"]) .'-C'.$row["club_id"].'">'. $row["name"] .'</a><br>';
           }
        }
     }
@@ -60,12 +63,35 @@ include_once('C_Event.php');
        }
     }
 
+
+    public function showStatus() {
+      if ($this->getStatus()) {
+        echo '<br><span class="grey-text text-lighten-1">Status: approved</span>';
+
+        $db = new Connection();
+        $db->open();
+        $user = $db->runQuery("SELECT * FROM users WHERE user_id = ". $this->getApprovedBy() ." LIMIT 1");
+        $db->close();
+
+        if (mysqli_num_rows($user) == 1) {
+            while ($row = $user->fetch_assoc()) {
+
+              echo '<br><span class="grey-text text-lighten-1">Approved by: </span>';
+              echo '<a>'. $row["username"] .'</a>';
+            }
+         }
+
+      } else {
+        echo '<br><span class="grey-text text-lighten-1">Status: not approved<br>Approved by: <span id="approvedBy"></span></span>';
+      }
+    }
+
     public function showControls() {
       echo '<div class="centerPos">';
-      if ($this->getStatus() == "0") {
-        echo '<div class="btn grey-text text-darken-3 lime waves-effect waves-light">Approve</div>
-              <div class="btn grey-text text-darken-3 red lighten-3 waves-effect waves-light">Delete</div>';
-      } else echo '<div class="btn grey-text text-darken-3 red lighten-3 waves-effect waves-light">Delete</div>';
+      if (!$this->getStatus()) {
+        echo '<div class="btn grey-text text-darken-3 lime waves-effect waves-light eControlBtn">Approve</div>
+              <div class="btn grey-text text-darken-3 red lighten-3 waves-effect waves-light eControlBtn">Delete</div>';
+      } else echo '<div class="btn grey-text text-darken-3 red lighten-3 waves-effect waves-light eControlBtn">Delete</div>';
       echo '</div>';
     }
 

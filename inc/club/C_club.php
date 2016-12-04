@@ -178,7 +178,7 @@ class Club {
 
   }
 
-  public function fetchEvents() {
+  public function fetchEvents($curUser) {
     // Get events of a club
     $db = new Connection();
     $db->open();
@@ -196,8 +196,9 @@ class Club {
       $eDescription = $row["description"];
       $eDate = $row["eventDate"];
       $eStatus = $row["approved"];
+      $eCurUser = $curUser;
 
-      $this->addEvent(new Event($eId, $eClubId, $eUserId, $eApprovedBy, $eName, $eDescription, $eDate, $eStatus));
+      $this->addEvent(new Event($eId, $eClubId, $eUserId, $eApprovedBy, $eName, $eDescription, $eDate, $eStatus, $eCurUser));
     }
   }
 

@@ -14,7 +14,7 @@ Developer: Arnis Zelcs
     private $eventDate;
     private $status;
 
-    public function __construct($id, $clubId, $userId, $approvedBy, $name, $description, $eventDate, $status) {
+    public function __construct($id, $clubId, $userId, $approvedBy, $name, $description, $eventDate, $status, $curUser) {
       $this->id = $id;
       $this->clubId = $clubId;
       $this->userId = $userId;
@@ -23,6 +23,7 @@ Developer: Arnis Zelcs
       $this->description = $description;
       $this->eventDate = $eventDate;
       $this->status = $status;
+      $this->curUser = $curUser;
     }
 
     // Setters
@@ -58,6 +59,10 @@ Developer: Arnis Zelcs
       $this->status = $status;
     }
 
+    public function setCurUser($curUser) {
+      $this->curUser = $curUser;
+    }
+
     // Getters
     public function getId() {
       return $this->id;
@@ -89,6 +94,10 @@ Developer: Arnis Zelcs
 
     public function getStatus() {
       return $this->status;
+    }
+
+    public function getCurUser() {
+      return $this->curUser;
     }
 
 
