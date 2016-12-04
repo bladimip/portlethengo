@@ -45,12 +45,16 @@ function getApprovedContributions ($title, $userID) {
 		echo "<br>Added " . $title . ":<br>";
 		while ($row = $queryResult->fetch_assoc()) {
 			if ($title == "events") {
+				echo ("<a href=/sportlethen/" . url($row["category"]) . "/" . url($row["clubname"]) . "/event/" . "C" . url($row["club_id"]) . "E" . url($row["event_id"]) . ">" . $row["name"] . "</a>") . "<br>";
 			}
 			if ($title == "articles") {
+				echo ("<a href=/health-wellbeing/" . url($row["title"]) . "-A" . url($row["news_id"]) . ">" . $row["title"] . "</a>") . "<br>";
 			}
 			if ($title == "locations") {
+				echo ("<a href=/map/" . url($row["name"]) . "-L" . url($row["loc_id"]) . ">" . $row["name"] . "</a>") . "<br>";
 			}
 			if ($title == "routes") {
+				echo ("<a href=/map/" . url($row["name"]) . "-R" . url($row["route_id"]) . ">" . $row["name"] . "</a>") . "<br>";
 			}
 		}
 		return TRUE;
@@ -58,9 +62,6 @@ function getApprovedContributions ($title, $userID) {
 		return FALSE;
 }
 
-
-
-//Other page content
 //setting testing variable - browsed user's id:
 $person = 3;
 
@@ -69,7 +70,6 @@ $db = new Connection();
 $db->open();
 $user = $db->runQuery("SELECT * FROM Users WHERE user_id = " . $person);
 $db->close();
-
 
 //writing queried user data into variables
 //not all data will be used in final version
@@ -87,6 +87,7 @@ while ($row = $user->fetch_assoc()) {
 // Navbar
 top($userName . "'s profile");
 
+//Other page content
 //Displaying username
 echo "<h2>" . $userName . "</h2>";
 
