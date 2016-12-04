@@ -182,7 +182,7 @@ $('.eControlBtn').on('click', function() {
         Materialize.toast("Approved", 3000, 'rounded');
 
       // On delete
-      } elseif (data == "Deleted") {
+      } else if (data == "Deleted") {
         Materialize.toast(data, 3000, 'rounded');
         // Go to back to the club page
         var club_link = $('#club_link').attr('href');
