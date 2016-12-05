@@ -21,8 +21,25 @@ $(document).ready(function() {
   });
 
 	// Add event
-	$('#addNewEventBtn').on('click', function() {
+	$('#saveNewEventBtn').on('click', function() {
+		var form = document.getElementById('addNewEventForm');
+		var formData = new FormData(form);
+		formData.append('event', 'add');
 
+		//send formdata to server-side
+    $.ajax({
+      url: '/inc/php/controlEvent.php', // php file
+      type: 'post',
+      data: formData,
+      dataType: 'html', // return html from php file
+      async: true,
+      processData: false,  // tell jQuery not to process the data
+      contentType: false,   // tell jQuery not to set contentType
+      success: function(data) {
+        console.log(data);
+        Materialize.toast(data, 30000, 'rounded');
+      }
+    });
 	});
 
 });

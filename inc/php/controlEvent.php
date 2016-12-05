@@ -4,6 +4,13 @@ Developer: Arnis Zelcs
 2016
 */
 
+// test Vars
+$userID = 3;
+$clubID = 3;
+// if admin - int
+// Null if not admin (same with approved attribute)
+$approvedBy = 3;
+
 include_once('../db/simpleDB.php');
 include_once('functions.php');
 
@@ -18,8 +25,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
   if (isset($_POST["event"])) {
     $event = test_input($_POST["event"]);
   }
+  /*
   if (isset($_POST["userID"])) {
     $userID = test_input($_POST["userID"]);
+  }
+  */
+  if (isset($_POST["title"])) {
+    $title = test_input($_POST["title"]);
+  }
+  if (isset($_POST["description"])) {
+    $description = test_input($_POST["description"]);
+  }
+  if (isset($_POST["date"])) {
+    $date = test_input($_POST["date"]);
   }
 
   // Approve
@@ -48,6 +66,21 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $db->close();
 
     echo 'Deleted';
+
+  // Add
+  } elseif ($event == "add") {
+
+    $db = new Connection();
+    $db->open();
+
+    $pTitle = $db->escape($title);
+    $pDescription = $db->escape($description);
+    $pDate = $db->escape($date);
+/* ################################# convert to proper date format ######################################*/
+    $delFilePath = $db->runQuery("INSERT INTO clubevents (club_id, user_id, approvedBy, name, description, eventDate, approved) VALUES ('". $clubID ."', '". $userID ."', '". $userID ."', '". $pTitle ."', '". $pDescription ."', '". $pDate ."', ". 1 .")");
+    $db->close();
+
+    echo 'Added';
   }
 }
 ?>

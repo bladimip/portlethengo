@@ -54,7 +54,7 @@ class ClubContributor extends Club {
 
             </div>
             <div class="modal-footer">
-              <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">SAVE</a>
+              <a href="#!" id="saveNewEventBtn" class=" modal-action modal-close waves-effect waves-green btn-flat">SAVE</a>
             </div>
           </div>';
   }
