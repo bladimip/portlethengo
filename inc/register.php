@@ -16,7 +16,7 @@ if ($_POST['enter']) {
     if (!$_POST['login'] or !$_POST['email'] or !$_POST['password']) exit('DATA ENTRED ERROR');
     
     if ($CONNECT){
-    $Row = (mysqli_query($CONNECT, "SELECT `login` FROM `users` WHERE `login` = '$_POST[login]'"));
+    $Row = mysqli_fetch_assoc(mysqli_query($CONNECT, "SELECT `login` FROM `users` WHERE `login` = '$_POST[login]'"));
     if ($Row['login']) exit('Login <b>'.$_POST['login'].'</b> allready in use');
     $Row = mysqli_fetch_assoc(mysqli_query($CONNECT, "SELECT `email` FROM `users` WHERE `email` = '$_POST[email]'"));
     if ($Row['email']) exit('Email <b>'.$_POST['email'].'</b> allready in use');
