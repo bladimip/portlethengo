@@ -93,13 +93,16 @@ if (isset($_GET["club"])) {
           elseif ($userType == "clubAdmin") $clubObj = new ClubAdmin($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
           elseif ($userType == "siteAdmin") $clubObj = new ClubSiteAdmin($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
           else echo 'Error: privilage conflict';
+
+          // Save an id of person requested the page
+          $clubObj->setCurUserID($userId);
         }
         ////
 
         //Load information about club images to a club object, parameter is a an id of user currently on the page (logged in)
         $clubObj->fetchImages();
         //Load information about club events to a club object
-        $clubObj->fetchEvents($userId);
+        $clubObj->fetchEvents();
 
 
         // Add more information (for ClubAdmin and SiteAdmin only)

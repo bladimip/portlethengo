@@ -29,6 +29,7 @@ include_once('C_Event.php');
 
       echo '<p>'. $this->getDescription() .'</p>';
       echo '<p>Date: '. date_format(new DateTime($this->getEventDate()), 'd M Y') .'</p>
+            <!-- #############################################Need to remove that, as is better to save in session -->
             <input type="hidden" id="event_id" value="'. $this->getId() .'">
             <input type="hidden" id="user_id" value="'. $this->getCurUser() .'">';
     }
