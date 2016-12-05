@@ -53,7 +53,8 @@ function top( $title ) {
 				<nav>
 					<div class="nav-wrapper deep-purple lighten-1">
 
-						<a href="/" class="left brand-logo"><span class="lnr lnr-apartment"></span>Portlethen</a>
+						<a href="/" class="left brand-logo lime-text"><span class="lnr lnr-apartment"></span>Portlethen</a>
+
 						<ul class="right hide-on-med-and-down">
 							<li><span class="waves-effect waves-light searchBtn"><span class="lnr lnr-magnifier"></span>SEARCH</span></li>
 							<li><a class="waves-effect waves-light" href="/sportlethen"><span class="lnr lnr-users"></span>SPORTLETHEN</a></li>
@@ -132,7 +133,7 @@ else if ($_SESSION['USER_LOGIN_IN'] = $p1) exit('Hello admin');
 }
 
 // Footer
-function bottom() {
+function bottom($auth) {
 ?>
 		<footer class="page-footer deep-purple lighten-1">
 			<div class="container">
@@ -169,8 +170,12 @@ function bottom() {
 				</div>
 			</div>
 		</footer>
-
-
+<?php
+		// Add additional javascript for admin mode only for admins (security issue)
+		if ($auth == "clubAdmin" || $auth == "siteAdmin") {
+			echo '<script src="/assets/js/scriptAuth.js"></script>';
+		}
+?>
 	</body>
 	</html>
 
