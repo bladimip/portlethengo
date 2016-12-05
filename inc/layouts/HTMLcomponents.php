@@ -1,5 +1,14 @@
 <?php
 
+include_once 'setting.php';
+session_start();
+$CONNECT = mysqli_connect(HOST, USER, PASS, DB);
+error_reporting(0);
+//check the connection!!
+//if ($CONNECT) echo 'OK';
+//else echo 'EROOR';
+
+
 // Navigation bar
 function top( $title ) {
 ?>
@@ -45,6 +54,7 @@ function top( $title ) {
 					<div class="nav-wrapper deep-purple lighten-1">
 
 						<a href="/" class="left brand-logo lime-text"><span class="lnr lnr-apartment"></span>Portlethen</a>
+
 						<ul class="right hide-on-med-and-down">
 							<li><span class="waves-effect waves-light searchBtn"><span class="lnr lnr-magnifier"></span>SEARCH</span></li>
 							<li><a class="waves-effect waves-light" href="/sportlethen"><span class="lnr lnr-users"></span>SPORTLETHEN</a></li>
@@ -72,6 +82,54 @@ function top( $title ) {
 		</div>
 
 <?php
+}
+
+//Validation by Ilja
+function FormChars ($p1) {
+return nl2br(htmlspecialchars(trim($p1), ENT_QUOTES), false);
+}
+
+
+// Make password sequire
+// Use password and login for sequre
+function GenPass ($p1, $p2) {
+return md5('MRILJA'.md5('321'.$p1.'123').md5('678'.$p2.'890'));
+}
+
+//Check did the user log in or not
+//THERE ADD MESSAGE
+function ULogin($p1) {
+if ($p1 <= 0 and $_SESSION['USER_LOGIN_IN'] != $p1) exit('This page aveilible only for guest');
+else if ($_SESSION['USER_LOGIN_IN'] = $p1);
+}
+
+
+// Sending the messages to users
+function MessageSend($p1, $p2) {
+if ($p1 == 1) $p1 = 'Error';
+else if ($p1 == 2) $p1 = 'Help';
+else if ($p1 == 3) $p1 = 'Information';
+$_SESSION['message'] = '<div class="chip"><b>'.$p1.'</b>: '.$p2.'</div>';
+exit(header('Location: '.$_SERVER['HTTP_REFERER']));
+}
+
+
+// Show the messages to users
+function MessageShow() {
+if ($_SESSION['message'])$Message = $_SESSION['message'];
+echo $Message;
+$_SESSION['message'] = array();
+}
+
+function WhoIsUser($p1) {
+
+if ($p1 == 0) return 'No';
+else if ($p1 == 1) return 'Admin';
+	}
+
+function DidTheUserAdmin($p1) {
+if ($p1 <= 0 and $_SESSION['USER_SITEADMIN'] != $p1) exit('You are not the admin');
+else if ($_SESSION['USER_LOGIN_IN'] = $p1) exit('Hello admin');
 }
 
 // Footer
