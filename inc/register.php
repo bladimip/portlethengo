@@ -8,7 +8,7 @@ include('layouts/HTMLcomponents.php');
 Ulogin(0);
 //error_reporting(0);
 
-if ($_POST['enter']) {
+if (isset($_POST['enter'])) {
     $_POST['login'] = FormChars($_POST['login']);
     $_POST['email'] = FormChars($_POST['email']);
     $_POST['password'] = GenPass(FormChars($_POST['password']), $_POST['login']);
@@ -59,6 +59,6 @@ top("Registration");
 <?php
 
 // Footer
-bottom();
+bottom("public");
 
 ?>

@@ -1,9 +1,7 @@
 <?php
 
-include_once 'setting.php';
 session_start();
-$CONNECT = mysqli_connect(HOST, USER, PASS, DB);
-error_reporting(0);
+$CONNECT = mysqli_connect('localhost', 'root', '', 'webdev5');
 //check the connection!!
 //if ($CONNECT) echo 'OK';
 //else echo 'EROOR';
