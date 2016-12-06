@@ -59,7 +59,7 @@ include_once('C_Event.php');
           while ($row = $user->fetch_assoc()) {
 
             echo '<span class="grey-text text-lighten-1">Event was added by: </span>';
-            echo '<a>'. $row["username"] .'</a>';
+            echo '<a id="user_link" href="/users/'. url($row["username"]) .'</a><br>';
           }
        }
     }
