@@ -196,9 +196,8 @@ class Club {
       $eDescription = $row["description"];
       $eDate = $row["eventDate"];
       $eStatus = $row["approved"];
-      $eCurUser = $this->getCurUserID();
 
-      $this->addEvent(new Event($eId, $eClubId, $eUserId, $eApprovedBy, $eName, $eDescription, $eDate, $eStatus, $eCurUser));
+      $this->addEvent(new Event($eId, $eClubId, $eUserId, $eApprovedBy, $eName, $eDescription, $eDate, $eStatus));
     }
   }
 

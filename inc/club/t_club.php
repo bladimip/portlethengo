@@ -19,6 +19,7 @@ $result = $db->runQuery("SELECT * FROM clubs WHERE club_id = id");
 $db->close();
 
 */
+session_start();
 
 include('../db/simpleDB.php');
 include('../layouts/HTMLcomponents.php');
@@ -29,12 +30,16 @@ include('C_event.php');
 include('C_user.php');
 
 // test variables(session vars) - TEST******************************
-$userId = 3;
-$clubAdmin = 1;
-$nkpag = 0;
-$siteAdmin = 1;
+if (isset($_SESSION["log"])) {
+  $userId = $_SESSION["log"]['USER_ID'];
+  $clubAdmin = $_SESSION["log"]['USER_CLUBADMIN'];
+  $nkpag = $_SESSION["log"]['USER_NKPAG'];
+  $siteAdmin = $_SESSION["log"]['USER_SITEADMIN'];
+  //$_SESSION['USER_LOGIN'] = $Row['username'];
+  //$_SESSION['USER_LOGIN_IN'] = 1;
+}
 $blocked = 0;
-$loggedIn = true;
+$loggedIn = isset($_SESSION["log"]);
 
 
 // Navbar
@@ -94,8 +99,6 @@ if (isset($_GET["club"])) {
           elseif ($userType == "siteAdmin") $clubObj = new ClubSiteAdmin($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
           else echo 'Error: privilage conflict';
 
-          // Save an id of person requested the page
-          $clubObj->setCurUserID($userId);
         }
         ////
 
@@ -117,9 +120,14 @@ if (isset($_GET["club"])) {
         $clubObj->displayContent();
         ////
 
+        // Add additional javascript for admin mode only for admins (security issue)
+        if ($userType == "clubAdmin" || $userType == "siteAdmin") {
+          echo '<script src="/assets/js/scriptAuth.js"></script>';
+        }
+
     } else echo 'Club not found';
 } else echo 'Club not found';
 
 // Footer
-bottom($userType);
+bottom();
 ?>

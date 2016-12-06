@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 $CONNECT = mysqli_connect('localhost', 'root', '', 'webdev5');
 //check the connection!!
 //if ($CONNECT) echo 'OK';
@@ -159,7 +158,7 @@ else if ($_SESSION['USER_LOGIN_IN'] = $p1) exit('Hello admin');
 }
 
 // Footer
-function bottom($auth) {
+function bottom() {
 ?>
 		<footer class="page-footer deep-purple lighten-1">
 			<div class="container">
@@ -196,12 +195,6 @@ function bottom($auth) {
 				</div>
 			</div>
 		</footer>
-<?php
-		// Add additional javascript for admin mode only for admins (security issue)
-		if ($auth == "clubAdmin" || $auth == "siteAdmin") {
-			echo '<script src="/assets/js/scriptAuth.js"></script>';
-		}
-?>
 	</body>
 	</html>
 
