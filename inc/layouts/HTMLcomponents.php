@@ -64,9 +64,8 @@ function top( $title ) {
 				</nav>
 			</div>
 			<div class="searchInput">
-				<form>
-					<input type="text" name="search">
-				</form>
+				<input id="searchField" type="text" name="search">
+				<div id="searchResults"></div>
 			</div>
 			
 		</div>
