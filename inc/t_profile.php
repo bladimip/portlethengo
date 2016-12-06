@@ -26,7 +26,7 @@ function getApprovedContributions ($title, $userID) {
 	$db = new Connection();
 	$db->open();
 	
-	//checking which table is needed and making according query, won't work if wrong table given
+	//checking which table is needed and making according query, will return FALSE if wrong table given
 	if ($title == "events") {
 		$queryResult = $db->runQuery("SELECT *, Clubs.name as clubname FROM ClubGenre, Clubs, ClubEvents WHERE user_id = ". $userID . " AND approved = 1 AND code = genreCode AND Clubs.club_id = ClubEvents.club_id");
 	} else if ($title == "articles") {
@@ -35,26 +35,47 @@ function getApprovedContributions ($title, $userID) {
 		$queryResult = $db->runQuery("SELECT * FROM Locations WHERE user_id = ". $userID . " AND approved = 1");
 	} else if ($title == "routes") {
 		$queryResult = $db->runQuery("SELECT * FROM Routes WHERE user_id = ". $userID . " AND approved = 1");
+	} else {
+		return FALSE;
 	}
+	
+	//alternative to IF statement chain
+	// switch ($title) {
+    // case "events":
+        // $queryResult = $db->runQuery("SELECT *, Clubs.name as clubname FROM ClubGenre, Clubs, ClubEvents WHERE user_id = ". $userID . " AND approved = 1 AND code = genreCode AND Clubs.club_id = ClubEvents.club_id");
+        // break;
+	// case "articles":
+        // $queryResult = $db->runQuery("SELECT * FROM HealthNews WHERE user_id = ". $userID . " AND approved = 1");
+        // break;
+	// case "locations":
+        // $queryResult = $db->runQuery("SELECT * FROM Locations WHERE user_id = ". $userID . " AND approved = 1");
+        // break;
+	// case "routes":
+        // $queryResult = $db->runQuery("SELECT * FROM Routes WHERE user_id = ". $userID . " AND approved = 1");
+        // break;
+	// default:
+        // return FALSE;
+	// }
 	
 	$db->close();
 
 	//outputting contributions and returning boolean value
+	//output works only if any rows found
 	if ($queryResult->num_rows >= 1) {
 		echo "<br>Added " . $title . ":<br>";
 		echo '<div class="collection">';
 		while ($row = $queryResult->fetch_assoc()) {
 			if ($title == "events") {
-				echo ("<a href='/sportlethen/" . url($row["category"]) . "/" . url($row["clubname"]) . "/event/" . "C" . url($row["club_id"]) . "E" . url($row["event_id"]) . "' class='collection-item'>" . $row["name"] . "</a>");
+				echo ('<a href="/sportlethen/' . url($row["category"]) . '/' . url($row["clubname"]) . '/event/' . 'C' . url($row["club_id"]) . 'E' . url($row["event_id"]) . '" class="collection-item">' . $row["name"] . '</a>');
 			}
 			if ($title == "articles") {
-				echo ("<a href='/health-wellbeing/" . url($row["title"]) . "-A" . url($row["news_id"]) . "' class='collection-item'>" . $row["title"] . "</a>");
+				echo ('<a href="/health-wellbeing/' . url($row["title"]) . '-A' . url($row["news_id"]) . '" class="collection-item">' . $row["title"] . '</a>');
 			}
 			if ($title == "locations") {
-				echo ("<a href='/map/" . url($row["name"]) . "-L" . url($row["loc_id"]) . "' class='collection-item'>" . $row["name"] . "</a>");
+				echo ('<a href="/map/' . url($row["name"]) . '-L' . url($row["loc_id"]) . '" class="collection-item">' . $row["name"] . '</a>');
 			}
 			if ($title == "routes") {
-				echo ("<a href='/map/" . url($row["name"]) . "-R" . url($row["route_id"]) . "' class='collection-item'>" . $row["name"] . "</a>");
+				echo ('<a href="/map/' . url($row["name"]) . '-R' . url($row["route_id"]) . '" class="collection-item">' . $row["name"] . '</a>');
 			}
 		}
 		echo '</div>';
@@ -76,7 +97,7 @@ $db->close();
 //displaying profile page only if such user exists
 if ($user->num_rows >= 1) {
 	//writing queried user data into variables
-	//not all data will be used in final version
+	//if multiple users found (should not be possible in normal conditions), only last one in array will be shown
 	while ($row = $user->fetch_assoc()) {
 		$userID = $row["user_id"];
 		$clubAdmin = $row["clubAdmin"];
@@ -84,7 +105,6 @@ if ($user->num_rows >= 1) {
 		$siteAdmin = $row["siteAdmin"];
 		$userName = $row["username"];
 		$email = $row["email"];
-		//$password = $row["password"];
 		$blocked = $row["blocked"];
 	}
 
@@ -119,20 +139,14 @@ if ($user->num_rows >= 1) {
 		$clubsAdministered = $db->runQuery("SELECT * FROM ClubAdmins, Clubs, ClubGenre WHERE Clubs.club_id = ClubAdmins.club_id AND user_id = ". $userID . " AND Clubs.genreCode = ClubGenre.code");
 		$db->close();
 		while ($row = $clubsAdministered->fetch_assoc()) {
-			echo ("<a href=/sportlethen/" . url($row["category"]) . "/" . url($row["name"]) . "-C" . $row["club_id"] . ">" . $row["name"] . "</a>") . " ";
+			echo ('<a href="/sportlethen/' . url($row["category"]) . '/' . url($row["name"]) . '-C' . $row["club_id"] . '">' . $row["name"] . '</a>') . ' ';
 		}
 	}
 
-	//getting added events that are approved
+	//getting added contributions that are approved
 	$events = getApprovedContributions("events", $userID);
-
-	//getting added articles that are approved
 	$news = getApprovedContributions("articles", $userID);
-
-	//getting added locations that are approved
 	$locations = getApprovedContributions("locations", $userID);
-
-	//getting added routes that are approved
 	$routes = getApprovedContributions("routes", $userID);
 
 	//outputting message if user has no approved contributions
