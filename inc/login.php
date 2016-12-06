@@ -1,5 +1,5 @@
 <?php
-/* 
+/*
 Registration
 */
 
@@ -34,7 +34,7 @@ if ($_POST['enter'] ) {
 top("Welcome to Portlethen");
 
 //Other page content
-?>
+?><!--
     <div class="container">
         <div class="section">
 
@@ -55,7 +55,7 @@ top("Welcome to Portlethen");
             </div>
 
         </div>
-    </div>
+    </div> -->
 <?php
 
 // Footer
