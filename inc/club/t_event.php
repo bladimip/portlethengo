@@ -1,5 +1,10 @@
 <?php
-/* 
+/*
+Developer: Arnis Zelcs
+2016
+*/
+
+/*
 Event information template
 Id of an event and id of a club need to be passed to this script, otherwise it won't work and an output will be 404
 
@@ -19,14 +24,88 @@ $db->close();
 
 */
 
+
 include('../db/simpleDB.php');
 include('../layouts/HTMLcomponents.php');
+include('../php/functions.php');
+include('C_eventClubAdmin.php');
+
+
+
+if (isset($_SESSION['USER_LOGIN_IN'])) {
+  $userId = $_SESSION['USER_ID'];
+  $clubAdmin = $_SESSION['USER_CLUBADMIN'];
+  $nkpag = $_SESSION['USER_NKPAG'];
+  $siteAdmin = $_SESSION['USER_SITEADMIN'];
+  //$_SESSION['USER_LOGIN'] = $Row['username'];
+}
+$blocked = 0;
+$loggedIn = isset($_SESSION['USER_LOGIN_IN']);
+
+if (isset($_GET["id"])) {
+    // string containing ids of a club and event
+    $strIDs = $_GET["id"];
+    // split into two string separating club and event
+    $arr = explode("E", $strIDs);
+
+    // cut numbers(ids) from strings
+    $clubID = preg_replace("/[^0-9]+/", '', $arr[0]);
+    $eventID = preg_replace("/[^0-9]+/", '', $arr[1]);
+
+    //// GET GENERAL INFORMATION OF EVENT
+    $db = new Connection();
+    $db->open();
+    $event = $db->runQuery("SELECT * FROM clubevents WHERE club_id = " . $clubID . " AND event_id = ". $eventID ." LIMIT 1");
+    $db->close();
+
+    if (mysqli_num_rows($event) == 1) {
+        while ($row = $event->fetch_assoc()) {
+
+            $eId = $row["event_id"];
+            $eClubId = $row["club_id"];
+            $eUserId = $row["user_id"];
+            $eApprovedBy = $row["approvedBy"];
+            $eName = $row["name"];
+            $eDescription = $row["description"];
+            $eDate = $row["eventDate"];
+            $eStatus = $row["approved"];
+
+
+            // if session exists - TEST***************************
+            if ($loggedIn) {
+              //// DETERMINE A TYPE OF A USER REQUESTING A CLUB PAGE
+              if ($siteAdmin) $userType = "siteAdmin";
+              elseif ($clubAdmin) {
+                  $db = new Connection();
+                  $db->open();
+                  $match = $db->runQuery("SELECT * FROM clubadmins, clubs WHERE clubadmins.user_id = ". $userId ." AND clubs.club_id = clubadmins.club_id AND clubs.club_id = '". $clubGET ."' LIMIT 1");
+                  $db->close();
+
+                  // Check if clubAdmin is an admin of selected club
+                  // If a club admin is not an admin of selected club, that admin is treated as contributer)
+                  if (mysqli_num_rows($match) == 1) $userType = "clubAdmin";
+                  else $userType = "contributor";
+
+              } else $userType = "contributor";
+            }
+
+
+            // Create a club object depending on the user type
+            // Public users - first as most common
+            if ($userType == "public" || $userType == "contributor") $eventObj = new Event($eId, $eClubId, $eUserId, $eApprovedBy, $eName, $eDescription, $eDate, $eStatus, $userId);
+            elseif ($userType == "clubAdmin" || $userType == "siteAdmin") $eventObj = new EventAdmin($eId, $eClubId, $eUserId, $eApprovedBy, $eName, $eDescription, $eDate, $eStatus, $userId);
+            else echo 'Error: privilage conflict';
+
+        }
+
+    }
+}
 
 // Navbar
-top("Event title goes here");
+top($eventObj->getName());
 
 //Other page content
-
+$eventObj->displayContent();
 
 // Footer
 bottom();

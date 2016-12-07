@@ -1,6 +1,6 @@
 <?php
-/* 
-Map page - Google Map API 
+/*
+Map page - Google Map API
 
 ./map.php
 
@@ -22,6 +22,6 @@ top("Locations and Routes");
 
 
 // Footer
-bottom();
+bottom("public");
 
 ?>

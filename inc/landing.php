@@ -1,5 +1,5 @@
 <?php
-/* 
+/*
 Landing page (Home) page
 */
 
@@ -26,6 +26,6 @@ top("Welcome to Portlethen");
 <?php
 
 // Footer
-bottom();
+bottom("public");
 
 ?>

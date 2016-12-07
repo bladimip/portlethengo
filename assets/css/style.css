@@ -23,6 +23,12 @@
 	designed on a 20 by 20 grid. */
 }
 
+.lnr-pencil {
+	padding: 5px;
+	color: white;
+	background-color: rgba(60,170,210,.9);
+}
+
 .nav-wrapper .brand-logo {
 	font-family: 'Orbitron', sans-serif;
 	margin-left: 10px;
@@ -54,9 +60,11 @@
 	text-align: center;
 	border-bottom: none;
 }
+
 #searchResults {
 	background-color: white;
 }
+
 .searchInput > input:focus {
 	border-bottom: 1px solid transparent !important;
 	box-shadow: 0 1px 0 0 transparent !important;
@@ -84,6 +92,132 @@
 
 footer {
 	background-color: #555;
+}
+
+/* Sportlethen */
+
+.sp-title {
+	text-align: center;
+	padding : 15px 0;
+	font-size: 2em !important;
+}
+
+.sp-genre {
+	padding: 25px !important;
+	text-align: center;
+	background-color: #cddc39;
+	color: #424242;
+	font-size: 1.5em;
+	font-family: 'Orbitron', sans-serif;
+	margin-top: 1px;
+}
+
+.sp-genre-list {
+	padding: 15px !important;
+	margin-top: 1px;
+	font-size: 1.5em;
+	font-family: 'Orbitron', sans-serif;
+	color: #424242;
+	background-color: #cddc39;
+}
+
+.sp-genre:hover,
+.sp-genre-list:hover {
+	background-color: rgba(0,0,0,.6);
+	color: white;
+}
+
+/* event calendar */
+.collection-item {
+	color: black !important;
+}
+
+.collection-item span:nth-child(2) {
+	display: none;
+}
+
+.collection-item span {
+	font-weight: bold;
+	color: #8e24aa;
+	padding-right: 15px;
+}
+
+/* Club Admin Mode */
+
+#clubImgContainer {
+	margin-top: 5px;
+}
+
+#saveClubBtnCont {
+	background-color: rgba(60,170,210,.9);
+	padding: 10px;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.edit {
+	border: 1px solid rgba(60,170,210,.9) !important;
+	border-radius: 2px !important;
+	padding: 0 5px !important;
+}
+
+.editField {
+	text-align: left;
+}
+
+.editLabel {
+	margin: 5px;
+	padding: 0 5px;;
+	color: #ccc;
+}
+
+.editImage {
+	text-align: center;
+}
+
+.editImage img {
+	height: 75px;
+}
+
+.addImgBtn {
+	margin-bottom: 25px;
+	color: #424242 !important;
+}
+
+#addImgIcon {
+border: 1px dashed #555 !important;
+}
+
+.imgLayout {
+	display: inline-block;
+	margin: 0 5px;
+}
+
+.ImgDeleteBtn {
+	padding: 5px;
+	margin: 5px 0;
+	border: 1px solid #ffcdd2;
+	border-radius: 5px;
+	cursor: pointer;
+	text-align: center;
+}
+
+.ImgDeleteBtn:hover {
+	background-color: #ffcdd2;
+}
+
+.adminImg {
+	margin: 10px 0px;
+	padding: 25px;
+	background-color: rgba(60,170,210,.9);
+}
+
+.adminImg img {
+	width: 45px;
+	margin-right: 15px;
+}
+
+.adminImg span {
 	color: white;
 }
 
@@ -113,9 +247,39 @@ footer {
 }
 /*medium*/
 @media screen and (max-width: 992px) and (min-width: 601px) {
-
+	.collection-item span:nth-child(2) {
+		display: block;
+	}
 }
 /*large*/
 @media screen and (min-width: 991px) {
+	.collection-item span:nth-child(2) {
+		display: block;
+	}
+}
 
+
+.flexcontainer {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row /* works with row or column */
+   flex-direction: row;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+}
+
+.justify {
+	text-align: justify;
+}
+
+.centerPos {
+	margin-top: 15px;
+	width: 100%;
+	text-align: center;
+}
+
+.slider .indicators .indicator-item.active {
+    background-color: #8e24aa !important;
 }

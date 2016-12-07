@@ -1,5 +1,5 @@
 <?php
-/* 
+/*
 Health and Wellbeing page
 
 ./health.php
@@ -30,7 +30,6 @@ top("Healt and Wellbeing");
 
 
 // Footer
-bottom();
+bottom("public");
 
 ?>
-
