@@ -1,11 +1,10 @@
 <?php
-
 $CONNECT = mysqli_connect('localhost', 'root', '', 'webdev5');
 //check the connection!!
 //if ($CONNECT) echo 'OK';
 //else echo 'EROOR';
 
-
+session_start();
 // Navigation bar
 function top( $title ) {
 ?>
@@ -57,7 +56,12 @@ function top( $title ) {
 							<li><a class="waves-effect waves-light" href="/sportlethen"><span class="lnr lnr-users"></span>SPORTLETHEN</a></li>
 							<li><a class="waves-effect waves-light" href="/health-wellbeing"><span class="lnr lnr-heart-pulse"></span>HEALTH & WELLBEING</a></li>
 							<li><a class="waves-effect waves-light" href="/map"><span class="lnr lnr-map"></span>MAP</a></li>
-							<li><a class="waves-effect waves-light"  href="#modal2"><span class="lnr lnr-user"></span>Login</a></li>
+							<li><a class="waves-effect waves-light"  href="#modal2"><span class="lnr lnr-user"></span>
+
+								<?php if (isset($_SESSION['USER_LOGIN_IN'])) echo 'Logout';
+											else echo 'Login'; ?>
+
+								</a></li>
 						</ul>
 
 						<ul class="right hide-on-large-only">
@@ -65,7 +69,12 @@ function top( $title ) {
 							<li><a class="waves-effect waves-light" href="/sportlethen"><span class="lnr lnr-users"></span></a></li>
 							<li><a class="waves-effect waves-light" href="/health-wellbeing"><span class="lnr lnr-heart-pulse"></span></a></li>
 							<li><a class="waves-effect waves-light" href="/map"><span class="lnr lnr-map"></span></a></li>
-							<li><a class="waves-effect waves-light"  href="#modal2"><span class="lnr lnr-user"></span></a></li>
+							<li><a class="waves-effect waves-light"  href="#modal2"><span class="lnr lnr-user"></span>
+
+								<?php if (isset($_SESSION['USER_LOGIN_IN'])) echo 'Logout';
+											else echo 'Login'; ?>
+
+								</a></li>
 						</ul>
 					</div>
 				</nav>
@@ -85,14 +94,15 @@ function top( $title ) {
 								<div class="col s12 center">
 										<h3><i class="mdi-content-send brown-text"></i></h3>
 										<h4>Login</h4>
-										<p class="left-align light"><form method="POST" action="/login">
+										<p class="left-align light">
+											<form method="POST" action="/login">
 
-										Login:      <input type="text" name="login" required><br>
-										Password :  <input type="password" name="password" required><br><br>
-										<input type="submit" name="enter" value="Login">
-										<input type="reset" value="Clear">
+												Login:      <input type="text" name="login" required><br>
+												Password :  <input type="password" name="password" required><br><br>
+												<input type="submit" name="enter" value="Login">
+												<input type="reset" value="Clear">
 
-
+											</form>
 										</p>
 								</div>
 						</div>

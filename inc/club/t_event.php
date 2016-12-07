@@ -24,6 +24,7 @@ $db->close();
 
 */
 
+
 include('../db/simpleDB.php');
 include('../layouts/HTMLcomponents.php');
 include('../php/functions.php');
@@ -31,13 +32,15 @@ include('C_eventClubAdmin.php');
 
 
 
-// test variables(session vars) - TEST******************************
-$userId = 1;
-$clubAdmin = 0;
-$nkpag = 0;
-$siteAdmin = 1;
+if (isset($_SESSION['USER_LOGIN_IN'])) {
+  $userId = $_SESSION['USER_ID'];
+  $clubAdmin = $_SESSION['USER_CLUBADMIN'];
+  $nkpag = $_SESSION['USER_NKPAG'];
+  $siteAdmin = $_SESSION['USER_SITEADMIN'];
+  //$_SESSION['USER_LOGIN'] = $Row['username'];
+}
 $blocked = 0;
-$loggedIn = true;
+$loggedIn = isset($_SESSION['USER_LOGIN_IN']);
 
 if (isset($_GET["id"])) {
     // string containing ids of a club and event
@@ -105,5 +108,5 @@ top($eventObj->getName());
 $eventObj->displayContent();
 
 // Footer
-bottom($userType);
+bottom();
 ?>

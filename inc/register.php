@@ -2,6 +2,7 @@
 /*
 Registration
 */
+session_start();
 
 include('db/simpleDB.php');
 include('layouts/HTMLcomponents.php');

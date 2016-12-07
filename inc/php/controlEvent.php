@@ -4,12 +4,10 @@ Developer: Arnis Zelcs
 2016
 */
 
-// test Vars
-$userID = 3;
-$clubID = 3;
-// if admin - int
-// Null if not admin (same with approved attribute)
-$approvedBy = 3;
+session_start();
+
+$userID = $_SESSION['USER_ID'];
+$clubID = $_SESSION["club_id"];
 
 include_once('../db/simpleDB.php');
 include_once('functions.php');
@@ -77,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $pDescription = $db->escape($description);
     $pDate = $db->escape($date);
 /* ################################# convert to proper date format ######################################*/
-    $delFilePath = $db->runQuery("INSERT INTO clubevents (club_id, user_id, approvedBy, name, description, eventDate, approved) VALUES ('". $clubID ."', '". $userID ."', '". $userID ."', '". $pTitle ."', '". $pDescription ."', '". $pDate ."', ". 1 .")");
+    $delFilePath = $db->runQuery("INSERT INTO clubevents (club_id, user_id, approvedBy, name, description, eventDate, approved) VALUES ('". $clubID ."', '". $userID ."', '". $userID ."', '". $pTitle ."', '". $pDescription ."', '". date_format(new DateTime($pDate), 'Y-m-d') ."', ". 1 .")");
     $db->close();
 
     echo 'Added';

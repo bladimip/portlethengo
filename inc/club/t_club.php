@@ -19,7 +19,6 @@ $result = $db->runQuery("SELECT * FROM clubs WHERE club_id = id");
 $db->close();
 
 */
-session_start();
 
 include('../db/simpleDB.php');
 include('../layouts/HTMLcomponents.php');
@@ -29,17 +28,16 @@ include('C_image.php');
 include('C_event.php');
 include('C_user.php');
 
-// test variables(session vars) - TEST******************************
-if (isset($_SESSION["log"])) {
-  $userId = $_SESSION["log"]['USER_ID'];
-  $clubAdmin = $_SESSION["log"]['USER_CLUBADMIN'];
-  $nkpag = $_SESSION["log"]['USER_NKPAG'];
-  $siteAdmin = $_SESSION["log"]['USER_SITEADMIN'];
+
+if (isset($_SESSION['USER_LOGIN_IN'])) {
+  $userId = $_SESSION['USER_ID'];
+  $clubAdmin = $_SESSION['USER_CLUBADMIN'];
+  $nkpag = $_SESSION['USER_NKPAG'];
+  $siteAdmin = $_SESSION['USER_SITEADMIN'];
   //$_SESSION['USER_LOGIN'] = $Row['username'];
-  //$_SESSION['USER_LOGIN_IN'] = 1;
 }
 $blocked = 0;
-$loggedIn = isset($_SESSION["log"]);
+$loggedIn = isset($_SESSION['USER_LOGIN_IN']);
 
 
 // Navbar
@@ -73,8 +71,10 @@ if (isset($_GET["club"])) {
           $cEmail = $row["email"];
           $cAddress = $row["address"];
 
-          // if session exists - TEST***************************
           if ($loggedIn) {
+
+            $_SESSION["club_id"] = $cId;
+
             //// DETERMINE A TYPE OF A USER REQUESTING A CLUB PAGE
             if ($siteAdmin) $userType = "siteAdmin";
             elseif ($clubAdmin) {
