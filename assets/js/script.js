@@ -23,7 +23,7 @@ $(document).ready(function() {
 		}
 
 		if ($.trim(condition) == "Logout") {
-			$.post('/inc/logout', {'toLogout' : true}, function(data) {
+			$.post('/inc/logout.php', {'toLogout' : true}, function(data) {
 				if (data == "success") {
 					window.location = '/';
 				} else {
