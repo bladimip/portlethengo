@@ -1,6 +1,6 @@
 <?php
-/* 
-Map page - Google Map API 
+/*
+Map page - Google Map API
 
 ./map.php
 
@@ -19,16 +19,70 @@ include('layouts/HTMLcomponents.php');
 top("Locations and Routes");
 
 //Other page content
-
-$long;
-$lat;
+$route_id= 2;
+$coordinates;
+// declare centre point of the map
 $centre = "{lat: 57.062423, lng: -2.130447}";
 
 
 // function to pull the list of locations from the database to draw them to the page or any other reason
-function drawList(){
-    global $long, $lat;
+function pullRoute(){
+    global $coordinates, $route_id;
     // connect to the database
+    $db = new Connection();
+    $db->open();
+    if(userType()==2){
+        $loc = $db->runQuery("SELECT * FROM routes WHERE route_id = $route_id;");
+    }
+    else{
+        $loc = $db->runQuery("SELECT * FROM routes WHERE approved = 1 AND route_id = $route_id;");
+    }
+    $db->close();
+
+    // loop through all returned results
+    while ($row = $loc->fetch_assoc()) {
+        $route_id = $row["route_id"];
+        $user_id = $row["user_id"];
+        $approvedBy = $row["approvedBy"];
+        $name = $row["name"];
+        $description = $row["description"];
+        $coordinates = $row["coordinates"];
+        $approved = $row["approved"];
+    };
+}
+
+//function to draw the markers on the map, draws the first and last marker for a route
+function drawMarkers(){
+    //take global coordinates from last pulled route
+    global $coordinates;
+    // split them up
+    $co = explode(';', $coordinates);
+    // find and print the first one
+    $start = explode(',',$co[0]);
+    $startlat = $start[0];
+    $startlong = $start[1];
+    echo "var marker = new google.maps.Marker({position: {lat: ".$startlat.", lng: ".$startlong."}, map: map});";
+    // find and print the last one
+    $end = explode(',',$co[count($co)-1]);
+    $endlat = $end[0];
+    $endlong = $end[1];
+    echo "var marker = new google.maps.Marker({position: {lat: ".$endlat.", lng: ".$endlong."}, map: map});";
+
+
+
+
+
+    //foreach (explode(';', $coordinates) as $co) {
+        //foreach(explode(',', $co) as $l){
+        //}
+        //echo "var marker = new google.maps.Marker({position: {lat: ".$lat.", lng: ".$long."}, map: map});";
+        //echo "<br>". count($co);
+        //}
+}
+
+function drawRoute(){
+    global $long, $lat;
+    //connect to the database
     $db = new Connection();
     $db->open();
     if(userType()==2){
@@ -41,52 +95,11 @@ function drawList(){
 
     // loop through all returned results
     while ($row = $loc->fetch_assoc()) {
-        $loc_id = $row["loc_id"];
-        $user_id = $row["user_id"];
-        $approvedBy = $row["approvedBy"];
-        $name = $row["name"];
-        $description = $row["description"];
         $lat = $row["latitude"];
         $long = $row["longitude"];
-        $address = $row["address"];
-        $approved = $row["approved"];
-        echo $name. " ";
-        echo  $lat. " ";
-        echo $long. "<br>";
+        echo "{lat: ".$lat.", lng: ".$long."},";
     };
-}
 
-//function to draw the markers on the map
-function drawMarkers(){
-    global $long, $lat;
-    //connect to the database
-    $db = new Connection();
-    $db->open();
-    if(userType()==2){
-        $loc = $db->runQuery("SELECT * FROM Locations limit 1;");
-    }
-    else{
-        $loc = $db->runQuery("SELECT * FROM Locations WHERE approved = 1;");
-    }
-    $db->close();
-
-    // loop through all returned results
-    while ($row = $loc->fetch_assoc()) {
-        $lat = $row["latitude"];
-        $long = $row["longitude"];
-        $description = $row["description"];
-        $name = $row["name"];
-        echo "var marker = new google.maps.Marker({position: {lat: ".$lat.", lng: ".$long."}, map: map, animation: google.maps.Animation.DROP});";
-        //echo "var contentString = '<div class=\"marker-info-win\"><div class=\"marker-inner-win\"><span class=\"info-content\"><h1 class=\"marker-heading\">New Marker</h1>'This is a new marker infoWindow'</span></div></div>;";
-        //var contentString = '<div class="marker-info-win"><div class="marker-inner-win"><span class="info-content"><h1 class="marker-heading">New Marker</h1>'This is a new marker infoWindow'</span></div></div>
-        //echo "var infowindow = new google.maps.InfoWindow({content: contentString});";
-        //echo "var infowindow = new google.maps.InfoWindow();";
-        //echo "infowindow.setContent(contentString);";
-        //echo "google.maps.event.addListener(marker, 'click', function() {infowindow.open(map,marker);});";
-        //echo  "marker.addListener('click', function() {infowindow.open(map, marker);});";
-        //var infowindow = new google.maps.InfoWindow({content: contentString});
-
-    };
 }
 
 //TODO placeholder function to return the usertype, to be rewritten
@@ -103,9 +116,10 @@ function getUserID(){
 }
 
 
-drawList();
+pullRoute();
+//drawMarkers();
 ?>
-    <h3>Portlethan Places</h3>
+    <h3>Portlethan Routes</h3>
     <div id="map"></div>
     <script>
         function initMap() {
@@ -115,13 +129,29 @@ drawList();
             var centre = <?php echo $centre ?>;
             var map = new google.maps.Map(document.getElementById('map'), {zoom: 14, center: centre});
             //click listener to add markers.
-            google.maps.event.addListener(map, 'click', function(event) {
-                addMarker(event.latLng, map);
-            });
+            //google.maps.event.addListener(map, 'click', function(event) {
+            //    addMarker(event.latLng, map);
+            //});
             <?php
-            //
             drawMarkers();
             ?>
+
+            var route = [<?php drawRoute()
+                //{lat: 57.061539, lng: -2.128038},
+                //{lat: 57.063107, lng: -2.140097},
+                //{lat: 57.062370, lng: -2.132270},
+                //{lat: 57.060047, lng: -2.129781}?>
+            ];
+            var flightPath = new google.maps.Polyline({
+                path: route,
+                geodesic: true,
+                strokeColor: '#ff0000',
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            });
+
+            flightPath.setMap(map);
+
             // g-maps example of how to place markers (use drawMarkers() function instead ) :
             //var marker = new google.maps.Marker({position: {lat: -25.363, lng: 131.044}, map: map});
             //var marker = new google.maps.Marker({position: uluru, map: map});

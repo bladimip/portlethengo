@@ -36,6 +36,13 @@ function top( $title ) {
 		<script src="/assets/js/init.js"></script>
 		
 		<script src="/assets/js/script.js"></script>
+
+		<style>
+			#map {
+				height: 500px;
+				width: 50%;
+			}
+		</style>
 	</head>
 
 	<body>

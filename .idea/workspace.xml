@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7985c7fa-3ae5-4133-bee0-215008d8b736" name="Default" comment="sql script update">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inc/db/createTemp.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inc/db/dropTemp.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inc/db/popTemp.sql" />
+    <list default="true" id="7985c7fa-3ae5-4133-bee0-215008d8b736" name="Default" comment="update now drawing the map with all points or routes plotted">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inc/addmap.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inc/addroute.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inc/routes.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inc/test components.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/db/createTemp.sql" afterPath="$PROJECT_DIR$/inc/db/createTemp.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/db/popTemp.sql" afterPath="$PROJECT_DIR$/inc/db/popTemp.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/layouts/HTMLcomponents.php" afterPath="$PROJECT_DIR$/inc/layouts/HTMLcomponents.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/map.php" afterPath="$PROJECT_DIR$/inc/map.php" />
     </list>
     <ignored path="UniFirstProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,7 +30,7 @@
     <favorites_list name="UniFirstProject" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="simpleDB.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/db/simpleDB.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -41,8 +46,96 @@
       <file leaf-file-name="map.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/map.php">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="67">
+              <caret line="78" column="144" selection-start-line="78" selection-start-column="144" selection-end-line="78" selection-end-column="144" />
+              <folding>
+                <marker date="1481137381000" expanded="true" signature="638:661" ph="SELECT * FRO... Locations" />
+                <marker date="1481137381000" expanded="true" signature="712:754" ph="SELECT * FRO... Locations" />
+                <marker date="1481137381000" expanded="true" signature="1500:1523" ph="SELECT name,... Locations" />
+                <marker date="1481137381000" expanded="true" signature="1500:1531" ph="SELECT * FRO... Locations" />
+                <marker date="1481137381000" expanded="true" signature="1582:1620" ph="SELECT name,... Locations" />
+                <marker date="1481137381000" expanded="true" signature="1582:1624" ph="SELECT * FRO... Locations" />
+                <marker date="1481137381000" expanded="true" signature="3354:4450" ph="..." />
+                <marker date="1481137381000" expanded="true" signature="3383:3621" ph="{...}" />
+                <marker date="1481137381000" expanded="true" signature="3383:4200" ph="{...}" />
+                <marker date="1481137381000" expanded="true" signature="3397:3505" ph="//..." />
+                <marker date="1481137381000" expanded="true" signature="3629:3655" ph="{&quot;center&quot;: centre...}" />
+                <marker date="1481137381000" expanded="true" signature="3775:3836" ph="{...}" />
+                <marker date="1481137381000" expanded="true" signature="3926:4190" ph="//..." />
+                <marker date="1481137381000" expanded="true" signature="4020:4190" ph="//..." />
+                <marker date="1481137381000" expanded="true" signature="4244:4437" ph="{...}" />
+                <marker date="1481137381000" expanded="true" signature="4349:4425" ph="{&quot;position&quot;: location...}" />
+                <marker date="1481137381000" expanded="true" signature="4475:4491" ph="..." />
+                <marker date="1481137381000" expanded="true" signature="4616:4638" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/inc/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1905">
+              <caret line="138" column="31" selection-start-line="138" selection-start-column="31" selection-end-line="138" selection-end-column="31" />
+              <folding>
+                <marker date="1481137517000" expanded="true" signature="698:712" ph="SELECT * FRO... Locations" />
+                <marker date="1481137517000" expanded="true" signature="698:736" ph="SELECT * FRO... routes" />
+                <marker date="1481137517000" expanded="true" signature="698:737" ph="SELECT * FRO... routes" />
+                <marker date="1481137517000" expanded="true" signature="796:851" ph="SELECT * FRO... routes" />
+                <marker date="1481137517000" expanded="true" signature="796:852" ph="SELECT * FRO... routes" />
+                <marker date="1481137517000" expanded="true" signature="847:851" ph="SELECT * FRO... Locations" />
+                <marker date="1481137517000" expanded="true" signature="2423:2446" ph="SELECT * FRO... Locations" />
+                <marker date="1481137517000" expanded="true" signature="2497:2539" ph="SELECT * FRO... Locations" />
+                <marker date="1481137517000" expanded="true" signature="3182:4816" ph="..." />
+                <marker date="1481137517000" expanded="true" signature="3211:4566" ph="{...}" />
+                <marker date="1481137517000" expanded="true" signature="3225:3333" ph="//..." />
+                <marker date="1481137517000" expanded="true" signature="3498:3672" ph="//..." />
+                <marker date="1481137517000" expanded="true" signature="3765:3985" ph="//..." />
+                <marker date="1481137517000" expanded="true" signature="4055:4239" ph="{&quot;path&quot;: route...}" />
+                <marker date="1481137517000" expanded="true" signature="4292:4556" ph="//..." />
+                <marker date="1481137517000" expanded="true" signature="4610:4803" ph="{...}" />
+                <marker date="1481137517000" expanded="true" signature="4715:4791" ph="{&quot;position&quot;: location...}" />
+                <marker date="1481137517000" expanded="true" signature="4841:4857" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="landing.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/landing.php">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test components.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/test components.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="38" column="3" selection-start-line="38" selection-start-column="3" selection-end-line="38" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addmap.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/addmap.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addroute.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/addroute.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="31" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -51,18 +144,8 @@
       <file leaf-file-name="HTMLcomponents.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/layouts/HTMLcomponents.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dropTemp.sql" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/inc/db/dropTemp.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="225">
+              <caret line="44" column="16" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -83,9 +166,15 @@
       <list>
         <option value="$PROJECT_DIR$/test" />
         <option value="$PROJECT_DIR$/inc/db/simpleDB.php" />
-        <option value="$PROJECT_DIR$/inc/db/createTemp.sql" />
         <option value="$PROJECT_DIR$/inc/db/dropTemp.sql" />
         <option value="$PROJECT_DIR$/inc/db/popTemp.sql" />
+        <option value="$PROJECT_DIR$/inc/db/createTemp.sql" />
+        <option value="$PROJECT_DIR$/inc/layouts/HTMLcomponents.php" />
+        <option value="$PROJECT_DIR$/inc/addroute.php" />
+        <option value="$PROJECT_DIR$/inc/addmap.php" />
+        <option value="$PROJECT_DIR$/inc/test components.php" />
+        <option value="$PROJECT_DIR$/inc/map.php" />
+        <option value="$PROJECT_DIR$/inc/routes.php" />
       </list>
     </option>
   </component>
@@ -126,6 +215,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -194,9 +284,40 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UniFirstProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UniFirstProject" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UniFirstProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UniFirstProject" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -269,7 +390,8 @@
       <workItem from="1478527690345" duration="1033000" />
       <workItem from="1478606993484" duration="142000" />
       <workItem from="1478609400185" duration="4000" />
-      <workItem from="1480344073976" duration="2483000" />
+      <workItem from="1480344073976" duration="12133000" />
+      <workItem from="1480940763317" duration="25565000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1478527797280</created>
@@ -299,32 +421,48 @@
       <option name="project" value="LOCAL" />
       <updated>1480347640884</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="sql script update">
+      <created>1480428008534</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1480428008534</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3662000" />
+    <option name="totallyTimeSpent" value="38877000" />
+  </component>
+  <component name="TodoView" selected-index="4">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18229167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957503" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957503" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957503" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -362,23 +500,141 @@
     <MESSAGE value="test" />
     <MESSAGE value="connection update" />
     <MESSAGE value="sql script update" />
-    <option name="LAST_COMMIT_MESSAGE" value="sql script update" />
+    <MESSAGE value="update now drawing the map with all points or routes plotted" />
+    <option name="LAST_COMMIT_MESSAGE" value="update now drawing the map with all points or routes plotted" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test" />
-    <entry file="file://$PROJECT_DIR$/assets/images/siteadmin.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/inc/db/simpleDB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="72" column="57" selection-start-line="72" selection-start-column="57" selection-end-line="72" selection-end-column="57" />
+          <folding>
+            <element signature="e#6#1265#0#PHP" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/inc/map.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+          <folding>
+            <marker date="1481137381000" expanded="true" signature="638:661" ph="SELECT * FRO... Locations" />
+            <marker date="1481137381000" expanded="true" signature="712:754" ph="SELECT * FRO... Locations" />
+            <marker date="1481137381000" expanded="true" signature="1500:1523" ph="SELECT name,... Locations" />
+            <marker date="1481137381000" expanded="true" signature="1500:1531" ph="SELECT * FRO... Locations" />
+            <marker date="1481137381000" expanded="true" signature="1582:1620" ph="SELECT name,... Locations" />
+            <marker date="1481137381000" expanded="true" signature="1582:1624" ph="SELECT * FRO... Locations" />
+            <marker date="1481137381000" expanded="true" signature="3354:4450" ph="..." />
+            <marker date="1481137381000" expanded="true" signature="3383:3621" ph="{...}" />
+            <marker date="1481137381000" expanded="true" signature="3383:4200" ph="{...}" />
+            <marker date="1481137381000" expanded="true" signature="3397:3505" ph="//..." />
+            <marker date="1481137381000" expanded="true" signature="3629:3655" ph="{&quot;center&quot;: centre...}" />
+            <marker date="1481137381000" expanded="true" signature="3775:3836" ph="{...}" />
+            <marker date="1481137381000" expanded="true" signature="3926:4190" ph="//..." />
+            <marker date="1481137381000" expanded="true" signature="4020:4190" ph="//..." />
+            <marker date="1481137381000" expanded="true" signature="4244:4437" ph="{...}" />
+            <marker date="1481137381000" expanded="true" signature="4349:4425" ph="{&quot;position&quot;: location...}" />
+            <marker date="1481137381000" expanded="true" signature="4475:4491" ph="..." />
+            <marker date="1481137381000" expanded="true" signature="4616:4638" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/layouts/HTMLcomponents.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test" />
+    <entry file="file://$PROJECT_DIR$/assets/images/siteadmin.png" />
     <entry file="file://$PROJECT_DIR$/inc/db/webdev5_populate.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/db/dropTemp.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/init.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/materialize.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3216">
+          <caret line="232" column="8385" selection-start-line="232" selection-start-column="8385" selection-end-line="232" selection-end-column="8385" />
+          <folding>
+            <marker date="1478610363000" expanded="true" signature="163033:163040" ph="..." />
+            <marker date="1478610363000" expanded="true" signature="236210:236239" ph="..." />
+            <marker date="1478610363000" expanded="true" signature="236500:236510" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-474">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/db/createTemp.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="95" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/addroute.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="31" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/addmap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/test components.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="3" selection-start-line="38" selection-start-column="3" selection-end-line="38" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -393,31 +649,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/landing.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/db/createTemp.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1935">
-          <caret line="129" column="2" selection-start-line="129" selection-start-column="2" selection-end-line="129" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/db/popTemp.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="981">
-          <caret line="135" column="819" selection-start-line="135" selection-start-column="819" selection-end-line="135" selection-end-column="819" />
+        <state relative-caret-position="217">
+          <caret line="85" column="22" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/map.php">
+    <entry file="file://$PROJECT_DIR$/inc/landing.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -427,17 +667,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/layouts/HTMLcomponents.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        <state relative-caret-position="225">
+          <caret line="44" column="16" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/db/dropTemp.sql">
+    <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="36" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/map.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="78" column="144" selection-start-line="78" selection-start-column="144" selection-end-line="78" selection-end-column="144" />
+          <folding>
+            <marker date="1481137381000" expanded="true" signature="638:661" ph="SELECT * FRO... Locations" />
+            <marker date="1481137381000" expanded="true" signature="712:754" ph="SELECT * FRO... Locations" />
+            <marker date="1481137381000" expanded="true" signature="1500:1523" ph="SELECT name,... Locations" />
+            <marker date="1481137381000" expanded="true" signature="1500:1531" ph="SELECT * FRO... Locations" />
+            <marker date="1481137381000" expanded="true" signature="1582:1620" ph="SELECT name,... Locations" />
+            <marker date="1481137381000" expanded="true" signature="1582:1624" ph="SELECT * FRO... Locations" />
+            <marker date="1481137381000" expanded="true" signature="3354:4450" ph="..." />
+            <marker date="1481137381000" expanded="true" signature="3383:3621" ph="{...}" />
+            <marker date="1481137381000" expanded="true" signature="3383:4200" ph="{...}" />
+            <marker date="1481137381000" expanded="true" signature="3397:3505" ph="//..." />
+            <marker date="1481137381000" expanded="true" signature="3629:3655" ph="{&quot;center&quot;: centre...}" />
+            <marker date="1481137381000" expanded="true" signature="3775:3836" ph="{...}" />
+            <marker date="1481137381000" expanded="true" signature="3926:4190" ph="//..." />
+            <marker date="1481137381000" expanded="true" signature="4020:4190" ph="//..." />
+            <marker date="1481137381000" expanded="true" signature="4244:4437" ph="{...}" />
+            <marker date="1481137381000" expanded="true" signature="4349:4425" ph="{&quot;position&quot;: location...}" />
+            <marker date="1481137381000" expanded="true" signature="4475:4491" ph="..." />
+            <marker date="1481137381000" expanded="true" signature="4616:4638" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1905">
+          <caret line="138" column="31" selection-start-line="138" selection-start-column="31" selection-end-line="138" selection-end-column="31" />
+          <folding>
+            <marker date="1481137517000" expanded="true" signature="698:712" ph="SELECT * FRO... Locations" />
+            <marker date="1481137517000" expanded="true" signature="698:736" ph="SELECT * FRO... routes" />
+            <marker date="1481137517000" expanded="true" signature="698:737" ph="SELECT * FRO... routes" />
+            <marker date="1481137517000" expanded="true" signature="796:851" ph="SELECT * FRO... routes" />
+            <marker date="1481137517000" expanded="true" signature="796:852" ph="SELECT * FRO... routes" />
+            <marker date="1481137517000" expanded="true" signature="847:851" ph="SELECT * FRO... Locations" />
+            <marker date="1481137517000" expanded="true" signature="2423:2446" ph="SELECT * FRO... Locations" />
+            <marker date="1481137517000" expanded="true" signature="2497:2539" ph="SELECT * FRO... Locations" />
+            <marker date="1481137517000" expanded="true" signature="3182:4816" ph="..." />
+            <marker date="1481137517000" expanded="true" signature="3211:4566" ph="{...}" />
+            <marker date="1481137517000" expanded="true" signature="3225:3333" ph="//..." />
+            <marker date="1481137517000" expanded="true" signature="3498:3672" ph="//..." />
+            <marker date="1481137517000" expanded="true" signature="3765:3985" ph="//..." />
+            <marker date="1481137517000" expanded="true" signature="4055:4239" ph="{&quot;path&quot;: route...}" />
+            <marker date="1481137517000" expanded="true" signature="4292:4556" ph="//..." />
+            <marker date="1481137517000" expanded="true" signature="4610:4803" ph="{...}" />
+            <marker date="1481137517000" expanded="true" signature="4715:4791" ph="{&quot;position&quot;: location...}" />
+            <marker date="1481137517000" expanded="true" signature="4841:4857" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -107,7 +107,7 @@ VALUES (1, "image", "Welcome", "http://enigmalighting.com/wp-content/uploads/201
 
 /*locations
 */
-INSERT INTO Locations (user_id, approvedBy, name, description, longitude, latitude, address, approved)
+INSERT INTO Locations (user_id, approvedBy, name, description, latitude, longitude, address, approved)
 VALUES (2, 2, "Portlethen Train Station", "", 57.061538, -2.128038, "Portlethen, Aberdeen AB12 4JS", 1),
 (2, 2, "Asda Portlethen Superstore", "", 57.063107, -2.140097, "Muirend Rd, Portlethen AB12 4XP", 1),
 (9, 2, "Random Rock", "", 57.062372, -2.132270, "Dunvegan Avenue, Portlethen, Aberdeen AB12 4QE, UK", 1),
