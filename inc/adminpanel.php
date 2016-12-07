@@ -3,9 +3,9 @@
 Registration
 */
 
-//include('../db/simpleDB.php');
-//include('../layouts/HTMLcomponents.php');
-error_reporting(0);
+include('/db/simpleDB.php');
+include('/layouts/HTMLcomponents.php');
+//error_reporting(0);
 Ulogin(1);
 DidTheUserAdmin(1);
 

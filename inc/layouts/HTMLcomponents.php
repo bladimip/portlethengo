@@ -4,7 +4,7 @@ $CONNECT = mysqli_connect('localhost', 'root', '', 'webdev5');
 //if ($CONNECT) echo 'OK';
 //else echo 'EROOR';
 
-session_start();
+//session_start();
 // Navigation bar
 function top( $title ) {
 ?>
@@ -132,8 +132,8 @@ return md5('MRILJA'.md5('321'.$p1.'123').md5('678'.$p2.'890'));
 //Check did the user log in or not
 //THERE ADD MESSAGE
 function ULogin($p1) {
-if ($p1 <= 0 and $_SESSION['USER_LOGIN_IN'] != $p1) exit('This page aveilible only for guest');
-else if ($_SESSION['USER_LOGIN_IN'] = $p1);
+if ($p1 <= 0 and $_SESSION['USER_LOGIN_IN'] != $p1);
+else if ($_SESSION['USER_LOGIN_IN'] = $p1) exit('This page available only for user');
 }
 
 
