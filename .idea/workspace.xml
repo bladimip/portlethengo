@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7985c7fa-3ae5-4133-bee0-215008d8b736" name="Default" comment="update now drawing the map with all points or routes plotted">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inc/addmap.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inc/addroute.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inc/routes.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inc/test components.php" />
+    <list default="true" id="7985c7fa-3ae5-4133-bee0-215008d8b736" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/db/createTemp.sql" afterPath="$PROJECT_DIR$/inc/db/createTemp.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/db/popTemp.sql" afterPath="$PROJECT_DIR$/inc/db/popTemp.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/layouts/HTMLcomponents.php" afterPath="$PROJECT_DIR$/inc/layouts/HTMLcomponents.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/map.php" afterPath="$PROJECT_DIR$/inc/map.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/routes.php" afterPath="$PROJECT_DIR$/inc/routes.php" />
     </list>
     <ignored path="UniFirstProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,27 +69,26 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inc/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1905">
-              <caret line="138" column="31" selection-start-line="138" selection-start-column="31" selection-end-line="138" selection-end-column="31" />
+            <state relative-caret-position="630">
+              <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
               <folding>
-                <marker date="1481137517000" expanded="true" signature="698:712" ph="SELECT * FRO... Locations" />
-                <marker date="1481137517000" expanded="true" signature="698:736" ph="SELECT * FRO... routes" />
-                <marker date="1481137517000" expanded="true" signature="698:737" ph="SELECT * FRO... routes" />
-                <marker date="1481137517000" expanded="true" signature="796:851" ph="SELECT * FRO... routes" />
-                <marker date="1481137517000" expanded="true" signature="796:852" ph="SELECT * FRO... routes" />
-                <marker date="1481137517000" expanded="true" signature="847:851" ph="SELECT * FRO... Locations" />
-                <marker date="1481137517000" expanded="true" signature="2423:2446" ph="SELECT * FRO... Locations" />
-                <marker date="1481137517000" expanded="true" signature="2497:2539" ph="SELECT * FRO... Locations" />
-                <marker date="1481137517000" expanded="true" signature="3182:4816" ph="..." />
-                <marker date="1481137517000" expanded="true" signature="3211:4566" ph="{...}" />
-                <marker date="1481137517000" expanded="true" signature="3225:3333" ph="//..." />
-                <marker date="1481137517000" expanded="true" signature="3498:3672" ph="//..." />
-                <marker date="1481137517000" expanded="true" signature="3765:3985" ph="//..." />
-                <marker date="1481137517000" expanded="true" signature="4055:4239" ph="{&quot;path&quot;: route...}" />
-                <marker date="1481137517000" expanded="true" signature="4292:4556" ph="//..." />
-                <marker date="1481137517000" expanded="true" signature="4610:4803" ph="{...}" />
-                <marker date="1481137517000" expanded="true" signature="4715:4791" ph="{&quot;position&quot;: location...}" />
-                <marker date="1481137517000" expanded="true" signature="4841:4857" ph="..." />
+                <marker date="1481140086000" expanded="true" signature="698:712" ph="SELECT * FRO... Locations" />
+                <marker date="1481140086000" expanded="true" signature="698:736" ph="SELECT * FRO... routes" />
+                <marker date="1481140086000" expanded="true" signature="698:737" ph="SELECT * FRO... routes" />
+                <marker date="1481140086000" expanded="true" signature="796:851" ph="SELECT * FRO... routes" />
+                <marker date="1481140086000" expanded="true" signature="796:852" ph="SELECT * FRO... routes" />
+                <marker date="1481140086000" expanded="true" signature="847:851" ph="SELECT * FRO... Locations" />
+                <marker date="1481140086000" expanded="true" signature="2803:4437" ph="..." />
+                <marker date="1481140086000" expanded="true" signature="2832:4187" ph="{...}" />
+                <marker date="1481140086000" expanded="true" signature="2846:2954" ph="//..." />
+                <marker date="1481140086000" expanded="true" signature="3119:3293" ph="//..." />
+                <marker date="1481140086000" expanded="true" signature="3386:3606" ph="//..." />
+                <marker date="1481140086000" expanded="true" signature="3414:3606" ph="//..." />
+                <marker date="1481140086000" expanded="true" signature="3676:3860" ph="{&quot;path&quot;: route...}" />
+                <marker date="1481140086000" expanded="true" signature="3913:4177" ph="//..." />
+                <marker date="1481140086000" expanded="true" signature="4231:4424" ph="{...}" />
+                <marker date="1481140086000" expanded="true" signature="4336:4412" ph="{&quot;position&quot;: location...}" />
+                <marker date="1481140086000" expanded="true" signature="4462:4478" ph="..." />
               </folding>
             </state>
           </provider>
@@ -167,13 +160,13 @@
         <option value="$PROJECT_DIR$/test" />
         <option value="$PROJECT_DIR$/inc/db/simpleDB.php" />
         <option value="$PROJECT_DIR$/inc/db/dropTemp.sql" />
-        <option value="$PROJECT_DIR$/inc/db/popTemp.sql" />
         <option value="$PROJECT_DIR$/inc/db/createTemp.sql" />
         <option value="$PROJECT_DIR$/inc/layouts/HTMLcomponents.php" />
         <option value="$PROJECT_DIR$/inc/addroute.php" />
         <option value="$PROJECT_DIR$/inc/addmap.php" />
         <option value="$PROJECT_DIR$/inc/test components.php" />
         <option value="$PROJECT_DIR$/inc/map.php" />
+        <option value="$PROJECT_DIR$/inc/db/popTemp.sql" />
         <option value="$PROJECT_DIR$/inc/routes.php" />
       </list>
     </option>
@@ -391,7 +384,7 @@
       <workItem from="1478606993484" duration="142000" />
       <workItem from="1478609400185" duration="4000" />
       <workItem from="1480344073976" duration="12133000" />
-      <workItem from="1480940763317" duration="25565000" />
+      <workItem from="1480940763317" duration="27912000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1478527797280</created>
@@ -428,11 +421,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480428008534</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update now drawing the map with all points or routes plotted">
+      <created>1481137639334</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1481137639334</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38877000" />
+    <option name="totallyTimeSpent" value="41224000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -649,14 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/db/popTemp.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="85" column="22" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/landing.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -708,29 +700,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/inc/db/popTemp.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="922">
+          <caret line="132" column="519" selection-start-line="132" selection-start-column="519" selection-end-line="132" selection-end-column="519" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/inc/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1905">
-          <caret line="138" column="31" selection-start-line="138" selection-start-column="31" selection-end-line="138" selection-end-column="31" />
+        <state relative-caret-position="630">
+          <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
           <folding>
-            <marker date="1481137517000" expanded="true" signature="698:712" ph="SELECT * FRO... Locations" />
-            <marker date="1481137517000" expanded="true" signature="698:736" ph="SELECT * FRO... routes" />
-            <marker date="1481137517000" expanded="true" signature="698:737" ph="SELECT * FRO... routes" />
-            <marker date="1481137517000" expanded="true" signature="796:851" ph="SELECT * FRO... routes" />
-            <marker date="1481137517000" expanded="true" signature="796:852" ph="SELECT * FRO... routes" />
-            <marker date="1481137517000" expanded="true" signature="847:851" ph="SELECT * FRO... Locations" />
-            <marker date="1481137517000" expanded="true" signature="2423:2446" ph="SELECT * FRO... Locations" />
-            <marker date="1481137517000" expanded="true" signature="2497:2539" ph="SELECT * FRO... Locations" />
-            <marker date="1481137517000" expanded="true" signature="3182:4816" ph="..." />
-            <marker date="1481137517000" expanded="true" signature="3211:4566" ph="{...}" />
-            <marker date="1481137517000" expanded="true" signature="3225:3333" ph="//..." />
-            <marker date="1481137517000" expanded="true" signature="3498:3672" ph="//..." />
-            <marker date="1481137517000" expanded="true" signature="3765:3985" ph="//..." />
-            <marker date="1481137517000" expanded="true" signature="4055:4239" ph="{&quot;path&quot;: route...}" />
-            <marker date="1481137517000" expanded="true" signature="4292:4556" ph="//..." />
-            <marker date="1481137517000" expanded="true" signature="4610:4803" ph="{...}" />
-            <marker date="1481137517000" expanded="true" signature="4715:4791" ph="{&quot;position&quot;: location...}" />
-            <marker date="1481137517000" expanded="true" signature="4841:4857" ph="..." />
+            <marker date="1481140086000" expanded="true" signature="698:712" ph="SELECT * FRO... Locations" />
+            <marker date="1481140086000" expanded="true" signature="698:736" ph="SELECT * FRO... routes" />
+            <marker date="1481140086000" expanded="true" signature="698:737" ph="SELECT * FRO... routes" />
+            <marker date="1481140086000" expanded="true" signature="796:851" ph="SELECT * FRO... routes" />
+            <marker date="1481140086000" expanded="true" signature="796:852" ph="SELECT * FRO... routes" />
+            <marker date="1481140086000" expanded="true" signature="847:851" ph="SELECT * FRO... Locations" />
+            <marker date="1481140086000" expanded="true" signature="2803:4437" ph="..." />
+            <marker date="1481140086000" expanded="true" signature="2832:4187" ph="{...}" />
+            <marker date="1481140086000" expanded="true" signature="2846:2954" ph="//..." />
+            <marker date="1481140086000" expanded="true" signature="3119:3293" ph="//..." />
+            <marker date="1481140086000" expanded="true" signature="3386:3606" ph="//..." />
+            <marker date="1481140086000" expanded="true" signature="3414:3606" ph="//..." />
+            <marker date="1481140086000" expanded="true" signature="3676:3860" ph="{&quot;path&quot;: route...}" />
+            <marker date="1481140086000" expanded="true" signature="3913:4177" ph="//..." />
+            <marker date="1481140086000" expanded="true" signature="4231:4424" ph="{...}" />
+            <marker date="1481140086000" expanded="true" signature="4336:4412" ph="{&quot;position&quot;: location...}" />
+            <marker date="1481140086000" expanded="true" signature="4462:4478" ph="..." />
           </folding>
         </state>
       </provider>

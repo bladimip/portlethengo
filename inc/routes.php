@@ -19,7 +19,7 @@ include('layouts/HTMLcomponents.php');
 top("Locations and Routes");
 
 //Other page content
-$route_id= 2;
+$route_id= 3;
 $coordinates;
 // declare centre point of the map
 $centre = "{lat: 57.062423, lng: -2.130447}";
@@ -67,39 +67,22 @@ function drawMarkers(){
     $endlat = $end[0];
     $endlong = $end[1];
     echo "var marker = new google.maps.Marker({position: {lat: ".$endlat.", lng: ".$endlong."}, map: map});";
-
-
-
-
-
-    //foreach (explode(';', $coordinates) as $co) {
-        //foreach(explode(',', $co) as $l){
-        //}
-        //echo "var marker = new google.maps.Marker({position: {lat: ".$lat.", lng: ".$long."}, map: map});";
-        //echo "<br>". count($co);
-        //}
 }
 
 function drawRoute(){
-    global $long, $lat;
-    //connect to the database
-    $db = new Connection();
-    $db->open();
-    if(userType()==2){
-        $loc = $db->runQuery("SELECT * FROM Locations;");
+    global $long, $lat, $coordinates;
+    //take global coordinates from last pulled route
+    global $coordinates;
+    // split them up
+    $i=0;
+    $co = explode(';', $coordinates);
+    while ($i < count($co)){
+        $point = explode(',',$co[$i]);
+        $pointlat = $point[0];
+        $pointlong = $point[1];
+        echo "{lat: ".$pointlat.", lng: ".$pointlong."}, ";
+        $i++;
     }
-    else{
-        $loc = $db->runQuery("SELECT * FROM Locations WHERE approved = 1;");
-    }
-    $db->close();
-
-    // loop through all returned results
-    while ($row = $loc->fetch_assoc()) {
-        $lat = $row["latitude"];
-        $long = $row["longitude"];
-        echo "{lat: ".$lat.", lng: ".$long."},";
-    };
-
 }
 
 //TODO placeholder function to return the usertype, to be rewritten
