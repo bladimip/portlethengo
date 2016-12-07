@@ -61,6 +61,8 @@ if (isset($_GET["id"])) {
     if (mysqli_num_rows($event) == 1) {
         while ($row = $event->fetch_assoc()) {
 
+            $userType = "public";
+
             $eId = $row["event_id"];
             $eClubId = $row["club_id"];
             $eUserId = $row["user_id"];
@@ -92,9 +94,11 @@ if (isset($_GET["id"])) {
 
             // Create a club object depending on the user type
             // Public users - first as most common
-            if ($userType == "public" || $userType == "contributor") $eventObj = new Event($eId, $eClubId, $eUserId, $eApprovedBy, $eName, $eDescription, $eDate, $eStatus, $userId);
-            elseif ($userType == "clubAdmin" || $userType == "siteAdmin") $eventObj = new EventAdmin($eId, $eClubId, $eUserId, $eApprovedBy, $eName, $eDescription, $eDate, $eStatus, $userId);
+            if ($userType == "public" || $userType == "contributor") $eventObj = new Event($eId, $eClubId, $eUserId, $eApprovedBy, $eName, $eDescription, $eDate, $eStatus);
+            elseif ($userType == "clubAdmin" || $userType == "siteAdmin") $eventObj = new EventAdmin($eId, $eClubId, $eUserId, $eApprovedBy, $eName, $eDescription, $eDate, $eStatus);
             else echo 'Error: privilage conflict';
+
+
 
         }
 
@@ -106,6 +110,12 @@ top($eventObj->getName());
 
 //Other page content
 $eventObj->displayContent();
+
+
+// Add additional javascript for admin mode only for admins (security issue)
+if ($userType == "clubAdmin" || $userType == "siteAdmin") {
+  echo '<script src="/assets/js/scriptAuth.js"></script>';
+}
 
 // Footer
 bottom();

@@ -151,13 +151,9 @@ $('#saveClubBtn').on('click', function() {
 $('.eControlBtn').on('click', function() {
   var button = $(this);
   var event = button.text();
-  var eventID = $('#event_id').val();
-  var userID = $('#user_id').val();
 
   var formData = new FormData();
-  formData.append('eventID', eventID);
   formData.append('event', event);
-  formData.append('userID', userID);
 
   // Send form data object to server-side
   $.ajax({
