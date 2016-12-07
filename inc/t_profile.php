@@ -7,10 +7,6 @@ Following php file displays user profile
 
 TODO:
 finalize style and layout
-adjust queries so that unnecessary info is not passed (password, full club details for exmaple)
-add viewer's status checking
-display page based on viewer's status
-recieve information from session
 */
 
 //file contains methods for creating top and bottom
@@ -87,6 +83,14 @@ function getApprovedContributions ($title, $userID) {
 //to identify users usernames are used as they are unique
 //getting username from link:
 $person = $_GET["username"];
+//trimming special characters and whitespaces
+//used for security reasons as well as creating valid link for users with whitespaces
+$person = url($person);
+//some issues with removing ampersand ("&"), after ampersand rest text dissapears (where?)
+//following lines were used while trying to fix this
+//$person = preg_replace('/[^A-Za-z0-9\-]/', '-', $person);
+//$person = htmlspecialchars_decode($person);
+//$person = str_replace("&amp","",$person);
 
 //getting sql query with user data using his/her username
 $db = new Connection();
@@ -112,6 +116,9 @@ if ($user->num_rows >= 1) {
 	top($userName . "'s profile");
 
 	//Other page content
+	echo '<div class="container">';
+    echo '<div class="section">';
+    echo '<div class="row">';
 	//Displaying username
 	echo "<h2>" . $userName . "</h2>";
 
@@ -127,9 +134,15 @@ if ($user->num_rows >= 1) {
 		echo "Map Admin<br>";
 	}
 
-	//Following 2 strings will be displayed only for admins
-	echo "User ID: " . $userID . "<br>";
-	echo "Registered email address: " . $email . "<br>";
+	//Following 2 strings will be displayed only for site admins and account owner
+	if (isset($_SESSION['USER_LOGIN_IN'])) {
+		$viewerUserId = $_SESSION['USER_ID'];
+		$viewerSiteAdmin = $_SESSION['USER_SITEADMIN'];
+		if (($viewerUserId == $userID) || ($viewerSiteAdmin == TRUE)) {
+			echo "User ID: " . $userID . "<br>";
+			echo "Registered email address: " . $email . "<br>";
+		}
+	}
 
 	//getting administrated clubs (if any)
 	if ($clubAdmin == 1) {
@@ -153,6 +166,9 @@ if ($user->num_rows >= 1) {
 	if (($events == 0) and ($news == 0) and ($locations == 0) and ($routes == 0)) {
 		echo "<br>This user has not made any contibutions yet<br>";
 	}
+	echo '</div>';
+	echo '</div>';
+	echo '</div>';
 
 } else {
 	//following page is displayed when user is not found
