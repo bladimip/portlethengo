@@ -120,24 +120,26 @@ if ($user->num_rows >= 1) {
     echo '<div class="section">';
     echo '<div class="row">';
 	//Displaying username
-	echo "<h2>" . $userName . "</h2>";
+	echo '<h3 class="profileTitle">' . $userName . '</h3>';
 
 	//Displaying if user acount is blocked
 	if ($blocked == 1) {
-		echo "This account is disabled<br>";
+		echo '<p class="disabledTitle">This account is disabled</p><br>';
 	}
 
 	//Displaying if user is one of site admins
 	if ($siteAdmin == 1) {
-		echo "Site Administrator<br>";
+		echo '<p class="adminTitle">Site Administrator</p><br>';
 	} else if ($nkpag == 1) {
-		echo "Map Admin<br>";
+		echo '<p class="adminTitle">Map Admin</p><br>';
 	}
 
 	//Following 2 strings will be displayed only for site admins and account owner
-	if (isset($_SESSION['USER_LOGIN_IN'])) {
-		$viewerUserId = $_SESSION['USER_ID'];
-		$viewerSiteAdmin = $_SESSION['USER_SITEADMIN'];
+	if (TRUE) {//isset($_SESSION['USER_LOGIN_IN'])) {
+		//$viewerUserId = $_SESSION['USER_ID'];
+		//$viewerSiteAdmin = $_SESSION['USER_SITEADMIN'];
+		$viewerUserId = 3;
+		$viewerSiteAdmin = 0;
 		if (($viewerUserId == $userID) || ($viewerSiteAdmin == TRUE)) {
 			echo "User ID: " . $userID . "<br>";
 			echo "Registered email address: " . $email . "<br>";
@@ -146,14 +148,15 @@ if ($user->num_rows >= 1) {
 
 	//getting administrated clubs (if any)
 	if ($clubAdmin == 1) {
-		echo ("Admin of following clubs: ");
+		echo '<bold>Admin of following clubs: ';
 		$db = new Connection();
 		$db->open();
 		$clubsAdministered = $db->runQuery("SELECT * FROM ClubAdmins, Clubs, ClubGenre WHERE Clubs.club_id = ClubAdmins.club_id AND user_id = ". $userID . " AND Clubs.genreCode = ClubGenre.code");
 		$db->close();
 		while ($row = $clubsAdministered->fetch_assoc()) {
-			echo ('<a href="/sportlethen/' . url($row["category"]) . '/' . url($row["name"]) . '-C' . $row["club_id"] . '">' . $row["name"] . '</a>') . ' ';
+			echo ('<a class="clubTitle" href="/sportlethen/' . url($row["category"]) . '/' . url($row["name"]) . '-C' . $row["club_id"] . '">' . $row["name"] . '</a>') . ' ';
 		}
+		echo '</bold>';
 	}
 
 	//getting added contributions that are approved
