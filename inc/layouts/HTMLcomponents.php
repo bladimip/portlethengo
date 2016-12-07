@@ -56,10 +56,9 @@ function top( $title ) {
 							<li><a class="waves-effect waves-light" href="/sportlethen"><span class="lnr lnr-users"></span>SPORTLETHEN</a></li>
 							<li><a class="waves-effect waves-light" href="/health-wellbeing"><span class="lnr lnr-heart-pulse"></span>HEALTH & WELLBEING</a></li>
 							<li><a class="waves-effect waves-light" href="/map"><span class="lnr lnr-map"></span>MAP</a></li>
-							<li><a class="waves-effect waves-light"  href="#modal2"><span class="lnr lnr-user"></span>
-
-								<?php if (isset($_SESSION['USER_LOGIN_IN'])) echo 'Logout';
-											else echo 'Login'; ?>
+							<li><a class="waves-effect waves-light logBtn"  href="#!"><span class="lnr lnr-user"></span>
+								<?php if (isset($_SESSION['USER_LOGIN_IN'])) echo '<span>Logout</span>';
+											else echo '<span>Login</span>'; ?>
 
 								</a></li>
 						</ul>
@@ -69,10 +68,9 @@ function top( $title ) {
 							<li><a class="waves-effect waves-light" href="/sportlethen"><span class="lnr lnr-users"></span></a></li>
 							<li><a class="waves-effect waves-light" href="/health-wellbeing"><span class="lnr lnr-heart-pulse"></span></a></li>
 							<li><a class="waves-effect waves-light" href="/map"><span class="lnr lnr-map"></span></a></li>
-							<li><a class="waves-effect waves-light"  href="#modal2"><span class="lnr lnr-user"></span>
-
-								<?php if (isset($_SESSION['USER_LOGIN_IN'])) echo 'Logout';
-											else echo 'Login'; ?>
+							<li><a class="waves-effect waves-light logBtn"  href="#!"><span class="lnr lnr-user"></span>
+								<?php if (isset($_SESSION['USER_LOGIN_IN'])) echo '<span>Logout</span>';
+											else echo '<span>Login</span>'; ?>
 
 								</a></li>
 						</ul>

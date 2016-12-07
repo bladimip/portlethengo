@@ -15,6 +15,25 @@ $(document).ready(function() {
 
 	$('.modal').modal();
 
+	$('.logBtn').on('click', function() {
+		var condition = $(this).bind('span eq(1)').text();
+
+		if ($.trim(condition) == "Login") {
+			$('#modal2').modal('open');
+		}
+
+		if ($.trim(condition) == "Logout") {
+			$.post('/inc/logout.php', {'toLogout' : true}, function(data) {
+				if (data == "success") {
+					window.location = '/';
+				} else {
+					console.log(data);
+				}
+			});
+		}
+
+	});
+
 	$('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
     selectYears: 15 // Creates a dropdown of 15 years to control year
