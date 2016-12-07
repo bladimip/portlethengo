@@ -1,8 +1,8 @@
 <?php
 $CONNECT = mysqli_connect('localhost', 'root', '', 'webdev5');
 //check the connection!!
-//if ($CONNECT) echo 'OK';
-//else echo 'EROOR';
+if ($CONNECT) echo 'OK';
+else echo 'EROOR';
 
 session_start();
 // Navigation bar
