@@ -61,8 +61,13 @@
 	border-bottom: none;
 }
 
-#searchResults {
+#searchOutput {
 	background-color: white;
+	border: 2px solid black;
+	margin: auto;
+    width: 70%;
+	height: 400px;
+	overflow:auto;
 }
 
 .searchInput > input:focus {

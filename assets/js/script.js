@@ -61,11 +61,13 @@ $(document).ready(function() {
     });
 	});
 
+	//searching function
+	//sends entered values from #searchfield text-box to search.php on every key press
+	//works only when 3 or more characters entered
 	$("#searchField").keyup(function() {
 		var val = $(this).val();
 		var formData = new FormData();
 		formData.append("search", val);
-
 
 		if (val.length >= 3) {
 			$.ajax({

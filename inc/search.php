@@ -64,7 +64,7 @@ function searchSection ($table, $search) {
 	//output works only if any rows found
 	//output is made as a single row because of ajax script used (found in script.js)
 	if ($queryResult->num_rows >= 1) {
-		$str = '<p>' . $label . ':</p><div class="collection">';
+		$str = '<h5>' . $label . ':</h5><div class="collection">';
 		while ($row = $queryResult->fetch_assoc()) {
 			switch ($table) {
 			case "Users":
@@ -104,6 +104,8 @@ function searchSection ($table, $search) {
 // $search = preg_replace('/[^A-Za-z0-9\-]/', ' ', $_POST["search"]);
 // echo "trimmed search string used in query: " . $search  . "<br>";
 
+//putting all search output into divisions for style formatting
+echo '<div class="section" id="searchOutput"><div class="container">';
 //searching in each section of website
 $users = searchSection("Users", $_POST["search"]);
 $categories = searchSection("ClubGenre", $_POST["search"]);
@@ -115,7 +117,8 @@ $routes = searchSection("Routes", $_POST["search"]);
 
 //outputting message if no results found
 if (($users == 0) and ($categories == 0) and ($clubs == 0) and ($events == 0) and ($articles == 0) and ($locations == 0) and ($routes == 0)) {
-	echo "<br>No results found =(<br>";
+	echo '<h5 class="messageTitle">No results found =(</h5>';
 }
+echo '</div></div>';
 	
 ?>
