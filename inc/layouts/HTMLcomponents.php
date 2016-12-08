@@ -32,6 +32,13 @@ function top( $title ) {
 
 		<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
 
+
+
+		<link rel="stylesheet" href="/assets/css/materialize.css">
+		<script src="/assets/js/jquery-2.1.4.min.js"></script>
+
+
+
 		<!-- MATERIALIZE -->
 		<!-- Compiled and minified JavaScript -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>

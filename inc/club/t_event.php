@@ -75,6 +75,9 @@ if (isset($_GET["id"])) {
 
             // if session exists - TEST***************************
             if ($loggedIn) {
+
+              $_SESSION["eventID"] = $eId;
+
               //// DETERMINE A TYPE OF A USER REQUESTING A CLUB PAGE
               if ($siteAdmin) $userType = "siteAdmin";
               elseif ($clubAdmin) {

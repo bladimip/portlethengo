@@ -168,14 +168,14 @@ $('.eControlBtn').on('click', function() {
       console.log(data);
 
       // Username of the user who just have approved a selected event is returned
-      if (data != "Deleted") {
+      if (data == "Approved") {
 
         // Remove "Approve" button
         button.remove();
         // Add a username to the screen
         $('#approvedBy').text(data);
         // Show a toast "Approved"
-        Materialize.toast("Approved", 3000, 'rounded');
+        Materialize.toast(data, 3000, 'rounded');
 
       // On delete
       } else if (data == "Deleted") {
@@ -183,6 +183,11 @@ $('.eControlBtn').on('click', function() {
         // Go to back to the club page
         var club_link = $('#club_link').attr('href');
         window.location = club_link;
+
+      // On Add
+      } else if (data == "Added") {
+        Materialize.toast(data, 3000, 'rounded');
+        window.reload();
       }
     }
   });
