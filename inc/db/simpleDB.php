@@ -49,10 +49,10 @@ METHODS DESCRIPTION AND USAGE:
 
 	class Connection {
 
-		private $servername = "us-cdbr-azure-southcentral-f.cloudapp.net";
+		private $servername = "localhost";
 		private $db = "webdev5";
-		private $username = "b04a42ad414e01";
-		private $password = "686a923d";
+		private $username = "root";
+		private $password = "";
 		private $myConn;
 		private $result;
 
