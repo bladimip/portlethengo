@@ -5,8 +5,6 @@ Created on 28 November 2016
 
 Following php file displays user profile
 
-TODO:
-finalize style and layout
 */
 
 //file contains methods for creating top and bottom
@@ -35,30 +33,12 @@ function getApprovedContributions ($title, $userID) {
 		return FALSE;
 	}
 	
-	//alternative to IF statement chain
-	// switch ($title) {
-    // case "events":
-        // $queryResult = $db->runQuery("SELECT *, Clubs.name as clubname FROM ClubGenre, Clubs, ClubEvents WHERE user_id = ". $userID . " AND approved = 1 AND code = genreCode AND Clubs.club_id = ClubEvents.club_id");
-        // break;
-	// case "articles":
-        // $queryResult = $db->runQuery("SELECT * FROM HealthNews WHERE user_id = ". $userID . " AND approved = 1");
-        // break;
-	// case "locations":
-        // $queryResult = $db->runQuery("SELECT * FROM Locations WHERE user_id = ". $userID . " AND approved = 1");
-        // break;
-	// case "routes":
-        // $queryResult = $db->runQuery("SELECT * FROM Routes WHERE user_id = ". $userID . " AND approved = 1");
-        // break;
-	// default:
-        // return FALSE;
-	// }
-	
 	$db->close();
 
 	//outputting contributions and returning boolean value
 	//output works only if any rows found
 	if ($queryResult->num_rows >= 1) {
-		echo "<br>Added " . $title . ":<br>";
+		echo "<br><h5>Added " . $title . ":</h5>";
 		echo '<div class="collection">';
 		while ($row = $queryResult->fetch_assoc()) {
 			if ($title == "events") {
@@ -116,11 +96,20 @@ if ($user->num_rows >= 1) {
 	top($userName . "'s profile");
 
 	//Other page content
-	echo '<div class="container">';
-    echo '<div class="section">';
-    echo '<div class="row">';
+	//making main divisions
+	echo '<div class="container"><div class="section">';
+	//based on user type, selected user icon is shown
+	if ($siteAdmin == 1)
+		$imgParam = '../assets/images/siteadmin.png';
+	else if ($nkpag == 1)
+		$imgParam = '../assets/images/mapadmin.png';
+	else if ($clubAdmin == 1)
+		$imgParam = '../assets/images/clubadmin.png';
+	else
+		$imgParam = '../assets/images/contributor.png';
+	echo '<div class="row"><div class="col s4"><img src="' . $imgParam . '" alt="User Icon" height="200" width="200"></div>';
 	//Displaying username
-	echo '<h3 class="profileTitle">' . $userName . '</h3>';
+	echo '<div class="col s8"><h3>' . $userName . '</h3></div></div>';
 
 	//Displaying if user acount is blocked
 	if ($blocked == 1) {
@@ -134,12 +123,14 @@ if ($user->num_rows >= 1) {
 		echo '<p class="adminTitle">Map Admin</p><br>';
 	}
 
-	//Following 2 strings will be displayed only for site admins and account owner
-	if (TRUE) {//isset($_SESSION['USER_LOGIN_IN'])) {
-		//$viewerUserId = $_SESSION['USER_ID'];
-		//$viewerSiteAdmin = $_SESSION['USER_SITEADMIN'];
-		$viewerUserId = 3;
-		$viewerSiteAdmin = 0;
+	//following 2 strings will be displayed only for logged in account owner and site admins 
+	//checking viewer info from current session
+	if (isset($_SESSION['USER_LOGIN_IN'])) {//TRUE) {
+		$viewerUserId = $_SESSION['USER_ID'];
+		$viewerSiteAdmin = $_SESSION['USER_SITEADMIN'];
+		//for testing
+		// $viewerUserId = 3;
+		// $viewerSiteAdmin = 1;
 		if (($viewerUserId == $userID) || ($viewerSiteAdmin == TRUE)) {
 			echo "User ID: " . $userID . "<br>";
 			echo "Registered email address: " . $email . "<br>";
@@ -148,15 +139,15 @@ if ($user->num_rows >= 1) {
 
 	//getting administrated clubs (if any)
 	if ($clubAdmin == 1) {
-		echo '<bold>Admin of following clubs: ';
+		echo '<h5>Admin of following clubs:</h5><div class="row">';
 		$db = new Connection();
 		$db->open();
 		$clubsAdministered = $db->runQuery("SELECT * FROM ClubAdmins, Clubs, ClubGenre WHERE Clubs.club_id = ClubAdmins.club_id AND user_id = ". $userID . " AND Clubs.genreCode = ClubGenre.code");
 		$db->close();
 		while ($row = $clubsAdministered->fetch_assoc()) {
-			echo ('<a class="clubTitle" href="/sportlethen/' . url($row["category"]) . '/' . url($row["name"]) . '-C' . $row["club_id"] . '">' . $row["name"] . '</a>') . ' ';
+			echo ('<a class="clubTitle" href="/sportlethen/' . url($row["category"]) . '/' . url($row["name"]) . '-C' . $row["club_id"] . '"><div class="col s6 m4 l3"><p class="sp-genre z-depth-2">' . $row["name"] . '</p></div></a>') . ' ';
 		}
-		echo '</bold>';
+		echo '</div>';
 	}
 
 	//getting added contributions that are approved
@@ -167,11 +158,9 @@ if ($user->num_rows >= 1) {
 
 	//outputting message if user has no approved contributions
 	if (($events == 0) and ($news == 0) and ($locations == 0) and ($routes == 0)) {
-		echo "<br>This user has not made any contibutions yet<br>";
+		echo '<br><h5 class="messageTitle">This user has not made any contibutions yet</h5><br>';
 	}
-	echo '</div>';
-	echo '</div>';
-	echo '</div>';
+	echo '</div></div>';
 
 } else {
 	//following page is displayed when user is not found
@@ -179,10 +168,9 @@ if ($user->num_rows >= 1) {
 	top("Ooops!");
 
 	//Other page content
-	echo "There is no user named '" . $person . "'.";
+	echo '<div class="container"><div class="section"><h5 class="messageTitle">There is no user named "' . $person . '".</h5></div></div>';
 }
 
 // Footer
 bottom();
-	
 ?>

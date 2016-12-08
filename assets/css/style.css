@@ -70,10 +70,6 @@
 	box-shadow: 0 1px 0 0 transparent !important;
 }
 
-.profileTitle {
-	text-transform: capitalize;
-}
-
 .disabledTitle {
 	text-align: center;
 	color: red;
@@ -84,10 +80,8 @@
 	color: blue;
 }
 
-.clubTitle {
-	border: 1px solid black;
-    outline-style: double;
-    outline-color: black;
+.messageTitle {
+	text-align: center;
 }
 
 footer {
