@@ -71,7 +71,7 @@ $(document).ready(function() {
 
 		if (val.length >= 3) {
 			$.ajax({
-				url:"/inc/search.php",
+				url:"search",
 				type:"post",
 				data:formData,
 				dataType:"html",
