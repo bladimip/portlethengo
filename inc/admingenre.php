@@ -1,5 +1,5 @@
 <?php
-/* 
+/*
 Registration
 */
 
@@ -28,7 +28,7 @@ top("Welcome to Portlethen");
 
 ?>
 
-  
+
   <div class="container">
         <div class="section">
 
@@ -49,19 +49,52 @@ top("Welcome to Portlethen");
         <div class="input-field col s6">
           <input id="clubgenrecode" type="text" name="clubgenrecode" required class="validate">
           <label for="clubgenrecode">Club genre short version</label>
-        </div> 
+        </div>
                     <input type="submit" name="enter" value="Add Genre" class=" waves-effect waves-green btn-flat">
                     </p>
                     <hr>
                     <h5>Delete ganre</h5>
 <?php
+
+function fetchGenres() {
+  $db = new Connection();
+  $db->open();
+  $genres = $db->runQuery("SELECT * FROM clubgenre");
+  $db->close();
+
+  $genresArr = array();
+  while ($row = $genres->fetch_assoc()) {
+    $genresArr[$row["code"]] = $row["category"];
+  }
+  return $genresArr;
+}
+
+function showCategory($genresArr) {
+ echo '<div class="row">
+           <select class="input-field">';
+
+           foreach ($genresArr as $key => $value) {
+
+               echo '<option value="'. $key .'">'. $value .'</option>';
+             }
+             // Go to next key
+             next($genresArr);
+           
+ echo '    </select>
+       </div>';
+}
+
+showCategory(fetchGenres());
+
+/*
 $sql = "SELECT * FROM clubs";
-$result_select = mysql_query($sql);
+$result_select = mysqli_query($sql);
 echo "<select name = ''>";
 while($object = mysql_fetch_object($result_select)){
 echo "<option value = '$object->column_name' > $object->column_name </option>";
 }
 echo "</select>";
+*/
 ?>
 
 <input type="submit" name="entergenre" value="Delete Genre" class=" waves-effect waves-green btn-flat">
