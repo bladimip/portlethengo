@@ -7,6 +7,8 @@
   unset($_SESSION["USER_SITEADMIN"]);
   unset($_SESSION["USER_LOGIN"]);
   unset($_SESSION["USER_LOGIN_IN"]);
+  unset($_SESSION["club_id"]);
+  unset($_SESSION["eventID"]);
 
   echo 'success';
 ?>

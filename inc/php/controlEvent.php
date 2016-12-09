@@ -8,6 +8,7 @@ session_start();
 
 $userID = $_SESSION['USER_ID'];
 $clubID = $_SESSION["club_id"];
+$eventID = $_SESSION["eventID"];
 
 include_once('../db/simpleDB.php');
 include_once('functions.php');
@@ -17,17 +18,9 @@ header('Content-Type: text/plain');
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-  if (isset($_POST["eventID"])) {
-    $eventID = test_input($_POST["eventID"]);
-  }
   if (isset($_POST["event"])) {
     $event = test_input($_POST["event"]);
   }
-  /*
-  if (isset($_POST["userID"])) {
-    $userID = test_input($_POST["userID"]);
-  }
-  */
   if (isset($_POST["title"])) {
     $title = test_input($_POST["title"]);
   }
@@ -56,6 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }
      }
 
+     echo 'Approved';
+
   // Delete
   } elseif ($event == "Delete") {
     $db = new Connection();
@@ -74,7 +69,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $pTitle = $db->escape($title);
     $pDescription = $db->escape($description);
     $pDate = $db->escape($date);
-/* ################################# convert to proper date format ######################################*/
     $delFilePath = $db->runQuery("INSERT INTO clubevents (club_id, user_id, approvedBy, name, description, eventDate, approved) VALUES ('". $clubID ."', '". $userID ."', '". $userID ."', '". $pTitle ."', '". $pDescription ."', '". date_format(new DateTime($pDate), 'Y-m-d') ."', ". 1 .")");
     $db->close();
 
