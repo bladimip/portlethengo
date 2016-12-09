@@ -17,7 +17,7 @@ if ($_POST['enter'] ) {
       if ($CONNECT){
       $Row = mysqli_fetch_assoc(mysqli_query($CONNECT, "SELECT `password` FROM `users` WHERE `username` = '$_POST[login]'"));
       if ($Row['password'] != $_POST['password']) exit('wrong login or password');
-      $Row = mysqli_fetch_assoc(mysqli_query($CONNECT, "SELECT `user_id`, `clubAdmin`,`nkpag`,`siteAdmin`,`username`  FROM `users` WHERE `username` = '$_POST[login]'"));
+      $Row = mysqli_fetch_assoc(mysqli_query($CONNECT, "SELECT `user_id`, `clubAdmin`,`nkpag`,`siteAdmin`,`username`, `blocked`  FROM `users` WHERE `username` = '$_POST[login]'"));
 
       session_start();
 
@@ -27,6 +27,7 @@ if ($_POST['enter'] ) {
       $_SESSION['USER_SITEADMIN'] = $Row['siteAdmin'];
       $_SESSION['USER_LOGIN'] = $Row['username'];
       $_SESSION['USER_LOGIN_IN'] = 1;
+      $_SESSION["BLOCK"] = $Row['blocked'];
 
       exit(header('Location: /users/'. $_SESSION['USER_LOGIN']));
   }

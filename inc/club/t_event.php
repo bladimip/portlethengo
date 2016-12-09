@@ -38,8 +38,9 @@ if (isset($_SESSION['USER_LOGIN_IN'])) {
   $nkpag = $_SESSION['USER_NKPAG'];
   $siteAdmin = $_SESSION['USER_SITEADMIN'];
   //$_SESSION['USER_LOGIN'] = $Row['username'];
+  $isBlocked = $_SESSION["BLOCK"];
 }
-$blocked = 0;
+
 $loggedIn = isset($_SESSION['USER_LOGIN_IN']);
 
 if (isset($_GET["id"])) {
@@ -76,22 +77,28 @@ if (isset($_GET["id"])) {
             // if session exists - TEST***************************
             if ($loggedIn) {
 
-              $_SESSION["eventID"] = $eId;
+              if (!$isBlocked) {
 
-              //// DETERMINE A TYPE OF A USER REQUESTING A CLUB PAGE
-              if ($siteAdmin) $userType = "siteAdmin";
-              elseif ($clubAdmin) {
-                  $db = new Connection();
-                  $db->open();
-                  $match = $db->runQuery("SELECT * FROM clubadmins, clubs WHERE clubadmins.user_id = ". $userId ." AND clubs.club_id = clubadmins.club_id AND clubs.club_id = '". $clubGET ."' LIMIT 1");
-                  $db->close();
+                $_SESSION["eventID"] = $eId;
 
-                  // Check if clubAdmin is an admin of selected club
-                  // If a club admin is not an admin of selected club, that admin is treated as contributer)
-                  if (mysqli_num_rows($match) == 1) $userType = "clubAdmin";
-                  else $userType = "contributor";
+                //// DETERMINE A TYPE OF A USER REQUESTING A CLUB PAGE
+                if ($siteAdmin) $userType = "siteAdmin";
+                elseif ($clubAdmin) {
+                    $db = new Connection();
+                    $db->open();
+                    $match = $db->runQuery("SELECT * FROM clubadmins, clubs WHERE clubadmins.user_id = ". $userId ." AND clubs.club_id = clubadmins.club_id AND clubs.club_id = '". $clubGET ."' LIMIT 1");
+                    $db->close();
 
-              } else $userType = "contributor";
+                    // Check if clubAdmin is an admin of selected club
+                    // If a club admin is not an admin of selected club, that admin is treated as contributer)
+                    if (mysqli_num_rows($match) == 1) $userType = "clubAdmin";
+                    else $userType = "contributor";
+
+                } else $userType = "contributor";
+
+              } else {
+                $userType = "public";
+              }
             }
 
 
