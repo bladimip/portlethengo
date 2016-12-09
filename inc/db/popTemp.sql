@@ -1,7 +1,9 @@
 /*Population script for coursework
 due to some issues previously, im adding line that sets auto increment to 1
 */
-SET @@auto_increment_increment=1;
+USE webdev5;
+
+SET auto_increment_increment=1;
 
 /*users
 */
@@ -30,14 +32,14 @@ VALUES ("gf", "Golf"),
 
 /*clubs
 */
-INSERT INTO Clubs (name, genreCode, description, phone, email, address)
+INSERT INTO Clubs (name, genreCode, description, phone, email, address, approved)
 VALUES ("Best (Golf) Club Ever!", "gf", "Suspendisse tempus nibh sit amet fermentum condimentum. Vestibulum in lorem pharetra, tincidunt metus id, tincidunt arcu. Nunc et iaculis nunc, in scelerisque tellus. Morbi facilisis libero nec turpis sodales vestibulum. In non tellus eget felis fermentum consequat. Fusce dapibus placerat est nec malesuada. Aenean lobortis eleifend nulla, et aliquet enim accumsan et.
 
-In vel magna eros. Mauris maximus elementum sapien, a scelerisque lectus euismod quis. Vestibulum volutpat pulvinar diam quis molestie. Phasellus malesuada ut ipsum sit amet hendrerit. Etiam ut elit sed nibh sodales interdum. Donec non elit rhoncus, malesuada dolor ac, iaculis tortor. Aenean lorem neque, ultricies vel lacinia.", "01224 123456", "bestever@rgu.ac.uk", "1 Golf Street, Aberdeen, AB11 1GF"),
-("Fight Club", "ma", "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent tincidunt mattis leo eu sollicitudin. Aliquam commodo velit lectus, id molestie elit interdum quis. Mauris iaculis enim vel sapien feugiat condimentum. Fusce eget vehicula odio, a efficitur nibh. Etiam in massa nisi. Nulla facilisi. Aenean ac euismod neque. Vivamus vitae augue vitae turpis varius eleifend quis ac lorem. Nullam arcu neque, pretium at justo at, aliquam.", "+44 777 1234", "soap@rgu.ac.uk, insurance@rgu.ac.uk", "13 Friday Street, Aberdeen, AB13 7FK"),
+In vel magna eros. Mauris maximus elementum sapien, a scelerisque lectus euismod quis. Vestibulum volutpat pulvinar diam quis molestie. Phasellus malesuada ut ipsum sit amet hendrerit. Etiam ut elit sed nibh sodales interdum. Donec non elit rhoncus, malesuada dolor ac, iaculis tortor. Aenean lorem neque, ultricies vel lacinia.", "01224 123456", "bestever@rgu.ac.uk", "1 Golf Street, Aberdeen, AB11 1GF",1),
+("Fight Club", "ma", "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent tincidunt mattis leo eu sollicitudin. Aliquam commodo velit lectus, id molestie elit interdum quis. Mauris iaculis enim vel sapien feugiat condimentum. Fusce eget vehicula odio, a efficitur nibh. Etiam in massa nisi. Nulla facilisi. Aenean ac euismod neque. Vivamus vitae augue vitae turpis varius eleifend quis ac lorem. Nullam arcu neque, pretium at justo at, aliquam.", "+44 777 1234", "soap@rgu.ac.uk, insurance@rgu.ac.uk", "13 Friday Street, Aberdeen, AB13 7FK",0),
 ("Sunday Golfers", "gf", "
-Fusce venenatis iaculis dolor tristique accumsan. Integer molestie magna sapien, nec finibus dolor iaculis quis. Donec sit amet dui commodo, fringilla ipsum eu, condimentum augue. Phasellus lacinia orci orci, in.", "0777 6666", "sunday@rgu.ac.uk", "9 Seaside Avenue, Ground Floor Left, Torry, Aberdeen, AB33 3FS"),
-("West Ham Aberdeen", "fb", "Quisque pulvinar ipsum quis libero ornare, eget dictum elit auctor. Nam sodales ut sem sed congue. Praesent pellentesque odio in volutpat accumsan. Suspendisse varius dictum ex et euismod. Donec sit.", "01224 565656", "whaberdeen@rgu.ac.uk", "Aberdeen Main Stadium Basement, Aberdeen, Scotland, AB22 2WH");
+Fusce venenatis iaculis dolor tristique accumsan. Integer molestie magna sapien, nec finibus dolor iaculis quis. Donec sit amet dui commodo, fringilla ipsum eu, condimentum augue. Phasellus lacinia orci orci, in.", "0777 6666", "sunday@rgu.ac.uk", "9 Seaside Avenue, Ground Floor Left, Torry, Aberdeen, AB33 3FS",1),
+("West Ham Aberdeen", "fb", "Quisque pulvinar ipsum quis libero ornare, eget dictum elit auctor. Nam sodales ut sem sed congue. Praesent pellentesque odio in volutpat accumsan. Suspendisse varius dictum ex et euismod. Donec sit.", "01224 565656", "whaberdeen@rgu.ac.uk", "Aberdeen Main Stadium Basement, Aberdeen, Scotland, AB22 2WH",1);
 
 /*clubadmins
 */

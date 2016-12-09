@@ -34,6 +34,7 @@ CREATE TABLE Clubs (
 	phone			VARCHAR(100),
 	email 			VARCHAR(200),
 	address 		VARCHAR(200) 	NOT NULL,
+	approved		BOOLEAN			DEFAULT FALSE,
 	PRIMARY KEY (club_id),
 	CONSTRAINT fk_Clubs_clubGenre FOREIGN KEY (genreCode) REFERENCES ClubGenre (code) ON DELETE CASCADE
 );
