@@ -1,5 +1,5 @@
 <?php
-$CONNECT = mysqli_connect('localhost', 'root', '', 'webdev5');
+$CONNECT = new mysqli('localhost', 'root', '', 'webdev5');
 //check the connection!!
 //if ($CONNECT) echo 'OK';
 //else echo 'EROOR';
@@ -22,7 +22,6 @@ function top( $title ) {
 
 		<!-- Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
-
 		<!-- Icons -->
 		<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 
@@ -90,7 +89,7 @@ function top( $title ) {
 			</div>
 
 
-			  <!-- Modal Structure -->
+			  <!-- Modal Structure for login -->
 			  <div id="modal2" class="modal">
 			    <div class="modal-content">
 
@@ -98,14 +97,14 @@ function top( $title ) {
 						<div class="row">
 								<div class="col s12 center">
 										<h3><i class="mdi-content-send brown-text"></i></h3>
-										<h4>Login</h4>
 										<p class="left-align light">
 											<form method="POST" action="/login">
 
-												Login:      <input type="text" name="login" required><br>
+												Username:      <input type="text" name="login" required><br>
 												Password :  <input type="password" name="password" required><br><br>
-												<input type="submit" name="enter" value="Login">
-												<input type="reset" value="Clear">
+												<input type="submit" name="enter" value="Login" class=" waves-effect waves-green btn-flat">
+												<input type="reset" value="Clear" class=" waves-effect waves-green btn-flat">
+												<a href="#modal3" data-dismiss="modal2" class=" waves-effect waves-green btn-flat">Sign Up</a>
 
 											</form>
 										</p>
@@ -113,8 +112,24 @@ function top( $title ) {
 						</div>
 
 			    </div>
-			    <div class="modal-footer">
-			      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+			  </div>
+
+			  			  <!-- Modal Structure for registration-->
+			  <div id="modal3" class="modal">
+			    <div class="modal-content">
+            <div class="row">
+                <div class="col s12 center">
+                    <h3><i class="mdi-content-send brown-text"></i></h3>
+                    <p class="left-align light"><form method="POST" action="/register">
+                    Username:      <input type="text" name="login" required><br>
+                    E-mail:     <input type="email" name="email" required><br>
+                    Password :  <input type="password" name="password" required><br><br>
+                    <input type="submit" name="enter" value="Sign Up" class=" waves-effect waves-green btn-flat">
+                    <input type="reset" value="Clear" class=" waves-effect waves-green btn-flat">
+                    </p>
+                </div>
+            </div>
+
 			    </div>
 			  </div>
 
@@ -139,8 +154,8 @@ return md5('MRILJA'.md5('321'.$p1.'123').md5('678'.$p2.'890'));
 //Check did the user log in or not
 //THERE ADD MESSAGE
 function ULogin($p1) {
-if ($p1 <= 0 and $_SESSION['USER_LOGIN_IN'] != $p1) exit('This page aveilible only for guest');
-else if ($_SESSION['USER_LOGIN_IN'] = $p1);
+if ($p1 <= 0 and $_SESSION['USER_LOGIN_IN'] != $p1);
+else if ($_SESSION['USER_LOGIN_IN'] = $p1) exit('This page available only for user');
 }
 
 
@@ -169,7 +184,7 @@ else if ($p1 == 1) return 'Admin';
 
 function DidTheUserAdmin($p1) {
 if ($p1 <= 0 and $_SESSION['USER_SITEADMIN'] != $p1) exit('You are not the admin');
-else if ($_SESSION['USER_LOGIN_IN'] = $p1) exit('Hello admin');
+else if ($_SESSION['USER_LOGIN_IN'] = $p1);
 }
 
 // Footer
@@ -207,6 +222,7 @@ function bottom() {
 			<div class="footer-copyright">
 				<div class="container">
 					Made by <a class="brown-text text-lighten-3">CA2</a>
+					<?php if (isset($_SESSION['USER_SITEADMIN']))  echo  '<a class="grey-text text-lighten-4 right" href="/adminpanel">Admin Panel</a>'?>
 				</div>
 			</div>
 		</footer>
