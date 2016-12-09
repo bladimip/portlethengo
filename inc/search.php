@@ -37,11 +37,11 @@ function searchSection ($table, $search) {
         break;
     case "Clubs":
 		$label = "Clubs";
-		$queryResult = $db->runQuery("SELECT Clubs.club_id, Clubs.genreCode, name, code, category FROM Clubs, ClubGenre WHERE name LIKE '%". $search . "%' AND Clubs.genreCode = code");
+		$queryResult = $db->runQuery("SELECT club_id, genreCode, name, approved, code, category FROM Clubs, ClubGenre WHERE name LIKE '%". $search . "%' AND genreCode = code AND approved = 1");
         break;
 	case "ClubEvents":
 		$label = "Events";
-		$queryResult = $db->runQuery("SELECT event_id, ClubEvents.club_id, ClubEvents.name as ename, approved, Clubs.club_id as cid, Clubs.genreCode, Clubs.name as cname, code, category FROM ClubEvents, Clubs, ClubGenre WHERE ClubEvents.name LIKE '%". $search . "%' AND approved = 1 AND Clubs.club_id = ClubEvents.club_id AND code = genreCode");
+		$queryResult = $db->runQuery("SELECT event_id, ClubEvents.club_id as eid, ClubEvents.name as ename, ClubEvents.approved, Clubs.club_id as cid, genreCode, Clubs.name as cname, code, category FROM ClubEvents, Clubs, ClubGenre WHERE ClubEvents.name LIKE '%". $search . "%' AND ClubEvents.approved = 1 AND Clubs.club_id = ClubEvents.club_id AND code = genreCode");
         break;
     case "HealthNews":
 		$label = "Articles";

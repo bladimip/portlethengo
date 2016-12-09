@@ -22,7 +22,7 @@ function getApprovedContributions ($title, $userID) {
 	
 	//checking which table is needed and making according query, will return FALSE if wrong table given
 	if ($title == "events") {
-		$queryResult = $db->runQuery("SELECT *, Clubs.name as clubname FROM ClubGenre, Clubs, ClubEvents WHERE user_id = ". $userID . " AND approved = 1 AND code = genreCode AND Clubs.club_id = ClubEvents.club_id");
+		$queryResult = $db->runQuery("SELECT *, Clubs.name as clubname FROM ClubGenre, Clubs, ClubEvents WHERE user_id = ". $userID . " AND code = genreCode AND Clubs.club_id = ClubEvents.club_id  AND ClubEvents.approved = 1");
 	} else if ($title == "articles") {
 		$queryResult = $db->runQuery("SELECT * FROM HealthNews WHERE user_id = ". $userID . " AND approved = 1");
 	} else if ($title == "locations") {
@@ -139,15 +139,17 @@ if ($user->num_rows >= 1) {
 
 	//getting administrated clubs (if any)
 	if ($clubAdmin == 1) {
-		echo '<h5>Admin of following clubs:</h5><div class="row">';
 		$db = new Connection();
 		$db->open();
-		$clubsAdministered = $db->runQuery("SELECT * FROM ClubAdmins, Clubs, ClubGenre WHERE Clubs.club_id = ClubAdmins.club_id AND user_id = ". $userID . " AND Clubs.genreCode = ClubGenre.code");
+		$clubsAdministered = $db->runQuery("SELECT * FROM ClubAdmins, Clubs, ClubGenre WHERE Clubs.club_id = ClubAdmins.club_id AND user_id = ". $userID . " AND Clubs.genreCode = ClubGenre.code AND approved = 1");
 		$db->close();
-		while ($row = $clubsAdministered->fetch_assoc()) {
-			echo ('<a class="clubTitle" href="/sportlethen/' . url($row["category"]) . '/' . url($row["name"]) . '-C' . $row["club_id"] . '"><div class="col s6 m4 l3"><p class="sp-genre z-depth-2">' . $row["name"] . '</p></div></a>') . ' ';
+		if ($clubsAdministered->num_rows >= 1) {
+			echo '<h5>Admin of following clubs:</h5><div class="row">';
+			while ($row = $clubsAdministered->fetch_assoc()) {
+				echo ('<a class="clubTitle" href="/sportlethen/' . url($row["category"]) . '/' . url($row["name"]) . '-C' . $row["club_id"] . '"><div class="col s6 m4 l3"><p class="sp-genre z-depth-2">' . $row["name"] . '</p></div></a>') . ' ';
+			}
+			echo '</div>';
 		}
-		echo '</div>';
 	}
 
 	//getting added contributions that are approved
