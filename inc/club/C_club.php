@@ -118,8 +118,8 @@ class Club {
         echo '<li>
                 <img src="'. $image->getPath() .'" alt="'. $image->getAltName() .'"> <!-- random image -->
                 <div class="caption center-align">
-                  <h3>'. $image->getAltName() .'!</h3>
-                  <h5 class="light grey-text text-lighten-3">Path '. $image->getPath() .'.</h5>
+                  <h3>'. $this->getName() .'!</h3>
+                  <h5 class="light grey-text text-lighten-3">'. $image->getAltName() .'.</h5>
                 </div>
               </li>';
       }

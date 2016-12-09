@@ -79,7 +79,8 @@
 .sp-genre {
 	padding: 25px !important;
 	text-align: center;
-	background-color: #cddc39;
+	background-color: rgba(0,0,0,.15);
+	border: 1px solid white;
 	color: #424242;
 	font-size: 1.5em;
 	font-family: 'Orbitron', sans-serif;
@@ -92,12 +93,13 @@
 	font-size: 1.5em;
 	font-family: 'Orbitron', sans-serif;
 	color: #424242;
-	background-color: #cddc39;
+	background-color: rgba(0,0,0,.15);
+	border: 1px solid white;
 }
 
 .sp-genre:hover,
 .sp-genre-list:hover {
-	background-color: rgba(0,0,0,.6);
+	background-color: rgba(0,0,0,.5);
 	color: white;
 }
 
