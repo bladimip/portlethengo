@@ -10,9 +10,9 @@ finalize looks
 */
 
 //file contains information and methods for DB
-include('../inc/db/simpleDB.php');
+include('/db/simpleDB.php');
 //file contains function for trimming white-spaces and special characters when creating links
-include('../php/functions.php');
+include('/php/functions.php');
 
 //following function checks selected tables (sections) and outputs results based on search
 //also returns boolean value that is used for checking if any results found
