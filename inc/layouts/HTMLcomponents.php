@@ -49,13 +49,13 @@ function top( $title ) {
 				<nav>
 					<div class="nav-wrapper deep-purple lighten-1">
 
-						<a href="/" class="left brand-logo lime-text"><span class="lnr lnr-apartment"></span>Portlethen</a>
+						<a href="/" class="left brand-logo lime-text"><span class="lnr lnr-apartment"></span>Go-Portlethen</a>
 
 						<ul class="right hide-on-med-and-down">
-							<li><span class="waves-effect waves-light searchBtn"><span class="lnr lnr-magnifier"></span>SEARCH</span></li>
-							<li><a class="waves-effect waves-light" href="/sportlethen"><span class="lnr lnr-users"></span>SPORTLETHEN</a></li>
-							<li><a class="waves-effect waves-light" href="/health-wellbeing"><span class="lnr lnr-heart-pulse"></span>HEALTH & WELLBEING</a></li>
-							<li><a class="waves-effect waves-light" href="/map"><span class="lnr lnr-map"></span>MAP</a></li>
+							<li><span class="waves-effect waves-light searchBtn"><span class="lnr lnr-magnifier"></span>Search</span></li>
+							<li><a class="waves-effect waves-light" href="/sportlethen"><span class="lnr lnr-users"></span>SPortlethen</a></li>
+							<li><a class="waves-effect waves-light" href="/health-wellbeing"><span class="lnr lnr-heart-pulse"></span>Health & Wellbeing</a></li>
+							<li><a class="waves-effect waves-light" href="/map"><span class="lnr lnr-map"></span>Discover North Kincardineshire</a></li>
 							<li><a class="waves-effect waves-light logBtn"  href="#!"><span class="lnr lnr-user"></span>
 								<?php if (isset($_SESSION['USER_LOGIN_IN'])) echo '<span>Logout</span>';
 											else echo '<span>Login</span>'; ?>
@@ -172,8 +172,8 @@ function bottom() {
 			<div class="container">
 				<div class="row">
 					<div class="col l6 s12">
-						<h5 class="white-text">Portlethen</h5>
-						<p class="grey-text text-lighten-4">Cras congue sodales leo in volutpat. Curabitur euismod felis dapibus nisi porta lobortis. In semper, mi vel blandit elementum, justo nisl imperdiet justo, eget tempus ligula turpis non risus. Sed orci felis, tincidunt in turpis a, viverra faucibus arcu. </p>
+						<h5 class="white-text">Go-Portlethen</h5>
+						<a href="/about"><p class="grey-text text-lighten-4">About us</p></a>
 
 
 					</div>

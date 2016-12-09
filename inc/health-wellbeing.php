@@ -24,12 +24,12 @@ include('db/simpleDB.php');
 include('layouts/HTMLcomponents.php');
 
 // Navbar
-top("Healt and Wellbeing");
+top("Health and Wellbeing");
 
 //Other page content
 
 
 // Footer
-bottom("public");
+bottom();
 
 ?>
