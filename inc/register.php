@@ -24,8 +24,19 @@ if (isset($_POST['enter'])) {
     //mysqli_query($CONNECT, "INSERT INTO `users`  VALUES ('', '0', '0', '0', '$_POST[login]', '$_POST[email]', '$_POST[password]', '0')");
     $db = new Connection();
     $db->open();
-    $db->runQuery("INSERT INTO `users` (clubAdmin, nkpag, siteAdmin, username, email, password, blocked)  VALUES ('0', '0', '0', '$_POST[login]', '$_POST[email]', '$_POST[password]', '0')");
+    $db->runQuery("INSERT INTO `users` (clubAdmin, nkpag, siteAdmin, username, email, password, blocked)
+      VALUES ('0', '0', '0', '$_POST[login]', '$_POST[email]', '$_POST[password]', '0')");
+    $lastID = $db->getLastID();
     $db->close();
+
+    $_SESSION['USER_ID'] = $lastID;
+    $_SESSION['USER_CLUBADMIN'] = 0;
+    $_SESSION['USER_NKPAG'] = 0;
+    $_SESSION['USER_SITEADMIN'] = 0;
+    $_SESSION['USER_LOGIN'] = $_POST['login'];
+    $_SESSION['USER_LOGIN_IN'] = 1;
+    $_SESSION["BLOCK"] = 0;
+
     header ('Location: /users/'.$_POST['login']);
     }
 

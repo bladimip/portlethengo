@@ -167,13 +167,10 @@ $('.eControlBtn').on('click', function() {
     success: function(data) {
       console.log(data);
 
-      // Username of the user who just have approved a selected event is returned
       if (data == "Approved") {
 
         // Remove "Approve" button
         button.remove();
-        // Add a username to the screen
-        $('#approvedBy').text(data);
         // Show a toast "Approved"
         Materialize.toast(data, 3000, 'rounded');
 

@@ -41,7 +41,6 @@ else {
   $db->open();
   $genres = $db->runQuery("INSERT INTO clubs (name, genreCode, description, phone, email, address, approved) VALUES ('".$title."', '".$genre."', '".$description."', '".$phone."', '".$email."', '".$address."', 0)");
   $lastID = $db->getLastID();
-  echo $lastID;
   $db->close();
 
   // Link a user with a club
@@ -52,7 +51,7 @@ else {
 
 
   //echo $title.'<br>'.$genre.'<br>'.$description.'<br>'.$phone.'<br>'.$email.'<br>'.$address;
-  //header('Location: /sportlethen');
+  header('Location: /sportlethen');
 }
 
 ?>
