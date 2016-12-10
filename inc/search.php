@@ -105,7 +105,7 @@ function searchSection ($table, $search) {
 // echo "trimmed search string used in query: " . $search  . "<br>";
 
 //putting all search output into divisions for style formatting
-echo '<div class="section" id="searchOutput"><div class="container">';
+echo '<div class="section" id="searchOutput"><div class="container" id="searchResults">';
 //searching in each section of website
 $users = searchSection("Users", $_POST["search"]);
 $categories = searchSection("ClubGenre", $_POST["search"]);
