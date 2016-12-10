@@ -107,7 +107,7 @@ class Club {
   }
 
   public function showImages() {
-    if (count($this->images) == 1) echo '<img src="" alt="">';
+    if (count($this->images) == 1) echo '<img style="width:100%" class="materialboxed" src="'.$this->images[0]->getPath().'" alt="'.$this->images[0]->getAltName().'">';
 
     elseif (count($this->images) > 1) {
 

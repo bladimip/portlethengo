@@ -90,9 +90,7 @@ if (isset($_GET["club"])) {
                   else $userType = "contributor";
 
               } else $userType = "contributor";
-            } else {
-              $userType = "public";
-            }
+            } else $userType = "public";
           }
 
           // Create a club object depending on the user type

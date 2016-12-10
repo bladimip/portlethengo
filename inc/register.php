@@ -2,7 +2,6 @@
 /*
 Registration
 */
-session_start();
 
 include('db/simpleDB.php');
 include('layouts/HTMLcomponents.php');
@@ -27,7 +26,7 @@ if (isset($_POST['enter'])) {
     $db->open();
     $db->runQuery("INSERT INTO `users` (clubAdmin, nkpag, siteAdmin, username, email, password, blocked)  VALUES ('0', '0', '0', '$_POST[login]', '$_POST[email]', '$_POST[password]', '0')");
     $db->close();
-    header ('Location: login');
+    header ('Location: /users/'.$_POST['login']);
     }
 
 

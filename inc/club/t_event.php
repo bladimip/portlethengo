@@ -95,10 +95,7 @@ if (isset($_GET["id"])) {
                     else $userType = "contributor";
 
                 } else $userType = "contributor";
-
-              } else {
-                $userType = "public";
-              }
+              } else $userType = "public";
             }
 
 
