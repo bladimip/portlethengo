@@ -101,8 +101,8 @@ function searchSection ($table, $search) {
 
 //testing
 //echo "initial search string: " . $_POST["search"] . "<br>";
-$search = preg_replace('/[^A-Za-z0-9\-]/', ' ', $_POST["search"]);
-echo "trimmed search string used in query: " . $search  . "<br>";
+// $search = preg_replace('/[^A-Za-z0-9\-]/', ' ', $_POST["search"]);
+// echo "trimmed search string used in query: " . $search  . "<br>";
 
 //putting all search output into divisions for style formatting
 echo '<div class="section" id="searchOutput"><div class="container">';

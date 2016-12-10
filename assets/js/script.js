@@ -71,7 +71,7 @@ $(document).ready(function() {
 
 		if (val.length >= 3) {
 			$.ajax({
-				url:"/inc/search",
+				url:"search.php",
 				type:"post",
 				data:formData,
 				dataType:"html",
@@ -79,11 +79,11 @@ $(document).ready(function() {
 				processData: false,
 				contentType: false,
 				success: function(data) {
-					$("#searchResults").html(data);
+					$("#searchOutput").html(data);
 				}
 			})
 		} else {
-			$("#searchResults").html("");
+			$("#searchOutput").html("");
 		}
 	});
 
