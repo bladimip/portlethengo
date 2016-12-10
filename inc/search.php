@@ -37,7 +37,7 @@ function searchSection ($table, $search) {
         break;
     case "Clubs":
 		$label = "Clubs";
-		$queryResult = $db->runQuery("SELECT club_id, genreCode, name, approved, code, category FROM Clubs, ClubGenre WHERE name LIKE '%". $search . "%' AND genreCode = code AND approved = 1");
+		$queryResult = $db->runQuery("SELECT club_id, genreCode, name, approved, code, category FROM Clubs, ClubGenre WHERE name LIKE '%" . $search . "%' AND genreCode = code AND approved = 1");
         break;
 	case "ClubEvents":
 		$label = "Events";
