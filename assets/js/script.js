@@ -79,11 +79,11 @@ $(document).ready(function() {
 				processData: false,
 				contentType: false,
 				success: function(data) {
-					$("#searchOutput").html(data);
+					$("#searchResults").html(data);
 				}
 			})
 		} else {
-			$("#searchOutput").html("");
+			$("#searchResults").html("");
 		}
 	});
 
