@@ -63,7 +63,8 @@ function searchSection ($table, $search) {
 	//outputting results depending on section and returning boolean value
 	//output works only if any rows found
 	//output is made as a single row because of ajax script used (found in script.js)
-	if ($queryResult->num_rows >= 1) {
+	//if no value given returns all rows - to prevent this added another condition: must be at least 3 chars long
+	if (($queryResult->num_rows >= 1) && (strlen($search) >= 3)) {
 		$str = '<h5>' . $label . ':</h5><div class="collection">';
 		while ($row = $queryResult->fetch_assoc()) {
 			switch ($table) {
