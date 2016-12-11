@@ -40,7 +40,7 @@ function top( $title ) {
 		<style>
 			#map {
 				height: 500px;
-				width: 50%;
+				width: 100%;
 			}
 		</style>
 	</head>

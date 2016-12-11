@@ -63,7 +63,7 @@ function drawMarkers(){
     $db = new Connection();
     $db->open();
     if(userType()==2){
-        $loc = $db->runQuery("SELECT * FROM Locations limit 1;");
+        $loc = $db->runQuery("SELECT * FROM Locations;");
     }
     else{
         $loc = $db->runQuery("SELECT * FROM Locations WHERE approved = 1;");
@@ -94,7 +94,7 @@ function userType(){
     // return 0 for normal user
     // return 1 for contributor
     // return 2 for admin
-    return 2;
+    return 1;
 }
 
 //TODO placeholder function to return the user_ID, to be rewritten

@@ -19,7 +19,7 @@ include('layouts/HTMLcomponents.php');
 top("Locations and Routes");
 
 //Other page content
-$route_id= 3;
+$route_id= 4;
 $coordinates;
 // declare centre point of the map
 $centre = "{lat: 57.062423, lng: -2.130447}";
@@ -100,7 +100,6 @@ function getUserID(){
 
 
 pullRoute();
-//drawMarkers();
 ?>
     <h3>Portlethan Routes</h3>
     <div id="map"></div>
@@ -120,6 +119,7 @@ pullRoute();
             ?>
 
             var route = [<?php drawRoute()
+                //g-maps example
                 //{lat: 57.061539, lng: -2.128038},
                 //{lat: 57.063107, lng: -2.140097},
                 //{lat: 57.062370, lng: -2.132270},
@@ -134,10 +134,6 @@ pullRoute();
             });
 
             flightPath.setMap(map);
-
-            // g-maps example of how to place markers (use drawMarkers() function instead ) :
-            //var marker = new google.maps.Marker({position: {lat: -25.363, lng: 131.044}, map: map});
-            //var marker = new google.maps.Marker({position: uluru, map: map});
         }
 
         function addMarker(location, map) {
