@@ -20,16 +20,15 @@ include('layouts/HTMLcomponents.php');
 top("Locations and Routes");
 
 //TODO placeholder function to return the user_ID, to be rewritten
-//function getUserID(){
-//    return 4;
-//}
-//$user_id = getUserID();
+function getUserID(){
+    return 1;
+}
 //Other page content
 
 
 // Gets data from post parameters
 $loadmap = 1;
-$user_id = 4;
+$user_id = getUserID();
 $centre = "{lat: 57.062423, lng: -2.130447}";
 
 

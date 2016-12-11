@@ -19,7 +19,7 @@ include('layouts/HTMLcomponents.php');
 top("Locations and Routes");
 
 //Other page content
-$route_id= 4;
+$route_id= 1;
 $coordinates;
 // declare centre point of the map
 $centre = "{lat: 57.062423, lng: -2.130447}";
@@ -31,14 +31,13 @@ function pullRoute(){
     // connect to the database
     $db = new Connection();
     $db->open();
-    if(userType()==2){
+    if(getUserType()==2){
         $loc = $db->runQuery("SELECT * FROM routes WHERE route_id = $route_id;");
     }
     else{
         $loc = $db->runQuery("SELECT * FROM routes WHERE approved = 1 AND route_id = $route_id;");
     }
     $db->close();
-
     // loop through all returned results
     while ($row = $loc->fetch_assoc()) {
         $route_id = $row["route_id"];
@@ -85,17 +84,36 @@ function drawRoute(){
     }
 }
 
-//TODO placeholder function to return the usertype, to be rewritten
-function userType(){
-    // return 0 for normal user
-    // return 1 for contributor
-    // return 2 for admin
-    return 2;
+function getUserType(){
+    $userID = getUserID();
+    if ($userID != 0) {
+        $query = "SELECT nkpag, siteAdmin FROM Users WHERE user_id = $userID;";
+        $db = new Connection();
+        $db->open();
+        $result = $db->runQuery($query);
+        $db->close();
+        while ($row = $result->fetch_assoc()) {
+            $nkpag = $row["nkpag"];
+            $siteAdmin = $row["siteAdmin"];
+        }
+    }
+    if ($userID==0){
+        // return 0 for normal user
+        return 0;
+    }
+    elseif ($nkpag==1 || $siteAdmin==1){
+        // return 2 for admin
+        return 2;
+    }
+    else{
+        // return 1 for contributor
+        return 1;
+    }
 }
 
 //TODO placeholder function to return the user_ID, to be rewritten
 function getUserID(){
-    return 4;
+    return 1;
 }
 
 
@@ -110,7 +128,7 @@ pullRoute();
 
             var centre = <?php echo $centre ?>;
             var map = new google.maps.Map(document.getElementById('map'), {zoom: 14, center: centre});
-            //click listener to add markers.
+            //click listener to add markers. uncomment if you want to add markers by clicking
             //google.maps.event.addListener(map, 'click', function(event) {
             //    addMarker(event.latLng, map);
             //});

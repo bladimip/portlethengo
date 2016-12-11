@@ -47,7 +47,6 @@ function onLoad(){
         $co = str_replace(",","b", $co);
         $co = str_replace("a",",", $co);
         $co = str_replace("b",";", $co);
-        echo $name, $description, $address, $co;
         $query = "INSERT INTO routes (user_id, name, description, coordinates, approved) VALUES ('$user_id', '$name', '$description', '$co', 0);";
         $db = new Connection();
         $db->open();

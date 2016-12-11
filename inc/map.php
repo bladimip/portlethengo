@@ -1,6 +1,6 @@
 <?php
-/* 
-Map page - Google Map API 
+/*
+Map page - Google Map API
 
 ./map.php
 
@@ -19,10 +19,25 @@ include('layouts/HTMLcomponents.php');
 top("Locations and Routes");
 
 //Other page content
+//use $_GET to load individual locations
+//eg. map.php?loc=2
+//use map.php to load all locations, loading of location depending on user ID automatic.
+
 
 $long;
 $lat;
 $centre = "{lat: 57.062423, lng: -2.130447}";
+$onLoadLoc = 0;
+
+function getLocation(){
+    global $onLoadLoc;
+    if (!empty($_GET)){
+        $onLoadLoc = $_GET['loc'];
+    }
+    else{
+        $onLoadLoc = 0;
+    }
+}
 
 
 // function to pull the list of locations from the database to draw them to the page or any other reason
@@ -31,7 +46,7 @@ function drawList(){
     // connect to the database
     $db = new Connection();
     $db->open();
-    if(userType()==2){
+    if(getUserType()==2){
         $loc = $db->runQuery("SELECT * FROM Locations;");
     }
     else{
@@ -57,53 +72,95 @@ function drawList(){
 }
 
 //function to draw the markers on the map
-function drawMarkers(){
+function drawMarkers($location){
     global $long, $lat;
-    //connect to the database
-    $db = new Connection();
-    $db->open();
-    if(userType()==2){
-        $loc = $db->runQuery("SELECT * FROM Locations;");
+    if ($location == 0) {
+        //connect to the database
+        $db = new Connection();
+        $db->open();
+        if (getUserType() == 2) {
+            $loc = $db->runQuery("SELECT * FROM Locations;");
+        } else {
+            $loc = $db->runQuery("SELECT * FROM Locations WHERE approved = 1;");
+        }
+        $db->close();
+        // loop through all returned results
+        while ($row = $loc->fetch_assoc()) {
+            $lat = $row["latitude"];
+            $long = $row["longitude"];
+            $description = $row["description"];
+            $name = $row["name"];
+            echo "var marker = new google.maps.Marker({position: {lat: " . $lat . ", lng: " . $long . "}, map: map, animation: google.maps.Animation.DROP});";
+            //echo "var contentString = '<div class=\"marker-info-win\"><div class=\"marker-inner-win\"><span class=\"info-content\"><h1 class=\"marker-heading\">New Marker</h1>'This is a new marker infoWindow'</span></div></div>;";
+            //var contentString = '<div class="marker-info-win"><div class="marker-inner-win"><span class="info-content"><h1 class="marker-heading">New Marker</h1>'This is a new marker infoWindow'</span></div></div>
+            //echo "var infowindow = new google.maps.InfoWindow({content: contentString});";
+            //echo "var infowindow = new google.maps.InfoWindow();";
+            //echo "infowindow.setContent(contentString);";
+            //echo "google.maps.event.addListener(marker, 'click', function() {infowindow.open(map,marker);});";
+            //echo  "marker.addListener('click', function() {infowindow.open(map, marker);});";
+            //var infowindow = new google.maps.InfoWindow({content: contentString});
+        };
+    } else {
+        //connect to the database
+        $db = new Connection();
+        $db->open();
+        if (getUserType() == 2) {
+            $loc = $db->runQuery("SELECT * FROM Locations WHERE loc_id = $location;");
+        } else {
+            $loc = $db->runQuery("SELECT * FROM Locations WHERE approved = 1 AND loc_id = $location;");
+        }
+        $db->close();
+        // loop through all returned results
+        while ($row = $loc->fetch_assoc()) {
+            $lat = $row["latitude"];
+            $long = $row["longitude"];
+            $description = $row["description"];
+            $name = $row["name"];
+            echo "var marker = new google.maps.Marker({position: {lat: " . $lat . ", lng: " . $long . "}, map: map, animation: google.maps.Animation.DROP});";
+        }
+    }
+};
+
+function getUserType(){
+    $userID = getUserID();
+    if ($userID != 0) {
+        $query = "SELECT nkpag, siteAdmin FROM Users WHERE user_id = $userID;";
+        $db = new Connection();
+        $db->open();
+        $result = $db->runQuery($query);
+        $db->close();
+        $nkpag = 0;
+        $siteAdmin = 0;
+        while ($row = $result->fetch_assoc()) {
+            $nkpag = $row["nkpag"];
+            $siteAdmin = $row["siteAdmin"];
+        }
+    }
+    if ($userID==0){
+        // return 0 for normal user
+        return 0;
+    }
+    elseif ($nkpag==1 || $siteAdmin==1){
+        // return 2 for admin
+        return 2;
     }
     else{
-        $loc = $db->runQuery("SELECT * FROM Locations WHERE approved = 1;");
+        // return 1 for contributor
+        return 1;
     }
-    $db->close();
-
-    // loop through all returned results
-    while ($row = $loc->fetch_assoc()) {
-        $lat = $row["latitude"];
-        $long = $row["longitude"];
-        $description = $row["description"];
-        $name = $row["name"];
-        echo "var marker = new google.maps.Marker({position: {lat: ".$lat.", lng: ".$long."}, map: map, animation: google.maps.Animation.DROP});";
-        //echo "var contentString = '<div class=\"marker-info-win\"><div class=\"marker-inner-win\"><span class=\"info-content\"><h1 class=\"marker-heading\">New Marker</h1>'This is a new marker infoWindow'</span></div></div>;";
-        //var contentString = '<div class="marker-info-win"><div class="marker-inner-win"><span class="info-content"><h1 class="marker-heading">New Marker</h1>'This is a new marker infoWindow'</span></div></div>
-        //echo "var infowindow = new google.maps.InfoWindow({content: contentString});";
-        //echo "var infowindow = new google.maps.InfoWindow();";
-        //echo "infowindow.setContent(contentString);";
-        //echo "google.maps.event.addListener(marker, 'click', function() {infowindow.open(map,marker);});";
-        //echo  "marker.addListener('click', function() {infowindow.open(map, marker);});";
-        //var infowindow = new google.maps.InfoWindow({content: contentString});
-
-    };
-}
-
-//TODO placeholder function to return the usertype, to be rewritten
-function userType(){
-    // return 0 for normal user
-    // return 1 for contributor
-    // return 2 for admin
-    return 1;
 }
 
 //TODO placeholder function to return the user_ID, to be rewritten
 function getUserID(){
-    return 4;
+    return 1;
+}
+
+getLocation();
+if ($onLoadLoc == 0) {
+    drawList();
 }
 
 
-drawList();
 ?>
     <h3>Portlethan Places</h3>
     <div id="map"></div>
@@ -114,13 +171,17 @@ drawList();
 
             var centre = <?php echo $centre ?>;
             var map = new google.maps.Map(document.getElementById('map'), {zoom: 14, center: centre});
-            //click listener to add markers.
-            google.maps.event.addListener(map, 'click', function(event) {
-                addMarker(event.latLng, map);
-            });
+            //click listener to add markers. uncomment if you want to add markers by clicking
+            //google.maps.event.addListener(map, 'click', function(event) {
+            //    addMarker(event.latLng, map);
+            //});
             <?php
-            //
-            drawMarkers();
+            if ($onLoadLoc == 0){
+                drawMarkers($onLoadLoc);
+            }
+            else{
+                drawMarkers($onLoadLoc);
+            }
             ?>
             // g-maps example of how to place markers (use drawMarkers() function instead ) :
             //var marker = new google.maps.Marker({position: {lat: -25.363, lng: 131.044}, map: map});
