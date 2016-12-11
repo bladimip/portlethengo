@@ -66,7 +66,7 @@ if (isset($_GET["clubs_type"])) {
 
       function showCategory($genresAvailable) {
         echo '<div class="row">
-                <span class="lnr lnr-pencil"></span><span class="editLabel">Genre:</span>
+                <span class="editLabel">Genre:</span>
                   <select class="input-field" name="ncGenre">';
 
                   foreach ($genresAvailable as $key => $value) {
@@ -87,7 +87,7 @@ if (isset($_GET["clubs_type"])) {
           echo '<h4 class="center">Create a new club.</h4>';
 
           echo '<div class="row">
-            <span class="lnr lnr-pencil"></span><span class="editLabel">Title:</span>
+            <span class="editLabel">Title:</span>
             <input type="text" class="sp-title edit" name="ncTitle">
           </div>';
 
@@ -95,7 +95,7 @@ if (isset($_GET["clubs_type"])) {
           showCategory(fetchGenres());
 
           echo '<div class="row">
-                  <span class="lnr lnr-pencil"></span><span class="editLabel">Description:</span>
+                  <span class="editLabel">Description:</span>
                   <div class="input-field col s12">
                     <textarea id="textarea3" class="materialize-textarea edit" name="ncDescription"></textarea>
                   </div>
@@ -103,11 +103,11 @@ if (isset($_GET["clubs_type"])) {
 
           echo '<br>
                 <div class="row">
-                  <span class="lnr lnr-pencil"></span><span class="editLabel">Phone:</span>
+                  <span class="editLabel">Phone:</span>
                   <input type="text" class="editField edit" name="ncPhone">
-                  <span class="lnr lnr-pencil"></span><span class="editLabel">Email:</span>
+                  <span class="editLabel">Email:</span>
                   <input type="text" class="editField edit" name="ncEmail">
-                  <span class="lnr lnr-pencil"></span><span class="editLabel">Address:</span>
+                  <span class="editLabel">Address:</span>
                   <input type="text" class="editField edit" name="ncAddress">
                 </div>
 
@@ -176,7 +176,7 @@ if (isset($_GET["clubs_type"])) {
                   </div>
               </a>';
     }
-    
+
     echo '</div>';
 
 }
