@@ -24,7 +24,11 @@ $(document).ready(function() {
 
 		if ($.trim(condition) == "Logout") {
 			$.post('logout', {'toLogout' : true}, function(data) {
-				Materialize.toast('Logout done', 4000)
+				if (data == "success") {
+					window.location = '/';
+				} else {
+					console.log(data);
+				}
 				}
 			});
 		}
