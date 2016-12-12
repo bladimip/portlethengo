@@ -19,7 +19,7 @@ include('../layouts/HTMLcomponents.php');
 // Navbar
 top("Locations and Routes");
 
-//TODO placeholder function to return the user_ID, to be rewritten
+//TODO placeholder function to return the user_ID from session, to be rewritten
 function getUserID(){
     return 1;
 }

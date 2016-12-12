@@ -19,17 +19,17 @@ include('../layouts/HTMLcomponents.php');
 // Navbar
 top("Locations and Routes");
 
-//TODO placeholder function to return the user_ID, to be rewritten
-//function getUserID(){
-//    return 4;
-//}
-//$user_id = getUserID();
+//TODO placeholder function to return the user_ID from session, to be rewritten
+function getUserID(){
+    return 1;
+};
+$user_id = getUserID();
 //Other page content
 
 
 // Gets data from post parameters
 $loadmap = 0;
-$user_id = 4;
+
 $centre = "{lat: 57.062423, lng: -2.130447}";
 
 
