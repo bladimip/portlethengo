@@ -90,10 +90,13 @@ function drawList(){
         $loc = $db->runQuery("SELECT * FROM Routes WHERE approved = 1;");
     }
     $db->close();
+    if (getUserType()!=0){
+        echo '<a class="waves-effect waves-light btn" href="addroute">Add Route</a>';
+    }
     //HTML before running loop
     echo <<<EEE
     <div id="loclist">
-    <h3>Portlethen Routes</h2>
+    <h3>Portlethen Places</h2> <a href="map">Click here to see Locations.</a>
         <ul style="list-style-type:none">
 EEE;
     // loop through all returned results
@@ -113,7 +116,7 @@ EEE;
                     <li>$description</li>
                     <li>$address</li>
                     <li><font size="2"><a href="approve/route/$route_id" id="greentext">Not approved, click here to approve, </a>
-                    <a href="delete/location/$route_id" id="redtext">click here to remove.</a></font></li>
+                    <a href="delete/route/$route_id" id="redtext">click here to remove.</a></font></li>
                 </ul>
             </li>
 EEE;

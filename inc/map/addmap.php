@@ -63,7 +63,7 @@ function onLoad(){
         <input type="text" placeholder="Locations Description" name="description" required>
         <input type="text" placeholder="Locations Address" name="address"required>
         <input id= "co" type="text" placeholder="Click the map to set Co-ordinates" name="co" required>
-        <input type="submit" value="SUBMIT!">
+        <input type="submit" class="waves-effect waves-light btn" value="SUBMIT!">
     </form>
 EAT;
     }

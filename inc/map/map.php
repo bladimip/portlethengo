@@ -54,11 +54,14 @@ function drawList(){
         $loc = $db->runQuery("SELECT * FROM Locations WHERE approved = 1;");
     }
     $db->close();
+    if (getUserType()!=0){
+        echo '<a class="waves-effect waves-light btn" href="addmap">Add Location</a>';
+    }
     //HTML before running loop
     echo <<<EEE
     <div id="loclist">
-    <h3>Portlethen Places</h2>
-        <ul style="list-style-type:none">
+    <h3>Portlethen Places</h2> <a href="routes">Click here to see routes.</a>
+       <ul style="list-style-type:none">
 EEE;
     // loop through all returned results
     while ($row = $loc->fetch_assoc()) {
