@@ -11,7 +11,6 @@ $result = $db->runQuery("SELECT * FROM locations);
 $db->close();
 
 */
-//localhost:8888/addmap.php?name=test&description=test&address=testadd&lat=57.055423&lng=-2.135547
 
 include('../db/simpleDB.php');
 include('../layouts/HTMLcomponents.php');
