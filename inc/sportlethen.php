@@ -172,7 +172,7 @@ if (isset($_GET["clubs_type"])) {
       echo '
               <a href="/sportlethen/new-club">
                   <div class="col s12 m6 l3">
-                      <p class="sp-genre z-depth-2">Create new club<br> &nbsp </p>
+                      <p class="sp-genre z-depth-2">+<br>Create a new club</p>
                   </div>
               </a>';
     }
