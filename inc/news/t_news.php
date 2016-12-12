@@ -56,7 +56,7 @@ if (isset($_GET["news_id"]))
 		$altName = $row['altName'];
 		$mediaPath = $row['mediaPath'];
 		$approved = $row['approved'];
-		$siteAdmin = 1;
+		//$siteAdmin = 1;
 
 		if($siteAdmin)
 		{
