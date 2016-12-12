@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7985c7fa-3ae5-4133-bee0-215008d8b736" name="Default" comment="test">
+    <list default="true" id="7985c7fa-3ae5-4133-bee0-215008d8b736" name="Default" comment="commit files">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/health-wellbeing.php" afterPath="$PROJECT_DIR$/inc/health-wellbeing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/news/t_news.php" afterPath="$PROJECT_DIR$/inc/news/t_news.php" />
     </list>
     <ignored path="UniFirstProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,7 +25,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="health-wellbeing.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="health-wellbeing.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/health-wellbeing.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -33,6 +34,29 @@
                 <marker date="1481550296000" expanded="true" signature="1030:1189" ph="SELECT news_... HealthNews" />
                 <marker date="1481550296000" expanded="true" signature="1787:1890" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/inc/edit.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <marker date="1481550505000" expanded="true" signature="263:358" ph="UPDATE Healt... " />
+                <marker date="1481550505000" expanded="true" signature="391:491" ph="UPDATE Healt... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".htaccess" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.htaccess">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="90" selection-start-line="13" selection-start-column="90" selection-end-line="13" selection-end-column="90" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -51,6 +75,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/test" />
+        <option value="$PROJECT_DIR$/.htaccess" />
       </list>
     </option>
   </component>
@@ -193,7 +218,7 @@
       <workItem from="1478527690345" duration="1033000" />
       <workItem from="1478606993484" duration="142000" />
       <workItem from="1478609400185" duration="4000" />
-      <workItem from="1481553074521" duration="203000" />
+      <workItem from="1481553074521" duration="475000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1478527797280</created>
@@ -216,11 +241,18 @@
       <option name="project" value="LOCAL" />
       <updated>1478528386064</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="commit test">
+      <created>1481553361091</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1481553361091</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1382000" />
+    <option name="totallyTimeSpent" value="1654000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -228,6 +260,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18203124" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -276,7 +309,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="commit test" />
+    <MESSAGE value="commit files" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -291,6 +326,25 @@
           <folding>
             <marker date="1481550296000" expanded="true" signature="1030:1189" ph="SELECT news_... HealthNews" />
             <marker date="1481550296000" expanded="true" signature="1787:1890" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="90" selection-start-line="13" selection-start-column="90" selection-end-line="13" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <marker date="1481550505000" expanded="true" signature="263:358" ph="UPDATE Healt... " />
+            <marker date="1481550505000" expanded="true" signature="391:491" ph="UPDATE Healt... " />
           </folding>
         </state>
       </provider>
