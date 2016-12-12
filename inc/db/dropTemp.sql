@@ -14,3 +14,4 @@ DROP TABLE LocationImages;
 DROP TABLE Locations;
 DROP TABLE Routes;
 DROP TABLE Users;
+

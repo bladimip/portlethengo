@@ -49,6 +49,7 @@ METHODS DESCRIPTION AND USAGE:
 
 	class Connection {
 
+
 		private $servername = "us-cdbr-azure-southcentral-f.cloudapp.net";
 		private $db = "webdev5";
 		private $username = "b04a42ad414e01";
@@ -90,10 +91,8 @@ METHODS DESCRIPTION AND USAGE:
 			$this->myConn->close();
 		}
 
-		public function getLastID() {
-			$last_id = mysqli_insert_id($this->myConn);
-			return $last_id;
-		}
+
+
 
 // Escape characters
 		public function escape($str) {

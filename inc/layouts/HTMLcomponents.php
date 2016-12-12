@@ -47,6 +47,20 @@ function top( $title ) {
 		<script src="/assets/js/init.js"></script>
 
 		<script src="/assets/js/script.js"></script>
+
+		<style>
+			#map {
+				height: 500px;
+				width: 100%;
+			}
+			#greentext {
+				color: green;
+			}
+			#redtext{
+				color: red;
+			}
+
+		</style>
 	</head>
 
 	<body>

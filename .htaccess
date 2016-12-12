@@ -14,6 +14,17 @@ RewriteRule ^health-wellbeing/news/([^/]+)$ inc/approve.php [QSA,L]
 RewriteRule ^health-wellbeing/news/editArticle.php([^/]+)$ inc/editArticle.php [QSA,L]
 RewriteRule ^health-wellbeing/news/deleteArticle.php([^/]+)$ inc/deleteArticle.php [QSA,L]
 
+RewriteRule ^map/location/ inc/map/map.php?loc=$1 [QSA,L]
+RewriteRule ^map inc/map/map.php [QSA,L]
+RewriteRule ^routes/route/([^/]+)$ inc/map/routes.php?route=$1 [QSA,L]
+RewriteRule ^routes inc/map/routes.php [QSA,L]
+RewriteRule ^addmap inc/map/addmap.php [QSA,L]
+RewriteRule ^addroute inc/map/addroute.php [QSA,L]
+RewriteRule ^approve/location/([^/]+)$ inc/map/approve.php?loc=$1 [QSA,L]
+RewriteRule ^approve/route/([^/]+)$ inc/map/approve.php?route=$1 [QSA,L]
+RewriteRule ^delete/location/([^/]+)$ inc/map/delete.php?loc=$1 [QSA,L]
+RewriteRule ^delete/route/([^/]+)$ inc/map/delete.php?route=$1 [QSA,L]
+
 RewriteRule ^inc/(.*)$ route.php
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
