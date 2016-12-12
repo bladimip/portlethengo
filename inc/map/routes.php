@@ -91,10 +91,15 @@ function drawList(){
     }
     $db->close();
     if (getUserType()!=0){
-        echo '<a class="waves-effect waves-light btn" href="addroute">Add Route</a>';
+        echo     '<div class="row">';
+        echo '<div class="col s12 m10 l8 offset-m1 offset-l2">';
+        echo '<a class="waves-effect waves-light btn" href="addroute">Add Route</a></div></div>';
     }
     //HTML before running loop
     echo <<<EEE
+    <div class="row">
+    <div class="col s12 m10 l8 offset-m1 offset-l2">
+
     <div id="loclist">
     <h3>Portlethen Places</h2> <a href="map">Click here to see Locations.</a>
         <ul style="list-style-type:none">
@@ -146,6 +151,8 @@ EEE;
     echo <<<EEE
         </ul>
     </div>
+    </div>
+</div>
 EEE;
 
 };
@@ -198,9 +205,8 @@ function getUserID(){
     return 1;
 };
 
-
 pullRoute();
-drawList();
+
 ?>
     <div id="map"></div>
     <script>
@@ -249,6 +255,9 @@ drawList();
     </script>
 
 <?php
+
+
+drawList();
 // Footer
 bottom();
 

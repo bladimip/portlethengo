@@ -55,10 +55,16 @@ function drawList(){
     }
     $db->close();
     if (getUserType()!=0){
-        echo '<a class="waves-effect waves-light btn" href="addmap">Add Location</a>';
+        echo '<div class="row">';
+        echo '<div class="col s12 m10 l8 offset-m1 offset-l2">';
+        echo '<a class="waves-effect waves-light btn" href="addmap">Add Location</a></div></div>';
     }
     //HTML before running loop
     echo <<<EEE
+    
+    <div class="row">
+    <div class="col s12 m10 l8 offset-m1 offset-l2">
+    
     <div id="loclist">
     <h3>Portlethen Places</h2> <a href="routes">Click here to see routes.</a>
        <ul style="list-style-type:none">
@@ -114,6 +120,8 @@ EEE;
     //HTML after running loop
     echo <<<EEE
         </ul>
+    </div>
+    </div>
     </div>
 EEE;
 };
@@ -200,10 +208,7 @@ function getUserID(){
     return 1;
 };
 
-getLocation();
-if ($onLoadLoc == 0) {
-    drawList();
-}
+
 
 
 ?>
@@ -240,6 +245,11 @@ if ($onLoadLoc == 0) {
     </script>
 
 <?php
+
+getLocation();
+if ($onLoadLoc == 0) {
+    drawList();
+}
 // Footer
 bottom();
 

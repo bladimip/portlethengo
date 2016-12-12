@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7985c7fa-3ae5-4133-bee0-215008d8b736" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/map/addmap.php" afterPath="$PROJECT_DIR$/inc/map/addmap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/map/map.php" afterPath="$PROJECT_DIR$/inc/map/map.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/map/routes.php" afterPath="$PROJECT_DIR$/inc/map/routes.php" />
     </list>
     <ignored path="UniFirstProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,20 +28,56 @@
       <file leaf-file-name="map.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inc/map/map.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="197" column="79" selection-start-line="197" selection-start-column="79" selection-end-line="197" selection-end-column="79" />
+            <state relative-caret-position="45">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
                 <element signature="e#7#165#0#PHP" expanded="true" />
                 <element signature="n#getLocation#0;n#!!top" expanded="false" />
                 <element signature="n#drawMarkers#0;n#!!top" expanded="false" />
                 <element signature="n#getUserType#0;n#!!top" expanded="false" />
-                <marker date="1481560666000" expanded="true" signature="1047:1070" ph="SELECT * FRO... Locations" />
-                <marker date="1481560666000" expanded="true" signature="1121:1163" ph="SELECT * FRO... Locations" />
-                <marker date="1481560666000" expanded="true" signature="3561:3584" ph="SELECT * FRO... Locations" />
-                <marker date="1481560666000" expanded="true" signature="3640:3682" ph="SELECT * FRO... Locations" />
-                <marker date="1481560666000" expanded="true" signature="4323:4362" ph="SELECT * FRO... Locations" />
-                <marker date="1481560666000" expanded="true" signature="4427:4483" ph="SELECT * FRO... Locations" />
-                <marker date="1481560666000" expanded="true" signature="5405:5456" ph="SELECT nkpag... Users" />
+                <marker date="1481562164000" expanded="true" signature="1047:1070" ph="SELECT * FRO... Locations" />
+                <marker date="1481562164000" expanded="true" signature="1121:1163" ph="SELECT * FRO... Locations" />
+                <marker date="1481562164000" expanded="true" signature="3779:3802" ph="SELECT * FRO... Locations" />
+                <marker date="1481562164000" expanded="true" signature="3858:3900" ph="SELECT * FRO... Locations" />
+                <marker date="1481562164000" expanded="true" signature="4541:4580" ph="SELECT * FRO... Locations" />
+                <marker date="1481562164000" expanded="true" signature="4645:4701" ph="SELECT * FRO... Locations" />
+                <marker date="1481562164000" expanded="true" signature="5623:5674" ph="SELECT nkpag... Users" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/map/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="154" selection-end-column="6" />
+              <folding>
+                <element signature="n#pullRoute#0;n#!!top" expanded="false" />
+                <element signature="n#drawMarkers#0;n#!!top" expanded="false" />
+                <element signature="n#drawRoute#0;n#!!top" expanded="false" />
+                <element signature="n#getUserType#0;n#!!top" expanded="false" />
+                <marker date="1481561931000" expanded="true" signature="930:968" ph="SELECT * FRO... routes" />
+                <marker date="1481561931000" expanded="true" signature="1028:1083" ph="SELECT * FRO... routes" />
+                <marker date="1481561931000" expanded="true" signature="2474:2494" ph="SELECT * FRO... Routes" />
+                <marker date="1481561931000" expanded="true" signature="2542:2581" ph="SELECT * FRO... Routes" />
+                <marker date="1481561931000" expanded="true" signature="2671:2752" ph="..." />
+                <marker date="1481561931000" expanded="true" signature="2736:2752" ph="..." />
+                <marker date="1481561931000" expanded="true" signature="2911:4755" ph="..." />
+                <marker date="1481561931000" expanded="true" signature="2964:4748" ph="..." />
+                <marker date="1481561931000" expanded="true" signature="2988:4737" ph="..." />
+                <marker date="1481561931000" expanded="true" signature="2997:4731" ph="..." />
+                <marker date="1481561931000" expanded="true" signature="3087:3107" ph="..." />
+                <marker date="1481561931000" expanded="true" signature="3108:4726" ph="..." />
+                <marker date="1481561931000" expanded="true" signature="3538:4009" ph="..." />
+                <marker date="1481561931000" expanded="true" signature="3559:3991" ph="..." />
+                <marker date="1481561931000" expanded="true" signature="3760:3969" ph="..." />
+                <marker date="1481561931000" expanded="true" signature="3775:3964" ph="..." />
+                <marker date="1481561931000" expanded="true" signature="4445:4645" ph="..." />
+                <marker date="1481561931000" expanded="true" signature="4466:4627" ph="..." />
+                <marker date="1481561931000" expanded="true" signature="5282:5333" ph="SELECT nkpag... Users" />
+                <marker date="1481561931000" expanded="true" signature="6056:6295" ph="{...}" />
+                <marker date="1481561931000" expanded="true" signature="6070:6178" ph="//..." />
               </folding>
             </state>
           </provider>
@@ -78,9 +115,9 @@
         <option value="$PROJECT_DIR$/inc/map/addroute.php" />
         <option value="$PROJECT_DIR$/inc/map/approve.php" />
         <option value="$PROJECT_DIR$/inc/map/delete.php" />
-        <option value="$PROJECT_DIR$/inc/map/map.php" />
-        <option value="$PROJECT_DIR$/inc/map/routes.php" />
         <option value="$PROJECT_DIR$/inc/map/addmap.php" />
+        <option value="$PROJECT_DIR$/inc/map/routes.php" />
+        <option value="$PROJECT_DIR$/inc/map/map.php" />
       </list>
     </option>
   </component>
@@ -294,7 +331,7 @@
       <workItem from="1481546345157" duration="149000" />
       <workItem from="1481546527931" duration="374000" />
       <workItem from="1481549871505" duration="5000" />
-      <workItem from="1481549917056" duration="9761000" />
+      <workItem from="1481549917056" duration="10784000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1478527797280</created>
@@ -401,11 +438,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481560674101</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Job finished, all done except for;&#10;&#10;//TODO A function required to return user from session">
+      <created>1481561094982</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1481561094982</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62142000" />
+    <option name="totallyTimeSpent" value="63165000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -846,25 +890,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/map/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="195" column="79" selection-start-line="195" selection-start-column="79" selection-end-line="195" selection-end-column="79" />
-          <folding>
-            <element signature="n#pullRoute#0;n#!!top" expanded="false" />
-            <element signature="n#drawMarkers#0;n#!!top" expanded="false" />
-            <element signature="n#drawList#0;n#!!top" expanded="false" />
-            <element signature="n#drawRoute#0;n#!!top" expanded="false" />
-            <element signature="n#getUserType#0;n#!!top" expanded="false" />
-            <marker date="1481560666000" expanded="true" signature="930:968" ph="SELECT * FRO... routes" />
-            <marker date="1481560666000" expanded="true" signature="1028:1083" ph="SELECT * FRO... routes" />
-            <marker date="1481560666000" expanded="true" signature="2474:2494" ph="SELECT * FRO... Routes" />
-            <marker date="1481560666000" expanded="true" signature="2542:2581" ph="SELECT * FRO... Routes" />
-            <marker date="1481560666000" expanded="true" signature="5073:5124" ph="SELECT nkpag... Users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/map/addmap.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -875,22 +900,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/inc/map/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="154" selection-end-column="6" />
+          <folding>
+            <element signature="n#pullRoute#0;n#!!top" expanded="false" />
+            <element signature="n#drawMarkers#0;n#!!top" expanded="false" />
+            <element signature="n#drawRoute#0;n#!!top" expanded="false" />
+            <element signature="n#getUserType#0;n#!!top" expanded="false" />
+            <marker date="1481561931000" expanded="true" signature="930:968" ph="SELECT * FRO... routes" />
+            <marker date="1481561931000" expanded="true" signature="1028:1083" ph="SELECT * FRO... routes" />
+            <marker date="1481561931000" expanded="true" signature="2474:2494" ph="SELECT * FRO... Routes" />
+            <marker date="1481561931000" expanded="true" signature="2542:2581" ph="SELECT * FRO... Routes" />
+            <marker date="1481561931000" expanded="true" signature="2671:2752" ph="..." />
+            <marker date="1481561931000" expanded="true" signature="2736:2752" ph="..." />
+            <marker date="1481561931000" expanded="true" signature="2911:4755" ph="..." />
+            <marker date="1481561931000" expanded="true" signature="2964:4748" ph="..." />
+            <marker date="1481561931000" expanded="true" signature="2988:4737" ph="..." />
+            <marker date="1481561931000" expanded="true" signature="2997:4731" ph="..." />
+            <marker date="1481561931000" expanded="true" signature="3087:3107" ph="..." />
+            <marker date="1481561931000" expanded="true" signature="3108:4726" ph="..." />
+            <marker date="1481561931000" expanded="true" signature="3538:4009" ph="..." />
+            <marker date="1481561931000" expanded="true" signature="3559:3991" ph="..." />
+            <marker date="1481561931000" expanded="true" signature="3760:3969" ph="..." />
+            <marker date="1481561931000" expanded="true" signature="3775:3964" ph="..." />
+            <marker date="1481561931000" expanded="true" signature="4445:4645" ph="..." />
+            <marker date="1481561931000" expanded="true" signature="4466:4627" ph="..." />
+            <marker date="1481561931000" expanded="true" signature="5282:5333" ph="SELECT nkpag... Users" />
+            <marker date="1481561931000" expanded="true" signature="6056:6295" ph="{...}" />
+            <marker date="1481561931000" expanded="true" signature="6070:6178" ph="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/inc/map/map.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="197" column="79" selection-start-line="197" selection-start-column="79" selection-end-line="197" selection-end-column="79" />
+        <state relative-caret-position="45">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
             <element signature="e#7#165#0#PHP" expanded="true" />
             <element signature="n#getLocation#0;n#!!top" expanded="false" />
             <element signature="n#drawMarkers#0;n#!!top" expanded="false" />
             <element signature="n#getUserType#0;n#!!top" expanded="false" />
-            <marker date="1481560666000" expanded="true" signature="1047:1070" ph="SELECT * FRO... Locations" />
-            <marker date="1481560666000" expanded="true" signature="1121:1163" ph="SELECT * FRO... Locations" />
-            <marker date="1481560666000" expanded="true" signature="3561:3584" ph="SELECT * FRO... Locations" />
-            <marker date="1481560666000" expanded="true" signature="3640:3682" ph="SELECT * FRO... Locations" />
-            <marker date="1481560666000" expanded="true" signature="4323:4362" ph="SELECT * FRO... Locations" />
-            <marker date="1481560666000" expanded="true" signature="4427:4483" ph="SELECT * FRO... Locations" />
-            <marker date="1481560666000" expanded="true" signature="5405:5456" ph="SELECT nkpag... Users" />
+            <marker date="1481562164000" expanded="true" signature="1047:1070" ph="SELECT * FRO... Locations" />
+            <marker date="1481562164000" expanded="true" signature="1121:1163" ph="SELECT * FRO... Locations" />
+            <marker date="1481562164000" expanded="true" signature="3779:3802" ph="SELECT * FRO... Locations" />
+            <marker date="1481562164000" expanded="true" signature="3858:3900" ph="SELECT * FRO... Locations" />
+            <marker date="1481562164000" expanded="true" signature="4541:4580" ph="SELECT * FRO... Locations" />
+            <marker date="1481562164000" expanded="true" signature="4645:4701" ph="SELECT * FRO... Locations" />
+            <marker date="1481562164000" expanded="true" signature="5623:5674" ph="SELECT nkpag... Users" />
           </folding>
         </state>
       </provider>
