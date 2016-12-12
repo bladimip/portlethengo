@@ -92,7 +92,7 @@ function top( $title ) {
 											<form method="POST" action="/login">
 
 												Username:      <input type="text" name="login" required><br>
-												Password :  <input type="password" name="password" required><br><br>
+												Password:  <input type="password" name="password" required><br><br>
 												<input type="submit" name="enter" value="Login" class=" waves-effect waves-green btn-flat">
 												<input type="reset" value="Clear" class=" waves-effect waves-green btn-flat">
 												<a href="#modal3" data-dismiss="modal2" class=" waves-effect waves-green btn-flat">Sign Up</a>
