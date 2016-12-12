@@ -2,46 +2,17 @@
 /* 
 Registration
 */
-
 include('/db/simpleDB.php');
 include('/layouts/HTMLcomponents.php');
 //error_reporting(0);
 //Ulogin(1);
 DidTheUserAdmin(1);
 
-//Delete user
 
-if (isset($_POST['delete'])) {
-    
-    $sql = "DELETE FROM webdev5 WHERE user_id = $row[user_id]";
-
-if ($CONNECT->query($sql) === TRUE) {
-    echo "Record deleted successfully";
-} else {
-    echo "Error deleting record: " . $CONNECT->error;
-}}
-
-// Block User
-
-if (isset($_POST['block'])) {
-    
-    $sql = "DELETE FROM webdev5 WHERE user_id = $row[user_id]";
-
-if ($CONNECT->query($sql) === TRUE) {
-    echo "Record deleted successfully";
-} else {
-    echo "Error deleting record: " . $CONNECT->error;
+if(isset($_POST["id"]))  
+{  
+  $_SESSION['user_crID'] = $_POST["id"];
 }
-
-$sql = "UPDATE webdev5 SET blocked='1' WHERE user_id = $row[user_id]";
-
-if ($CONNECT->query($sql) === TRUE) {
-    echo "Record updated successfully";
-} else {
-    echo "Error updating record: " . $CONNECT->error;
-}}
-
-
 
 // Navbar
 top("Welcome to Portlethen");
@@ -77,9 +48,7 @@ if ($result->num_rows > 0) {
           <tr>
               <th>User ID</th>
               <th>Username</th>
-              <th>Make this user map admin</th>
-              <th>Make user Admin</th>
-              <th>Make user Club Admin</th>
+              <th>Change user rights</th>
           </tr>
         </thead>
         ';
@@ -88,16 +57,8 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo "<tbody>
           <tr>
-            <td>".$row["user_id"]."</td><td>".$row["username"]."</td><td> ".(($row["nkpag"] ? '1' : 0) ? 
-'<a class="waves-effect waves-light btn">Delete  map Admin rights</a>' : '<a class="waves-effect waves-light btn">Make user map Admin</a>')."</td><td> ".(($row["siteAdmin"] ? '1' : 0) ? 
-'<a class="waves-effect waves-light btn">Delete Admin rights</a>' : '<a class="waves-effect waves-light btn">Make user Admin</a>'). "</td><td>".'<ul id="dropdown2" class="dropdown-content">
-    <li><a href="#!">one<span class="badge">1</span></a></li>
-    <li><a href="#!">two<span class="new badge">1</span></a></li>
-    <li><a href="#!">three</a></li>
-  </ul>
-  <a class="btn dropdown-button" href="#!" data-activates="dropdown2">Dropdown<i class="mdi-navigation-arrow-drop-down right"></i></a>' ."</td></tr></p>";
-     }
-     echo '</p>';
+            <td>".$row["user_id"]."</td><td>".$row["username"]."</td><td>".'<input type="button" name="submit" id="submit" class="btn btn-info" value="Change" onClick="ChangeUserRughts(' . $row["user_id"] .');" />  ' ."</td></tr></p>";
+     };
 } else {
      echo "0 results";
 }
@@ -110,3 +71,21 @@ $CONNECT->close();
 
         </div>
     </div>
+
+<script>
+
+function ChangeUserRughts(id)
+  {
+      jQuery.ajax({
+       type: "POST",
+       url: "adminusersrights",
+       data: 'id='+id,
+       cache: false,
+       success: function(data, response)
+       {
+        window.location.href = "adminchange";
+       }
+     });
+ }
+
+</script>

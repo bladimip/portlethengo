@@ -1,5 +1,5 @@
 <?php
-$CONNECT = new mysqli('localhost', 'root', '', 'webdev5');
+$CONNECT = mysqli_connect('us-cdbr-azure-southcentral-f.cloudapp.net', 'b04a42ad414e01', '686a923d', 'webdev5');
 //check the connection!!
 //if ($CONNECT) echo 'OK';
 //else echo 'EROOR';
@@ -22,6 +22,7 @@ function top( $title ) {
 
 		<!-- Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+
 		<!-- Icons -->
 		<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 
@@ -103,27 +104,25 @@ function top( $title ) {
 			</div>
 
 
-			  <!-- Modal Structure for login -->
+		  <!-- Modal Structure -->
 			  <div id="modal2" class="modal">
 			    <div class="modal-content">
-
-
 						<div class="row">
 								<div class="col s12 center">
+										<h4>Login</h4>
 										<p class="left-align light">
 											<form method="POST" action="/login">
-
 												Username:      <input type="text" name="login" required><br>
-												Password :  <input type="password" name="password" required><br><br>
+												Password:  <input type="password" name="password" required><br><br>
 												<input type="submit" name="enter" value="Login" class=" waves-effect waves-green btn-flat">
 												<input type="reset" value="Clear" class=" waves-effect waves-green btn-flat">
 												<a href="#modal3" data-dismiss="modal2" class=" waves-effect waves-green btn-flat">Sign Up</a>
+												<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
 
 											</form>
 										</p>
 								</div>
 						</div>
-
 			    </div>
 			  </div>
 
@@ -138,14 +137,12 @@ function top( $title ) {
                     Password :  <input type="password" name="password" required><br><br>
                     <input type="submit" name="enter" value="Sign Up" class=" waves-effect waves-green btn-flat">
                     <input type="reset" value="Clear" class=" waves-effect waves-green btn-flat">
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
                     </form></p>
                 </div>
             </div>
-
 			    </div>
 			  </div>
-
-
 		</div>
 
 <?php
@@ -166,8 +163,8 @@ return md5('MRILJA'.md5('321'.$p1.'123').md5('678'.$p2.'890'));
 //Check did the user log in or not
 //THERE ADD MESSAGE
 function ULogin($p1) {
-if ($p1 <= 0 and $_SESSION['USER_LOGIN_IN'] != $p1);
-else if ($_SESSION['USER_LOGIN_IN'] = $p1) exit('This page available only for user');
+if ($p1 <= 0 and $_SESSION['USER_LOGIN_IN'] != $p1) exit('This page aveilible only for guest');
+else if ($_SESSION['USER_LOGIN_IN'] = $p1);
 }
 
 
@@ -195,8 +192,8 @@ else if ($p1 == 1) return 'Admin';
 	}
 
 function DidTheUserAdmin($p1) {
-if ($p1 <= 0 and $_SESSION['USER_SITEADMIN'] != $p1) exit('You are not the admin');
-else if ($_SESSION['USER_LOGIN_IN'] = $p1);
+if ($_SESSION['USER_SITEADMIN'] = '1');
+else (header('Location: landing'));
 }
 
 // Footer
