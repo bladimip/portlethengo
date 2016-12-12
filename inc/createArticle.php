@@ -12,7 +12,7 @@ echo "
 		<p><b>Description
 			<textarea name='description' type='text' size='5000'>
 		</textarea></b></p>
-		<p><b>Type of Media ('image' or 'video')
+		<p><b>Type of Media ('image' or 'video') Leave the next two fields empty if you don't want to add an image or a video
 		<input name='mediaType' type='text' size='100'>
 		</b></p>
 		<p><b> Path to selected media ('www.youtube.com/gfhsdfhsd'). If it is a youtube video make sure that you go to the video click share and then embed and copy the link from there

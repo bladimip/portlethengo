@@ -23,7 +23,7 @@ echo "
 		<p>Description
 			<input name = 'description' type='text' value='{$description}' size='5000'>
 		</p>
-		<p>Type of Media ('image' or 'video')
+		<p>Type of Media ('image' or 'video') Leave the next two fields if you don't want to add an image or a video
 		<input name='mediaType' type='text' value='{$mediaType}' >
 		</p>
 		<p> Path to selected media ('www.youtube.com/gfhsdfhsd'). If it is a youtube video make sure that you go to the video click share and then embed and copy the link from there

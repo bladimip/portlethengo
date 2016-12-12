@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7985c7fa-3ae5-4133-bee0-215008d8b736" name="Default" comment="">
+    <list default="true" id="7985c7fa-3ae5-4133-bee0-215008d8b736" name="Default" comment="commit all files">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/news/t_news.php" afterPath="$PROJECT_DIR$/inc/news/t_news.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/createArticle.php" afterPath="$PROJECT_DIR$/inc/createArticle.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/editArticle.php" afterPath="$PROJECT_DIR$/inc/editArticle.php" />
     </list>
     <ignored path="UniFirstProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,7 +38,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="edit.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inc/edit.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
@@ -50,17 +51,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editArticle.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="editArticle.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/editArticle.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+              <caret line="25" column="71" selection-start-line="25" selection-start-column="71" selection-end-line="25" selection-end-column="71" />
               <folding>
-                <marker date="1481507703000" expanded="true" signature="311:976" ph="..." />
-                <marker date="1481507703000" expanded="true" signature="375:440" ph="..." />
-                <marker date="1481507703000" expanded="true" signature="446:543" ph="..." />
-                <marker date="1481507703000" expanded="true" signature="549:651" ph="..." />
-                <marker date="1481507703000" expanded="true" signature="657:908" ph="..." />
+                <marker date="1481554744000" expanded="true" signature="311:1047" ph="..." />
+                <marker date="1481554744000" expanded="true" signature="375:440" ph="..." />
+                <marker date="1481554744000" expanded="true" signature="446:543" ph="..." />
+                <marker date="1481554744000" expanded="true" signature="549:722" ph="..." />
+                <marker date="1481554744000" expanded="true" signature="728:979" ph="..." />
               </folding>
             </state>
           </provider>
@@ -82,19 +83,19 @@
       <file leaf-file-name="createArticle.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/createArticle.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="74" />
               <folding>
-                <marker date="1481499386000" expanded="true" signature="252:841" ph="..." />
-                <marker date="1481499386000" expanded="true" signature="258:322" ph="..." />
-                <marker date="1481499386000" expanded="true" signature="261:318" ph="..." />
-                <marker date="1481499386000" expanded="true" signature="328:421" ph="..." />
-                <marker date="1481499386000" expanded="true" signature="331:417" ph="..." />
-                <marker date="1481499386000" expanded="true" signature="399:413" ph="..." />
-                <marker date="1481499386000" expanded="true" signature="427:525" ph="..." />
-                <marker date="1481499386000" expanded="true" signature="430:521" ph="..." />
-                <marker date="1481499386000" expanded="true" signature="531:768" ph="..." />
-                <marker date="1481499386000" expanded="true" signature="534:764" ph="..." />
+                <marker date="1481554744000" expanded="true" signature="252:918" ph="..." />
+                <marker date="1481554744000" expanded="true" signature="258:322" ph="..." />
+                <marker date="1481554744000" expanded="true" signature="261:318" ph="..." />
+                <marker date="1481554744000" expanded="true" signature="328:421" ph="..." />
+                <marker date="1481554744000" expanded="true" signature="331:417" ph="..." />
+                <marker date="1481554744000" expanded="true" signature="399:413" ph="..." />
+                <marker date="1481554744000" expanded="true" signature="427:602" ph="..." />
+                <marker date="1481554744000" expanded="true" signature="430:598" ph="..." />
+                <marker date="1481554744000" expanded="true" signature="608:845" ph="..." />
+                <marker date="1481554744000" expanded="true" signature="611:841" ph="..." />
               </folding>
             </state>
           </provider>
@@ -177,6 +178,8 @@
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/inc/news/t_news.php" />
         <option value="$PROJECT_DIR$/inc/deleteArticle.php" />
+        <option value="$PROJECT_DIR$/inc/createArticle.php" />
+        <option value="$PROJECT_DIR$/inc/editArticle.php" />
       </list>
     </option>
   </component>
@@ -217,56 +220,7 @@
     </navigator>
     <panes>
       <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UniFirstProject2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UniFirstProject2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UniFirstProject2" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UniFirstProject2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UniFirstProject2" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="inc" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UniFirstProject2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UniFirstProject2" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="inc" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="news" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
+        <subPane />
       </pane>
       <pane id="Scope" />
       <pane id="Scratches" />
@@ -337,7 +291,7 @@
       <workItem from="1478527690345" duration="1033000" />
       <workItem from="1478606993484" duration="142000" />
       <workItem from="1478609400185" duration="4000" />
-      <workItem from="1481553074521" duration="735000" />
+      <workItem from="1481553074521" duration="1050000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1478527797280</created>
@@ -374,11 +328,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481553712196</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="commit all files">
+      <created>1481554059804</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1481554059804</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1914000" />
+    <option name="totallyTimeSpent" value="2229000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -457,7 +418,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="commit test" />
     <MESSAGE value="commit files" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit files" />
+    <MESSAGE value="commit all files" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit all files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -484,25 +446,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/createArticle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1481499386000" expanded="true" signature="252:841" ph="..." />
-            <marker date="1481499386000" expanded="true" signature="258:322" ph="..." />
-            <marker date="1481499386000" expanded="true" signature="261:318" ph="..." />
-            <marker date="1481499386000" expanded="true" signature="328:421" ph="..." />
-            <marker date="1481499386000" expanded="true" signature="331:417" ph="..." />
-            <marker date="1481499386000" expanded="true" signature="399:413" ph="..." />
-            <marker date="1481499386000" expanded="true" signature="427:525" ph="..." />
-            <marker date="1481499386000" expanded="true" signature="430:521" ph="..." />
-            <marker date="1481499386000" expanded="true" signature="531:768" ph="..." />
-            <marker date="1481499386000" expanded="true" signature="534:764" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/articleCreation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -524,17 +467,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <marker date="1481550959000" expanded="true" signature="358:448" ph="UPDATE Healt... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
-          <folding>
-            <marker date="1481550505000" expanded="true" signature="263:358" ph="UPDATE Healt... " />
-            <marker date="1481550505000" expanded="true" signature="391:491" ph="UPDATE Healt... " />
           </folding>
         </state>
       </provider>
@@ -569,16 +501,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/inc/createArticle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="74" />
+          <folding>
+            <marker date="1481554744000" expanded="true" signature="252:918" ph="..." />
+            <marker date="1481554744000" expanded="true" signature="258:322" ph="..." />
+            <marker date="1481554744000" expanded="true" signature="261:318" ph="..." />
+            <marker date="1481554744000" expanded="true" signature="328:421" ph="..." />
+            <marker date="1481554744000" expanded="true" signature="331:417" ph="..." />
+            <marker date="1481554744000" expanded="true" signature="399:413" ph="..." />
+            <marker date="1481554744000" expanded="true" signature="427:602" ph="..." />
+            <marker date="1481554744000" expanded="true" signature="430:598" ph="..." />
+            <marker date="1481554744000" expanded="true" signature="608:845" ph="..." />
+            <marker date="1481554744000" expanded="true" signature="611:841" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/inc/editArticle.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+          <caret line="25" column="71" selection-start-line="25" selection-start-column="71" selection-end-line="25" selection-end-column="71" />
           <folding>
-            <marker date="1481507703000" expanded="true" signature="311:976" ph="..." />
-            <marker date="1481507703000" expanded="true" signature="375:440" ph="..." />
-            <marker date="1481507703000" expanded="true" signature="446:543" ph="..." />
-            <marker date="1481507703000" expanded="true" signature="549:651" ph="..." />
-            <marker date="1481507703000" expanded="true" signature="657:908" ph="..." />
+            <marker date="1481554744000" expanded="true" signature="311:1047" ph="..." />
+            <marker date="1481554744000" expanded="true" signature="375:440" ph="..." />
+            <marker date="1481554744000" expanded="true" signature="446:543" ph="..." />
+            <marker date="1481554744000" expanded="true" signature="549:722" ph="..." />
+            <marker date="1481554744000" expanded="true" signature="728:979" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+          <folding>
+            <marker date="1481550505000" expanded="true" signature="263:358" ph="UPDATE Healt... " />
+            <marker date="1481550505000" expanded="true" signature="391:491" ph="UPDATE Healt... " />
           </folding>
         </state>
       </provider>
