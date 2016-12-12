@@ -15,8 +15,6 @@ $edit = $db ->runQuery("UPDATE HealthNews SET title = '$title', description = '$
 $editMedia = $db ->runQuery("UPDATE HealthMedia SET mediaType = '$mediaType', mediaPath = '$mediaPath' WHERE news_id = '$news_id'");
 $db -> close();
 
-//echo "<a href='/health-wellbeing'>back to article</a>";
-// header doesn't work
 header('location: /health-wellbeing');
 
 ?>

@@ -69,12 +69,6 @@ $db -> close();
 				{
 					echo "<li><a href='/health-wellbeing/news/{$news_id} '>{$title}</a> written by {$username} UNAPPROVED 
 					</li>";
-					//$db new Connection();
-					//$db -> open();
-					//$approvesql = $db ->runQuery("UPDATE HealthNews SET approved = 1, approvedBy = '".$user_id".' WHERE news_id = '".$news_id."'");
-					//echo "<div class='btn newsApBtn'>Approve</div>";
-					//$db -> close();
-					// add a button to update the status to approved
 					
 				}
 			}
