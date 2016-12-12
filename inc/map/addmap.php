@@ -21,7 +21,7 @@ top("Locations and Routes");
 
 //TODO placeholder function to return the user_ID from session, to be rewritten
 function getUserID(){
-    return 1;
+    return ;
 }
 //Other page content
 
