@@ -27,7 +27,11 @@ include('../layouts/HTMLcomponents.php');
 top("Articles");
 
 //Other page content
-echo"<LINK href='style.css' rel='stylesheet' type='text/css'>";
+if (isset($_SESSION['USER_LOGIN_IN']))
+{
+	$user_id = $_SESSION['USER_ID'];
+	$siteAdmin = $_SESSION['USER_SITEADMIN'];
+}
 if (isset($_GET["news_id"])) 
 {
     
