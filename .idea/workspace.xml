@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7985c7fa-3ae5-4133-bee0-215008d8b736" name="Default" comment="commit all files">
+    <list default="true" id="7985c7fa-3ae5-4133-bee0-215008d8b736" name="Default" comment="made changes to jack 2 that we made in uni today">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/createArticle.php" afterPath="$PROJECT_DIR$/inc/createArticle.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/approve.php" afterPath="$PROJECT_DIR$/inc/approve.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/articleCreation.php" afterPath="$PROJECT_DIR$/inc/articleCreation.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/editArticle.php" afterPath="$PROJECT_DIR$/inc/editArticle.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/health-wellbeing.php" afterPath="$PROJECT_DIR$/inc/health-wellbeing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/news/t_news.php" afterPath="$PROJECT_DIR$/inc/news/t_news.php" />
     </list>
     <ignored path="UniFirstProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,21 +28,31 @@
     <favorites_list name="UniFirstProject" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="health-wellbeing.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/health-wellbeing.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="35" selection-end-column="1" />
+            <state relative-caret-position="30">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="38" />
               <folding>
-                <marker date="1481550296000" expanded="true" signature="1030:1189" ph="SELECT news_... HealthNews" />
-                <marker date="1481550296000" expanded="true" signature="1787:1890" ph="..." />
+                <marker date="1481571503000" expanded="true" signature="1058:1217" ph="SELECT news_... HealthNews" />
+                <marker date="1481571503000" expanded="true" signature="1719:1822" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="simpleDB.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/db/simpleDB.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="93">
+              <caret line="54" column="29" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/edit.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
@@ -54,20 +68,20 @@
       <file leaf-file-name="editArticle.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/editArticle.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="71" selection-start-line="25" selection-start-column="71" selection-end-line="25" selection-end-column="71" />
+            <state relative-caret-position="75">
+              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
               <folding>
-                <marker date="1481554744000" expanded="true" signature="311:1047" ph="..." />
-                <marker date="1481554744000" expanded="true" signature="375:440" ph="..." />
-                <marker date="1481554744000" expanded="true" signature="446:543" ph="..." />
-                <marker date="1481554744000" expanded="true" signature="549:722" ph="..." />
-                <marker date="1481554744000" expanded="true" signature="728:979" ph="..." />
+                <marker date="1481571670000" expanded="true" signature="313:1049" ph="..." />
+                <marker date="1481571670000" expanded="true" signature="377:442" ph="..." />
+                <marker date="1481571670000" expanded="true" signature="448:545" ph="..." />
+                <marker date="1481571670000" expanded="true" signature="551:724" ph="..." />
+                <marker date="1481571670000" expanded="true" signature="730:981" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="deleteArticle.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="deleteArticle.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inc/deleteArticle.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
@@ -84,7 +98,7 @@
         <entry file="file://$PROJECT_DIR$/inc/createArticle.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="74" />
+              <caret line="14" column="92" selection-start-line="14" selection-start-column="92" selection-end-line="14" selection-end-column="92" />
               <folding>
                 <marker date="1481554744000" expanded="true" signature="252:918" ph="..." />
                 <marker date="1481554744000" expanded="true" signature="258:322" ph="..." />
@@ -104,15 +118,15 @@
       <file leaf-file-name="articleCreation.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/articleCreation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="225">
+              <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
               <folding>
-                <marker date="1481512348000" expanded="true" signature="598:830" ph="INSERT INTO HealthNews... " />
-                <marker date="1481512348000" expanded="true" signature="704:756" ph="SELECT user_... Users" />
-                <marker date="1481512348000" expanded="true" signature="866:1017" ph="INSERT INTO HealthMedia... " />
-                <marker date="1481512348000" expanded="true" signature="1178:1370" ph="INSERT INTO HealthNews... " />
-                <marker date="1481512348000" expanded="true" signature="1258:1310" ph="SELECT user_... Users" />
-                <marker date="1481512348000" expanded="true" signature="1406:1557" ph="INSERT INTO HealthMedia... " />
+                <marker date="1481571518000" expanded="true" signature="597:829" ph="INSERT INTO HealthNews... " />
+                <marker date="1481571518000" expanded="true" signature="703:755" ph="SELECT user_... Users" />
+                <marker date="1481571518000" expanded="true" signature="865:1016" ph="INSERT INTO HealthMedia... " />
+                <marker date="1481571518000" expanded="true" signature="1177:1369" ph="INSERT INTO HealthNews... " />
+                <marker date="1481571518000" expanded="true" signature="1257:1309" ph="SELECT user_... Users" />
+                <marker date="1481571518000" expanded="true" signature="1405:1556" ph="INSERT INTO HealthMedia... " />
               </folding>
             </state>
           </provider>
@@ -121,10 +135,10 @@
       <file leaf-file-name="approve.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/approve.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
               <folding>
-                <marker date="1481550959000" expanded="true" signature="358:448" ph="UPDATE Healt... " />
+                <marker date="1481571657000" expanded="true" signature="426:516" ph="UPDATE Healt... " />
               </folding>
             </state>
           </provider>
@@ -133,19 +147,19 @@
       <file leaf-file-name="t_news.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/news/t_news.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-915">
-              <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+            <state relative-caret-position="135">
+              <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
               <folding>
-                <marker date="1481553901000" expanded="true" signature="764:942" ph="SELECT * FRO... HealthNews" />
-                <marker date="1481553901000" expanded="true" signature="1648:1703" ph="..." />
-                <marker date="1481553901000" expanded="true" signature="1800:1915" ph="..." />
-                <marker date="1481553901000" expanded="true" signature="2141:2470" ph="..." />
-                <marker date="1481553901000" expanded="true" signature="2207:2461" ph="..." />
-                <marker date="1481553901000" expanded="true" signature="2507:2965" ph="..." />
-                <marker date="1481553901000" expanded="true" signature="2573:2956" ph="..." />
-                <marker date="1481553901000" expanded="true" signature="3011:3219" ph="..." />
-                <marker date="1481553901000" expanded="true" signature="3081:3210" ph="..." />
-                <marker date="1481553901000" expanded="true" signature="3629:3744" ph="..." />
+                <marker date="1481571274000" expanded="true" signature="790:968" ph="SELECT * FRO... HealthNews" />
+                <marker date="1481571274000" expanded="true" signature="1674:1729" ph="..." />
+                <marker date="1481571274000" expanded="true" signature="1826:1941" ph="..." />
+                <marker date="1481571274000" expanded="true" signature="2167:2496" ph="..." />
+                <marker date="1481571274000" expanded="true" signature="2233:2487" ph="..." />
+                <marker date="1481571274000" expanded="true" signature="2533:2991" ph="..." />
+                <marker date="1481571274000" expanded="true" signature="2599:2982" ph="..." />
+                <marker date="1481571274000" expanded="true" signature="3037:3245" ph="..." />
+                <marker date="1481571274000" expanded="true" signature="3107:3236" ph="..." />
+                <marker date="1481571274000" expanded="true" signature="3655:3770" ph="..." />
               </folding>
             </state>
           </provider>
@@ -154,8 +168,8 @@
       <file leaf-file-name=".htaccess" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.htaccess">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="90" selection-start-line="13" selection-start-column="90" selection-end-line="13" selection-end-column="90" />
+            <state relative-caret-position="105">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -175,11 +189,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/test" />
-        <option value="$PROJECT_DIR$/.htaccess" />
-        <option value="$PROJECT_DIR$/inc/news/t_news.php" />
         <option value="$PROJECT_DIR$/inc/deleteArticle.php" />
         <option value="$PROJECT_DIR$/inc/createArticle.php" />
+        <option value="$PROJECT_DIR$/.htaccess" />
+        <option value="$PROJECT_DIR$/inc/news/t_news.php" />
+        <option value="$PROJECT_DIR$/inc/health-wellbeing.php" />
+        <option value="$PROJECT_DIR$/inc/articleCreation.php" />
+        <option value="$PROJECT_DIR$/inc/approve.php" />
         <option value="$PROJECT_DIR$/inc/editArticle.php" />
+        <option value="$PROJECT_DIR$/inc/db/simpleDB.php" />
       </list>
     </option>
   </component>
@@ -291,7 +309,8 @@
       <workItem from="1478527690345" duration="1033000" />
       <workItem from="1478606993484" duration="142000" />
       <workItem from="1478609400185" duration="4000" />
-      <workItem from="1481553074521" duration="1050000" />
+      <workItem from="1481553074521" duration="3033000" />
+      <workItem from="1481570018754" duration="1795000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1478527797280</created>
@@ -335,11 +354,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481554059804</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added some text to the article creation + article edit">
+      <created>1481554780791</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1481554780791</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2229000" />
+    <option name="totallyTimeSpent" value="6007000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -347,14 +373,14 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18203124" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -419,19 +445,55 @@
     <MESSAGE value="commit test" />
     <MESSAGE value="commit files" />
     <MESSAGE value="commit all files" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit all files" />
+    <MESSAGE value="added some text to the article creation + article edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some text to the article creation + article edit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test" />
-    <entry file="file://$PROJECT_DIR$/.htaccess">
+    <entry file="file://$PROJECT_DIR$/inc/health-wellbeing.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="90" selection-start-line="13" selection-start-column="90" selection-end-line="13" selection-end-column="90" />
+        <state relative-caret-position="420">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <marker date="1481571503000" expanded="true" signature="1058:1217" ph="SELECT news_... HealthNews" />
+            <marker date="1481571503000" expanded="true" signature="1719:1822" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/db/simpleDB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+          <folding>
+            <marker date="1481550505000" expanded="true" signature="263:358" ph="UPDATE Healt... " />
+            <marker date="1481550505000" expanded="true" signature="391:491" ph="UPDATE Healt... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/editArticle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="71" selection-start-line="25" selection-start-column="71" selection-end-line="25" selection-end-column="71" />
+          <folding>
+            <marker date="1481571670000" expanded="true" signature="313:1049" ph="..." />
+            <marker date="1481571670000" expanded="true" signature="377:442" ph="..." />
+            <marker date="1481571670000" expanded="true" signature="448:545" ph="..." />
+            <marker date="1481571670000" expanded="true" signature="551:724" ph="..." />
+            <marker date="1481571670000" expanded="true" signature="730:981" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -446,65 +508,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/articleCreation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1481512348000" expanded="true" signature="598:830" ph="INSERT INTO HealthNews... " />
-            <marker date="1481512348000" expanded="true" signature="704:756" ph="SELECT user_... Users" />
-            <marker date="1481512348000" expanded="true" signature="866:1017" ph="INSERT INTO HealthMedia... " />
-            <marker date="1481512348000" expanded="true" signature="1178:1370" ph="INSERT INTO HealthNews... " />
-            <marker date="1481512348000" expanded="true" signature="1258:1310" ph="SELECT user_... Users" />
-            <marker date="1481512348000" expanded="true" signature="1406:1557" ph="INSERT INTO HealthMedia... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/approve.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1481550959000" expanded="true" signature="358:448" ph="UPDATE Healt... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/health-wellbeing.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="35" selection-end-column="1" />
-          <folding>
-            <marker date="1481550296000" expanded="true" signature="1030:1189" ph="SELECT news_... HealthNews" />
-            <marker date="1481550296000" expanded="true" signature="1787:1890" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/news/t_news.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-915">
-          <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-          <folding>
-            <marker date="1481553901000" expanded="true" signature="764:942" ph="SELECT * FRO... HealthNews" />
-            <marker date="1481553901000" expanded="true" signature="1648:1703" ph="..." />
-            <marker date="1481553901000" expanded="true" signature="1800:1915" ph="..." />
-            <marker date="1481553901000" expanded="true" signature="2141:2470" ph="..." />
-            <marker date="1481553901000" expanded="true" signature="2207:2461" ph="..." />
-            <marker date="1481553901000" expanded="true" signature="2507:2965" ph="..." />
-            <marker date="1481553901000" expanded="true" signature="2573:2956" ph="..." />
-            <marker date="1481553901000" expanded="true" signature="3011:3219" ph="..." />
-            <marker date="1481553901000" expanded="true" signature="3081:3210" ph="..." />
-            <marker date="1481553901000" expanded="true" signature="3629:3744" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/createArticle.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="74" />
+          <caret line="14" column="92" selection-start-line="14" selection-start-column="92" selection-end-line="14" selection-end-column="92" />
           <folding>
             <marker date="1481554744000" expanded="true" signature="252:918" ph="..." />
             <marker date="1481554744000" expanded="true" signature="258:322" ph="..." />
@@ -520,16 +527,124 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/inc/articleCreation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+          <folding>
+            <marker date="1481571518000" expanded="true" signature="597:829" ph="INSERT INTO HealthNews... " />
+            <marker date="1481571518000" expanded="true" signature="703:755" ph="SELECT user_... Users" />
+            <marker date="1481571518000" expanded="true" signature="865:1016" ph="INSERT INTO HealthMedia... " />
+            <marker date="1481571518000" expanded="true" signature="1177:1369" ph="INSERT INTO HealthNews... " />
+            <marker date="1481571518000" expanded="true" signature="1257:1309" ph="SELECT user_... Users" />
+            <marker date="1481571518000" expanded="true" signature="1405:1556" ph="INSERT INTO HealthMedia... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/approve.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1481571657000" expanded="true" signature="426:516" ph="UPDATE Healt... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/news/t_news.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+          <folding>
+            <marker date="1481571274000" expanded="true" signature="790:968" ph="SELECT * FRO... HealthNews" />
+            <marker date="1481571274000" expanded="true" signature="1674:1729" ph="..." />
+            <marker date="1481571274000" expanded="true" signature="1826:1941" ph="..." />
+            <marker date="1481571274000" expanded="true" signature="2167:2496" ph="..." />
+            <marker date="1481571274000" expanded="true" signature="2233:2487" ph="..." />
+            <marker date="1481571274000" expanded="true" signature="2533:2991" ph="..." />
+            <marker date="1481571274000" expanded="true" signature="2599:2982" ph="..." />
+            <marker date="1481571274000" expanded="true" signature="3037:3245" ph="..." />
+            <marker date="1481571274000" expanded="true" signature="3107:3236" ph="..." />
+            <marker date="1481571274000" expanded="true" signature="3655:3770" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test" />
+    <entry file="file://$PROJECT_DIR$/inc/news/t_news.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
+          <folding>
+            <marker date="1481571274000" expanded="true" signature="790:968" ph="SELECT * FRO... HealthNews" />
+            <marker date="1481571274000" expanded="true" signature="1674:1729" ph="..." />
+            <marker date="1481571274000" expanded="true" signature="1826:1941" ph="..." />
+            <marker date="1481571274000" expanded="true" signature="2167:2496" ph="..." />
+            <marker date="1481571274000" expanded="true" signature="2233:2487" ph="..." />
+            <marker date="1481571274000" expanded="true" signature="2533:2991" ph="..." />
+            <marker date="1481571274000" expanded="true" signature="2599:2982" ph="..." />
+            <marker date="1481571274000" expanded="true" signature="3037:3245" ph="..." />
+            <marker date="1481571274000" expanded="true" signature="3107:3236" ph="..." />
+            <marker date="1481571274000" expanded="true" signature="3655:3770" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/health-wellbeing.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="38" />
+          <folding>
+            <marker date="1481571503000" expanded="true" signature="1058:1217" ph="SELECT news_... HealthNews" />
+            <marker date="1481571503000" expanded="true" signature="1719:1822" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/articleCreation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+          <folding>
+            <marker date="1481571518000" expanded="true" signature="597:829" ph="INSERT INTO HealthNews... " />
+            <marker date="1481571518000" expanded="true" signature="703:755" ph="SELECT user_... Users" />
+            <marker date="1481571518000" expanded="true" signature="865:1016" ph="INSERT INTO HealthMedia... " />
+            <marker date="1481571518000" expanded="true" signature="1177:1369" ph="INSERT INTO HealthNews... " />
+            <marker date="1481571518000" expanded="true" signature="1257:1309" ph="SELECT user_... Users" />
+            <marker date="1481571518000" expanded="true" signature="1405:1556" ph="INSERT INTO HealthMedia... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/approve.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+          <folding>
+            <marker date="1481571657000" expanded="true" signature="426:516" ph="UPDATE Healt... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/inc/editArticle.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="71" selection-start-line="25" selection-start-column="71" selection-end-line="25" selection-end-column="71" />
+        <state relative-caret-position="75">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
           <folding>
-            <marker date="1481554744000" expanded="true" signature="311:1047" ph="..." />
-            <marker date="1481554744000" expanded="true" signature="375:440" ph="..." />
-            <marker date="1481554744000" expanded="true" signature="446:543" ph="..." />
-            <marker date="1481554744000" expanded="true" signature="549:722" ph="..." />
-            <marker date="1481554744000" expanded="true" signature="728:979" ph="..." />
+            <marker date="1481571670000" expanded="true" signature="313:1049" ph="..." />
+            <marker date="1481571670000" expanded="true" signature="377:442" ph="..." />
+            <marker date="1481571670000" expanded="true" signature="448:545" ph="..." />
+            <marker date="1481571670000" expanded="true" signature="551:724" ph="..." />
+            <marker date="1481571670000" expanded="true" signature="730:981" ph="..." />
           </folding>
         </state>
       </provider>
@@ -541,6 +656,52 @@
           <folding>
             <marker date="1481550505000" expanded="true" signature="263:358" ph="UPDATE Healt... " />
             <marker date="1481550505000" expanded="true" signature="391:491" ph="UPDATE Healt... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/db/simpleDB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="54" column="29" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/createArticle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="92" selection-start-line="14" selection-start-column="92" selection-end-line="14" selection-end-column="92" />
+          <folding>
+            <marker date="1481554744000" expanded="true" signature="252:918" ph="..." />
+            <marker date="1481554744000" expanded="true" signature="258:322" ph="..." />
+            <marker date="1481554744000" expanded="true" signature="261:318" ph="..." />
+            <marker date="1481554744000" expanded="true" signature="328:421" ph="..." />
+            <marker date="1481554744000" expanded="true" signature="331:417" ph="..." />
+            <marker date="1481554744000" expanded="true" signature="399:413" ph="..." />
+            <marker date="1481554744000" expanded="true" signature="427:602" ph="..." />
+            <marker date="1481554744000" expanded="true" signature="430:598" ph="..." />
+            <marker date="1481554744000" expanded="true" signature="608:845" ph="..." />
+            <marker date="1481554744000" expanded="true" signature="611:841" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/deleteArticle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <marker date="1481553965000" expanded="true" signature="134:183" ph="DELETE FROM " />
+            <marker date="1481553965000" expanded="true" signature="218:268" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>

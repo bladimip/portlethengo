@@ -4,7 +4,7 @@
 // html components not working
 include('layouts/HTMLcomponents.php');
 
-top();
+top("");
 
 $news_id = $_POST['news_id'];
 $title = $_POST['title'];

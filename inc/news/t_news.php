@@ -32,6 +32,10 @@ if (isset($_SESSION['USER_LOGIN_IN']))
 	$user_id = $_SESSION['USER_ID'];
 	$siteAdmin = $_SESSION['USER_SITEADMIN'];
 }
+else
+{
+	$siteAdmin = 0;
+}
 if (isset($_GET["news_id"])) 
 {
     

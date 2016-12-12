@@ -1,5 +1,6 @@
 <?php
 include('db/simpleDB.php');
+include('layouts/HTMLcomponents.php');
 //
 //use session 'USER_ID'
 if (isset($_SESSION['USER_LOGIN_IN'])) 
@@ -7,12 +8,14 @@ if (isset($_SESSION['USER_LOGIN_IN']))
   $user_id = $_SESSION['USER_ID'];
   $siteAdmin = $_SESSION['USER_SITEADMIN'];
 }
-			$user_id = 8;
+else
+{
+    $siteAdmin = 0;
+}
+			//$user_id = 1;
+            //$siteAdmin = 1;
 			$title = $_POST['title'];
 			$description = $_POST['description'];
-			//$newsDate = $row['newsDate'];
-			$siteAdmin = 0;
-			// use session for siteAdmin USER_SITEADMIN
 			$mediaType = $_POST['mediaType'];
 			$mediaPath = $_POST['mediaPath'];
 			if($siteAdmin == 1)
