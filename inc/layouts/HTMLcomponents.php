@@ -58,7 +58,7 @@ function top( $title ) {
 						<a href="/" class="left brand-logo lime-text"><span class="lnr lnr-apartment"></span>Go-Portlethen</a>
 
 						<ul class="right hide-on-med-and-down">
-							<li><span class="waves-effect waves-light searchBtn"><span class="lnr lnr-magnifier"></span>Search</span></li>
+							<li><a class="waves-effect waves-light" href="/search"><span class="lnr lnr-magnifier"></span>Search</a></li>
 							<li><a class="waves-effect waves-light" href="/sportlethen"><span class="lnr lnr-users"></span>SPortlethen</a></li>
 							<li><a class="waves-effect waves-light" href="/health-wellbeing"><span class="lnr lnr-heart-pulse"></span>Health & Wellbeing</a></li>
 							<li><a class="waves-effect waves-light" href="/map"><span class="lnr lnr-map"></span>Discover Area</a></li>
@@ -96,7 +96,6 @@ function top( $title ) {
 
 						<div class="row">
 								<div class="col s12 center">
-										<h3><i class="mdi-content-send brown-text"></i></h3>
 										<p class="left-align light">
 											<form method="POST" action="/login">
 
@@ -119,14 +118,13 @@ function top( $title ) {
 			    <div class="modal-content">
             <div class="row">
                 <div class="col s12 center">
-                    <h3><i class="mdi-content-send brown-text"></i></h3>
                     <p class="left-align light"><form method="POST" action="/register">
                     Username:      <input type="text" name="login" required><br>
                     E-mail:     <input type="email" name="email" required><br>
                     Password :  <input type="password" name="password" required><br><br>
                     <input type="submit" name="enter" value="Sign Up" class=" waves-effect waves-green btn-flat">
                     <input type="reset" value="Clear" class=" waves-effect waves-green btn-flat">
-                    </p>
+                    </form></p>
                 </div>
             </div>
 

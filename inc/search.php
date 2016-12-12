@@ -3,16 +3,17 @@
 Developed by Vlad R
 Created on 4 December 2016
 
-Following php file processes search requests through search bar across all sections of website
+Search v.3
+Following php file contains page template that processes search requests taken from form
 
-TODO:
-finalize looks
 */
 
 //file contains information and methods for DB
 include('/db/simpleDB.php');
 //file contains function for trimming white-spaces and special characters when creating links
 include('/php/functions.php');
+
+include('layouts/HTMLcomponents.php');
 
 //following function checks selected tables (sections) and outputs results based on search
 //also returns boolean value that is used for checking if any results found
@@ -100,26 +101,63 @@ function searchSection ($table, $search) {
 		return FALSE;
 }
 
+// Navbar
+top("Search website");
+
+//Other page content
 //testing
 //echo "initial search string: " . $_POST["search"] . "<br>";
 // $search = preg_replace('/[^A-Za-z0-9\-]/', ' ', $_POST["search"]);
 // echo "trimmed search string used in query: " . $search  . "<br>";
 
 //putting all search output into divisions for style formatting
-echo '<div class="section" id="searchOutput"><div class="container">';
-//searching in each section of website
-$users = searchSection("Users", $_POST["search"]);
-$categories = searchSection("ClubGenre", $_POST["search"]);
-$clubs = searchSection("Clubs", $_POST["search"]);
-$events = searchSection("ClubEvents", $_POST["search"]);
-$articles = searchSection("HealthNews", $_POST["search"]);
-$locations = searchSection("Locations", $_POST["search"]);
-$routes = searchSection("Routes", $_POST["search"]);
+echo '<div class="section"><div class="container">';
 
-//outputting message if no results found
-if (($users == 0) and ($categories == 0) and ($clubs == 0) and ($events == 0) and ($articles == 0) and ($locations == 0) and ($routes == 0)) {
-	echo '<h5 class="messageTitle">No results found =(</h5>';
+//search form - label, text box and a submit button
+echo ('
+<form action="/search" method="post" name="SearchForm">
+	<div class="input-field">
+		<input type="text" id="search" name="search">
+		<label for="search">Looking for...</label>
+	</div>
+	<div class="col s12 center">
+		<button class="btn waves-effect waves-light" type="submit" name="action">Search</button>
+	</div>
+</form>
+');
+
+/*
+<br>Search in:<br>
+<input name="group1" type="radio" id="all" checked /><label for="all">All sections of website</label>
+<br>
+<input name="group1" type="radio" id="users" /><label for="users">Users</label>
+<input name="group1" type="radio" id="clubSections" /><label for="clubSections">Club genres</label>
+<input name="group1" type="radio" id="clubs" /><label for="clubs">Clubs</label>
+<input name="group1" type="radio" id="clubEvents" /><label for="clubEvents">Events</label>
+<input name="group1" type="radio" id="articles" /><label for="articles">Articles</label>
+<input name="group1" type="radio" id="locations" /><label for="locations">Locations</label>
+<input name="group1" type="radio" id="routes" /><label for="routes">Routes</label>
+<br>
+*/
+
+if (isset($_POST['search'])) {
+	// searching in each section of website
+	$users = searchSection("Users", $_POST["search"]);
+	$categories = searchSection("ClubGenre", $_POST["search"]);
+	$clubs = searchSection("Clubs", $_POST["search"]);
+	$events = searchSection("ClubEvents", $_POST["search"]);
+	$articles = searchSection("HealthNews", $_POST["search"]);
+	$locations = searchSection("Locations", $_POST["search"]);
+	$routes = searchSection("Routes", $_POST["search"]);
+	
+	//outputting message if no results found
+	if (($users == 0) and ($categories == 0) and ($clubs == 0) and ($events == 0) and ($articles == 0) and ($locations == 0) and ($routes == 0)) {
+		echo '<h5 class="messageTitle">No results found =(</h5>';
+	}
 }
 echo '</div></div>';
+
+// Footer
+bottom();
 	
 ?>
