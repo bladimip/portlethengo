@@ -10,16 +10,19 @@ include('/layouts/HTMLcomponents.php');
 DidTheUserAdmin(1);
 
 
-if (isset($_POST['enter'])) {
+$sql = "SELECT approved FROM clubs";
+$result = mysqli_query($CONNECT, $sql);
+$notapproved = 0;
 
-  $_POST['clubgenre'] = FormChars($_POST['clubgenre']);
-  $_POST['clubgenrecode'] = FormChars($_POST['clubgenrecode']);
-
-  mysqli_query($CONNECT, "INSERT INTO `clubgenre`  VALUES ('$_POST[clubgenre]', '$_POST[clubgenrecode]')");
-
+if (mysqli_num_rows($result) > 0) {
+  while($row = mysqli_fetch_assoc($result)) {
+    if ($row["approved"] == 0){
+      $notapproved = $notapproved + 1;
+    }
+  }
+} else {
+  echo "0 results";
 }
-
-
 
 // Navbar
 top("Welcome to Portlethen");
@@ -28,22 +31,23 @@ top("Welcome to Portlethen");
 
 ?>
 
-  
-  <div class="container">
-        <div class="section">
 
-            <div class="row">
-                <div class="col s12 center">
-                    <h3><i class="mdi-content-send brown-text"></i></h3>
-                    <h4>Admin Panel</h4>
-                    <p class="center-align light">There you can change come details of users and webpage.</p>
-                    <div class="collection">
-    <a href="adminusers" class="collection-item">Show all users</a>
-    <a href="admingenre" class="collection-item">Modify Genre</a>
-    <a href="adminusersrights" class="collection-item">Change user rights</a>
-                </div>
-            </div>
+<div class="container">
+  <div class="section">
+
+    <div class="row">
+      <div class="col s12 center">
+        <h3><i class="mdi-content-send brown-text"></i></h3>
+        <h4>Admin Panel</h4>
+        <p class="center-align light">There you can change come details of users and webpage.</p>
+        <div class="collection">
+          <a href="adminusers" class="collection-item">Show all users</a>
+          <a href="admingenre" class="collection-item">Modify Genre</a>
+          <a href="adminusersrights" class="collection-item">Change user rights</a>
+          <a href="admingroups" class="collection-item"><span class="new badge red"><?php echo $notapproved ?></span>Approve the clubs</a>
         </div>
+      </div>
+    </div>
 
   </div>
-                </div>
+</div>

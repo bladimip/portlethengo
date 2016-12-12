@@ -7,4 +7,7 @@ function url($url) {
    $url = preg_replace('~[^-a-z-A-Z0-9_]+~', '+', $url);
    return $url;
 }
+
+
+
 ?>

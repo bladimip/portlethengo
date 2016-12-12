@@ -9,37 +9,35 @@ include('/layouts/HTMLcomponents.php');
 //Ulogin(1);
 DidTheUserAdmin(1);
 
-//Delete user
-
-if (isset($_POST['delete'])) {
-    
-    $sql = "DELETE FROM webdev5 WHERE user_id = $row[user_id]";
-
-if ($CONNECT->query($sql) === TRUE) {
-    echo "Record deleted successfully";
-} else {
-    echo "Error deleting record: " . $CONNECT->error;
-}}
-
-// Block User
-
-if (isset($_POST['block'])) {
-    
-    $sql = "DELETE FROM webdev5 WHERE user_id = $row[user_id]";
-
-if ($CONNECT->query($sql) === TRUE) {
-    echo "Record deleted successfully";
-} else {
-    echo "Error deleting record: " . $CONNECT->error;
+if(isset($_POST["id"]))  
+{  
+  $name = mysqli_real_escape_string($CONNECT, $_POST["id"]);
+  $sql = "UPDATE users SET blocked='0' WHERE user_id = '".$name."'";  
+  if(mysqli_query($CONNECT, $sql))  
+  {  
+    echo "Message Saved";  
+  }  
 }
 
-$sql = "UPDATE webdev5 SET blocked='1' WHERE user_id = $row[user_id]";
+if(isset($_POST["idd"]))  
+{  
+  $name = mysqli_real_escape_string($CONNECT, $_POST["idd"]);
+  $sql = "UPDATE users SET blocked='1' WHERE user_id = '".$name."'";  
+  if(mysqli_query($CONNECT, $sql))  
+  {  
+    echo "Message Saved";  
+  }  
+}
 
-if ($CONNECT->query($sql) === TRUE) {
-    echo "Record updated successfully";
-} else {
-    echo "Error updating record: " . $CONNECT->error;
-}}
+if(isset($_POST["iddd"]))  
+{  
+  $name = mysqli_real_escape_string($CONNECT, $_POST["iddd"]);
+  $sql = "DELETE FROM users WHERE user_id = '".$name."'";  
+  if(mysqli_query($CONNECT, $sql))  
+  {  
+    echo "Message Saved";  
+  }  
+}
 
 
 
@@ -57,8 +55,8 @@ top("Welcome to Portlethen");
             <div class="row">
                 <div class="col s12 center">
                     <h3><i class="mdi-content-send brown-text"></i></h3>
-                    <h4>Admin Panel</h4>
-                    <p class="center-align light">There you can change come details of users and webpage.</p>
+                    <h4>Admin Panel - Manipulate with users</h4>
+                    <p class="center-align light">There you can change come details of users.</p>
                     <div class="collection">
     <a href="adminpanel" class="collection-item">Go to admin panel</a>
 
@@ -88,7 +86,7 @@ if ($result->num_rows > 0) {
         echo "<tbody>
           <tr>
             <td>".$row["user_id"]."</td><td>".$row["username"]."</td><td> ".(($row["blocked"] ? '1' : 0) ? 
-'<a class="waves-effect waves-light btn">Unblock User</a>' : '<a class="waves-effect waves-light btn">Block User</a>'). "</td><td>".'<input type="submit" name="delete" value="Delete User" class="waves-effect waves-light btn"></p>' ."</td></tr></p>";
+'<input type="button" id="button_id" value="Unblock user" onClick="UpdateRecordunblock(' . $row["user_id"] .');" class="waves-effect waves-light btn" ></a>' : '<input type="button" id="button_id" value="Block user" onClick="UpdateRecordblock(' . $row["user_id"] .');" class="waves-effect waves-light btn" ></a>'). "</td><td>".'<input type="button" id="button_id" value="Delete User" onClick="DeleteRecord(' . $row["user_id"] .');" class="waves-effect waves-light btn" ></a>' ."</td></tr></p>";
      }
 } else {
      echo "0 results";
@@ -102,3 +100,48 @@ $CONNECT->close();
 
         </div>
     </div>
+
+
+    <script>
+  function UpdateRecordunblock(id)
+  {
+      jQuery.ajax({
+       type: "POST",
+       url: "adminusers",
+       data: 'id='+id,
+       cache: false,
+       success: function(data, response)
+       {
+         Materialize.toast("User with id:" + id + " is successfully unblocked", 3000, 'rounded')
+       }
+     });
+ }
+
+ function UpdateRecordblock(idd)
+  {
+      jQuery.ajax({
+       type: "POST",
+       url: "adminusers",
+       data: 'idd='+idd,
+       cache: false,
+       success: function(data, response)
+       {
+         Materialize.toast("User with id:" + idd + " is successfully blocked", 3000, 'rounded')
+       }
+     });
+ }
+
+ function DeleteRecord(iddd)
+  {
+      jQuery.ajax({
+       type: "POST",
+       url: "adminusers",
+       data: 'iddd='+iddd,
+       cache: false,
+       success: function(data, response)
+       {
+         Materialize.toast("User with id:" + iddd + " is successfully deleted", 3000, 'rounded')
+       }
+     });
+ }
+</script>
