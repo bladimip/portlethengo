@@ -34,6 +34,10 @@ if (isset($_SESSION['USER_LOGIN_IN']))
 } else {
 	$siteAdmin = 0;
 }
+else
+{
+	$siteAdmin = 0;
+}
 if (isset($_GET["news_id"])) 
 {
     
@@ -80,30 +84,52 @@ if (isset($_GET["news_id"]))
 		    {
 		    	echo "<p>Invalid Media</p>";
 		    }
-		    //these two forms work indvidually but if they are both there they both redirect to /inc/approve.php?
-		    echo "<center><form name ='approveFrom' action='/inc/approve.php' method='post'>
+			if($approved == 0)
+			{
+
+
+				echo "<center><form name ='approveFrom' action='/inc/approve.php' method='post'>
+						<input name='news_id' type='hidden' value='{$news_id}'>
+						<input name='approved' type='hidden' value='{$approved}'>
+						<input name='approvedBy' type='hidden' value='{$approvedBy}'>
+						<input type='Submit' name='Submit' value='Approve'>
+						</center></form>
+					";
+
+				echo "<center><form name='editForm' action='/inc/editArticle.php' method='post'>
+						<input name='news_id' type='hidden' value='{$news_id}'>
+						<input name ='title' type='hidden' value='{$title}'>
+						<input name ='description' type='hidden' value='{$description}'>
+						<input name = 'mediaType' type='hidden' value='{$mediaType}'>
+						<input name = 'mediaPath' type='hidden' value='{$mediaPath}'>
+						<input type='Submit' name='Submit' value='Edit'>
+						</center></form>
+					";
+
+				echo "<center><form name='deleteForm' action='/inc/deleteArticle.php' method='post'>
 					<input name='news_id' type='hidden' value='{$news_id}'>
-					<input name='approved' type='hidden' value='{$approved}'>
-					<input name='approvedBy' type='hidden' value='{$approvedBy}'>
-					<input type='Submit' name='Submit' value='Approve'>
+					<input type='Submit' name='Submit' value='Delete'>
 					</center></form>
-				";
-				
-				echo"<center><form name='editForm' action='/inc/editArticle.php' method='post'>
+					";
+			}
+			else
+			{
+				echo "<center><form name='editForm' action='/inc/editArticle.php' method='post'>
+						<input name='news_id' type='hidden' value='{$news_id}'>
+						<input name ='title' type='hidden' value='{$title}'>
+						<input name ='description' type='hidden' value='{$description}'>
+						<input name = 'mediaType' type='hidden' value='{$mediaType}'>
+						<input name = 'mediaPath' type='hidden' value='{$mediaPath}'>
+						<input type='Submit' name='Submit' value='Edit'>
+						</center></form>
+					";
+
+				echo "<center><form name='deleteForm' action='/inc/deleteArticle.php' method='post'>
 					<input name='news_id' type='hidden' value='{$news_id}'>
-					<input name ='title' type='hidden' value='{$title}'>
-					<input name ='description' type='hidden' value='{$description}'>
-					<input name = 'mediaType' type='hidden' value='{$mediaType}'>
-					<input name = 'mediaPath' type='hidden' value='{$mediaPath}'>
-					<input type='Submit' name='Submit' value='Edit'>
+					<input type='Submit' name='Submit' value='Delete'>
 					</center></form>
-			    ";
-			    
-			    echo"<center><form name='deleteForm' action='/inc/deleteArticle.php' method='post'>
-			    <input name='news_id' type='hidden' value='{$news_id}'>
-			    <input type='Submit' name='Submit' value='Delete'>
-			    </center></form>
-			    ";
+					";
+			}
 	    }
 	    else
 	    {

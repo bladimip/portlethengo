@@ -2,6 +2,9 @@
 
 include('db/simpleDB.php');
 
+include('layouts/HTMLcomponents.php');
+//echo 'test';
+
 if (isset($_SESSION['USER_LOGIN_IN'])) 
 {
   $user_id = $_SESSION['USER_ID'];
@@ -10,7 +13,11 @@ if (isset($_SESSION['USER_LOGIN_IN']))
 	$siteAdmin = 0;
 }
 
-//$user_id = 6;
+else
+{
+    $siteAdmin = 0;
+}
+
 $news_id = $_POST['news_id'];
 $approved = $_POST['approved'];
 $approvedBy = $_POST['approvedBy'];

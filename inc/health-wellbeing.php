@@ -36,6 +36,12 @@ if (isset($_SESSION['USER_LOGIN_IN']))
 } else {
 	$siteAdmin = 0;
 }
+else
+{
+	$siteAdmin = 0;
+}
+
+$loggedOn = isset($_SESSION['USER_LOGIN_IN']);
 
 
 //$siteAdmin = 1;
@@ -52,11 +58,12 @@ $db -> close();
 		{
 			$news_id = $row['news_id'];
 			$title = $row['title'];
+
 			//$user_id = $row['user_id'];
 			//$description = $row['description'];
+
 			$approved = $row['approved'];
 			$username = $row['username'];
-			//if($siteAdmin ==1)
 			if($siteAdmin == 1)
 			{
 				if($approved == 1)
@@ -91,9 +98,19 @@ $db -> close();
 
 		echo ' </div>';
 		}
-		echo "<p><center><FORM METHOD='LINK' ACTION='inc/createArticle.php'><INPUT TYPE='submit' VALUE='Create an Article'></FORM></p>";
+        echo "<p><center><FORM METHOD='LINK' ACTION='inc/createArticle.php'><INPUT TYPE='submit' VALUE='Create an Article'></FORM></p>";
+        /* Uncomment this once the session is working
+		if($loggedOn)
+        {
+            echo "<p><center><FORM METHOD='LINK' ACTION='inc/createArticle.php'><INPUT TYPE='submit' VALUE='Create an Article'></FORM></p>";
 
+        }
+        else
+        {
+            echo "Log on to create an Article";
+        }
 
+		*/
 
 
 
