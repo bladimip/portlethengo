@@ -52,7 +52,7 @@ function onLoad(){
         $result = $db->runQuery($query);
         $db->close();
         echo "<p>The location has been added to the database but will not be seen until and administrator has approved it.</p>";
-        echo "<br><a href=\"map.php\">Go Back</a>";
+        echo "<br><a href=\"map\">Go Back</a>";
         $loadmap = 0 ;
         }
     else{

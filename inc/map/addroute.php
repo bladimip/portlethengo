@@ -39,10 +39,14 @@ function onLoad(){
         //set $loadmap to 0 so it doesn't draw the map
         //$loadmap = 0;
         //take in variables from $_POST method and precess them ready to be added to database
-        $name = $_POST['name'];
-        $description = $_POST['description'];
-        $address = $_POST['address'];
-        $co = $_POST['co'];
+        $name2 = $_POST['name'];
+        $name = trim("();", $name2);
+        $description2 = $_POST['description'];
+        $description= trim("();", $description2);
+        $address2 = $_POST['address'];
+        $address = trim("();", $address2);
+        $co2 = $_POST['co'];
+        $co = trim("();", $co2);
         $co = str_replace(";", "a", $co);
         $co = str_replace(",","b", $co);
         $co = str_replace("a",",", $co);

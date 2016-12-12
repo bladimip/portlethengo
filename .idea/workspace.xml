@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7985c7fa-3ae5-4133-bee0-215008d8b736" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/map/addmap.php" afterPath="$PROJECT_DIR$/inc/map/addmap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/map/addroute.php" afterPath="$PROJECT_DIR$/inc/map/addroute.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/map/map.php" afterPath="$PROJECT_DIR$/inc/map/map.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/map/routes.php" afterPath="$PROJECT_DIR$/inc/map/routes.php" />
     </list>
@@ -25,23 +28,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="map.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="map.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/map/map.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="360">
+              <caret line="210" column="14" selection-start-line="210" selection-start-column="14" selection-end-line="210" selection-end-column="14" />
               <folding>
                 <element signature="e#7#165#0#PHP" expanded="true" />
-                <element signature="n#getLocation#0;n#!!top" expanded="false" />
-                <element signature="n#drawMarkers#0;n#!!top" expanded="false" />
+                <element signature="n#drawList#0;n#!!top" expanded="false" />
                 <element signature="n#getUserType#0;n#!!top" expanded="false" />
-                <marker date="1481562164000" expanded="true" signature="1047:1070" ph="SELECT * FRO... Locations" />
-                <marker date="1481562164000" expanded="true" signature="1121:1163" ph="SELECT * FRO... Locations" />
-                <marker date="1481562164000" expanded="true" signature="3779:3802" ph="SELECT * FRO... Locations" />
-                <marker date="1481562164000" expanded="true" signature="3858:3900" ph="SELECT * FRO... Locations" />
-                <marker date="1481562164000" expanded="true" signature="4541:4580" ph="SELECT * FRO... Locations" />
-                <marker date="1481562164000" expanded="true" signature="4645:4701" ph="SELECT * FRO... Locations" />
-                <marker date="1481562164000" expanded="true" signature="5623:5674" ph="SELECT nkpag... Users" />
+                <marker date="1481585553000" expanded="true" signature="1047:1070" ph="SELECT * FRO... Locations" />
+                <marker date="1481585553000" expanded="true" signature="1121:1163" ph="SELECT * FRO... Locations" />
+                <marker date="1481585553000" expanded="true" signature="3780:3803" ph="SELECT * FRO... Locations" />
+                <marker date="1481585553000" expanded="true" signature="3859:3901" ph="SELECT * FRO... Locations" />
+                <marker date="1481585553000" expanded="true" signature="4542:4581" ph="SELECT * FRO... Locations" />
+                <marker date="1481585553000" expanded="true" signature="4646:4702" ph="SELECT * FRO... Locations" />
+                <marker date="1481585553000" expanded="true" signature="5624:5675" ph="SELECT nkpag... Users" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".htaccess" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.htaccess">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addroute.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/map/addroute.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="36" />
+              <folding>
+                <marker date="1481568385000" expanded="true" signature="1384:1509" ph="INSERT INTO routes... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addmap.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/map/addmap.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="54" column="31" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
+              <folding>
+                <marker date="1481582974000" expanded="true" signature="1196:1362" ph="INSERT INTO locations... " />
               </folding>
             </state>
           </provider>
@@ -50,34 +86,34 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/map/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="154" selection-end-column="6" />
+            <state relative-caret-position="768">
+              <caret line="82" column="20" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
               <folding>
-                <element signature="n#pullRoute#0;n#!!top" expanded="false" />
                 <element signature="n#drawMarkers#0;n#!!top" expanded="false" />
+                <element signature="n#drawList#0;n#!!top" expanded="false" />
                 <element signature="n#drawRoute#0;n#!!top" expanded="false" />
                 <element signature="n#getUserType#0;n#!!top" expanded="false" />
-                <marker date="1481561931000" expanded="true" signature="930:968" ph="SELECT * FRO... routes" />
-                <marker date="1481561931000" expanded="true" signature="1028:1083" ph="SELECT * FRO... routes" />
-                <marker date="1481561931000" expanded="true" signature="2474:2494" ph="SELECT * FRO... Routes" />
-                <marker date="1481561931000" expanded="true" signature="2542:2581" ph="SELECT * FRO... Routes" />
-                <marker date="1481561931000" expanded="true" signature="2671:2752" ph="..." />
-                <marker date="1481561931000" expanded="true" signature="2736:2752" ph="..." />
-                <marker date="1481561931000" expanded="true" signature="2911:4755" ph="..." />
-                <marker date="1481561931000" expanded="true" signature="2964:4748" ph="..." />
-                <marker date="1481561931000" expanded="true" signature="2988:4737" ph="..." />
-                <marker date="1481561931000" expanded="true" signature="2997:4731" ph="..." />
-                <marker date="1481561931000" expanded="true" signature="3087:3107" ph="..." />
-                <marker date="1481561931000" expanded="true" signature="3108:4726" ph="..." />
-                <marker date="1481561931000" expanded="true" signature="3538:4009" ph="..." />
-                <marker date="1481561931000" expanded="true" signature="3559:3991" ph="..." />
-                <marker date="1481561931000" expanded="true" signature="3760:3969" ph="..." />
-                <marker date="1481561931000" expanded="true" signature="3775:3964" ph="..." />
-                <marker date="1481561931000" expanded="true" signature="4445:4645" ph="..." />
-                <marker date="1481561931000" expanded="true" signature="4466:4627" ph="..." />
-                <marker date="1481561931000" expanded="true" signature="5282:5333" ph="SELECT nkpag... Users" />
-                <marker date="1481561931000" expanded="true" signature="6056:6295" ph="{...}" />
-                <marker date="1481561931000" expanded="true" signature="6070:6178" ph="//..." />
+                <marker date="1481586008000" expanded="true" signature="930:968" ph="SELECT * FRO... routes" />
+                <marker date="1481586008000" expanded="true" signature="1028:1083" ph="SELECT * FRO... routes" />
+                <marker date="1481586008000" expanded="true" signature="2474:2494" ph="SELECT * FRO... Routes" />
+                <marker date="1481586008000" expanded="true" signature="2542:2581" ph="SELECT * FRO... Routes" />
+                <marker date="1481586008000" expanded="true" signature="2671:2752" ph="..." />
+                <marker date="1481586008000" expanded="true" signature="2736:2752" ph="..." />
+                <marker date="1481586008000" expanded="true" signature="2911:4703" ph="..." />
+                <marker date="1481586008000" expanded="true" signature="2964:4696" ph="..." />
+                <marker date="1481586008000" expanded="true" signature="2987:4685" ph="..." />
+                <marker date="1481586008000" expanded="true" signature="2996:4679" ph="..." />
+                <marker date="1481586008000" expanded="true" signature="3086:3106" ph="..." />
+                <marker date="1481586008000" expanded="true" signature="3107:4674" ph="..." />
+                <marker date="1481586008000" expanded="true" signature="3537:3964" ph="..." />
+                <marker date="1481586008000" expanded="true" signature="3558:3946" ph="..." />
+                <marker date="1481586008000" expanded="true" signature="3715:3924" ph="..." />
+                <marker date="1481586008000" expanded="true" signature="3730:3919" ph="..." />
+                <marker date="1481586008000" expanded="true" signature="4400:4593" ph="..." />
+                <marker date="1481586008000" expanded="true" signature="4421:4575" ph="..." />
+                <marker date="1481586008000" expanded="true" signature="5230:5281" ph="SELECT nkpag... Users" />
+                <marker date="1481586008000" expanded="true" signature="6004:6243" ph="{...}" />
+                <marker date="1481586008000" expanded="true" signature="6018:6126" ph="//..." />
               </folding>
             </state>
           </provider>
@@ -111,13 +147,13 @@
         <option value="$PROJECT_DIR$/inc/test.php" />
         <option value="$PROJECT_DIR$/inc/map.php" />
         <option value="$PROJECT_DIR$/inc/layouts/HTMLcomponents.php" />
-        <option value="$PROJECT_DIR$/.htaccess" />
-        <option value="$PROJECT_DIR$/inc/map/addroute.php" />
         <option value="$PROJECT_DIR$/inc/map/approve.php" />
         <option value="$PROJECT_DIR$/inc/map/delete.php" />
+        <option value="$PROJECT_DIR$/inc/map/addroute.php" />
         <option value="$PROJECT_DIR$/inc/map/addmap.php" />
-        <option value="$PROJECT_DIR$/inc/map/routes.php" />
         <option value="$PROJECT_DIR$/inc/map/map.php" />
+        <option value="$PROJECT_DIR$/inc/map/routes.php" />
+        <option value="$PROJECT_DIR$/.htaccess" />
       </list>
     </option>
   </component>
@@ -205,7 +241,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="map" />
+              <option name="myItemId" value="db" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -219,29 +255,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="inc" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UniFirstProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UniFirstProject" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="inc" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="club" />
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -331,7 +345,7 @@
       <workItem from="1481546345157" duration="149000" />
       <workItem from="1481546527931" duration="374000" />
       <workItem from="1481549871505" duration="5000" />
-      <workItem from="1481549917056" duration="10784000" />
+      <workItem from="1481549917056" duration="13577000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1478527797280</created>
@@ -445,11 +459,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481561094982</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Job finished, all done except for;&#10;&#10;//TODO A function required to return user from session">
+      <created>1481562169316</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1481562169316</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63165000" />
+    <option name="totallyTimeSpent" value="65958000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -528,7 +549,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="Job finished, all done except for;&#10;&#10;//TODO A function required to return user from session" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -710,20 +733,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/db/createTemp.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="95" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/db/popTemp.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="922">
-          <caret line="132" column="519" selection-start-line="132" selection-start-column="519" selection-end-line="132" selection-end-column="519" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/test components.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -840,24 +849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/map/addroute.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="21" column="79" selection-start-line="21" selection-start-column="79" selection-end-line="21" selection-end-column="79" />
-          <folding>
-            <marker date="1481560666000" expanded="true" signature="1217:1342" ph="INSERT INTO routes... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/map/approve.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -890,67 +881,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/map/addmap.php">
+    <entry file="file://$PROJECT_DIR$/inc/map/addroute.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+        <state relative-caret-position="465">
+          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="36" />
           <folding>
-            <marker date="1481560931000" expanded="true" signature="1196:1362" ph="INSERT INTO locations... " />
+            <marker date="1481568385000" expanded="true" signature="1384:1509" ph="INSERT INTO routes... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/map/routes.php">
+    <entry file="file://$PROJECT_DIR$/inc/db/createTemp.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="154" selection-end-column="6" />
+        <state relative-caret-position="375">
+          <caret line="86" column="35" selection-start-line="0" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/db/popTemp.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="81" column="335" selection-start-line="0" selection-start-column="0" selection-end-line="135" selection-end-column="819" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/map/addmap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="54" column="31" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
           <folding>
-            <element signature="n#pullRoute#0;n#!!top" expanded="false" />
-            <element signature="n#drawMarkers#0;n#!!top" expanded="false" />
-            <element signature="n#drawRoute#0;n#!!top" expanded="false" />
-            <element signature="n#getUserType#0;n#!!top" expanded="false" />
-            <marker date="1481561931000" expanded="true" signature="930:968" ph="SELECT * FRO... routes" />
-            <marker date="1481561931000" expanded="true" signature="1028:1083" ph="SELECT * FRO... routes" />
-            <marker date="1481561931000" expanded="true" signature="2474:2494" ph="SELECT * FRO... Routes" />
-            <marker date="1481561931000" expanded="true" signature="2542:2581" ph="SELECT * FRO... Routes" />
-            <marker date="1481561931000" expanded="true" signature="2671:2752" ph="..." />
-            <marker date="1481561931000" expanded="true" signature="2736:2752" ph="..." />
-            <marker date="1481561931000" expanded="true" signature="2911:4755" ph="..." />
-            <marker date="1481561931000" expanded="true" signature="2964:4748" ph="..." />
-            <marker date="1481561931000" expanded="true" signature="2988:4737" ph="..." />
-            <marker date="1481561931000" expanded="true" signature="2997:4731" ph="..." />
-            <marker date="1481561931000" expanded="true" signature="3087:3107" ph="..." />
-            <marker date="1481561931000" expanded="true" signature="3108:4726" ph="..." />
-            <marker date="1481561931000" expanded="true" signature="3538:4009" ph="..." />
-            <marker date="1481561931000" expanded="true" signature="3559:3991" ph="..." />
-            <marker date="1481561931000" expanded="true" signature="3760:3969" ph="..." />
-            <marker date="1481561931000" expanded="true" signature="3775:3964" ph="..." />
-            <marker date="1481561931000" expanded="true" signature="4445:4645" ph="..." />
-            <marker date="1481561931000" expanded="true" signature="4466:4627" ph="..." />
-            <marker date="1481561931000" expanded="true" signature="5282:5333" ph="SELECT nkpag... Users" />
-            <marker date="1481561931000" expanded="true" signature="6056:6295" ph="{...}" />
-            <marker date="1481561931000" expanded="true" signature="6070:6178" ph="//..." />
+            <marker date="1481582974000" expanded="true" signature="1196:1362" ph="INSERT INTO locations... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/map/map.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="360">
+          <caret line="210" column="14" selection-start-line="210" selection-start-column="14" selection-end-line="210" selection-end-column="14" />
           <folding>
             <element signature="e#7#165#0#PHP" expanded="true" />
-            <element signature="n#getLocation#0;n#!!top" expanded="false" />
-            <element signature="n#drawMarkers#0;n#!!top" expanded="false" />
+            <element signature="n#drawList#0;n#!!top" expanded="false" />
             <element signature="n#getUserType#0;n#!!top" expanded="false" />
-            <marker date="1481562164000" expanded="true" signature="1047:1070" ph="SELECT * FRO... Locations" />
-            <marker date="1481562164000" expanded="true" signature="1121:1163" ph="SELECT * FRO... Locations" />
-            <marker date="1481562164000" expanded="true" signature="3779:3802" ph="SELECT * FRO... Locations" />
-            <marker date="1481562164000" expanded="true" signature="3858:3900" ph="SELECT * FRO... Locations" />
-            <marker date="1481562164000" expanded="true" signature="4541:4580" ph="SELECT * FRO... Locations" />
-            <marker date="1481562164000" expanded="true" signature="4645:4701" ph="SELECT * FRO... Locations" />
-            <marker date="1481562164000" expanded="true" signature="5623:5674" ph="SELECT nkpag... Users" />
+            <marker date="1481585553000" expanded="true" signature="1047:1070" ph="SELECT * FRO... Locations" />
+            <marker date="1481585553000" expanded="true" signature="1121:1163" ph="SELECT * FRO... Locations" />
+            <marker date="1481585553000" expanded="true" signature="3780:3803" ph="SELECT * FRO... Locations" />
+            <marker date="1481585553000" expanded="true" signature="3859:3901" ph="SELECT * FRO... Locations" />
+            <marker date="1481585553000" expanded="true" signature="4542:4581" ph="SELECT * FRO... Locations" />
+            <marker date="1481585553000" expanded="true" signature="4646:4702" ph="SELECT * FRO... Locations" />
+            <marker date="1481585553000" expanded="true" signature="5624:5675" ph="SELECT nkpag... Users" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/map/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="82" column="20" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
+          <folding>
+            <element signature="n#drawMarkers#0;n#!!top" expanded="false" />
+            <element signature="n#drawList#0;n#!!top" expanded="false" />
+            <element signature="n#drawRoute#0;n#!!top" expanded="false" />
+            <element signature="n#getUserType#0;n#!!top" expanded="false" />
+            <marker date="1481586008000" expanded="true" signature="930:968" ph="SELECT * FRO... routes" />
+            <marker date="1481586008000" expanded="true" signature="1028:1083" ph="SELECT * FRO... routes" />
+            <marker date="1481586008000" expanded="true" signature="2474:2494" ph="SELECT * FRO... Routes" />
+            <marker date="1481586008000" expanded="true" signature="2542:2581" ph="SELECT * FRO... Routes" />
+            <marker date="1481586008000" expanded="true" signature="2671:2752" ph="..." />
+            <marker date="1481586008000" expanded="true" signature="2736:2752" ph="..." />
+            <marker date="1481586008000" expanded="true" signature="2911:4703" ph="..." />
+            <marker date="1481586008000" expanded="true" signature="2964:4696" ph="..." />
+            <marker date="1481586008000" expanded="true" signature="2987:4685" ph="..." />
+            <marker date="1481586008000" expanded="true" signature="2996:4679" ph="..." />
+            <marker date="1481586008000" expanded="true" signature="3086:3106" ph="..." />
+            <marker date="1481586008000" expanded="true" signature="3107:4674" ph="..." />
+            <marker date="1481586008000" expanded="true" signature="3537:3964" ph="..." />
+            <marker date="1481586008000" expanded="true" signature="3558:3946" ph="..." />
+            <marker date="1481586008000" expanded="true" signature="3715:3924" ph="..." />
+            <marker date="1481586008000" expanded="true" signature="3730:3919" ph="..." />
+            <marker date="1481586008000" expanded="true" signature="4400:4593" ph="..." />
+            <marker date="1481586008000" expanded="true" signature="4421:4575" ph="..." />
+            <marker date="1481586008000" expanded="true" signature="5230:5281" ph="SELECT nkpag... Users" />
+            <marker date="1481586008000" expanded="true" signature="6004:6243" ph="{...}" />
+            <marker date="1481586008000" expanded="true" signature="6018:6126" ph="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>

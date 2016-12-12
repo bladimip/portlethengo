@@ -5,9 +5,9 @@ RewriteRule ^sportlethen/club/([^/]+)/event/([^/]+)$ inc/club/t_event.php?id=$1&
 
 RewriteRule ^health-wellbeing/news/([^/]+)$ inc/news/t_news.php?id=$1 [QSA,L]
 
-RewriteRule ^map/location/ inc/map/map.php?loc=$1 [QSA,L]
+RewriteRule ^map/location/([^/]+)$ inc/map/map.php?loc=$1 [QSA,L]
 RewriteRule ^map inc/map/map.php [QSA,L]
-RewriteRule ^routes/route/([^/]+)$ inc/map/routes.php?route=$1 [QSA,L]
+RewriteRule ^routes/([^/]+)$ inc/map/routes.php?route=$1 [QSA,L]
 RewriteRule ^routes inc/map/routes.php [QSA,L]
 RewriteRule ^addmap inc/map/addmap.php [QSA,L]
 RewriteRule ^addroute inc/map/addroute.php [QSA,L]

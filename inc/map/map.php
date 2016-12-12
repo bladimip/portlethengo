@@ -109,7 +109,7 @@ EEE;
             echo <<<EEE
             <li>
                 <ul> 
-                    <li><font size="4"><a href="map.php?loc=$loc_id">$name</a></font></li>
+                    <li><font size="4"><a href="map/location/$loc_id">$name</a></font></li>
                     <li>$description</li>
                     <li>$address</li>
                 </ul>
@@ -208,7 +208,7 @@ function getUserID(){
     return 1;
 };
 
-
+getLocation();
 
 
 ?>
@@ -246,7 +246,7 @@ function getUserID(){
 
 <?php
 
-getLocation();
+
 if ($onLoadLoc == 0) {
     drawList();
 }
