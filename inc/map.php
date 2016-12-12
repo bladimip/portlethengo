@@ -16,12 +16,12 @@ include('db/simpleDB.php');
 include('layouts/HTMLcomponents.php');
 
 // Navbar
-top("Locations and Routes");
+top("Discover North Kincardineshire");
 
 //Other page content
 
 
 // Footer
-bottom("public");
+bottom();
 
 ?>

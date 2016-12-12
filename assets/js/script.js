@@ -23,7 +23,7 @@ $(document).ready(function() {
 		}
 
 		if ($.trim(condition) == "Logout") {
-			$.post('/inc/logout.php', {'toLogout' : true}, function(data) {
+			$.post('logout', {'toLogout' : true}, function(data) {
 				if (data == "success") {
 					window.location = '/';
 				} else {
@@ -61,28 +61,31 @@ $(document).ready(function() {
     });
 	});
 
-	$("#searchField").keyup(function() {
-		var val = $(this).val();
-		var formData = new FormData();
-		formData.append("search", val);
+	//searching function - NOT USED AS OF NOW
+	//this responsive dynamic search was scrapped in favor of dedicated search page due to failed transition to Azure
+	//sends entered values from #searchfield text-box to search.php on every key press
+	//works only when 3 or more characters entered
+	// $("#searchField").keyup(function() {
+		// var val = $(this).val();
+		// var formData = new FormData();
+		// formData.append("search", val);
 
-
-		if (val.length >= 3) {
-			$.ajax({
-				url:"/inc/search.php",
-				type:"post",
-				data:formData,
-				dataType:"html",
-				async: true,
-				processData: false,
-				contentType: false,
-				success: function(data) {
-					$("#searchResults").html(data);
-				}
-			})
-		} else {
-			$("#searchResults").html("");
-		}
-	});
+		// if (val.length >= 3) {
+			// $.ajax({
+				// url:"/search.php",
+				// type:"post",
+				// data:formData,
+				// dataType:"html",
+				// async: true,
+				// processData: false,
+				// contentType: false,
+				// success: function(data) {
+					// $("#searchResults").html(data);
+				// }
+			// })
+		// } else {
+			// $("#searchResults").html("");
+		// }
+	// });
 
 });

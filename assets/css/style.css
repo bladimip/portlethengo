@@ -16,7 +16,7 @@
 .lnr-map,
 .lnr-user {
 	margin: 0 5px;
-	color: #e040fb;
+	color: #00FF00;
 	font-size: 20px;
 	/* To get crisp results, use sizes that are
 	a multiple of 20; because Linearicons was
@@ -60,12 +60,37 @@
 	text-align: center;
 	border-bottom: none;
 }
-#searchResults {
+
+#searchOutput {
 	background-color: white;
+	border: 2px solid black;
+	margin: auto;
+    width: 70%;
+	height: 400px;
+	overflow:auto;
 }
+
 .searchInput > input:focus {
 	border-bottom: 1px solid transparent !important;
 	box-shadow: 0 1px 0 0 transparent !important;
+}
+
+.disabledTitle {
+	text-align: center;
+	color: red;
+}
+
+.adminTitle {
+	text-align: center;
+	color: blue;
+}
+
+.messageTitle {
+	text-align: center;
+}
+
+footer {
+	background-color: #555;
 }
 
 /* Sportlethen */

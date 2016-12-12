@@ -9,7 +9,7 @@ error_reporting(0);
 Ulogin(0);
 
 
-if ($_POST['enter'] ) {
+if (isset($_POST['enter'] )) {
     $_POST['login'] = FormChars($_POST['login']);
     $_POST['password'] = GenPass(FormChars($_POST['password']), $_POST['login']);
 
