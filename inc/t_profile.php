@@ -48,10 +48,10 @@ function getApprovedContributions ($title, $userID) {
 				echo ('<a href="/health-wellbeing/news/' . url($row["news_id"]) . '" class="collection-item">' . $row["title"] . '</a>');
 			}
 			if ($title == "locations") {
-				echo ('<a href="/map/' . url($row["name"]) . '-L' . url($row["loc_id"]) . '" class="collection-item">' . $row["name"] . '</a>');
+				echo ('<a href="/map/location/' . url($row["loc_id"]) . '" class="collection-item">' . $row["name"] . '</a>');
 			}
 			if ($title == "routes") {
-				echo ('<a href="/map/' . url($row["name"]) . '-R' . url($row["route_id"]) . '" class="collection-item">' . $row["name"] . '</a>');
+				echo ('<a href="/map/route/' . url($row["route_id"]) . '" class="collection-item">' . $row["name"] . '</a>');
 			}
 		}
 		echo '</div>';

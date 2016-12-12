@@ -85,10 +85,10 @@ function searchSection ($table, $search) {
 				$str .= '<p><a href="/health-wellbeing/news/' . url($row["news_id"]) . '" class="collection-item">' . $row["title"] . '</a></p>';
 				break;
 			case "Locations":
-				$str .= '<p><a href="/map/' . url($row["name"]) . '-L' . url($row["loc_id"]) . '" class="collection-item">' . $row["name"] . '</a></p>';
+				$str .= '<p><a href="/map/location/' . url($row["loc_id"]) . '" class="collection-item">' . $row["name"] . '</a></p>';
 				break;
 			case "Routes":
-				$str .= '<p><a href="/map/' . url($row["name"]) . '-R' . url($row["route_id"]) . '" class="collection-item">' . $row["name"] . '</a></p>';
+				$str .= '<p><a href="/map/route/' . url($row["route_id"]) . '" class="collection-item">' . $row["name"] . '</a></p>';
 				break;
 			default:
 				return FALSE;
