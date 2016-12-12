@@ -10,8 +10,7 @@
 
   unset($_SESSION["club_id"]);
   unset($_SESSION["eventID"]);
-
-  header("Refresh:0");
+header("Location: landing");
 
   function destroyusersession () {
 	session_start();
