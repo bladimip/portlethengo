@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7985c7fa-3ae5-4133-bee0-215008d8b736" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/news/t_news.php" afterPath="$PROJECT_DIR$/inc/news/t_news.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/health-wellbeing.php" afterPath="$PROJECT_DIR$/inc/health-wellbeing.php" />
     </list>
     <ignored path="UniFirstProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,23 +24,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="health-wellbeing.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="health-wellbeing.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/health-wellbeing.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="38" />
+            <state relative-caret-position="810">
+              <caret line="95" column="53" selection-start-line="95" selection-start-column="53" selection-end-line="95" selection-end-column="53" />
               <folding>
-                <marker date="1481571503000" expanded="true" signature="1058:1217" ph="SELECT news_... HealthNews" />
-                <marker date="1481571503000" expanded="true" signature="1719:1822" ph="..." />
+                <marker date="1481573556000" expanded="true" signature="1106:1265" ph="SELECT news_... HealthNews" />
+                <marker date="1481573556000" expanded="true" signature="1767:1870" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="simpleDB.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="simpleDB.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inc/db/simpleDB.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
+            <state relative-caret-position="195">
               <caret line="54" column="29" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
               <folding />
             </state>
@@ -187,12 +187,12 @@
         <option value="$PROJECT_DIR$/inc/deleteArticle.php" />
         <option value="$PROJECT_DIR$/inc/createArticle.php" />
         <option value="$PROJECT_DIR$/.htaccess" />
-        <option value="$PROJECT_DIR$/inc/health-wellbeing.php" />
         <option value="$PROJECT_DIR$/inc/articleCreation.php" />
         <option value="$PROJECT_DIR$/inc/approve.php" />
         <option value="$PROJECT_DIR$/inc/editArticle.php" />
-        <option value="$PROJECT_DIR$/inc/db/simpleDB.php" />
         <option value="$PROJECT_DIR$/inc/news/t_news.php" />
+        <option value="$PROJECT_DIR$/inc/health-wellbeing.php" />
+        <option value="$PROJECT_DIR$/inc/db/simpleDB.php" />
       </list>
     </option>
   </component>
@@ -305,7 +305,7 @@
       <workItem from="1478606993484" duration="142000" />
       <workItem from="1478609400185" duration="4000" />
       <workItem from="1481553074521" duration="3033000" />
-      <workItem from="1481570018754" duration="2020000" />
+      <workItem from="1481570018754" duration="3078000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1478527797280</created>
@@ -370,11 +370,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481572076346</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="commenting out $siteAdmin =">
+      <created>1481572242301</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1481572242301</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6232000" />
+    <option name="totallyTimeSpent" value="7290000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -456,7 +463,8 @@
     <MESSAGE value="commit all files" />
     <MESSAGE value="added some text to the article creation + article edit" />
     <MESSAGE value="made changes to jack2 that we made in uni today" />
-    <option name="LAST_COMMIT_MESSAGE" value="made changes to jack2 that we made in uni today" />
+    <MESSAGE value="commenting out $siteAdmin =" />
+    <option name="LAST_COMMIT_MESSAGE" value="commenting out $siteAdmin =" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -468,8 +476,8 @@
         <state relative-caret-position="420">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
-            <marker date="1481571503000" expanded="true" signature="1058:1217" ph="SELECT news_... HealthNews" />
-            <marker date="1481571503000" expanded="true" signature="1719:1822" ph="..." />
+            <marker date="1481573556000" expanded="true" signature="1106:1265" ph="SELECT news_... HealthNews" />
+            <marker date="1481573556000" expanded="true" signature="1767:1870" ph="..." />
           </folding>
         </state>
       </provider>
@@ -613,14 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/db/simpleDB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="54" column="29" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/createArticle.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -707,12 +707,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/health-wellbeing.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="38" />
+        <state relative-caret-position="810">
+          <caret line="95" column="53" selection-start-line="95" selection-start-column="53" selection-end-line="95" selection-end-column="53" />
           <folding>
-            <marker date="1481571503000" expanded="true" signature="1058:1217" ph="SELECT news_... HealthNews" />
-            <marker date="1481571503000" expanded="true" signature="1719:1822" ph="..." />
+            <marker date="1481573556000" expanded="true" signature="1106:1265" ph="SELECT news_... HealthNews" />
+            <marker date="1481573556000" expanded="true" signature="1767:1870" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/db/simpleDB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="54" column="29" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
