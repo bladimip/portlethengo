@@ -15,9 +15,13 @@ RewriteRule ^addmap inc/map/addmap.php [QSA,L]
 
 RewriteRule ^addroute inc/map/addroute.php [QSA,L]
 
-RewriteRule ^approve/location/([^/]+)$ inc/map/approve.php?loc=$1
+RewriteRule ^approve/location/([^/]+)$ inc/map/approve.php?loc=$1 [QSA,L]
 
-RewriteRule ^approve/route/([^/]+)$ inc/map/approve.php?route=$1
+RewriteRule ^approve/route/([^/]+)$ inc/map/approve.php?route=$1 [QSA,L]
+
+RewriteRule ^delete/location/([^/]+)$ inc/map/delete.php?loc=$1 [QSA,L]
+
+RewriteRule ^delete/route/([^/]+)$ inc/map/delete.php?route=$1 [QSA,L]
 
 RewriteRule ^inc/(.*)$ route.php
 RewriteCond %{REQUEST_FILENAME} !-d

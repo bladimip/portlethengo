@@ -20,19 +20,19 @@ if (getUserType()==2){
         //connect to the database
         $db = new Connection();
         $db->open();
-        $loc = $db->runQuery("UPDATE Locations SET approved=1, approvedBy=$userID WHERE loc_id=$loc_id;");
+        $loc = $db->runQuery("DELETE FROM Locations WHERE loc_id=$loc_id;");
         $db->close();
-        echo "Approved the Location";
+        echo "Deleted the Location";
         echo "<br><a href='map'>Go Back</a>";
     }
     if (isset($_GET['route'])){
         //connect to the database
         $db = new Connection();
         $db->open();
-        $loc = $db->runQuery("UPDATE Routes SET approved=1, approvedBy=$userID WHERE route_id = $route_id;");
+        $loc = $db->runQuery("DELETE FROM Routes WHERE route_id = $route_id;");
         $db->close();
-        echo "Approved the Route";
-        echo "<br><a href='routes'>Go Back</a>";
+        echo "Deleted the Route";
+        echo "<br><a href='route'>Go Back</a>";
     }
 }
 

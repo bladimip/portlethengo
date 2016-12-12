@@ -79,7 +79,7 @@ EEE;
                     <li>$description</li>
                     <li>$address</li>
                     <li><font size="2"><a href="approve/location/$loc_id" id="greentext">Not approved, click here to approve, </a>
-                    <a href="approve/location/$loc_id/0" id="redtext">click here to remove.</a></font></li>
+                    <a href="delete/location/$loc_id" id="redtext">click here to remove.</a></font></li>
                 </ul>
             </li>
 EEE;

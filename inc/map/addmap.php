@@ -58,7 +58,7 @@ function onLoad(){
     else{
         $loadmap=1;
         echo <<<EAT
-    <form id= "formid" action="addmap.php" method="post" >
+    <form id= "formid" action="addmap" method="post" >
         <input type="text" placeholder="Locations Name" name="name" required>
         <input type="text" placeholder="Locations Description" name="description" required>
         <input type="text" placeholder="Locations Address" name="address"required>
