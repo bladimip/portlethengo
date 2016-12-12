@@ -41,8 +41,5 @@ if (isset($_SESSION['USER_LOGIN_IN']))
 				$db -> close();
 			}
 
-
-//add whole path
-//echo "<a href='/health-wellbeing'>back to article</a>";
 header('location: /health-wellbeing');
 ?>

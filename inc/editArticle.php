@@ -1,7 +1,7 @@
 <?php
 
 
-// html components not working
+
 include('layouts/HTMLcomponents.php');
 
 top("");

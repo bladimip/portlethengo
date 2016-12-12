@@ -1,7 +1,6 @@
 <?php
 include('db/simpleDB.php');
 include('layouts/HTMLcomponents.php');
-//need to work out how to add the date and the userid and the news id to the form
 top("Create an Article");
 
 echo " 
