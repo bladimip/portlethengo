@@ -34,28 +34,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addroute.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="addroute.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inc/map/addroute.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="36" />
+            <state relative-caret-position="330">
+              <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
               <folding>
+                <element signature="n#getUserID#0;n#!!top" expanded="false" />
+                <element signature="n#onLoad#0;n#!!top" expanded="false" />
+                <element signature="n#loadMap#0;n#!!top" expanded="false" />
                 <marker date="1481568385000" expanded="true" signature="1384:1509" ph="INSERT INTO routes... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addmap.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="addmap.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/map/addmap.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+            <state relative-caret-position="150">
+              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
               <folding>
                 <element signature="n#getUserID#0;n#!!top" expanded="false" />
                 <element signature="n#onLoad#0;n#!!top" expanded="false" />
                 <element signature="n#loadMap#0;n#!!top" expanded="false" />
-                <marker date="1481586275000" expanded="true" signature="1097:1263" ph="INSERT INTO locations... " />
+                <marker date="1481586305000" expanded="true" signature="1098:1264" ph="INSERT INTO locations... " />
               </folding>
             </state>
           </provider>
@@ -287,7 +290,7 @@
       <workItem from="1481546345157" duration="149000" />
       <workItem from="1481546527931" duration="374000" />
       <workItem from="1481549871505" duration="5000" />
-      <workItem from="1481549917056" duration="13775000" />
+      <workItem from="1481549917056" duration="13864000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1478527797280</created>
@@ -415,11 +418,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481586042041</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Job finished, all done except for;&#10;&#10;//TODO A function required to return user from session&#10;&#10;&#10;Extra bug fixes in route of .htaccess">
+      <created>1481586282973</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1481586282973</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66156000" />
+    <option name="totallyTimeSpent" value="66245000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -500,7 +510,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -874,16 +884,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/map/addroute.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="36" />
-          <folding>
-            <marker date="1481568385000" expanded="true" signature="1384:1509" ph="INSERT INTO routes... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/map/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="768">
@@ -920,13 +920,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/map/addmap.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+        <state relative-caret-position="150">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
           <folding>
             <element signature="n#getUserID#0;n#!!top" expanded="false" />
             <element signature="n#onLoad#0;n#!!top" expanded="false" />
             <element signature="n#loadMap#0;n#!!top" expanded="false" />
-            <marker date="1481586275000" expanded="true" signature="1097:1263" ph="INSERT INTO locations... " />
+            <marker date="1481586305000" expanded="true" signature="1098:1264" ph="INSERT INTO locations... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/map/addroute.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+          <folding>
+            <element signature="n#getUserID#0;n#!!top" expanded="false" />
+            <element signature="n#onLoad#0;n#!!top" expanded="false" />
+            <element signature="n#loadMap#0;n#!!top" expanded="false" />
+            <marker date="1481568385000" expanded="true" signature="1384:1509" ph="INSERT INTO routes... " />
           </folding>
         </state>
       </provider>
