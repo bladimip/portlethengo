@@ -7,8 +7,7 @@
   unset($_SESSION["USER_SITEADMIN"]);
   unset($_SESSION["USER_LOGIN"]);
   unset($_SESSION["USER_LOGIN_IN"]);
-  header('Location: landing');
-  exit;
+  header("Refresh:0");
 
 
   function destroyusersession () {
