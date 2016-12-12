@@ -30,7 +30,7 @@ function top( $title ) {
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 
 		<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
-		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
 
 		<!-- MATERIALIZE -->
 		<!-- Compiled and minified JavaScript -->
@@ -56,9 +56,8 @@ function top( $title ) {
 							<li><a class="waves-effect waves-light" href="/sportlethen"><span class="lnr lnr-users"></span>SPORTLETHEN</a></li>
 							<li><a class="waves-effect waves-light" href="/health-wellbeing"><span class="lnr lnr-heart-pulse"></span>HEALTH & WELLBEING</a></li>
 							<li><a class="waves-effect waves-light" href="/map"><span class="lnr lnr-map"></span>MAP</a></li>
-							<li><a class="waves-effect waves-light logBtn"  href="#!"><span class="lnr lnr-user"></span>
-								<?php if (isset($_SESSION['USER_LOGIN_IN'])) echo '<span>Logout</span>';
-											else echo '<span>Login</span>'; ?>
+								<?php if (isset($_SESSION['USER_LOGIN_IN'])) echo '<li><a class="waves-effect waves-light logBtn"  href="logout"><span class="lnr lnr-user"></span><span>Logout</span>';
+											else echo '<li><a class="waves-effect waves-light logBtn"  href="#modal2"><span class="lnr lnr-user"></span><span>Login</span>'; ?>
 
 								</a></li>
 						</ul>
@@ -68,9 +67,8 @@ function top( $title ) {
 							<li><a class="waves-effect waves-light" href="/sportlethen"><span class="lnr lnr-users"></span></a></li>
 							<li><a class="waves-effect waves-light" href="/health-wellbeing"><span class="lnr lnr-heart-pulse"></span></a></li>
 							<li><a class="waves-effect waves-light" href="/map"><span class="lnr lnr-map"></span></a></li>
-							<li><a class="waves-effect waves-light logBtn"  href="#!"><span class="lnr lnr-user"></span>
-								<?php if (isset($_SESSION['USER_LOGIN_IN'])) echo '<span>Logout</span>';
-											else echo '<span>Login</span>'; ?>
+								<?php if (isset($_SESSION['USER_LOGIN_IN'])) echo '<li><a class="waves-effect waves-light logBtn"  href="logout"><span class="lnr lnr-user"></span><span>Logout</span>';
+											else echo '<li><a class="waves-effect waves-light logBtn"  href="#modal2"><span class="lnr lnr-user"></span><span>Login</span>'; ?>
 
 								</a></li>
 						</ul>
@@ -81,8 +79,6 @@ function top( $title ) {
 				<input id="searchField" type="text" name="search">
 				<div id="searchResults"></div>
 			</div>
-
-
 			  <!-- Modal Structure for login -->
 			  <div id="modal2" class="modal">
 			    <div class="modal-content">
@@ -145,12 +141,6 @@ function GenPass ($p1, $p2) {
 return md5('MRILJA'.md5('321'.$p1.'123').md5('678'.$p2.'890'));
 }
 
-//Check did the user log in or not
-//THERE ADD MESSAGE
-function ULogin($p1) {
-if ($p1 <= 0 and $_SESSION['USER_LOGIN_IN'] != $p1);
-else if ($_SESSION['USER_LOGIN_IN'] = $p1) exit('This page available only for user');
-}
 
 
 // Sending the messages to users
@@ -177,8 +167,8 @@ else if ($p1 == 1) return 'Admin';
 	}
 
 function DidTheUserAdmin($p1) {
-if ($p1 <= 0 and $_SESSION['USER_SITEADMIN'] != $p1) exit('You are not the admin');
-else if ($_SESSION['USER_LOGIN_IN'] = $p1);
+if (isset($_SESSION['USER_SITEADMIN']));
+else (header('Location: landing'));
 }
 
 // Footer
