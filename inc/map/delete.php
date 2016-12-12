@@ -23,7 +23,7 @@ if (getUserType()==2){
         $loc = $db->runQuery("DELETE FROM Locations WHERE loc_id=$loc_id;");
         $db->close();
         echo "Deleted the Location";
-        echo "<br><a href='map'>Go Back</a>";
+
     }
     if (isset($_GET['route'])){
         //connect to the database
@@ -32,7 +32,6 @@ if (getUserType()==2){
         $loc = $db->runQuery("DELETE FROM Routes WHERE route_id = $route_id;");
         $db->close();
         echo "Deleted the Route";
-        echo "<br><a href='route'>Go Back</a>";
     }
 }
 

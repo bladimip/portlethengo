@@ -23,7 +23,7 @@ if (getUserType()==2){
         $loc = $db->runQuery("UPDATE Locations SET approved=1, approvedBy=$userID WHERE loc_id=$loc_id;");
         $db->close();
         echo "Approved the Location";
-        echo "<br><a href='map'>Go Back</a>";
+
     }
     if (isset($_GET['route'])){
         //connect to the database
@@ -32,7 +32,7 @@ if (getUserType()==2){
         $loc = $db->runQuery("UPDATE Routes SET approved=1, approvedBy=$userID WHERE route_id = $route_id;");
         $db->close();
         echo "Approved the Route";
-        echo "<br><a href='routes'>Go Back</a>";
+
     }
 }
 

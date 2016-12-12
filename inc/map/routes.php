@@ -112,7 +112,7 @@ EEE;
                     <li><font size="4"><a href="/map/location/$route_id">$name</a></font></li>
                     <li>$description</li>
                     <li>$address</li>
-                    <li><font size="2"><a href="approve/location/$route_id" id="greentext">Not approved, click here to approve, </a>
+                    <li><font size="2"><a href="approve/route/$route_id" id="greentext">Not approved, click here to approve, </a>
                     <a href="delete/location/$route_id" id="redtext">click here to remove.</a></font></li>
                 </ul>
             </li>
