@@ -6,12 +6,14 @@ if (isset($_SESSION['USER_LOGIN_IN']))
 {
   $user_id = $_SESSION['USER_ID'];
   $siteAdmin = $_SESSION['USER_SITEADMIN'];
+} else {
+	$siteAdmin = 0;
 }
-			$user_id = 8;
+			//$user_id = 8;
 			$title = $_POST['title'];
 			$description = $_POST['description'];
 			//$newsDate = $row['newsDate'];
-			$siteAdmin = 0;
+			//$siteAdmin = 0;
 			// use session for siteAdmin USER_SITEADMIN
 			$mediaType = $_POST['mediaType'];
 			$mediaPath = $_POST['mediaPath'];
@@ -26,7 +28,6 @@ if (isset($_SESSION['USER_LOGIN_IN']))
 				$db -> close();
 				
 				
-				
 			}
 			else
 		    {
@@ -38,9 +39,6 @@ if (isset($_SESSION['USER_LOGIN_IN']))
 				$addMedia = $db ->runQuery("INSERT INTO HealthMedia(media_id, news_id, mediaType, altName, mediaPath) VALUES (LAST_INSERT_ID(),LAST_INSERT_ID(),'$mediaType', 'NULL', '$mediaPath')");
 				$db -> close();
 			}
-
-        
-
 
 
 //add whole path

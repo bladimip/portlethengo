@@ -33,10 +33,12 @@ if (isset($_SESSION['USER_LOGIN_IN']))
 {
   $user_id = $_SESSION['USER_ID'];
   $siteAdmin = $_SESSION['USER_SITEADMIN'];
+} else {
+	$siteAdmin = 0;
 }
 
 
-$siteAdmin = 1;
+//$siteAdmin = 1;
 $db = new Connection();
 $db -> open();
 $result = $db ->runQuery("SELECT news_id,title,siteAdmin,Users.user_id,username,approved FROM HealthNews,Users WHERE HealthNews.user_id = Users.user_id ORDER BY approved DESC, title ASC");
@@ -51,7 +53,7 @@ $db -> close();
 			$news_id = $row['news_id'];
 			$title = $row['title'];
 			//$user_id = $row['user_id'];
-			$description = $row['description'];
+			//$description = $row['description'];
 			$approved = $row['approved'];
 			$username = $row['username'];
 			//if($siteAdmin ==1)

@@ -31,6 +31,8 @@ if (isset($_SESSION['USER_LOGIN_IN']))
 {
 	$user_id = $_SESSION['USER_ID'];
 	$siteAdmin = $_SESSION['USER_SITEADMIN'];
+} else {
+	$siteAdmin = 0;
 }
 if (isset($_GET["news_id"])) 
 {
@@ -52,7 +54,7 @@ if (isset($_GET["news_id"]))
 		$altName = $row['altName'];
 		$mediaPath = $row['mediaPath'];
 		$approved = $row['approved'];
-		$siteAdmin = 1;
+		//$siteAdmin = 1;
 
 		if($siteAdmin)
 		{
@@ -71,7 +73,6 @@ if (isset($_GET["news_id"]))
 		    	<iframe width='420' height='350' src='{$mediaPath}' frameborder='0' allowfullscreen></iframe>
 		    	</div>";
 		    	
-
 		    	
 		    }
 		    
@@ -120,7 +121,6 @@ if (isset($_GET["news_id"]))
 		    	<iframe width='420' height='350' src='{$mediaPath}' frameborder='0' allowfullscreen></iframe>
 		    	</div>";
 		    	
-
 		    	
 		    }
 		    
@@ -133,7 +133,6 @@ if (isset($_GET["news_id"]))
 	echo '</div>';
 
 }
-
 
 // Footer
 bottom();
