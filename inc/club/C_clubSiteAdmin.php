@@ -60,7 +60,7 @@ class ClubSiteAdmin extends ClubAdmin {
   public function showClubAdmins() {
     echo '<span class="editLabel">Club Administrators:</span>';
     foreach ($this->thatClubAdmins as $value) {
-      echo '<a>'. $value->getUsername() .'</a>';
+      echo '<a id="user_link" href="/users/'. $value->getUsername() .'">'. $value->getUsername() .'</a>';
     }
   }
 

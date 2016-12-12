@@ -28,9 +28,7 @@ include_once('C_Event.php');
     public function showDescription() {
 
       echo '<p>'. $this->getDescription() .'</p>';
-      echo '<p>Date: '. date_format(new DateTime($this->getEventDate()), 'd M Y') .'</p>
-            <input type="hidden" id="event_id" value="'. $this->getId() .'">
-            <input type="hidden" id="user_id" value="'. $this->getCurUser() .'">';
+      echo '<p>Date: '. date_format(new DateTime($this->getEventDate()), 'd M Y') .'</p>';
     }
 
     public function showClub() {
@@ -58,7 +56,7 @@ include_once('C_Event.php');
           while ($row = $user->fetch_assoc()) {
 
             echo '<span class="grey-text text-lighten-1">Event was added by: </span>';
-            echo '<a>'. $row["username"] .'</a>';
+            echo '<a id="user_link" href="/users/'. url($row["username"]) .'">'. url($row["username"]) .'</a>';
           }
        }
     }
@@ -77,7 +75,7 @@ include_once('C_Event.php');
             while ($row = $user->fetch_assoc()) {
 
               echo '<br><span class="grey-text text-lighten-1">Approved by: </span>';
-              echo '<a>'. $row["username"] .'</a>';
+              echo '<a id="user_link" href="/users/'. url($row["username"]) .'">'. url($row["username"]) .'</a>';
             }
          }
 

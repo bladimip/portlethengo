@@ -1,5 +1,4 @@
 <?php
-session_start();
 $Random = rand(10001, 99999);
 $_SESSION['captcha'] = md5($Random);
 $im = imagecreatetruecolor(110, 30);

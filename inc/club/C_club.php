@@ -107,7 +107,7 @@ class Club {
   }
 
   public function showImages() {
-    if (count($this->images) == 1) echo '<img src="" alt="">';
+    if (count($this->images) == 1) echo '<img style="width:100%" class="materialboxed" src="'.$this->images[0]->getPath().'" alt="'.$this->images[0]->getAltName().'">';
 
     elseif (count($this->images) > 1) {
 
@@ -118,8 +118,8 @@ class Club {
         echo '<li>
                 <img src="'. $image->getPath() .'" alt="'. $image->getAltName() .'"> <!-- random image -->
                 <div class="caption center-align">
-                  <h3>'. $image->getAltName() .'!</h3>
-                  <h5 class="light grey-text text-lighten-3">Path '. $image->getPath() .'.</h5>
+                  <h3>'. $this->getName() .'!</h3>
+                  <h5 class="light grey-text text-lighten-3">'. $image->getAltName() .'.</h5>
                 </div>
               </li>';
       }
@@ -178,7 +178,7 @@ class Club {
 
   }
 
-  public function fetchEvents($curUser) {
+  public function fetchEvents() {
     // Get events of a club
     $db = new Connection();
     $db->open();
@@ -196,9 +196,8 @@ class Club {
       $eDescription = $row["description"];
       $eDate = $row["eventDate"];
       $eStatus = $row["approved"];
-      $eCurUser = $curUser;
 
-      $this->addEvent(new Event($eId, $eClubId, $eUserId, $eApprovedBy, $eName, $eDescription, $eDate, $eStatus, $eCurUser));
+      $this->addEvent(new Event($eId, $eClubId, $eUserId, $eApprovedBy, $eName, $eDescription, $eDate, $eStatus));
     }
   }
 

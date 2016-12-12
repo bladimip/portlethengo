@@ -28,13 +28,16 @@ include('C_image.php');
 include('C_event.php');
 include('C_user.php');
 
-// test variables(session vars) - TEST******************************
-$userId = 3;
-$clubAdmin = 1;
-$nkpag = 0;
-$siteAdmin = 1;
-$blocked = 0;
-$loggedIn = true;
+
+if (isset($_SESSION['USER_LOGIN_IN'])) {
+  $userId = $_SESSION['USER_ID'];
+  $clubAdmin = $_SESSION['USER_CLUBADMIN'];
+  $nkpag = $_SESSION['USER_NKPAG'];
+  $siteAdmin = $_SESSION['USER_SITEADMIN'];
+  //$_SESSION['USER_LOGIN'] = $Row['username'];
+  $isBlocked = $_SESSION["BLOCK"];
+}
+$loggedIn = isset($_SESSION['USER_LOGIN_IN']);
 
 
 // Navbar
@@ -68,22 +71,26 @@ if (isset($_GET["club"])) {
           $cEmail = $row["email"];
           $cAddress = $row["address"];
 
-          // if session exists - TEST***************************
           if ($loggedIn) {
-            //// DETERMINE A TYPE OF A USER REQUESTING A CLUB PAGE
-            if ($siteAdmin) $userType = "siteAdmin";
-            elseif ($clubAdmin) {
-                $db = new Connection();
-                $db->open();
-                $match = $db->runQuery("SELECT * FROM clubadmins, clubs WHERE clubadmins.user_id = ". $userId ." AND clubs.club_id = clubadmins.club_id AND clubs.club_id = '". $clubGET ."' LIMIT 1");
-                $db->close();
 
-                // Check if clubAdmin is an admin of selected club
-                // If a club admin is not an admin of selected club, that admin is treated as contributer)
-                if (mysqli_num_rows($match) == 1) $userType = "clubAdmin";
-                else $userType = "contributor";
+            $_SESSION["club_id"] = $cId;
 
-            } else $userType = "contributor";
+            if (!$isBlocked) {
+              //// DETERMINE A TYPE OF A USER REQUESTING A CLUB PAGE
+              if ($siteAdmin) $userType = "siteAdmin";
+              elseif ($clubAdmin) {
+                  $db = new Connection();
+                  $db->open();
+                  $match = $db->runQuery("SELECT * FROM clubadmins, clubs WHERE clubadmins.user_id = ". $userId ." AND clubs.club_id = clubadmins.club_id AND clubs.club_id = '". $clubGET ."' LIMIT 1");
+                  $db->close();
+
+                  // Check if clubAdmin is an admin of selected club
+                  // If a club admin is not an admin of selected club, that admin is treated as contributer)
+                  if (mysqli_num_rows($match) == 1) $userType = "clubAdmin";
+                  else $userType = "contributor";
+
+              } else $userType = "contributor";
+            } else $userType = "public";
           }
 
           // Create a club object depending on the user type
@@ -93,13 +100,14 @@ if (isset($_GET["club"])) {
           elseif ($userType == "clubAdmin") $clubObj = new ClubAdmin($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
           elseif ($userType == "siteAdmin") $clubObj = new ClubSiteAdmin($cId, $cName, $cCategory, $cDescription, $cPhone, $cEmail, $cAddress);
           else echo 'Error: privilage conflict';
+
         }
         ////
 
         //Load information about club images to a club object, parameter is a an id of user currently on the page (logged in)
         $clubObj->fetchImages();
         //Load information about club events to a club object
-        $clubObj->fetchEvents($userId);
+        $clubObj->fetchEvents();
 
 
         // Add more information (for ClubAdmin and SiteAdmin only)
@@ -114,9 +122,14 @@ if (isset($_GET["club"])) {
         $clubObj->displayContent();
         ////
 
+        // Add additional javascript for admin mode only for admins (security issue)
+        if ($userType == "clubAdmin" || $userType == "siteAdmin") {
+          echo '<script src="/assets/js/scriptAuth.js"></script>';
+        }
+
     } else echo 'Club not found';
 } else echo 'Club not found';
 
 // Footer
-bottom($userType);
+bottom();
 ?>

@@ -1,27 +1,22 @@
-/*scrip for creating tables in vlad's DB
+/*scrip for creating DB and tables
 -clubgenre must be created BEFORE clubs because of reference
--consider adding default values
--make unique email?
--change status fields to boolean?
--media type field - leave as is?
--locations and routes have status missing?
--add description to routes?
--changed data tipe for coordinates in locations - from decimal to float(10,6)
--helth news - title 200, desc 100??????
 */
-/*you migh need to (drop)create database first, depending on your situation
+
+/*
 DROP DATABASE webdev5;
 CREATE DATABASE webdev5;
-USE webdev5;
 */
+USE webdev5;
+
 CREATE TABLE Users (
 	user_id 		INTEGER 		AUTO_INCREMENT,
-	clubAdmin 		BOOLEAN,
-	nkpag 			BOOLEAN,
-	siteAdmin 		BOOLEAN,
+	clubAdmin 		BOOLEAN			DEFAULT FALSE,
+	nkpag 			BOOLEAN			DEFAULT FALSE,
+	siteAdmin 		BOOLEAN			DEFAULT FALSE,
 	username 		VARCHAR(100) 	NOT NULL UNIQUE,
-	email 			VARCHAR(200) 	NOT NULL,
-	password 		VARCHAR(500) 	NOT NULL,
+	email 			VARCHAR(200) 	NOT NULL UNIQUE,
+	password 		VARCHAR(50) 	NOT NULL,
+	blocked			BOOLEAN			DEFAULT FALSE,
 	PRIMARY KEY (user_id)
 );
 
@@ -58,7 +53,7 @@ CREATE TABLE ClubEvents (
 	name			VARCHAR(200) 	NOT NULL,
 	description		VARCHAR(5000)	NOT NULL,
 	eventDate		DATETIME		NOT NULL,
-	status			VARCHAR(100)	NOT NULL,
+	approved		BOOLEAN			DEFAULT FALSE,
 	PRIMARY KEY (event_id),
 	CONSTRAINT fk_ClubEvents_Clubs FOREIGN KEY (club_id) REFERENCES Clubs (club_id) ON DELETE CASCADE,
 	CONSTRAINT fk_ClubEvents_Users FOREIGN KEY (user_id) REFERENCES Users (user_id) ON DELETE CASCADE,
@@ -81,7 +76,7 @@ CREATE TABLE HealthNews (
 	title			VARCHAR(200)	NOT NULL,
 	description		VARCHAR(5000)	NOT NULL,
 	newsDate		DATETIME		NOT NULL,
-	status			VARCHAR(100)	NOT NULL,
+	approved		BOOLEAN			DEFAULT FALSE,
 	PRIMARY KEY (news_id),
 	CONSTRAINT fk_HealthNews_Users FOREIGN KEY (user_id) REFERENCES Users (user_id) ON DELETE CASCADE,
 	CONSTRAINT fk_HealthNews_UsersApprovedBy FOREIGN KEY (approvedBy) REFERENCES Users (user_id) ON DELETE CASCADE
@@ -106,6 +101,7 @@ CREATE TABLE Locations (
 	longitude		FLOAT(10,6)		NOT NULL,
 	latitude		FLOAT(10,6)		NOT NULL,
 	address			VARCHAR(200),
+	approved		BOOLEAN			DEFAULT FALSE,
 	PRIMARY KEY (loc_id),
 	CONSTRAINT fk_Locations_Users FOREIGN KEY (user_id) REFERENCES Users (user_id) ON DELETE CASCADE,
 	CONSTRAINT fk_Locations_UsersApprovedBy FOREIGN KEY (approvedBy) REFERENCES Users (user_id) ON DELETE CASCADE
@@ -123,9 +119,11 @@ CREATE TABLE LocationImages (
 CREATE TABLE Routes (
 	route_id 		INTEGER			AUTO_INCREMENT,
 	user_id			INTEGER			NOT NULL,
-	approvedBy		INTEGER			NOT NULL,
+	approvedBy		INTEGER,
 	name			VARCHAR(100)	NOT NULL,
+	description		VARCHAR(5000),
 	coordinates		VARCHAR(5000)	NOT NULL,
+	approved		BOOLEAN			DEFAULT FALSE,
 	PRIMARY KEY (route_id),
 	CONSTRAINT fk_Routes_Users FOREIGN KEY (user_id) REFERENCES Users (user_id) ON DELETE CASCADE,
 	CONSTRAINT fk_Routes_UsersApprovedBy FOREIGN KEY (approvedBy) REFERENCES Users (user_id) ON DELETE CASCADE
