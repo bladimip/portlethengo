@@ -79,7 +79,7 @@ function top( $title ) {
 				<input id="searchField" type="text" name="search">
 				<div id="searchResults"></div>
 			</div>
-			  <!-- Modal Structure for login -->
+			 			  <!-- Modal Structure -->
 			  <div id="modal2" class="modal">
 			    <div class="modal-content">
 
@@ -87,6 +87,7 @@ function top( $title ) {
 						<div class="row">
 								<div class="col s12 center">
 										<h3><i class="mdi-content-send brown-text"></i></h3>
+										<h4>Login</h4>
 										<p class="left-align light">
 											<form method="POST" action="/login">
 
@@ -95,12 +96,12 @@ function top( $title ) {
 												<input type="submit" name="enter" value="Login" class=" waves-effect waves-green btn-flat">
 												<input type="reset" value="Clear" class=" waves-effect waves-green btn-flat">
 												<a href="#modal3" data-dismiss="modal2" class=" waves-effect waves-green btn-flat">Sign Up</a>
+												<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
 
 											</form>
 										</p>
 								</div>
 						</div>
-
 			    </div>
 			  </div>
 
