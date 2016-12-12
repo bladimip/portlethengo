@@ -13,6 +13,18 @@ if(isset($_POST["id"]))
 {
 	$name = mysqli_real_escape_string($CONNECT, $_POST["id"]);
 	$sql = "UPDATE users SET siteAdmin='1' WHERE user_id = '".$name."'";
+
+	if(mysqli_query($CONNECT, $sql))
+	{
+		echo "Message Saved";
+	}
+}
+
+if(isset($_POST["iddddd"]))
+{
+	$cname = $row["user_id"];
+	$name = mysqli_real_escape_string($CONNECT, $_POST["iddddd"]);
+	$sql = "INSERT INTO clubadmins(user_id, club_id) VALUES ('".$name."', '".$cname."')";
 	if(mysqli_query($CONNECT, $sql))
 	{
 		echo "Message Saved";
@@ -80,17 +92,13 @@ top("Welcome to Portlethen");
 					<div  class="container">
 						<p>
 							<input type="checkbox" name="colorCheckbox" value="gadmin" id="indeterminate-checkbox" />
-							<label for="indeterminate-checkbox">General Admin Rights</label>
+							<label for="indeterminate-checkbox">Make this user - General Admin of website</label>
 						</p>
 
-						<p>
-							<input type="checkbox" name="colorCheckbox" value="madmin" id="test6" />
-							<label for="test6">Map Admin Rights</label>
-						</p>
 
 						<p>
 							<input type="checkbox" name="colorCheckbox" value="cadmin" id="test7" />
-							<label for="test7">Make user clubs Admin</label>
+							<label for="test7">Make this user - club or admin Admin</label>
 						</p>
 					</div>
 					<div class="gadmin box">
@@ -133,12 +141,12 @@ top("Welcome to Portlethen");
 									if ($adminCheck->num_rows >= 1) {
 										$admin = "admin";
 									} else {
-										$admin = " not admin";
+										$admin = "notadmin";
 									}
 
 									echo "<tbody>
 									<tr>
-										<td>".$rowclub["club_id"]."</td><td>".$rowclub["name"]."</td><td>".(($rowclub["club_id"] ? $row["user_id"] : $row["user_id"]) ? $admin : 'f')."</td></tr></p>";
+										<td>".$rowclub["club_id"]."</td><td>".$rowclub["name"]."</td><td>".($admin == "admin" ? '<input type="button" id="button_id" value="Delete user club admin rights" onClick="unmakeuserclubadmin(' . $row["user_id"] .', ' . $rowclub["club_id"] .');" class="waves-effect waves-light btn" ></a>' : '<input type="button" id="button_id" value="Make User this club admin" onClick="makeuserclubadmin(' . $rowclub["club_id"] .');" class="waves-effect waves-light btn" ></a>')."</td></tr></p>";
 									};
 								} else {
 									echo "0 results";
@@ -146,13 +154,11 @@ top("Welcome to Portlethen");
 
 								$CONNECT->close();
 								?>
-							</div>
 
-							<div class="madmin box">
 
 								<?php
 								echo (($row["nkpag"] ? '1' : 0) ?
-									'<input type="button" id="button_id" value="Delete user rights" onClick="deleterightmap(' . $row["user_id"] .');" class="waves-effect waves-light btn" ></a>' : '<input type="button" id="button_id" value="Make user map Admin" onClick="addrightmap(' . $row["user_id"] .');" class="waves-effect waves-light btn" ></a>'). "</td>";
+									'<input type="button" id="button_id" value="Delete user map Admin rights" onClick="deleterightmap(' . $row["user_id"] .');" class="waves-effect waves-light btn" ></a>' : '<input type="button" id="button_id" value="Make user map Admin" onClick="addrightmap(' . $row["user_id"] .');" class="waves-effect waves-light btn" ></a>'). "</td>";
 
 									?>
 
@@ -168,8 +174,7 @@ top("Welcome to Portlethen");
 			<script>
 
 				var chk1 = $("input[type='checkbox'][value='gadmin']");
-				var chk2 = $("input[type='checkbox'][value='madmin']");
-				var chk3 = $("input[type='checkbox'][value='cadmin']");
+				var chk2 = $("input[type='checkbox'][value='cadmin']");
 
 				$(document).ready(function(){
 					$(".cadmin").hide();
@@ -179,24 +184,46 @@ top("Welcome to Portlethen");
 						if($(this).attr("value")=="gadmin"){
 						//	chk2.prop('checked', false);
 						//	chk3.prop('checked', false);
-							$(".gadmin").toggle();
-						}
-						if($(this).attr("value")=="cadmin"){
-						//	chk1.prop('checked', false);
+						$(".gadmin").toggle();
+					}
+					else if($(this).attr("value")=="cadmin"){
+						chk1.prop('checked', false);
 						//	chk2.prop('checked', false);
-							$(".cadmin").toggle();
+						$(".cadmin").toggle();
 
-						}
-						if($(this).attr("value")=="madmin"){
-						//	chk1.prop('checked', false);
-						//	chk3.prop('checked', false);
-							$(".madmin").toggle();
-						}
+					}
 
-					});
+				});
 				});
 
 
+				function makeuserclubadmin(iddddd)
+				{
+					jQuery.ajax({
+						type: "POST",
+						url: "adminchange",
+						data: 'iddddd='+iddddd,
+						cache: false,
+						success: function(data, response)
+						{
+							Materialize.toast("User with id:" + iddddd + " is now Admin of club", 3000, 'rounded')
+						}
+					});
+				}
+
+				function unmakeuserclubadmin(uid, cid)
+				{
+					jQuery.ajax({
+						type: "POST",
+						url: "adminchange",
+						data : { uid : 'uid', cid : 'cid' },
+						cache: false,
+						success: function(data, response)
+						{
+							Materialize.toast("User with id:" + uid + " is now NOT Admin of club with id" + cid, 3000, 'rounded')
+						}
+					});
+				}
 
 				function makeuseradmin(id)
 				{

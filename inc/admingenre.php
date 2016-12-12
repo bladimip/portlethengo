@@ -22,9 +22,10 @@ if(isset($_POST["name"]))
 	}  
 }  
 
+?>
 
 
-
+<?php
 
 // Navbar
 top("Welcome to Portlethen");
@@ -48,34 +49,20 @@ top("Welcome to Portlethen");
 					<hr>
 					<h5>Add ganre</h5>
 
-					 <form id="submit_form">  
-                     <div class="input-field col s6">
-                     <label>Code for Genre (Required 2 symbols)</label>  
-                     <input type="text" name="name" id="name" class="form-control" maxlength="2"/>  
-                     </div> 
-                     <div class="input-field col s6">
-                     <label>Name of genre (Max 15 symbols)</label>  
-                     <input type="text" name="message" id="message" class="form-control" maxlength="15"/>  
-                     </div> 
-                     <br />  
-                     <input type="button" name="submit" id="submit" class="btn btn-info" value="Submit" />  
-                     <span id="error_message" class="text-danger"></span>  
-                     <span id="success_message" class="text-success"></span>  
-                </form>  
-
-					<hr>
-					<h5>Delete ganre</h5>
-					<?php
-					$sql = "SELECT * FROM clubs";
-					$result_select = mysql_query($sql);
-					echo "<select name = ''>";
-					while($object = mysql_fetch_object($result_select)){
-						echo "<option value = '$object->column_name' > $object->column_name </option>";
-					}
-					echo "</select>";
-					?>
-
-					<input type="button" name="entergenre" value="Delete Genre" class=" waves-effect waves-green btn-flat">
+					<form id="submit_form">  
+						<div class="input-field col s6">
+							<label>Code for Genre (Required 2 symbols)</label>  
+							<input type="text" name="name" id="name" class="form-control" maxlength="2"/>  
+						</div> 
+						<div class="input-field col s6">
+							<label>Name of genre (Max 15 symbols)</label>  
+							<input type="text" name="message" id="message" class="form-control" maxlength="15"/>  
+						</div> 
+						<br />  
+						<input type="button" name="submit" id="submit" class="btn btn-info" value="Submit" />  
+						<span id="error_message" class="text-danger"></span>  
+						<span id="success_message" class="text-success"></span>  
+					</form>  
 				</div>
 			</div>
 		</div>
@@ -84,27 +71,39 @@ top("Welcome to Portlethen");
 </div>
 
 <script>  
- $(document).ready(function(){  
-      $('#submit').click(function(){  
-           var name = $('#name').val();  
-           var message = $('#message').val();  
-           if(name == '' || message == '')  
-           {  
-                Materialize.toast('All Fields are required', 4000) ;
-           }  
-           else  
-           {  
-                $('#error_message').html('');  
-                $.ajax({  
-                     url:"admingenre",  
-                     method:"POST",  
-                     data:{name:name, message:message},  
-                     success:function(data){  
-                          $("form").trigger("reset");  
-                          Materialize.toast('The Genre is added', 4000) ;  
-                     }  
-                });  
-           }  
-      });  
- });  
- </script>  
+	$(document).ready(function(){  
+		$('#submit').click(function(){  
+			var name = $('#name').val();  
+			var message = $('#message').val();  
+			if(name == '' || message == '')  
+			{  
+				Materialize.toast('All Fields are required', 4000) ;
+			}  
+			else  
+			{  
+				$('#error_message').html('');  
+				$.ajax({  
+					url:"admingenre",  
+					method:"POST",  
+					data:{name:name, message:message},  
+					success:function(data){  
+						$("form").trigger("reset");  
+						Materialize.toast('The Genre is added', 4000) ;  
+					}  
+				});  
+			}  
+		});  
+	});  
+
+	function getState(val) {
+		$.ajax({
+			type: "POST",
+			url: "admingenre",
+			data:'country_id='+val,
+			success: function(data){
+				$("#state-list").html(data);
+			}
+		});
+	}
+
+</script>  

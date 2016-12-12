@@ -10,18 +10,15 @@ include('/layouts/HTMLcomponents.php');
 DidTheUserAdmin(1);
 
 
-if(isset($_POST["name"]))  
+if(isset($_POST["id"]))  
 {  
-	$name = mysqli_real_escape_string($CONNECT, $_POST["name"]);  
-	$message = mysqli_real_escape_string($CONNECT, $_POST["message"]);  
-
-	$sql = "INSERT INTO clubgenre(code, category) VALUES ('".$name."', '".$message."')";  
-	if(mysqli_query($CONNECT, $sql))  
-	{  
-		echo "Message Saved";  
-	}  
-}  
-
+  $name = mysqli_real_escape_string($CONNECT, $_POST["id"]);
+  $sql = "UPDATE clubs SET approved='1' WHERE club_id = '".$name."'";  
+  if(mysqli_query($CONNECT, $sql))  
+  {  
+    echo "Message Saved";  
+  }  
+}
 
 
 
@@ -53,16 +50,17 @@ if ($CONNECT->connect_error) {
      die("Connection failed: " . $CONNECT->connect_error);
 } 
 
-$sql = "SELECT club_id, name, approved FROM clubs";
+$sql = "SELECT club_id, name, approved, description FROM clubs";
 $result = $CONNECT->query($sql);
 
 if ($result->num_rows > 0) {
      echo '<table class="centered highlight">
         <thead>
           <tr>
-              <th>Club ID</th>
+              <th>ID</th>
               <th>Name</th>
-              <th>More information</th>
+              <th>Decription</th>
+              <th>Approve or not?</th>
           </tr>
         </thead>
         ';
@@ -71,7 +69,7 @@ if ($result->num_rows > 0) {
         if ($row["approved"] == 0){
         echo "<tbody>
           <tr>
-            <td>".$row["club_id"]."</td><td>".$row["name"]."</td><td> ".'<input type="button" id="button_id" value="More about the Club" onClick="MoreAboutTheClub(' . $row["club_id"] .');" class="waves-effect waves-light btn" ></a>' ."</td></tr></p>";
+            <td>".$row["club_id"]."</td><td>".$row["name"]."</td><td> ".$row["description"]."</td><td> ".'<input type="button" id="button_id" value="Approve" onClick="MoreAboutTheClub(' . $row["club_id"] .');" class="waves-effect waves-light btn" ></a>' ."</td></tr></p>";
      }}
 } else {
      echo "0 results";
@@ -91,12 +89,12 @@ function MoreAboutTheClub(id)
   {
       jQuery.ajax({
        type: "POST",
-       url: "adminusers",
+       url: "admingroups",
        data: 'id='+id,
        cache: false,
        success: function(data, response)
        {
-         //url for Arnis!!!
+         Materialize.toast('Club approved!', 4000)
        }
      });
  }

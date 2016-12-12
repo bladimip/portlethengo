@@ -128,6 +128,7 @@ function top( $title ) {
                     Password :  <input type="password" name="password" required><br><br>
                     <input type="submit" name="enter" value="Sign Up" class=" waves-effect waves-green btn-flat">
                     <input type="reset" value="Clear" class=" waves-effect waves-green btn-flat">
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
                     </p>
                 </div>
             </div>
@@ -152,14 +153,6 @@ return nl2br(htmlspecialchars(trim($p1), ENT_QUOTES), false);
 function GenPass ($p1, $p2) {
 return md5('MRILJA'.md5('321'.$p1.'123').md5('678'.$p2.'890'));
 }
-
-//Check did the user log in or not
-//THERE ADD MESSAGE
-function ULogin($p1) {
-if ($p1 <= 0 and $_SESSION['USER_LOGIN_IN'] != $p1) exit('This page aveilible only for guest');
-else if ($_SESSION['USER_LOGIN_IN'] = $p1);
-}
-
 
 // Sending the messages to users
 function MessageSend($p1, $p2) {
@@ -186,7 +179,7 @@ else if ($p1 == 1) return 'Admin';
 
 function DidTheUserAdmin($p1) {
 if ($p1 <= 0 and $_SESSION['USER_SITEADMIN'] != $p1) exit('You are not the admin');
-else if ($_SESSION['USER_LOGIN_IN'] = $p1) exit('Hello admin');
+else if ($_SESSION['USER_SITEADMIN'] = $p1);
 }
 
 // Footer
@@ -224,6 +217,7 @@ function bottom() {
 			<div class="footer-copyright">
 				<div class="container">
 					Made by <a class="brown-text text-lighten-3">CA2</a>
+					<?php if (isset($_SESSION['USER_SITEADMIN']))  echo  '<a class="grey-text text-lighten-4 right" href="/adminpanel">Admin Panel</a>'?>
 				</div>
 			</div>
 		</footer>
