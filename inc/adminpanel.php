@@ -9,7 +9,6 @@ include('/layouts/HTMLcomponents.php');
 //Ulogin(1);
 DidTheUserAdmin(1);
 
-
 $sql = "SELECT approved FROM clubs";
 $result = mysqli_query($CONNECT, $sql);
 $notapproved = 0;
