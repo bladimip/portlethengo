@@ -45,7 +45,7 @@ function getApprovedContributions ($title, $userID) {
 				echo ('<a href="/sportlethen/' . url($row["category"]) . '/' . url($row["clubname"]) . '/event/' . 'C' . url($row["club_id"]) . 'E' . url($row["event_id"]) . '" class="collection-item">' . $row["name"] . '</a>');
 			}
 			if ($title == "articles") {
-				echo ('<a href="/health-wellbeing/' . url($row["title"]) . '-A' . url($row["news_id"]) . '" class="collection-item">' . $row["title"] . '</a>');
+				echo ('<a href="/health-wellbeing/news/' . url($row["news_id"]) . '" class="collection-item">' . $row["title"] . '</a>');
 			}
 			if ($title == "locations") {
 				echo ('<a href="/map/' . url($row["name"]) . '-L' . url($row["loc_id"]) . '" class="collection-item">' . $row["name"] . '</a>');

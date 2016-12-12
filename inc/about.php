@@ -17,6 +17,7 @@ top("About Us");
                     <h4>Who we are</h4>
 					<hr>
 					<h5>SPortlethen</h5>
+					<img src="../assets/images/sportlethen.png" alt="SPortlethen Logo" width="40%">
                     <p class="left-align light">We are an association of local and progressive sports clubs who are working together to develop safe and fun sport & fitness activities in the Portlethen area.</p>
 					<p class="left-align light">We work with SportScotland and other organisations to develop our clubs.</p>
 					<p class="left-align light">This website is a single access point to find out more about the fantastic sporting opportunities in our area.</p>
