@@ -19,10 +19,16 @@ include('../layouts/HTMLcomponents.php');
 // Navbar
 top("Locations and Routes");
 
-//TODO placeholder function to return the user_ID from session, to be rewritten
 function getUserID(){
-    return ;
-}
+    //needs to check for logged in user and return user_id, return 0 for no active login
+    if (isset($_SESSION['USER_LOGIN_IN'])) {
+        $user_id = $_SESSION['USER_ID'];
+        return $user_id;
+    }
+    else{
+        return 0;
+    }
+};
 //Other page content
 
 
