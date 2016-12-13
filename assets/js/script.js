@@ -11,7 +11,7 @@ $(document).ready(function() {
 	$('.slider').slider({full_width: true});
 	$('.slider').slider('start');
 
-  $('select').material_select();
+	$('select').material_select();
 
 	$('.modal').modal();
 
@@ -23,7 +23,7 @@ $(document).ready(function() {
 		}
 
 		if ($.trim(condition) == "Logout") {
-			$.post('logout', {'toLogout' : true}, function(data) {
+			$.post('/inc/logout.php', {'toLogout' : true}, function(data) {
 				if (data == "success") {
 					window.location = '/';
 				} else {
@@ -46,7 +46,7 @@ $(document).ready(function() {
 		formData.append('event', 'add');
 
 		//send formdata to server-side
-    $.ajax({
+		$.ajax({
       url: '/inc/php/controlEvent.php', // php file
       type: 'post',
       data: formData,
@@ -55,8 +55,8 @@ $(document).ready(function() {
       processData: false,  // tell jQuery not to process the data
       contentType: false,   // tell jQuery not to set contentType
       success: function(data) {
-        console.log(data);
-        Materialize.toast(data, 30000, 'rounded');
+      	console.log(data);
+      	Materialize.toast(data, 30000, 'rounded');
       }
     });
 	});

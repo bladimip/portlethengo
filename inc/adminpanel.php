@@ -40,10 +40,10 @@ top("Welcome to Portlethen");
         <h4>Admin Panel</h4>
         <p class="center-align light">There you can change come details of users and webpage.</p>
         <div class="collection">
-          <a href="adminusers" class="collection-item">Show all users</a>
-          <a href="admingenre" class="collection-item">Modify Genre</a>
-          <a href="adminusersrights" class="collection-item">Change user rights</a>
-          <a href="admingroups" class="collection-item"><span class="new badge red"><?php echo $notapproved ?></span>Approve the clubs</a>
+          <a href="/inc/adminusers.php" class="collection-item">Show all users</a>
+          <a href="/inc/admingenre.php" class="collection-item">Modify Genre</a>
+          <a href="/inc/adminusersrights.php" class="collection-item">Change user rights</a>
+          <a href="/inc/admingroups.php" class="collection-item"><span class="new badge red"><?php echo $notapproved ?></span>Approve the clubs</a>
         </div>
       </div>
     </div>

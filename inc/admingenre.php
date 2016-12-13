@@ -44,7 +44,7 @@ top("Welcome to Portlethen");
 				<h4>Admin Panel</h4>
 				<p class="center-align light">There you can change come details of users and webpage.</p>
 				<div class="collection">
-					<a href="adminpanel" class="collection-item">Show Admin Panel</a>
+					<a href="/inc/adminpanel.php" class="collection-item">Show Admin Panel</a>
 
 					<hr>
 					<h5>Add ganre</h5>
@@ -83,7 +83,7 @@ top("Welcome to Portlethen");
 			{  
 				$('#error_message').html('');  
 				$.ajax({  
-					url:"admingenre",  
+					url:"/inc/admingenre.php",  
 					method:"POST",  
 					data:{name:name, message:message},  
 					success:function(data){  
@@ -98,7 +98,7 @@ top("Welcome to Portlethen");
 	function getState(val) {
 		$.ajax({
 			type: "POST",
-			url: "admingenre",
+			url: "/inc/admingenre.php",
 			data:'country_id='+val,
 			success: function(data){
 				$("#state-list").html(data);

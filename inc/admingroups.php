@@ -40,7 +40,7 @@ top("Welcome to Portlethen");
 				<h4>Admin Panel - See the not approved clubs</h4>
 				<p class="center-align light">There you can approve the clubs.</p>
 				<div class="collection">
-					<a href="adminpanel" class="collection-item">Show Admin Panel</a>
+					<a href="/inc/adminpanel.php" class="collection-item">Show Admin Panel</a>
 
 					<h5>Not approved clubs</h5>
 
@@ -89,7 +89,7 @@ function MoreAboutTheClub(id)
   {
       jQuery.ajax({
        type: "POST",
-       url: "admingroups",
+       url: "/inc/admingroups.php",
        data: 'id='+id,
        cache: false,
        success: function(data, response)

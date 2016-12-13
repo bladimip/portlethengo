@@ -31,7 +31,7 @@ top("Welcome to Portlethen");
                     <h4>Admin Panel - Change user rights</h4>
                     <p class="center-align light">There you can give to some user different rights</p>
                     <div class="collection">
-    <a href="adminpanel" class="collection-item">Go to admin panel</a>
+    <a href="/inc/adminpanel.php" class="collection-item">Go to admin panel</a>
 
 <?php
 
@@ -52,7 +52,7 @@ if ($result->num_rows > 0) {
           </tr>
         </thead>
         ';
-      echo '<p class="centre-align light"><form method="POST" action="/adminusersrights">';
+      echo '<p class="centre-align light"><form method="POST" action="/inc/adminusersrights.php">';
     // output data of each row
     while($row = $result->fetch_assoc()) {
         echo "<tbody>
@@ -78,12 +78,12 @@ function ChangeUserRughts(id)
   {
       jQuery.ajax({
        type: "POST",
-       url: "adminusersrights",
+       url: "/inc/adminusersrights.php",
        data: 'id='+id,
        cache: false,
        success: function(data, response)
        {
-        window.location.href = "adminchange";
+        window.location.href = "/inc/adminchange.php";
        }
      });
  }

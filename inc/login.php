@@ -30,7 +30,7 @@ if (isset($_POST['enter'])) {
       $_SESSION["BLOCK"] = $Row['blocked'];
     }
 
-      exit(header('Location: /users/'. $_SESSION['USER_LOGIN']));
+      exit(header('Location: /inc/users/'. $_SESSION['USER_LOGIN']));
   }
 }
 ?>

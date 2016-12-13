@@ -7,14 +7,14 @@ $CONNECT = mysqli_connect('localhost', 'root', '', 'webdev5');
 session_start();
 // Navigation bar
 function top( $title ) {
-?>
+	?>
 	<!DOCTYPE html>
 	<html>
 	<head>
 		<meta charset="UTF-8">
 		<title>
 
-		<?php echo $title; ?>
+			<?php echo $title; ?>
 
 		</title>
 		<link rel="stylesheet" href="/assets/css/style.css">
@@ -73,15 +73,15 @@ function top( $title ) {
 						<a href="/" class="left brand-logo lime-text"><span class="lnr lnr-apartment"></span>Go-Portlethen</a>
 
 						<ul class="right hide-on-med-and-down">
-							<li><a class="waves-effect waves-light" href="http://myfirstuniappmc.azurewebsites.net/inc/search.php"><span class="lnr lnr-magnifier"></span>Search</a></li>
-							<li><a class="waves-effect waves-light" href="http://myfirstuniappmc.azurewebsites.net/inc/sportlethen.php"><span class="lnr lnr-users"></span>SPortlethen</a></li>
-							<li><a class="waves-effect waves-light" href="http://myfirstuniappmc.azurewebsites.net/inc/health-wellbeing.php"><span class="lnr lnr-heart-pulse"></span>Health & Wellbeing</a></li>
-							<li><a class="waves-effect waves-light" href="http://myfirstuniappmc.azurewebsites.net/inc/map/map.php"><span class="lnr lnr-map"></span>Discover Area</a></li>
+							<li><a class="waves-effect waves-light" href="/inc/search.php"><span class="lnr lnr-magnifier"></span>Search</a></li>
+							<li><a class="waves-effect waves-light" href="/inc/sportlethen.php"><span class="lnr lnr-users"></span>SPortlethen</a></li>
+							<li><a class="waves-effect waves-light" href="/inc/health-wellbeing.php"><span class="lnr lnr-heart-pulse"></span>Health & Wellbeing</a></li>
+							<li><a class="waves-effect waves-light" href="/inc/map/map.php"><span class="lnr lnr-map"></span>Discover Area</a></li>
 							<li><a class="waves-effect waves-light logBtn"  href="#!"><span class="lnr lnr-user"></span>
 								<?php if (isset($_SESSION['USER_LOGIN_IN'])) echo '<span>Logout</span>';
-											else echo '<span>Login</span>'; ?>
+								else echo '<span>Login</span>'; ?>
 
-								</a></li>
+							</a></li>
 						</ul>
 
 						<ul class="right hide-on-large-only">
@@ -91,9 +91,9 @@ function top( $title ) {
 							<li><a class="waves-effect waves-light" href="map/map.php"><span class="lnr lnr-map"></span></a></li>
 							<li><a class="waves-effect waves-light logBtn"  href="#!"><span class="lnr lnr-user"></span>
 								<?php if (isset($_SESSION['USER_LOGIN_IN'])) echo '<span>Logout</span>';
-											else echo '<span>Login</span>'; ?>
+								else echo '<span>Login</span>'; ?>
 
-								</a></li>
+							</a></li>
 						</ul>
 					</div>
 				</nav>
@@ -104,140 +104,141 @@ function top( $title ) {
 			</div>
 
 
-		  <!-- Modal Structure -->
-			  <div id="modal2" class="modal">
-			    <div class="modal-content">
-						<div class="row">
-								<div class="col s12 center">
-										<h4>Login</h4>
-										<p class="left-align light">
-											<form method="POST" action="/login">
-												Username:      <input type="text" name="login" required><br>
-												Password:  <input type="password" name="password" required><br><br>
-												<input type="submit" name="enter" value="Login" class=" waves-effect waves-green btn-flat">
-												<input type="reset" value="Clear" class=" waves-effect waves-green btn-flat">
-												<a href="#modal3" data-dismiss="modal2" class=" waves-effect waves-green btn-flat">Sign Up</a>
-												<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+			<!-- Modal Structure -->
+			<div id="modal2" class="modal">
+				<div class="modal-content">
+					<div class="row">
+						<div class="col s12 center">
+							<h4>Login</h4>
+							<p class="left-align light">
+								<form method="POST" action="/inc/login.php">
+									Username:      <input type="text" name="login" required><br>
+									Password:  <input type="password" name="password" required><br><br>
+									<input type="submit" name="enter" value="Login" class=" waves-effect waves-green btn-flat">
+									<input type="reset" value="Clear" class=" waves-effect waves-green btn-flat">
+									<a href="#modal3" data-dismiss="modal2" class=" waves-effect waves-green btn-flat">Sign Up</a>
+									<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
 
-											</form>
-										</p>
-								</div>
+								</form>
+							</p>
 						</div>
-			    </div>
-			  </div>
+					</div>
+				</div>
+			</div>
 
-			  			  <!-- Modal Structure for registration-->
-			  <div id="modal3" class="modal">
-			    <div class="modal-content">
-            <div class="row">
-                <div class="col s12 center">
-                    <p class="left-align light"><form method="POST" action="/register">
-                    Username:      <input type="text" name="login" required><br>
-                    E-mail:     <input type="email" name="email" required><br>
-                    Password :  <input type="password" name="password" required><br><br>
-                    <input type="submit" name="enter" value="Sign Up" class=" waves-effect waves-green btn-flat">
-                    <input type="reset" value="Clear" class=" waves-effect waves-green btn-flat">
-                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-                    </form></p>
-                </div>
-            </div>
-			    </div>
-			  </div>
-		</div>
+			<!-- Modal Structure for registration-->
+			<div id="modal3" class="modal">
+				<div class="modal-content">
+					<div class="row">
+						<div class="col s12 center">
+							<p class="left-align light">
+								<form method="POST" action="/inc/register.php">
+									Username:      <input type="text" name="login" required><br>
+									E-mail:     <input type="email" name="email" required><br>
+									Password :  <input type="password" name="password" required><br><br>
+									<input type="submit" name="enter" value="Sign Up" class=" waves-effect waves-green btn-flat">
+									<input type="reset" value="Clear" class=" waves-effect waves-green btn-flat">
+									<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+								</form></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-<?php
-}
+			<?php
+		}
 
 //Validation by Ilja
-function FormChars ($p1) {
-return nl2br(htmlspecialchars(trim($p1), ENT_QUOTES), false);
-}
+		function FormChars ($p1) {
+			return nl2br(htmlspecialchars(trim($p1), ENT_QUOTES), false);
+		}
 
 
 // Make password sequire
 // Use password and login for sequre
-function GenPass ($p1, $p2) {
-return md5('MRILJA'.md5('321'.$p1.'123').md5('678'.$p2.'890'));
-}
+		function GenPass ($p1, $p2) {
+			return md5('MRILJA'.md5('321'.$p1.'123').md5('678'.$p2.'890'));
+		}
 
 //Check did the user log in or not
 //THERE ADD MESSAGE
-function ULogin($p1) {
-if ($p1 <= 0 and $_SESSION['USER_LOGIN_IN'] != $p1) exit('This page aveilible only for guest');
-else if ($_SESSION['USER_LOGIN_IN'] = $p1);
-}
+		function ULogin($p1) {
+			if ($p1 <= 0 and $_SESSION['USER_LOGIN_IN'] != $p1) exit('This page aveilible only for guest');
+			else if ($_SESSION['USER_LOGIN_IN'] = $p1);
+		}
 
 
 // Sending the messages to users
-function MessageSend($p1, $p2) {
-if ($p1 == 1) $p1 = 'Error';
-else if ($p1 == 2) $p1 = 'Help';
-else if ($p1 == 3) $p1 = 'Information';
-$_SESSION['message'] = '<div class="chip"><b>'.$p1.'</b>: '.$p2.'</div>';
-exit(header('Location: '.$_SERVER['HTTP_REFERER']));
-}
+		function MessageSend($p1, $p2) {
+			if ($p1 == 1) $p1 = 'Error';
+			else if ($p1 == 2) $p1 = 'Help';
+			else if ($p1 == 3) $p1 = 'Information';
+			$_SESSION['message'] = '<div class="chip"><b>'.$p1.'</b>: '.$p2.'</div>';
+			exit(header('Location: '.$_SERVER['HTTP_REFERER']));
+		}
 
 
 // Show the messages to users
-function MessageShow() {
-if ($_SESSION['message'])$Message = $_SESSION['message'];
-echo $Message;
-$_SESSION['message'] = array();
-}
+		function MessageShow() {
+			if ($_SESSION['message'])$Message = $_SESSION['message'];
+			echo $Message;
+			$_SESSION['message'] = array();
+		}
 
-function WhoIsUser($p1) {
+		function WhoIsUser($p1) {
 
-if ($p1 == 0) return 'No';
-else if ($p1 == 1) return 'Admin';
-	}
+			if ($p1 == 0) return 'No';
+			else if ($p1 == 1) return 'Admin';
+		}
 
-function DidTheUserAdmin($p1) {
-if ($_SESSION['USER_SITEADMIN'] = '1');
-else (header('Location: landing'));
-}
+		function DidTheUserAdmin($p1) {
+			if ($_SESSION['USER_SITEADMIN'] = '1');
+			else (header('Location: landing'));
+		}
 
 // Footer
-function bottom() {
-?>
-		<footer class="page-footer deep-purple lighten-1">
-			<div class="container">
-				<div class="row">
-					<div class="col l6 s12">
-						<h5 class="white-text">Go-Portlethen</h5>
-						<a href="/about"><p class="grey-text text-lighten-4">About us</p></a>
-
-
-					</div>
-					<div class="col l3 s12">
-						<h5 class="white-text">Social networks</h5>
-						<ul>
-							<li><a class="white-text" href="#!">Faceboook</a></li>
-							<li><a class="white-text" href="#!">Twitter</a></li>
-							<li><a class="white-text" href="#!">Google+</a></li>
-							<li><a class="white-text" href="#!">YouTube</a></li>
-						</ul>
-					</div>
-					<div class="col l3 s12">
-						<h5 class="white-text">Friends</h5>
-						<ul>
-							<li><a class="white-text" href="#!">WebPage1</a></li>
-							<li><a class="white-text" href="#!">WebPage2</a></li>
-							<li><a class="white-text" href="#!">WebPage3</a></li>
-							<li><a class="white-text" href="#!">WebPage4</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="footer-copyright">
+		function bottom() {
+			?>
+			<footer class="page-footer deep-purple lighten-1">
 				<div class="container">
-					Made by <a class="brown-text text-lighten-3">CA2</a>
-					<?php if (isset($_SESSION['USER_SITEADMIN']))  echo  '<a class="grey-text text-lighten-4 right" href="/adminpanel">Admin Panel</a>'?>
-				</div>
-			</div>
-		</footer>
-	</body>
-	</html>
+					<div class="row">
+						<div class="col l6 s12">
+							<h5 class="white-text">Go-Portlethen</h5>
+							<a href="/about"><p class="grey-text text-lighten-4">About us</p></a>
 
-<?php
-}
-?>
+
+						</div>
+						<div class="col l3 s12">
+							<h5 class="white-text">Social networks</h5>
+							<ul>
+								<li><a class="white-text" href="#!">Faceboook</a></li>
+								<li><a class="white-text" href="#!">Twitter</a></li>
+								<li><a class="white-text" href="#!">Google+</a></li>
+								<li><a class="white-text" href="#!">YouTube</a></li>
+							</ul>
+						</div>
+						<div class="col l3 s12">
+							<h5 class="white-text">Friends</h5>
+							<ul>
+								<li><a class="white-text" href="#!">WebPage1</a></li>
+								<li><a class="white-text" href="#!">WebPage2</a></li>
+								<li><a class="white-text" href="#!">WebPage3</a></li>
+								<li><a class="white-text" href="#!">WebPage4</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="footer-copyright">
+					<div class="container">
+						Made by <a class="brown-text text-lighten-3">CA2</a>
+						<?php if (isset($_SESSION['USER_SITEADMIN']))  echo  '<a class="grey-text text-lighten-4 right" href="/adminpanel">Admin Panel</a>'?>
+					</div>
+				</div>
+			</footer>
+		</body>
+		</html>
+
+		<?php
+	}
+	?>

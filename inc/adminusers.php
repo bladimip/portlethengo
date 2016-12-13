@@ -58,7 +58,7 @@ top("Welcome to Portlethen");
         <h4>Admin Panel - Manipulate with users</h4>
         <p class="center-align light">There you can change come details of users.</p>
         <div class="collection">
-          <a href="adminpanel" class="collection-item">Go to admin panel</a>
+          <a href="/inc/adminpanel.php" class="collection-item">Go to admin panel</a>
 
           <?php
 
@@ -107,7 +107,7 @@ top("Welcome to Portlethen");
   {
     jQuery.ajax({
      type: "POST",
-     url: "adminusers",
+     url: "/inc/adminusers.php",
      data: 'id='+id,
      cache: false,
      success: function(data, response)
@@ -121,7 +121,7 @@ top("Welcome to Portlethen");
   {
     jQuery.ajax({
      type: "POST",
-     url: "adminusers",
+     url: "/inc/adminusers.php",
      data: 'idd='+idd,
      cache: false,
      success: function(data, response)
@@ -135,7 +135,7 @@ top("Welcome to Portlethen");
   {
     jQuery.ajax({
      type: "POST",
-     url: "adminusers",
+     url: "/inc/adminusers.php",
      data: 'iddd='+iddd,
      cache: false,
      success: function(data, response)
