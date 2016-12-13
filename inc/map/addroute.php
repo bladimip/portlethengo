@@ -11,7 +11,7 @@ $result = $db->runQuery("SELECT * FROM locations);
 $db->close();
 
 */
-//localhost:8888/addmap.php?name=test&description=test&address=testadd&lat=57.055423&lng=-2.135547
+
 
 include('../db/simpleDB.php');
 include('../layouts/HTMLcomponents.php');
@@ -53,7 +53,7 @@ function onLoad(){
         $result = $db->runQuery($query);
         $db->close();
         echo "<p>The route has been added to the database but will not be seen until an administrator has approved it.</p>";
-        echo "<br><a href=\"map.php\">Go Back</a>";
+        echo "<br><a href=\"routes.php\">Go Back</a>";
         $loadmap = 0 ;
     }
     else{
@@ -73,7 +73,7 @@ EAT;
 function loadMap(){
     global $centre;
     echo <<<EOT
-    <h4>Portlethan, click the map to add your route. </h4>
+    <h4>Portlethan, click the map to add your route points. </h4>
     <div id="map"></div>
     <script>
         var poly;
