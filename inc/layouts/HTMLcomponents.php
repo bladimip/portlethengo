@@ -77,9 +77,12 @@ function top( $title ) {
 							<li><a class="waves-effect waves-light" href="/inc/sportlethen.php"><span class="lnr lnr-users"></span>SPortlethen</a></li>
 							<li><a class="waves-effect waves-light" href="/inc/health-wellbeing.php"><span class="lnr lnr-heart-pulse"></span>Health & Wellbeing</a></li>
 							<li><a class="waves-effect waves-light" href="/inc/map/map.php"><span class="lnr lnr-map"></span>Discover Area</a></li>
-							<li><a class="waves-effect waves-light logBtn"  href="#!"><span class="lnr lnr-user"></span>
-								<?php if (isset($_SESSION['USER_LOGIN_IN'])) echo '<span>Logout</span>';
-								else echo '<span>Login</span>'; ?>
+							<li>
+							<?php if (isset($_SESSION['USER_LOGIN_IN']))
+								echo '<a class="waves-effect waves-light logBtn"  href="/inc/landing.php"><span class="lnr lnr-user"></span><span>Logout</span>';
+							else
+								echo '<a class="waves-effect waves-light logBtn"  href="#!"><span class="lnr lnr-user"></span><span>Login</span>';
+							?>
 
 							</a></li>
 						</ul>
