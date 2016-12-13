@@ -34,10 +34,10 @@ if (isset($_SESSION['USER_LOGIN_IN']))
 } else {
 	$siteAdmin = 0;
 }
-else
-{
-	$siteAdmin = 0;
-}
+//else
+//{
+//	$siteAdmin = 0;
+//}
 if (isset($_GET["news_id"])) 
 {
     
