@@ -64,19 +64,19 @@ $db -> close();
 			{
 				if($approved == 1)
 				{
-					echo "<li><a href='/health-wellbeing/news/{$news_id} '>{$title}</a> written by {$username} APPROVED</li>";
+					echo "<li><a href='news/t_news.php?news_id={$news_id} '>{$title}</a> written by {$username} APPROVED</li>";
 					
 				}
 				else
 				{
-					echo "<li><a href='/health-wellbeing/news/{$news_id} '>{$title}</a> written by {$username} UNAPPROVED 
+					echo "<li><a href='news/t_news.php?news_id={$news_id} '>{$title}</a> written by {$username} UNAPPROVED 
 					</li>";
 					
 				}
 			}
 			elseif($siteAdmin == 0 && $approved ==1)
 			{
-				echo "<li><a href='/health-wellbeing/news/{$news_id} '>{$title}</a> written by {$username}</li>";
+				echo "<li><a href='news/t_news.php?news_id={$news_id} '>{$title}</a> written by {$username}</li>";
 				
 				
 			}
@@ -91,7 +91,7 @@ $db -> close();
 
 		if($loggedOn)
         {
-            echo "<p><center><FORM METHOD='LINK' ACTION='inc/createArticle.php'><INPUT TYPE='submit' VALUE='Create an Article'></FORM></p>";
+            echo "<p><center><FORM METHOD='LINK' ACTION='createArticle.php'><INPUT TYPE='submit' VALUE='Create an Article'></FORM></p>";
 
         }
         else
