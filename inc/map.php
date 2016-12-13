@@ -1,5 +1,5 @@
 <?php
 
-header('location: /map/map');
+//header('location: /map/map');
 
 ?>

@@ -1,5 +1,5 @@
 <?php
-
+echo "test";
 /*
 Map page - Google Map API
 
@@ -11,7 +11,7 @@ $db->open();
 $result = $db->runQuery("SELECT * FROM locations);
 $db->close();
 
-*/
+
 
 include('../db/simpleDB.php');
 include('../layouts/HTMLcomponents.php');
@@ -19,7 +19,7 @@ include('../layouts/HTMLcomponents.php');
 // Navbar
 top("Locations and Routes");
 echo "test";
-/*
+
 //Other page content
 //use $_GET to load individual locations
 //eg. map.php?loc=2
@@ -251,8 +251,8 @@ getLocation();
 if ($onLoadLoc == 0) {
     drawList();
 }
-*/
+
 // Footer
 bottom();
 
-?>
+?>*/
