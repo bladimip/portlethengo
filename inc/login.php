@@ -15,11 +15,11 @@ if (isset($_POST['enter'])) {
       if ($CONNECT){
 
       $Roww = mysqli_fetch_assoc(mysqli_query($CONNECT, "SELECT `password` FROM `users` WHERE `username` = '$_POST[login]'"));
-      if ($Roww['password'] != $_POST['password']) exit('wrong login or password');
+      if ($Roww['password'] != $_POST['password']) exit(header('Location: /'));
 
       $Row = mysqli_fetch_assoc(mysqli_query($CONNECT, "SELECT `user_id`, `clubAdmin`,`nkpag`,`siteAdmin`,`username`, `blocked`  FROM `users` WHERE `username` = '$_POST[login]'"));
 
-      if ($Roww['password'] = $_POST['password'] ){
+      if ($Roww['password'] == $_POST['password'] ){
       $_SESSION['USER_ID'] = $Row['user_id'];
       $_SESSION['USER_CLUBADMIN'] = $Row['clubAdmin'];
       $_SESSION['USER_NKPAG'] = $Row['nkpag'];
@@ -30,7 +30,8 @@ if (isset($_POST['enter'])) {
       $_SESSION["BLOCK"] = $Row['blocked'];
     }
 
-      exit(header('Location: /inc/users/'. $_SESSION['USER_LOGIN']));
+      exit(header('Location: /inc/profile.php?username='. $_SESSION['USER_LOGIN']));
   }
 }
 ?>
+
