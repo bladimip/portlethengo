@@ -82,7 +82,7 @@ function searchSection ($table, $search) {
 				$str .= '<p><a href="/inc/club/t_event.php?id=' . 'C' . url($row["cid"]) . 'E' . url($row["event_id"]) . '" class="collection-item">' . $row["ename"] . '</a></p>';
 				break;
 			case "HealthNews":
-				$str .= '<p><a href="/health-wellbeing/news/' . url($row["news_id"]) . '" class="collection-item">' . $row["title"] . '</a></p>';
+				$str .= '<p><a href="/inc/news/t_news.php?news_id=' . url($row["news_id"]) . '" class="collection-item">' . $row["title"] . '</a></p>';
 				break;
 			case "Locations":
 				$str .= '<p><a href="/inc/map/map.php?loc=' . url($row["loc_id"]) . '" class="collection-item">' . $row["name"] . '</a></p>';

@@ -101,7 +101,7 @@ function drawList(){
     <div class="col s12 m10 l8 offset-m1 offset-l2">
 
     <div id="loclist">
-    <h3>Routes and Trails</h2> <a href="map">Click here to see Locations.</a>
+    <h3>Routes and Trails</h2> <a href="map.php">Click here to see Locations.</a>
         <ul style="list-style-type:none">
 EEE;
     // loop through all returned results
