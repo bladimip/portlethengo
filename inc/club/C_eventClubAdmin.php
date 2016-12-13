@@ -41,7 +41,7 @@ include_once('C_Event.php');
           while ($row = $club->fetch_assoc()) {
 
             echo '<span class="grey-text text-lighten-1">Club: </span>';
-            echo '<a id="club_link" href="/sportlethen/'. url($row["category"]) .'/'. url($row["name"]) .'-C'.$row["club_id"].'">'. $row["name"] .'</a><br>';
+            echo '<a id="club_link" href="t_club.php?club=C'.$row["club_id"].'">'. $row["name"] .'</a><br>';
           }
        }
     }
@@ -56,7 +56,7 @@ include_once('C_Event.php');
           while ($row = $user->fetch_assoc()) {
 
             echo '<span class="grey-text text-lighten-1">Event was added by: </span>';
-            echo '<a id="user_link" href="/users/'. url($row["username"]) .'">'. url($row["username"]) .'</a>';
+            echo '<a id="user_link" href="../profile.php?username='. url($row["username"]) .'">'. url($row["username"]) .'</a>';
           }
        }
     }

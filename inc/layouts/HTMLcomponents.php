@@ -86,9 +86,9 @@ function top( $title ) {
 
 						<ul class="right hide-on-large-only">
 							<li><span class="waves-effect waves-light"><span class="lnr lnr-magnifier searchBtn"></span></span></li>
-							<li><a class="waves-effect waves-light" href="sportlethen.php"><span class="lnr lnr-users"></span></a></li>
-							<li><a class="waves-effect waves-light" href="health-wellbeing.php"><span class="lnr lnr-heart-pulse"></span></a></li>
-							<li><a class="waves-effect waves-light" href="map/map.php"><span class="lnr lnr-map"></span></a></li>
+							<li><a class="waves-effect waves-light" href="/inc/sportlethen.php"><span class="lnr lnr-users"></span></a></li>
+							<li><a class="waves-effect waves-light" href="/inc/health-wellbeing.php"><span class="lnr lnr-heart-pulse"></span></a></li>
+							<li><a class="waves-effect waves-light" href="/inc/map/map.php"><span class="lnr lnr-map"></span></a></li>
 							<li><a class="waves-effect waves-light logBtn"  href="#!"><span class="lnr lnr-user"></span>
 								<?php if (isset($_SESSION['USER_LOGIN_IN'])) echo '<span>Logout</span>';
 								else echo '<span>Login</span>'; ?>

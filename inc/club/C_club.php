@@ -148,7 +148,7 @@ class Club {
 
         if ($event->getStatus() == "1") {
           // C for club id, E for event id
-          echo '<a href="/sportlethen/'.url($this->getGenre()).'/'.url($this->getName()).'/event/C'.$this->getId()."E".$event->getId().'" class="collection-item"><span>'. date_format(new DateTime($event->getEventDate()), 'd M Y') .'</span> '. $event->getName() .'</a>';
+          echo '<a href="t_event.php?id=C'.$this->getId()."E".$event->getId().'" class="collection-item"><span>'. date_format(new DateTime($event->getEventDate()), 'd M Y') .'</span> '. $event->getName() .'</a>';
         }
       }
     } else {
