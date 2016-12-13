@@ -42,16 +42,16 @@ function getApprovedContributions ($title, $userID) {
 		echo '<div class="collection">';
 		while ($row = $queryResult->fetch_assoc()) {
 			if ($title == "events") {
-				echo ('<a href="/sportlethen/' . url($row["category"]) . '/' . url($row["clubname"]) . '/event/' . 'C' . url($row["club_id"]) . 'E' . url($row["event_id"]) . '" class="collection-item">' . $row["name"] . '</a>');
+				echo ('<a href="/inc/club/t_event.php?id=' . 'C' . url($row["club_id"]) . 'E' . url($row["event_id"]) . '" class="collection-item">' . $row["name"] . '</a>');
 			}
 			if ($title == "articles") {
 				echo ('<a href="/health-wellbeing/news/' . url($row["news_id"]) . '" class="collection-item">' . $row["title"] . '</a>');
 			}
 			if ($title == "locations") {
-				echo ('<a href="/map/location/' . url($row["loc_id"]) . '" class="collection-item">' . $row["name"] . '</a>');
+				echo ('<a href="/inc/map/map.php?loc=' . url($row["loc_id"]) . '" class="collection-item">' . $row["name"] . '</a>');
 			}
 			if ($title == "routes") {
-				echo ('<a href="/map/route/' . url($row["route_id"]) . '" class="collection-item">' . $row["name"] . '</a>');
+				echo ('<a href="/inc/map/routes.php?route=' . url($row["route_id"]) . '" class="collection-item">' . $row["name"] . '</a>');
 			}
 		}
 		echo '</div>';
@@ -146,7 +146,7 @@ if ($user->num_rows >= 1) {
 		if ($clubsAdministered->num_rows >= 1) {
 			echo '<h5>Admin of following clubs:</h5><div class="row">';
 			while ($row = $clubsAdministered->fetch_assoc()) {
-				echo ('<a class="clubTitle" href="/sportlethen/' . url($row["category"]) . '/' . url($row["name"]) . '-C' . $row["club_id"] . '"><div class="col s6 m4 l3"><p class="sp-genre z-depth-2">' . $row["name"] . '</p></div></a>') . ' ';
+				echo ('<a class="clubTitle" href="/inc/club/t_club.php?club=' . $row["club_id"] . '"><div class="col s6 m4 l3"><p class="sp-genre z-depth-2">' . $row["name"] . '</p></div></a>') . ' ';
 			}
 			echo '</div>';
 		}
