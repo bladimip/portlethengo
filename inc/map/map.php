@@ -208,7 +208,7 @@ function getUserID(){
     return 1;
 };
 
-
+getLocation();
 
 
 ?>
@@ -246,7 +246,7 @@ function getUserID(){
 
 <?php
 
-getLocation();
+
 if ($onLoadLoc == 0) {
     drawList();
 }

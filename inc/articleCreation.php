@@ -41,5 +41,5 @@ if (isset($_SESSION['USER_LOGIN_IN']))
 				$db -> close();
 			}
 
-header('location: /health-wellbeing');
+header('location: health-wellbeing.php');
 ?>
