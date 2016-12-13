@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7985c7fa-3ae5-4133-bee0-215008d8b736" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/map/addmap.php" afterPath="$PROJECT_DIR$/inc/map/addmap.php" />
     </list>
     <ignored path="UniFirstProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -290,7 +289,7 @@
       <workItem from="1481546345157" duration="149000" />
       <workItem from="1481546527931" duration="374000" />
       <workItem from="1481549871505" duration="5000" />
-      <workItem from="1481549917056" duration="13864000" />
+      <workItem from="1481549917056" duration="14094000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1478527797280</created>
@@ -425,11 +424,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481586282973</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Job finished, all done except for;&#10;//TODO A function required to return user from session&#10;Extra bug fixes in route of .htaccess&#10;minor last minute bug fix&#10;">
+      <created>1481586390012</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1481586390012</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66245000" />
+    <option name="totallyTimeSpent" value="66475000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -506,7 +512,8 @@
     <MESSAGE value="//TODO A function required to return user from session" />
     <MESSAGE value="Job finished, all done except for;&#10;&#10;//TODO A function required to return user from session" />
     <MESSAGE value="Job finished, all done except for;&#10;&#10;//TODO A function required to return user from session&#10;&#10;&#10;Extra bug fixes in route of .htaccess" />
-    <option name="LAST_COMMIT_MESSAGE" value="Job finished, all done except for;&#10;&#10;//TODO A function required to return user from session&#10;&#10;&#10;Extra bug fixes in route of .htaccess" />
+    <MESSAGE value="Job finished, all done except for;&#10;//TODO A function required to return user from session&#10;Extra bug fixes in route of .htaccess&#10;minor last minute bug fix&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Job finished, all done except for;&#10;//TODO A function required to return user from session&#10;Extra bug fixes in route of .htaccess&#10;minor last minute bug fix&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
