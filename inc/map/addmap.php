@@ -11,7 +11,7 @@ $result = $db->runQuery("SELECT * FROM locations);
 $db->close();
 
 */
-//localhost:8888/addmap.php?name=test&description=test&address=testadd&lat=57.055423&lng=-2.135547
+
 
 include('../db/simpleDB.php');
 include('../layouts/HTMLcomponents.php');
@@ -58,7 +58,7 @@ function onLoad(){
     else{
         $loadmap=1;
         echo <<<EAT
-    <form id= "formid" action="addmap" method="post" >
+    <form id= "formid" action="addmap.php" method="post" >
         <input type="text" placeholder="Locations Name" name="name" required>
         <input type="text" placeholder="Locations Description" name="description" required>
         <input type="text" placeholder="Locations Address" name="address"required>
