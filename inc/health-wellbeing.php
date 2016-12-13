@@ -69,14 +69,14 @@ $db -> close();
 				}
 				else
 				{
-					echo "<li><a href='/health-wellbeing/news/{$news_id} '>{$title}</a> written by {$username} UNAPPROVED 
+					echo "<li><a href='news/t_news.php?news_id={$news_id} '>{$title}</a> written by {$username} UNAPPROVED 
 					</li>";
 					
 				}
 			}
 			elseif($siteAdmin == 0 && $approved ==1)
 			{
-				echo "<li><a href='/health-wellbeing/news/{$news_id} '>{$title}</a> written by {$username}</li>";
+				echo "<li><a href='news/t_news.php?news_id={$news_id} '>{$title}</a> written by {$username}</li>";
 				
 				
 			}
