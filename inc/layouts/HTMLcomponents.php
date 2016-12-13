@@ -1,5 +1,5 @@
 <?php
-$CONNECT = mysqli_connect('us-cdbr-azure-southcentral-f.cloudapp.net', 'b04a42ad414e01', '686a923d', 'webdev5');
+$CONNECT = mysqli_connect('localhost', 'root', '', 'webdev5');
 //check the connection!!
 //if ($CONNECT) echo 'OK';
 //else echo 'EROOR';
