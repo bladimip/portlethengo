@@ -201,7 +201,7 @@ top("Welcome to Portlethen");
 				{
 					jQuery.ajax({
 						type: "POST",
-						url: "adminchange",
+						url: "/inc/adminchange.php",
 						data: 'iddddd='+iddddd,
 						cache: false,
 						success: function(data, response)
@@ -215,7 +215,7 @@ top("Welcome to Portlethen");
 				{
 					jQuery.ajax({
 						type: "POST",
-						url: "adminchange",
+						url: "/inc/adminchange.php",
 						data : { uid : 'uid', cid : 'cid' },
 						cache: false,
 						success: function(data, response)
@@ -229,7 +229,7 @@ top("Welcome to Portlethen");
 				{
 					jQuery.ajax({
 						type: "POST",
-						url: "adminchange",
+						url: "/inc/adminchange.php",
 						data: 'id='+id,
 						cache: false,
 						success: function(data, response)
@@ -243,7 +243,7 @@ top("Welcome to Portlethen");
 				{
 					jQuery.ajax({
 						type: "POST",
-						url: "adminchange",
+						url: "/inc/adminchange.php",
 						data: 'idd='+idd,
 						cache: false,
 						success: function(data, response)
@@ -257,7 +257,7 @@ top("Welcome to Portlethen");
 				{
 					jQuery.ajax({
 						type: "POST",
-						url: "adminchange",
+						url: "/inc/adminchange.php",
 						data: 'iddd='+iddd,
 						cache: false,
 						success: function(data, response)
@@ -271,7 +271,7 @@ top("Welcome to Portlethen");
 				{
 					jQuery.ajax({
 						type: "POST",
-						url: "adminchange",
+						url: "/inc/adminchange.php",
 						data: 'idddd='+idddd,
 						cache: false,
 						success: function(data, response)
