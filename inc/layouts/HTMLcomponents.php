@@ -198,16 +198,6 @@ function top( $title ) {
 		}
 
 // Footer
-<<<<<<< HEAD
-		function bottom() {
-			?>
-			<footer class="page-footer deep-purple lighten-1">
-				<div class="container">
-					<div class="row">
-						<div class="col l6 s12">
-							<h5 class="white-text">Go-Portlethen</h5>
-							<a href="/about"><p class="grey-text text-lighten-4">About us</p></a>
-=======
 function bottom() {
 ?>
 		<footer class="page-footer deep-purple lighten-1">
@@ -216,7 +206,6 @@ function bottom() {
 					<div class="col l6 s12">
 						<h5 class="white-text">Go-Portlethen</h5>
 						<a href="/inc/about.php"><p class="grey-text text-lighten-4">About us</p></a>
->>>>>>> NOROUTING-vlad
 
 
 						</div>

@@ -119,7 +119,6 @@ EEE;
                 <ul> 
                     <li><font size="4"><a href="routes.php?route=$route_id">$name</a></font></li>
                     <li>$description</li>
-                    <li>$address</li>
                     <li><font size="2"><a href="approve.php?route=$route_id" id="greentext">Not approved, click here to approve, </a>
                     <a href="delete.php?route=$route_id" id="redtext">click here to remove.</a></font></li>
                 </ul>
