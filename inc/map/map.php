@@ -57,7 +57,7 @@ function drawList(){
     if (getUserType()!=0){
         echo '<div class="row">';
         echo '<div class="col s12 m10 l8 offset-m1 offset-l2">';
-        echo '<a class="waves-effect waves-light btn" href="addmap">Add Location</a></div></div>';
+        echo '<a class="waves-effect waves-light btn" href="addmap.php">Add Location</a></div></div>';
     }
     //HTML before running loop
     echo <<<EEE
@@ -66,7 +66,7 @@ function drawList(){
     <div class="col s12 m10 l8 offset-m1 offset-l2">
     
     <div id="loclist">
-    <h3>Portlethen Places</h2> <a href="routes">Click here to see routes.</a>
+    <h3>Portlethen Places</h2> <a href="routes.php">Click here to see routes.</a>
        <ul style="list-style-type:none">
 EEE;
     // loop through all returned results
@@ -84,11 +84,11 @@ EEE;
             echo <<<EEE
             <li>
                 <ul> 
-                    <li><font size="4"><a href="/map/location/$loc_id">$name</a></font></li>
+                    <li><font size="4"><a href="map.php?loc=$loc_id">$name</a></font></li>
                     <li>$description</li>
                     <li>$address</li>
-                    <li><font size="2"><a href="approve/location/$loc_id" id="greentext">Not approved, click here to approve, </a>
-                    <a href="delete/location/$loc_id" id="redtext">click here to remove.</a></font></li>
+                    <li><font size="2"><a href="approve.php?loc=$loc_id" id="greentext">Not approved, click here to approve, </a>
+                    <a href="delete.php?loc=$loc_id" id="redtext">click here to remove.</a></font></li>
                 </ul>
             </li>
 EEE;

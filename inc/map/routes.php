@@ -93,7 +93,7 @@ function drawList(){
     if (getUserType()!=0){
         echo     '<div class="row">';
         echo '<div class="col s12 m10 l8 offset-m1 offset-l2">';
-        echo '<a class="waves-effect waves-light btn" href="addroute">Add Route</a></div></div>';
+        echo '<a class="waves-effect waves-light btn" href="addroute.php">Add Route</a></div></div>';
     }
     //HTML before running loop
     echo <<<EEE
@@ -101,7 +101,7 @@ function drawList(){
     <div class="col s12 m10 l8 offset-m1 offset-l2">
 
     <div id="loclist">
-    <h3>Portlethen Places</h2> <a href="map">Click here to see Locations.</a>
+    <h3>Routes and Trails</h2> <a href="map">Click here to see Locations.</a>
         <ul style="list-style-type:none">
 EEE;
     // loop through all returned results
@@ -117,11 +117,11 @@ EEE;
             echo <<<EEE
             <li>
                 <ul> 
-                    <li><font size="4"><a href="/map/location/$route_id">$name</a></font></li>
+                    <li><font size="4"><a href="routes.php?route=$route_id">$name</a></font></li>
                     <li>$description</li>
                     <li>$address</li>
-                    <li><font size="2"><a href="approve/route/$route_id" id="greentext">Not approved, click here to approve, </a>
-                    <a href="delete/route/$route_id" id="redtext">click here to remove.</a></font></li>
+                    <li><font size="2"><a href="approve.php?route=$route_id" id="greentext">Not approved, click here to approve, </a>
+                    <a href="delete.php?route=$route_id" id="redtext">click here to remove.</a></font></li>
                 </ul>
             </li>
 EEE;
@@ -140,7 +140,7 @@ EEE;
             echo <<<EEE
             <li>
                 <ul> 
-                    <li><font size="4"><a href="test.php?route=$route_id">$name</a></font></li>
+                    <li><font size="4"><a href="routes.php?route=$route_id">$name</a></font></li>
                     <li>$description</li>
                 </ul>
             </li>
