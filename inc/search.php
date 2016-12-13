@@ -70,25 +70,25 @@ function searchSection ($table, $search) {
 		while ($row = $queryResult->fetch_assoc()) {
 			switch ($table) {
 			case "Users":
-				$str .= '<p><a href="/users/' . url($row["username"]) . '" class="collection-item">' . $row["username"] . '</a></p>';
+				$str .= '<p><a href="/inc/profile.php?username=' . url($row["username"]) . '" class="collection-item">' . $row["username"] . '</a></p>';
 				break;
 			case "ClubGenre":
-				$str .= '<p><a href="/sportlethen/' . url($row["category"]) . '" class="collection-item">' . $row["category"] . '</a></p>';
+				$str .= '<p><a href="/inc/sportlethen.php?clubs_type=' . url($row["category"]) . '" class="collection-item">' . $row["category"] . '</a></p>';
 				break;
 			case "Clubs":
-				$str .= '<p><a href="/sportlethen/' . url($row["category"]) . '/' . url($row["name"]) . '-C' . $row["club_id"] . '" class="collection-item">' . $row["name"] . '</a></p>';
+				$str .= '<p><a href="/inc/club/t_club.php?club=' . $row["club_id"] . '" class="collection-item">' . $row["name"] . '</a></p>';
 				break;
 			case "ClubEvents":
-				$str .= '<p><a href="/sportlethen/' . url($row["category"]) . '/' . url($row["cname"]) . '/event/' . 'C' . url($row["cid"]) . 'E' . url($row["event_id"]) . '" class="collection-item">' . $row["ename"] . '</a></p>';
+				$str .= '<p><a href="/inc/club/t_event.php?id=' . 'C' . url($row["cid"]) . 'E' . url($row["event_id"]) . '" class="collection-item">' . $row["ename"] . '</a></p>';
 				break;
 			case "HealthNews":
 				$str .= '<p><a href="/health-wellbeing/news/' . url($row["news_id"]) . '" class="collection-item">' . $row["title"] . '</a></p>';
 				break;
 			case "Locations":
-				$str .= '<p><a href="/map/location/' . url($row["loc_id"]) . '" class="collection-item">' . $row["name"] . '</a></p>';
+				$str .= '<p><a href="/inc/map/map.php?loc=' . url($row["loc_id"]) . '" class="collection-item">' . $row["name"] . '</a></p>';
 				break;
 			case "Routes":
-				$str .= '<p><a href="/map/route/' . url($row["route_id"]) . '" class="collection-item">' . $row["name"] . '</a></p>';
+				$str .= '<p><a href="/inc/map/routes.php?route=' . url($row["route_id"]) . '" class="collection-item">' . $row["name"] . '</a></p>';
 				break;
 			default:
 				return FALSE;
@@ -115,7 +115,7 @@ echo '<div class="section"><div class="container">';
 
 //search form - label, text box and a submit button
 echo ('
-<form action="/search" method="post" name="SearchForm">
+<form action="/inc/search.php" method="post" name="SearchForm">
 	<div class="input-field">
 		<input type="text" id="search" name="search">
 		<label for="search">Looking for...</label>
