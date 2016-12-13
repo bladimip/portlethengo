@@ -1,4 +1,5 @@
 <?php
+echo "this is the right page";
 /*
 Map page - Google Map API
 
@@ -9,7 +10,7 @@ $db = new Connection();
 $db->open();
 $result = $db->runQuery("SELECT * FROM locations);
 $db->close();
-*/
+
 
 
 include('../db/simpleDB.php');
@@ -253,4 +254,4 @@ if ($onLoadLoc == 0) {
 // Footer
 bottom();
 
-?>
+?>*/
