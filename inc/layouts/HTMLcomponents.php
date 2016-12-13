@@ -73,10 +73,10 @@ function top( $title ) {
 						<a href="/" class="left brand-logo lime-text"><span class="lnr lnr-apartment"></span>Go-Portlethen</a>
 
 						<ul class="right hide-on-med-and-down">
-							<li><a class="waves-effect waves-light" href="myfirstuniappmc.azurewebsites.net/inc/search.php"><span class="lnr lnr-magnifier"></span>Search</a></li>
-							<li><a class="waves-effect waves-light" href="myfirstuniappmc.azurewebsites.net/inc/sportlethen.php"><span class="lnr lnr-users"></span>SPortlethen</a></li>
-							<li><a class="waves-effect waves-light" href="myfirstuniappmc.azurewebsites.net/inc/health-wellbeing.php"><span class="lnr lnr-heart-pulse"></span>Health & Wellbeing</a></li>
-							<li><a class="waves-effect waves-light" href="myfirstuniappmc.azurewebsites.net/inc/map/map.php"><span class="lnr lnr-map"></span>Discover Area</a></li>
+							<li><a class="waves-effect waves-light" href="http://myfirstuniappmc.azurewebsites.net/inc/search.php"><span class="lnr lnr-magnifier"></span>Search</a></li>
+							<li><a class="waves-effect waves-light" href="http://myfirstuniappmc.azurewebsites.net/inc/sportlethen.php"><span class="lnr lnr-users"></span>SPortlethen</a></li>
+							<li><a class="waves-effect waves-light" href="http://myfirstuniappmc.azurewebsites.net/inc/health-wellbeing.php"><span class="lnr lnr-heart-pulse"></span>Health & Wellbeing</a></li>
+							<li><a class="waves-effect waves-light" href="http://myfirstuniappmc.azurewebsites.net/inc/map/map.php"><span class="lnr lnr-map"></span>Discover Area</a></li>
 							<li><a class="waves-effect waves-light logBtn"  href="#!"><span class="lnr lnr-user"></span>
 								<?php if (isset($_SESSION['USER_LOGIN_IN'])) echo '<span>Logout</span>';
 											else echo '<span>Login</span>'; ?>
