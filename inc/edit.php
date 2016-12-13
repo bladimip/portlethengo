@@ -15,6 +15,6 @@ $edit = $db ->runQuery("UPDATE HealthNews SET title = '$title', description = '$
 $editMedia = $db ->runQuery("UPDATE HealthMedia SET mediaType = '$mediaType', mediaPath = '$mediaPath' WHERE news_id = '$news_id'");
 $db -> close();
 
-header('location: /health-wellbeing');
+header('location: health-wellbeing.php');
 
 ?>

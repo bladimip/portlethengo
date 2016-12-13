@@ -13,10 +13,6 @@ if (isset($_SESSION['USER_LOGIN_IN']))
 	$siteAdmin = 0;
 }
 
-else
-{
-    $siteAdmin = 0;
-}
 
 $news_id = $_POST['news_id'];
 $approved = $_POST['approved'];
@@ -27,5 +23,5 @@ $db -> open();
 $approvesql = $db ->runQuery("UPDATE HealthNews SET approved = 1, approvedBy = '{$user_id}' WHERE news_id = '{$news_id}'");
 $db -> close();
 
-header('location: /health-wellbeing');
+header('location: health-wellbeing.php');
 ?>
