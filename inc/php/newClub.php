@@ -51,7 +51,7 @@ else {
 
 
   //echo $title.'<br>'.$genre.'<br>'.$description.'<br>'.$phone.'<br>'.$email.'<br>'.$address;
-  header('Location: /sportlethen');
+  header('Location: /inc/sportlethen.php');
 }
 
 ?>

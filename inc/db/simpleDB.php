@@ -92,7 +92,10 @@ METHODS DESCRIPTION AND USAGE:
 		}
 
 
-
+		public function getLastID() {
+					$last_id = mysqli_insert_id($this->myConn);
+					return $last_id;
+				}
 
 // Escape characters
 		public function escape($str) {

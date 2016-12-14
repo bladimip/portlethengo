@@ -75,7 +75,7 @@ include_once('C_Event.php');
             while ($row = $user->fetch_assoc()) {
 
               echo '<br><span class="grey-text text-lighten-1">Approved by: </span>';
-              echo '<a id="user_link" href="/users/'. url($row["username"]) .'">'. url($row["username"]) .'</a>';
+              echo '<a id="user_link" href="../profile.php?username='. url($row["username"]) .'">'. url($row["username"]) .'</a>';
             }
          }
 
