@@ -2,9 +2,14 @@
 /*
 Registration
 */
-
 include('/db/simpleDB.php');
 include('/layouts/HTMLcomponents.php');
+// Navbar
+top("Welcome to Portlethen");
+//before displaying admin panel, checking if user is logged in, and then checking if hes admin; redirecting to landing if not;
+if (isset($_SESSION['USER_SITEADMIN'])) {
+	if (($_SESSION['USER_SITEADMIN']) == 1) {
+
 //error_reporting(0);
 //Ulogin(1);
 DidTheUserAdmin(1);
@@ -68,8 +73,6 @@ $result = $CONNECT->query($sql);
 $row = $result->fetch_assoc();
 mysqli_query($CONNECT, $sql);
 
-// Navbar
-top("Welcome to Portlethen");
 
 //Other page content
 
@@ -281,3 +284,9 @@ top("Welcome to Portlethen");
 					});
 				}
 			</script>
+		<?php
+	} else
+		exit(header('Location: /inc/landing.php'));
+} else 
+	exit(header('Location: /inc/landing.php'));
+?>

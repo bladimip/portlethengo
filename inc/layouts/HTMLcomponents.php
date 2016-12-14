@@ -235,7 +235,13 @@ function bottom() {
 				<div class="footer-copyright">
 					<div class="container">
 						Made by <a class="brown-text text-lighten-3">CA2</a>
-						<?php if (isset($_SESSION['USER_SITEADMIN']))  echo  '<a class="grey-text text-lighten-4 right" href="/adminpanel">Admin Panel</a>'?>
+						<?php
+						//before displaying link to admin panel, checking if user is logged in, and then checking if hes admin
+						if (isset($_SESSION['USER_SITEADMIN'])) {
+							if (($_SESSION['USER_SITEADMIN']) == 1) {
+								echo  '<a class="grey-text text-lighten-4 right" href="/inc/adminpanel.php">Admin Panel</a>';
+							}
+						}?>
 					</div>
 				</div>
 			</footer>
