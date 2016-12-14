@@ -139,9 +139,9 @@ class ClubAdmin extends ClubContributor {
 
         // C for club id, E for event id
         if ($event->getStatus() == "1") {
-          echo '<a href="/sportlethen/'.url($this->getGenre()).'/'.url($this->getName()).'/event/C'.$this->getId()."E".$event->getId().'" class="collection-item lime"><span>'. date_format(new DateTime($event->getEventDate()), 'd M Y') .'</span> '. $event->getName() .'<span class="badge"><span class="lnr lnr-checkmark-circle"></span></span></a>';
+          echo '<a href="t_event.php?id=C'.$this->getId()."E".$event->getId().'" class="collection-item lime"><span>'. date_format(new DateTime($event->getEventDate()), 'd M Y') .'</span> '. $event->getName() .'<span class="badge"><span class="lnr lnr-checkmark-circle"></span></span></a>';
         } else {
-          echo '<a href="/sportlethen/'.url($this->getGenre()).'/'.url($this->getName()).'/event/C'.$this->getId()."E".$event->getId().'" class="collection-item grey lighten-2"><span>'. date_format(new DateTime($event->getEventDate()), 'd M Y') .'</span> '. $event->getName() .'<span class="badge"><span class="lnr lnr-question-circle"></span></span></a>';
+          echo '<a href="t_event.php?id=C'.$this->getId()."E".$event->getId().'" class="collection-item grey lighten-2"><span>'. date_format(new DateTime($event->getEventDate()), 'd M Y') .'</span> '. $event->getName() .'<span class="badge"><span class="lnr lnr-question-circle"></span></span></a>';
         }
 
       }

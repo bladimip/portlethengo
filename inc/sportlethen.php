@@ -134,7 +134,6 @@ if (isset($_GET["clubs_type"])) {
       echo '<div class="row">';
       while ($row = $clubs->fetch_assoc()) {
               // build a link to a club template and pass a club name using GET
-              // check .htaccess file for routing rules - /sportlethen/genre/club name
               echo '
               <a href="club/t_club.php?club='.url($row["club_id"]).'">
                   <div class="sp-genre-list z-depth-1 waves-effect waves-dark col s12 l8 offset-l2">
@@ -170,7 +169,7 @@ if (isset($_GET["clubs_type"])) {
     if (isset($_SESSION["USER_LOGIN_IN"])) {
 
       echo '
-              <a href="/sportlethen/new-club">
+              <a href="sportlethen.php?clubs_type=new-club">
                   <div class="col s12 m6 l3">
                       <p class="sp-genre z-depth-2">+<br>Create a new club</p>
                   </div>

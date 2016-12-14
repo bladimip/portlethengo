@@ -241,7 +241,8 @@ function bottom() {
 							if (($_SESSION['USER_SITEADMIN']) == 1) {
 								echo  '<a class="grey-text text-lighten-4 right" href="/inc/adminpanel.php">Admin Panel</a>';
 							}
-						}?>
+						}
+						?>
 					</div>
 				</div>
 			</footer>

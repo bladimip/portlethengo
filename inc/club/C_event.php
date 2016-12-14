@@ -124,7 +124,7 @@ Developer: Arnis Zelcs
           while ($row = $club->fetch_assoc()) {
 
             echo '<span class="grey-text text-lighten-1">Club: </span>';
-            echo '<a href="t_club.php?club=-C'.$row["club_id"].'">'. $row["name"] .'</a><br>';
+            echo '<a href="t_club.php?club='.$row["club_id"].'">'. $row["name"] .'</a><br>';
           }
        }
     }

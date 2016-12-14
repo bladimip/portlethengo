@@ -48,8 +48,6 @@ top(isset($_GET["club"]) ? substr(str_replace("-", " ", $_GET["club"]), 0, strrp
 // Check if a club name is passed to this script
 if (isset($_GET["club"])) {
     $clubGET = urldecode($_GET["club"]);
-    // Get the id (last character added to the name)
-    $clubGET = substr($clubGET, -1);
 
     $userType = "public";
 
